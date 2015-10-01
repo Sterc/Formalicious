@@ -1,0 +1,5 @@
+Changelog for Formalicious.
+
+Formalicious 1.0.0
+==============
+- Initial release.
