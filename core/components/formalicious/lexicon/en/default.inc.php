@@ -7,9 +7,6 @@
  */
 $_lang['formalicious'] = 'Formalicious';
 $_lang['formalicious.menu_desc'] = 'Manage forms';
-
-$_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
-
 $_lang['formalicious.search...'] = 'Search...';
 $_lang['formalicious.settings'] = 'Form settings';
 $_lang['formalicious.settings.intro_msg'] = 'Here you can change the form settings to your preferred settings.';
@@ -72,6 +69,7 @@ $_lang['formalicious.add_value'] = 'Add value';
 
 
 $_lang['formalicious.field.name'] = 'Title';
+$_lang['formalicious.field.title'] = 'Title';
 $_lang['formalicious.field.placeholder'] = 'Placeholder';
 $_lang['formalicious.field.text'] = 'Description';
 $_lang['formalicious.field.required'] = 'Required';
@@ -79,11 +77,10 @@ $_lang['formalicious.field.saveform'] = 'Save submitted form';
 $_lang['formalicious.field.published'] = 'Published';
 $_lang['formalicious.field.emailto'] = 'Email to';
 $_lang['formalicious.field.subject'] = 'Subject';
-$_lang['formalicious.field.redirectto'] = 'Redirect to';
 $_lang['formalicious.field.fiar_msg'] = 'Here you can change the auto-reply settings to your preferred auto-reply settings.';
 $_lang['formalicious.field.fiaremail'] = 'Send auto reply';
 $_lang['formalicious.field.fiaremailto'] = 'Select email field';
-$_lang['formalicious.field.fiaremailfrom'] = 'Email from';
+$_lang['formalicious.field.fiaremailfrom'] = 'Email';
 $_lang['formalicious.field.fiarsubject'] = 'Subject';
 $_lang['formalicious.field.fiarcontent'] = 'Content';
 $_lang['formalicious.field.fiarattachment'] = 'Attachment';
@@ -95,6 +92,5 @@ $_lang['formalicious.data'] = 'Data';
 $_lang['formalicious.time'] = 'Time';
 $_lang['formalicious.title'] = 'Title';
 $_lang['formalicious.type'] = 'Type';
-
 $_lang['formalicious.submit'] = 'Submit';
 $_lang['formalicious.next'] = 'Next';

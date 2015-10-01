@@ -141,6 +141,7 @@ if($form){
 		$formPhs['fieldNames'] = implode(',', array_map(function ($v, $k) { return $k.'=='.$v; }, $fieldNames, array_keys($fieldNames)));
 		$formPhs['fieldNames'] = implode(',', array_map(function ($v, $k) { return $k.'=='.$v; }, $fieldNames, array_keys($fieldNames)));
 		$formPhs['formFields'] = implode(',', array_keys($fieldNames));
+		$formPhs['fiarattachment'] = (!empty($formPhs['fiarattachment'])) ? MODX_BASE_PATH.$formPhs['fiarattachment'] : '';
 		// print_r($modx->placeholders);
 		// 	exit($modx->getChunk($formTpl, $formPhs));
 
