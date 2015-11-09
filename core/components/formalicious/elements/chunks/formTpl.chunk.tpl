@@ -4,16 +4,17 @@
     &hooks=`[[+hooks]]`
     &emailTo=`[[+emailto]]`
     &emailSubject=`[[+subject]]`
-    &emailTpl=`@CODE:[[+fieldsemailoutput]]`
+    &emailTpl=`@CODE:[[+description:nl2br]]<br /><br />[[+fieldsemailoutput]]`
     &redirectTo=`[[+redirectTo]]`
     &redirectParams=`[[+redirectParams]]`
     &formid=`[[+id]]`
     &validate=`[[+validation]]`
     &fieldNames=`[[+fieldNames]]`
     &formFields=`[[+formFields]]`
-
+    &formName=`[[+formName]]`
+    &fsFormTopic=`[[+fsFormTopic]]`
     &fiarToField=`field_[[+fiaremailto]]`
-    &fiarTpl=`@CODE:[[+fiarcontent]][[+fieldsemailoutput]]`
+    &fiarTpl=`@CODE:[[+fiarcontent:nl2br]]<br /><br />[[+fieldsemailoutput]]`
     &fiarSubject=`[[+fiarsubject]]`
     &fiarFrom=`[[+fiaremailfrom]]`
     &fiarFiles=`[[+fiarattachment]]`
