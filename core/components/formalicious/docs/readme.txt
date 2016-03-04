@@ -1,6 +1,6 @@
 --------------------
 Formalicious
 --------------------
-Version: 1.0.0
-Author: Wieger Sloot <modx@sterc.nl>
+Version: 0.6
+Author: Sterc <modx@sterc.nl>
 --------------------
