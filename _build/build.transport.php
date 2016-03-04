@@ -14,7 +14,7 @@ set_time_limit(0);
 /* define package */
 define('PKG_NAME','Formalicious');
 define('PKG_NAME_LOWER',strtolower(PKG_NAME));
-define('PKG_VERSION','0.5.2');
+define('PKG_VERSION','0.6');
 define('PKG_RELEASE','beta');//pl
 
 /* define sources */
