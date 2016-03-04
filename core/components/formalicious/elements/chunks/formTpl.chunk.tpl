@@ -1,27 +1,25 @@
-
 [[!FormIt?
     &preHooks=`[[+preHooks]]`
     &hooks=`[[+hooks]]`
     &emailTo=`[[+emailto]]`
     &emailSubject=`[[+subject]]`
-    &emailTpl=`@CODE:[[+description:nl2br]]<br /><br />[[+fieldsemailoutput]]`
+    &emailFrom=`[[+emailfrom]]`
     &redirectTo=`[[+redirectTo]]`
     &redirectParams=`[[+redirectParams]]`
     &formid=`[[+id]]`
     &validate=`[[+validation]]`
     &fieldNames=`[[+fieldNames]]`
     &formFields=`[[+formFields]]`
-    &formName=`[[+formName]]`
-    &fsFormTopic=`[[+fsFormTopic]]`
+
     &fiarToField=`field_[[+fiaremailto]]`
-    &fiarTpl=`@CODE:[[+fiarcontent:nl2br]]<br /><br />[[+fieldsemailoutput]]`
+    &fiarTpl=`@CODE:[[+fiarcontent]]`
     &fiarSubject=`[[+fiarsubject]]`
     &fiarFrom=`[[+fiaremailfrom]]`
     &fiarFiles=`[[+fiarattachment]]`
 ]]
 
 <hr>
-<form action="[[~[[*id]]? &step=`[[+currentStep]]`]]" method="POST" enctype="multipart/form-data">
+<form action="[[~[[*id]]? &step=`[[+currentStep]]`]]" method="POST">
     [[+form]]
 
     [[+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[+currentStep:decr=`1`]]">« [[%prev]]</a>`:else=``]]

@@ -138,11 +138,9 @@ if($form){
 		$formPhs['hooks'] = implode(',', $hooks);
 		$formPhs['preHooks'] = implode(',', $preHooks);
 		$formPhs['validation'] = implode(',', array_map(function ($v, $k) { return sprintf("%s:%s", $k, implode(':',$v)); }, $validationCurrent, array_keys($validationCurrent)));
-		$formPhs['formName'] = $form->get('name') . ' (' . $modx->resource->get('id') . ')';
-		$formPhs['fsFormTopic'] = $form->get('name') . ' (' . $modx->resource->get('id') . ')';
+		$formPhs['fieldNames'] = implode(',', array_map(function ($v, $k) { return $k.'=='.$v; }, $fieldNames, array_keys($fieldNames)));
 		$formPhs['fieldNames'] = implode(',', array_map(function ($v, $k) { return $k.'=='.$v; }, $fieldNames, array_keys($fieldNames)));
 		$formPhs['formFields'] = implode(',', array_keys($fieldNames));
-		$formPhs['fiarattachment'] = (!empty($formPhs['fiarattachment'])) ? MODX_BASE_PATH.$formPhs['fiarattachment'] : '';
 		// print_r($modx->placeholders);
 		// 	exit($modx->getChunk($formTpl, $formPhs));
 

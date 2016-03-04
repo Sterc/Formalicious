@@ -6,10 +6,6 @@
  * @subpackage lexicon
  */
 $_lang['formalicious'] = 'Formalicious';
-
-
-$_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
-
 $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
 $_lang['formalicious.settings.intro_msg'] = 'Hier kun je de formulier instellingen wijzigen naar jouw voorkeursinstellingen.';
@@ -64,23 +60,16 @@ $_lang['formalicious.value_remove_confirm'] = 'Weet je zeker dat je deze waarde 
 $_lang['formalicious.field_create'] = 'Veld aanmaken';
 
 $_lang['formalicious.step.create'] = 'Nieuw stap aanmaken';
-$_lang['formalicious.step.remove'] = 'Verwijder stap';
-$_lang['formalicious.step.remove.msg'] = 'Weet je zeker dat je deze stap wilt verwijderen?';
 // $_lang['formalicious.new_step'] = 'Stap [[+number]]';
 $_lang['formalicious.new_step'] = 'Nieuwe stap';
 $_lang['formalicious.add_value'] = 'Waarde toevoegen';
 
-
 $_lang['formalicious.field.name'] = 'Titel';
-$_lang['formalicious.field.placeholder'] = 'Placeholder';
 $_lang['formalicious.field.text'] = 'Omschrijving';
-$_lang['formalicious.field.required'] = 'Verplicht';
 $_lang['formalicious.field.published'] = 'Gepubliceerd';
 $_lang['formalicious.field.emailto'] = 'Mailen naar';
-$_lang['formalicious.field.submittitle'] = 'Verstuur knop tekst';
 $_lang['formalicious.field.subject'] = 'Onderwerp';
-$_lang['formalicious.field.redirectto'] = 'Bedankt pagina';
-$_lang['formalicious.field.fiar_msg'] = 'Hier kun je de auto-reply instellingen wijzigen naar jouw gewenste auto-reply instellingen.';
+$_lang['formalicious.field.fiar_msg'] = 'Omschrijving';
 $_lang['formalicious.field.fiaremail'] = 'Auto reply versturen';
 $_lang['formalicious.field.fiaremailto'] = 'Selecteer e-mail veld';
 $_lang['formalicious.field.fiaremailfrom'] = 'Afzender e-mail';
@@ -95,6 +84,3 @@ $_lang['formalicious.data'] = 'Data';
 $_lang['formalicious.time'] = 'Tijd';
 $_lang['formalicious.title'] = 'Titel';
 $_lang['formalicious.type'] = 'Type';
-
-$_lang['formalicious.submit'] = 'Verzenden';
-$_lang['formalicious.next'] = 'Volgende';

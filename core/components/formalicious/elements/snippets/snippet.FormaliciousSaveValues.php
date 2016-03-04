@@ -5,6 +5,4 @@ $oldValues = $_SESSION['Formalicious_form_'.$formit->config['formid']];
 if(!$oldValues) $oldValues = array();
 $_SESSION['Formalicious_form_'.$formit->config['formid']] = array_merge($oldValues, $values);
 
-$hook->setValues(array_merge($oldValues, $values));
-
 return true;
