@@ -182,6 +182,9 @@ $builder->setPackageAttributes(array(
     //'setup-options' => array(
         //'source' => $sources['build'].'setup.options.php',
     //),
+    'requires' => array(
+        'formit' => '>=2.2.2',
+    ),
 ));
 $modx->log(modX::LOG_LEVEL_INFO,'Added package attributes and setup options.');
 

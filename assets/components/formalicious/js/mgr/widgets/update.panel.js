@@ -167,82 +167,8 @@ Formalicious.panel.Update = function(config) {
                 title: _('formalicious.fields')
                 ,xtype: 'formalicious-panel-manage-form'
                 ,disabled: (MODx.request.id) ? false : true
-            }/*,{
-                title: _('formalicious.saved_forms')
-                ,disabled: (MODx.request.id) ? false : true
-                ,items: [{
-                    html: '<p>'+_('formalicious.saved_forms.intro_msg')+'</p>'
-                    ,border: false
-                    ,bodyCssClass: 'panel-desc'
-                    ,cls: 'main-wrapper'
-                    ,style: 'padding-top:5px;'
-                },{
-                    xtype: 'panel'
-                    ,cls: 'main-wrapper'
-                    ,layout: 'form'
-                    ,labelWidth: 150
-                    ,items: [{
-                        xtype: 'datefield',
-                        fieldLabel: _('formalicious.select_start_date'),
-                        id: 'startdate',
-                        width: 400,
-                        listeners: {
-                            select: {
-                                scope: this,
-                                fn: function(dateField, dateObject) {
-                                    Ext.getCmp('formalicious-grid-saved-forms').baseParams.startDate = dateObject.format('d-m-Y');
-                                    Ext.getCmp('formalicious-grid-saved-forms').getBottomToolbar().changePage(1);
-                                    Ext.getCmp('formalicious-grid-saved-forms').refresh();
-                                }
-                            }
-                        }
-                    },{
-                        xtype: 'datefield',
-                        fieldLabel: _('formalicious.select_end_date'),
-                        id: 'enddate',
-                        width: 400,
-                        listeners: {
-                            select: {
-                                scope: this,
-                                fn: function(dateField, dateObject) {
-                                    Ext.getCmp('formalicious-grid-saved-forms').baseParams.endDate = dateObject.format('d-m-Y');
-                                    Ext.getCmp('formalicious-grid-saved-forms').getBottomToolbar().changePage(1);
-                                    Ext.getCmp('formalicious-grid-saved-forms').refresh();
-                                }
-                            }
-                        }
-                    },{
-                        xtype: 'panel'
-                        ,cls: 'button-holder'
-                        ,items: [{
-                            xtype: 'button',
-                            text: _('formalicious.clear'),
-                            scope: this,
-                            handler: function() {
-                                Ext.getCmp('startdate').setValue('');
-                                Ext.getCmp('enddate').setValue('');
-
-                                Ext.getCmp('formalicious-grid-saved-forms').baseParams.startDate = '';
-                                Ext.getCmp('formalicious-grid-saved-forms').baseParams.endDate = '';
-                                Ext.getCmp('formalicious-grid-saved-forms').getBottomToolbar().changePage(1);
-                                Ext.getCmp('formalicious-grid-saved-forms').refresh();
-                            }
-                        },
-                        {
-                            xtype: 'button',
-                            text: _('formalicious.export'),
-                            scope: this,
-                            handler: function() {
-                               Ext.getCmp('formalicious-grid-saved-forms').export();
-                            }
-                        }]
-                    }]
-                },{
-                    xtype: 'formalicious-grid-saved-forms'
-                    ,id: 'formalicious-grid-saved-forms'
-                    ,cls: 'main-wrapper'
-                }]
-            }*/]
+                
+            }]
         }]
     });
     Formalicious.panel.Update.superclass.constructor.call(this,config);
