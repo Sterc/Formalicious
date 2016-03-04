@@ -62,7 +62,7 @@ Formalicious.panel.ManageForm = function(config) {
         ,style: 'background: #fbfbfb'
         ,id: 'formalicious-panel-form-wrapper'
         ,items: [{
-            html: '<p>'+_('formalicious.settings.intro_msg')+'</p>'
+            html: '<p>'+_('formalicious.fields.intro_msg')+'</p>'
             ,border: false
             ,bodyCssClass: 'panel-desc'
             ,cls: 'main-wrapper'
