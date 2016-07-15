@@ -34,5 +34,9 @@
     },
     "database": {
         "tables": ["FormaliciousCategory","FormaliciousForm","FormaliciousStep","FormaliciousFieldType","FormaliciousField","FormaliciousSubField","FormaliciousAnswer"]
-    }
+    },
+    "dependencies": [{
+        "name": "formit",        
+        "version": ">=2.2.2"
+    }]
 }
