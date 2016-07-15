@@ -1,0 +1,38 @@
+{
+    "name": "Formalicious",
+    "lowCaseName": "formalicious",
+    "description": "",
+    "author": "Sterc",
+    "version": "0.6",
+    "package":{  
+        "menus": [{
+            "text": "formalicious",
+            "description": "formalicious.menu_desc",
+            "action": "index"
+        }],
+        "elements": {
+            "plugins": [],
+            "snippets": [{
+                "name": "renderForm",
+                "file": "snippet.renderForm.php"
+            },{
+                "name": "FormaliciousGetValues",
+                "file": "snippet.FormaliciousGetValues.php"
+            },{
+                "name": "FormaliciousSaveValues",
+                "file": "snippet.FormaliciousSaveValues.php"
+            }],
+            "chunks": [],
+            "templates": [],
+            "tvs": []
+        },
+        "systemSettings": [{
+            "key": "source",
+            "value": "1",
+            "area": "Paths"
+        }]
+    },
+    "database": {
+        "tables": ["FormaliciousCategory","FormaliciousForm","FormaliciousStep","FormaliciousFieldType","FormaliciousField","FormaliciousSubField","FormaliciousAnswer"]
+    }
+}
