@@ -22,7 +22,43 @@
                 "name": "FormaliciousSaveValues",
                 "file": "snippet.FormaliciousSaveValues.php"
             }],
-            "chunks": [],
+            "chunks": [{
+                "name": "checkboxesTpl",
+                "file": "checkboxesTpl.chunk.tpl"
+            },{
+                "name": "checkboxInnerTpl",
+                "file": "checkboxInnerTpl.chunk.tpl"
+            },{
+                "name": "emailTpl",
+                "file": "emailTpl.chunk.tpl"
+            },{
+                "name": "fileTpl",
+                "file": "fileTpl.chunk.tpl"
+            },{
+                "name": "formTpl",
+                "file": "formTpl.chunk.tpl"
+            },{
+                "name": "radiobuttonsInnerTpl",
+                "file": "radiobuttonsInnerTpl.chunk.tpl"
+            },{
+                "name": "radiobuttonsTpl",
+                "file": "radiobuttonsTpl.chunk.tpl"
+            },{
+                "name": "selectInnerTpl",
+                "file": "selectInnerTpl.chunk.tpl"
+            },{
+                "name": "selectTpl",
+                "file": "selectTpl.chunk.tpl"
+            },{
+                "name": "stepTpl",
+                "file": "stepTpl.chunk.tpl"
+            },{
+                "name": "textareaTpl",
+                "file": "textareaTpl.chunk.tpl"
+            },{
+                "name": "textTpl",
+                "file": "textTpl.chunk.tpl"
+            }],
             "templates": [],
             "tvs": []
         },
@@ -33,10 +69,23 @@
         }]
     },
     "database": {
-        "tables": ["FormaliciousCategory","FormaliciousForm","FormaliciousStep","FormaliciousFieldType","FormaliciousField","FormaliciousSubField","FormaliciousAnswer"]
+        "tables": [
+            "FormaliciousCategory",
+            "FormaliciousForm",
+            "FormaliciousStep",
+            "FormaliciousFieldType",
+            "FormaliciousField",
+            "FormaliciousSubField",
+            "FormaliciousAnswer"
+        ]
     },
     "dependencies": [{
-        "name": "formit",        
+        "name": "formit",
         "version": ">=2.2.2"
-    }]
+    }],
+    "build": {
+        "resolver": {
+            "after": ["resolve.defaulttypes.php"]
+        }
+    }
 }
