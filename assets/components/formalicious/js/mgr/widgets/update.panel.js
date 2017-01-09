@@ -366,6 +366,7 @@ Ext.extend(Formalicious.grid.AdvancedParams,MODx.grid.LocalGrid,{
             xtype: 'formalicious-window-param'
             ,record: this.menu.record
             ,isUpdate: true
+            ,selected: this.getSelectionModel().getSelected().id
             ,listeners: {
                 'success': {fn:function() {
                     // this.refresh();
@@ -432,7 +433,12 @@ Ext.extend(Formalicious.window.Param,MODx.Window,{
                     index = store.getCount() - 1;
                 }
                 var rec = new grid.Record({key: v.key, value: v.value});
-                if (!this.config.isUpdate) {
+                if (this.config.isUpdate) {
+                    // var record = store.getAt(this.config.selected);
+                    // record.set('key', v.key);
+                    // record.set('value', v.value);
+                    // record.commit();
+                } else {
                     store.insert(index, rec);
                 }
                 return true;
