@@ -1,7 +1,4 @@
 <?php
-/**
- * @package formalicious
- */
 $xpdo_meta_map['FormaliciousForm']= array (
   'package' => 'formalicious',
   'version' => NULL,
@@ -14,15 +11,18 @@ $xpdo_meta_map['FormaliciousForm']= array (
     'description' => '',
     'published' => 0,
     'saveform' => 0,
+    'redirectto' => 0,
     'emailto' => '',
     'subject' => '',
-    'redirectto' => 0,
     'fiaremail' => 0,
     'fiaremailto' => 0,
     'fiaremailfrom' => '',
     'fiarsubject' => '',
     'fiarcontent' => '',
     'fiarattachment' => '',
+    'prehooks' => '',
+    'posthooks' => '',
+    'parameters' => '',
   ),
   'fieldMeta' => 
   array (
@@ -70,6 +70,15 @@ $xpdo_meta_map['FormaliciousForm']= array (
       'default' => 0,
       'index' => 'index',
     ),
+    'redirectto' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '10',
+      'attributes' => 'unsigned',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
+    ),
     'emailto' => 
     array (
       'dbtype' => 'text',
@@ -84,15 +93,6 @@ $xpdo_meta_map['FormaliciousForm']= array (
       'phptype' => 'string',
       'null' => false,
       'default' => '',
-    ),
-    'redirectto' => 
-    array (
-      'dbtype' => 'int',
-      'precision' => '10',
-      'phptype' => 'integer',
-      'null' => false,
-      'default' => 0,
-      'index' => 'index',
     ),
     'fiaremail' => 
     array (
@@ -137,6 +137,29 @@ $xpdo_meta_map['FormaliciousForm']= array (
       'default' => '',
     ),
     'fiarattachment' => 
+    array (
+      'dbtype' => 'text',
+      'phptype' => 'text',
+      'null' => false,
+      'default' => '',
+    ),
+    'prehooks' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'posthooks' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
+    ),
+    'parameters' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'text',

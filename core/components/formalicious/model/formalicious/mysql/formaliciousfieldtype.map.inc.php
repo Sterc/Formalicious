@@ -1,7 +1,4 @@
 <?php
-/**
- * @package formalicious
- */
 $xpdo_meta_map['FormaliciousFieldType']= array (
   'package' => 'formalicious',
   'version' => NULL,
@@ -46,9 +43,11 @@ $xpdo_meta_map['FormaliciousFieldType']= array (
     array (
       'dbtype' => 'tinyint',
       'precision' => '1',
-      'phptype' => 'int',
+      'attributes' => 'unsigned',
+      'phptype' => 'boolean',
       'null' => false,
       'default' => 0,
+      'index' => 'index',
     ),
     'validation' => 
     array (

@@ -98,3 +98,14 @@ $_lang['formalicious.type'] = 'Type';
 
 $_lang['formalicious.submit'] = 'Submit';
 $_lang['formalicious.next'] = 'Next';
+
+$_lang['formalicious.advanced'] = 'Advanced';
+$_lang['formalicious.advanced.intro_msg'] = 'Here you can edit the advanced settings.';
+$_lang['formalicious.advanced.prehooks'] = 'Prehooks';
+$_lang['formalicious.advanced.prehooks.description'] = 'Comma separated list of Formit prehooks that will be executed when the form loads.';
+$_lang['formalicious.advanced.posthooks'] = 'Posthooks';
+$_lang['formalicious.advanced.posthooks.description'] = 'Comma separated list of Formit posthooks that will be executed when the form is submitted. The hooks only fire after successful validation.';
+$_lang['formalicious.advanced.parameters'] = 'Parameters';
+$_lang['formalicious.advanced.parameters.description'] = 'Add custom Formit parameters here. These will be added to the Formit snippet call, for example \'&myParam=`myValue`\'.';
+$_lang['formalicious.advanced.parameter'] = 'Parameter key';
+$_lang['formalicious.advanced.add_parameter'] = 'Add parameter';

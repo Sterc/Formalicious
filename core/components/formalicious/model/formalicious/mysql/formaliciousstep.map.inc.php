@@ -1,7 +1,4 @@
 <?php
-/**
- * @package formalicious
- */
 $xpdo_meta_map['FormaliciousStep']= array (
   'package' => 'formalicious',
   'version' => NULL,

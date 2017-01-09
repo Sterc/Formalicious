@@ -98,3 +98,14 @@ $_lang['formalicious.type'] = 'Type';
 
 $_lang['formalicious.submit'] = 'Verzenden';
 $_lang['formalicious.next'] = 'Volgende';
+
+$_lang['formalicious.advanced'] = 'Geavanceerd';
+$_lang['formalicious.advanced.intro_msg'] = 'Hier kun je de geavanceerde instellingen aanpassen.';
+$_lang['formalicious.advanced.prehooks'] = 'Prehooks';
+$_lang['formalicious.advanced.prehooks.description'] = 'Komma gescheiden lijst van prehooks die uitgevoerd worden zodra het formulier ingeladen wordt.';
+$_lang['formalicious.advanced.posthooks'] = 'Posthooks';
+$_lang['formalicious.advanced.posthooks.description'] = 'Komma gescheiden lijst van posthooks die uitgevoerd worden zodra het formulier verzonden is. Deze hooks worden alleen uitgevoerd na succesvolle validatie.';
+$_lang['formalicious.advanced.parameters'] = 'Parameters';
+$_lang['formalicious.advanced.parameters.description'] = 'Voeg hier custom Formit parameters toe, deze worden dan toegevoegd aan de Formit call.';
+$_lang['formalicious.advanced.parameter'] = 'Parameter key';
+$_lang['formalicious.advanced.add_parameter'] = 'Parameter toevoegen';
