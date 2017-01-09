@@ -242,7 +242,7 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
                         Ext.getCmp('modx-page-header').getEl().update('<h2>'+_('formalicious')+': '+r.object.name+'</h2>');
                         this.getForm().setValues(r.object);
 
-                        /* Add the data from the images field to the images grid (media tab) */
+                        /* Add the data from the parameters field to the parameters grid (advanced tab) */
                         var i = 0;
                         var grid = Ext.getCmp('formalicious-grid-advanced-params');
                         var store = grid.getStore();
@@ -252,10 +252,8 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
                         var parameters = Ext.decode(r.object.parameters);
                         if (parameters.length > 0) {
                             parameters.forEach(function(value) {
-                                // console.log(value);
-                                var rec = new grid.Record({id: i, key: value.key, value: value.value});
-                                // store.insert(i,rec);
-                                // i = i+1;
+                                var rec = new grid.Record({key: value.key, value: value.value});
+                                store.insert(i,rec);
                             });
                         }
 
@@ -274,9 +272,6 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
             MODx.fireEvent('ready');
         }
     }
-    // ,beforeSubmit: function(o) {
-    //     this.baseParams.content = Ext.encode(Ext.pluck(Ext.getCmp('pdfgenerator-grid-pdf').getStore().data.items, 'data'));
-    // }
     ,success: function(o) {
         if(!MODx.request.id){
             MODx.loadPage(MODx.request.a, "action=update&id=" + o.result.object.id);
@@ -293,7 +288,6 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
         } else {
             parameters = '';
         }
-        console.log(parameters);
         this.baseParams.parameters = parameters;
     }
 
@@ -338,22 +332,22 @@ Formalicious.grid.AdvancedParams = function(config) {
 };
 
 Ext.extend(Formalicious.grid.AdvancedParams,MODx.grid.LocalGrid,{
-    windows: {}
-    ,getMenu: function() {
+
+    getMenu: function() {
         var m = [];
         m.push({
             text: _('update')
-            ,handler: this.updateField
+            ,handler: this.updateParam
         });
         m.push('-');
         m.push({
             text: _('delete')
-            ,handler: this.removeField
+            ,handler: this.removeParam
         });
-        this.addContextMenuItem(m);
+        return m;
     }
     ,createParam: function(btn,e) {
-        var addImageWindow = MODx.load({
+        var paramWindow = MODx.load({
             xtype: 'formalicious-window-param'
             ,listeners: {
                 'success': {fn:function() {
@@ -362,31 +356,41 @@ Ext.extend(Formalicious.grid.AdvancedParams,MODx.grid.LocalGrid,{
             }
         });
 
-        addImageWindow.fp.getForm().reset();
-        addImageWindow.fp.getForm().setValues(this.menu.record);
-        addImageWindow.show(e.target);
+        paramWindow.fp.getForm().reset();
+        paramWindow.fp.getForm().setValues(this.menu.record);
+        paramWindow.show(e.target);
     }
 
     ,updateParam: function(btn,e) {
+        var paramWindow = MODx.load({
+            xtype: 'formalicious-window-param'
+            ,record: this.menu.record
+            ,isUpdate: true
+            ,listeners: {
+                'success': {fn:function() {
+                    // this.refresh();
+                },scope:this}
+            }
+        });
 
-
+        paramWindow.fp.getForm().reset();
+        paramWindow.fp.getForm().setValues(this.menu.record);
+        paramWindow.show(e.target);
     }
 
     ,removeParam: function(btn,e) {
         if (!this.menu.record) return false;
 
-        MODx.msg.confirm({
-            title: _('formalicious.field_remove')
-            ,text: _('formalicious.field_remove_confirm')
-            ,url: this.config.url
-            ,params: {
-                action: 'mgr/field/remove'
-                ,id: this.menu.record.id
-            }
-            ,listeners: {
-                'success': {fn:function(r) { this.refresh(); },scope:this}
-            }
-        });
+        Ext.Msg.confirm(
+            _('formalicious.advanced.parameter_remove'),
+            _('formalicious.advanced.parameter_remove_confirm'),
+            function(e) {
+                if (e == 'yes') {
+                    var r = this.getSelectionModel().getSelected();
+                    this.getStore().remove(r);
+                }
+            },this
+        );
     }
 });
 Ext.reg('formalicious-grid-advanced-params',Formalicious.grid.AdvancedParams);

@@ -109,3 +109,5 @@ $_lang['formalicious.advanced.parameters'] = 'Parameters';
 $_lang['formalicious.advanced.parameters.description'] = 'Add custom Formit parameters here. These will be added to the Formit snippet call, for example \'&myParam=`myValue`\'.';
 $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Add parameter';
+$_lang['formalicious.advanced.parameter_remove'] = 'Remove parameter';
+$_lang['formalicious.advanced.parameter_remove_confirm'] = 'Are you sure you want to remove this parameter?';

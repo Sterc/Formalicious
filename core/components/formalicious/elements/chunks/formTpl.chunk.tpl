@@ -16,6 +16,7 @@
     &fiarSubject=`[[+fiarsubject]]`
     &fiarFrom=`[[+fiaremailfrom]]`
     &fiarFiles=`[[+fiarattachment]]`
+    [[+parameters]]
 ]]
 
 <hr>
