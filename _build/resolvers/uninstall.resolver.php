@@ -6,7 +6,7 @@
  * @subpackage build
  */
 
-$success = false;
+$success = true;
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_UNINSTALL:
         $menuItem = $object->xpdo->getObject('modMenu', 'formalicious');
