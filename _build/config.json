@@ -8,7 +8,7 @@
         "menus": [{
             "text": "formalicious",
             "description": "formalicious.menu_desc",
-            "action": "index"
+            "action": "home"
         }],
         "elements": {
             "plugins": [],
