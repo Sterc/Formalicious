@@ -14,7 +14,7 @@ $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
 $_lang['formalicious.settings.intro_msg'] = 'Hier kun je de formulier instellingen wijzigen naar jouw voorkeursinstellingen.';
 $_lang['formalicious.fields'] = 'Formulier velden';
-$_lang['formalicious.fields.intro_msg'] = 'Hier kun je kiezen welke velden je wil aanpassen of nieuwe velden toevoegen.';
+$_lang['formalicious.fields.intro_msg'] = 'Hier kun je kiezen welke velden je wil aanpassen of nieuwe velden toevoegen. Een stap kan worden hernoemd door er dubbel op te klikken. Je kunt de stappen ordenen door ze in de gewenste volgorde te slepen.';
 $_lang['formalicious.saved_forms'] = 'Opgeslagen formulieren';
 $_lang['formalicious.saved_forms.intro_msg'] = 'Omschrijving';
 $_lang['formalicious.admin'] = 'Administrator';
@@ -63,7 +63,7 @@ $_lang['formalicious.value_remove_confirm'] = 'Weet je zeker dat je deze waarde 
 
 $_lang['formalicious.field_create'] = 'Veld aanmaken';
 
-$_lang['formalicious.step.create'] = 'Nieuw stap aanmaken';
+$_lang['formalicious.step.create'] = 'Nieuwe stap aanmaken';
 $_lang['formalicious.step.remove'] = 'Verwijder stap';
 $_lang['formalicious.step.remove.msg'] = 'Weet je zeker dat je deze stap wilt verwijderen?';
 // $_lang['formalicious.new_step'] = 'Stap [[+number]]';
