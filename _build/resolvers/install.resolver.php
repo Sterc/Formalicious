@@ -1,11 +1,13 @@
 <?php
 /**
- * Resolve defaultTypes.
+ * Formalicious install resolver.
+ * Creates the default types and adds the default category.
  *
  * @package formalicious
  * @subpackage build
  */
-function createType(&$modx,$data) {
+function createType(&$modx, $data)
+{
     $ct = $modx->getCount('FormaliciousFieldType',array(
         'name' => $data['name'],
     ));
@@ -15,14 +17,16 @@ function createType(&$modx,$data) {
         $type->save();
     }
 }
-function createCategory(&$modx,$data) {
+function createCategory(&$modx, $data)
+{
     $ct = $modx->getCount('FormaliciousCategory',array(
         'name' => $data['name'],
+        'published' => 1
     ));
     if (empty($ct)) {
-        $type = $modx->newObject('FormaliciousFieldType');
-        $type->fromArray($data);
-        $type->save();
+        $category = $modx->newObject('FormaliciousCategory');
+        $category->fromArray($data);
+        $category->save();
     }
 }
 if ($object->xpdo) {

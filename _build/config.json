@@ -3,7 +3,7 @@
     "lowCaseName": "formalicious",
     "description": "",
     "author": "Sterc",
-    "version": "0.6",
+    "version": "0.6.1",
     "package":{  
         "menus": [{
             "text": "formalicious",
@@ -61,12 +61,12 @@
             }],
             "templates": [],
             "tvs": [{
-                "caption": "Formalicious",
+                "caption": "Formalicious form",
                 "name": "formalicious",
                 "type": "listbox",
                 "description": "",
                 "defaultValue": "",
-                "inputOptionValues": "@SELECT '- Select a form -' AS name, 0 AS id UNION ALL SELECT name,id FROM modx_formalicious_forms WHERE published = 1",
+                "inputOptionValues": "@SELECT '- Select a form -' AS name, 0 AS id UNION ALL SELECT name,id FROM [[+PREFIX]]formalicious_forms WHERE published = 1",
                 "inputProperties": {
                     "allowBlank": false
                 }
@@ -95,7 +95,10 @@
     }],
     "build": {
         "resolver": {
-            "after": ["resolve.defaulttypes.php", "uninstall.resolver.php"]
+            "after": [
+                "install.resolver.php",
+                "uninstall.resolver.php"
+            ]
         }
     }
 }
