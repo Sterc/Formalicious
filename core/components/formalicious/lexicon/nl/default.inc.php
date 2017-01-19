@@ -86,6 +86,7 @@ $_lang['formalicious.field.redirectto'] = 'Bedankt pagina';
 $_lang['formalicious.field.fiar_msg'] = 'Hier kun je de auto-reply instellingen wijzigen naar jouw gewenste auto-reply instellingen.';
 $_lang['formalicious.field.fiaremail'] = 'Auto reply versturen';
 $_lang['formalicious.field.fiaremailto'] = 'Selecteer e-mail veld';
+$_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het veld waar het e-mailadres ingevuld dient te worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier.';
 $_lang['formalicious.field.fiaremailfrom'] = 'Afzender e-mail';
 $_lang['formalicious.field.fiarsubject'] = 'Onderwerp';
 $_lang['formalicious.field.fiarcontent'] = 'Inhoud';

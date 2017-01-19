@@ -133,6 +133,12 @@ Formalicious.panel.Update = function(config) {
                             }
                         }
                     },{
+                        xtype: 'label'
+                        ,text: _('formalicious.field.fiaremailto.description')
+                        ,cls: 'desc-under'
+                        ,style: 'margin: 5px 0 0 155px'
+                        ,width: 500
+                    },{
                         name: 'fiaremailfrom'
                         ,fieldLabel: _('formalicious.field.fiaremailfrom')
                         ,vtype: 'email'

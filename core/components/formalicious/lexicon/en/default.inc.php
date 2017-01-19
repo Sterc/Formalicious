@@ -86,6 +86,7 @@ $_lang['formalicious.field.redirectto'] = 'Redirect to';
 $_lang['formalicious.field.fiar_msg'] = 'Here you can change the auto-reply settings to your preferred auto-reply settings.';
 $_lang['formalicious.field.fiaremail'] = 'Send auto reply';
 $_lang['formalicious.field.fiaremailto'] = 'Select email field';
+$_lang['formalicious.field.fiaremailto.description'] = 'Select the field where the visitor fills in the e-mailaddress. If no options are shown, please add fields to this form first.';
 $_lang['formalicious.field.fiaremailfrom'] = 'Email from';
 $_lang['formalicious.field.fiarsubject'] = 'Subject';
 $_lang['formalicious.field.fiarcontent'] = 'Content';
