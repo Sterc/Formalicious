@@ -85,7 +85,7 @@
     }],
     "build": {
         "resolver": {
-            "after": ["resolve.defaulttypes.php"]
+            "after": ["resolve.defaulttypes.php", "uninstall.resolver.php"]
         }
     }
 }

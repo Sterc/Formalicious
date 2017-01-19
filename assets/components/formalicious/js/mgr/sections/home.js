@@ -12,7 +12,7 @@ Formalicious.page.Home = function(config) {
         ,buttons: [{
             text: 'Admin panel'
             ,handler: function() {
-                MODx.loadPage(MODx.request.a, 'action=admin');
+                MODx.loadPage('admin', 'namespace='+MODx.request.namespace);
             }
         }]
     });
