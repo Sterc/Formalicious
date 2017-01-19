@@ -37,10 +37,15 @@ $_lang['formalicious.fieldtype_remove'] = 'Remove type';
 $_lang['formalicious.fieldtype_remove_confirm'] = 'Are you sure you want to remove this type?';
 $_lang['formalicious.fieldtype.name'] = 'Name';
 $_lang['formalicious.fieldtype.tpl'] = 'Tpl';
+$_lang['formalicious.fieldtype.tpl.description'] = 'Name of the chunk that is used as template for this field.';
 $_lang['formalicious.fieldtype.answertpl'] = 'Value Tpl';
+$_lang['formalicious.fieldtype.answertpl.description'] = 'Name of the chunk that is used as template for the field values.';
 $_lang['formalicious.fieldtype.values'] = 'Values';
 $_lang['formalicious.fieldtype.validation'] = 'Validation';
+$_lang['formalicious.fieldtype.validation.description'] = 'Comma separated list of FormIt validators to use for this field. 
+See the built-in validators section on https://docs.modx.com/extras/revo/formit/formit.validators.';
 $_lang['formalicious.fieldtype.icon'] = 'Icon';
+$_lang['formalicious.fieldtype.icon.description'] = 'When adding a field to the form, this icon is shown when choosing a field type.';
 
 
 

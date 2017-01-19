@@ -37,10 +37,16 @@ $_lang['formalicious.fieldtype_remove'] = 'Type verwijderen';
 $_lang['formalicious.fieldtype_remove_confirm'] = 'Weet je zeker dat je dit type wil verwijderen?';
 $_lang['formalicious.fieldtype.name'] = 'Naam';
 $_lang['formalicious.fieldtype.tpl'] = 'Template';
+$_lang['formalicious.fieldtype.tpl.description'] = 'Naam van de chunk die als template voor dit veld gebruikt wordt.';
 $_lang['formalicious.fieldtype.answertpl'] = 'Waarden template';
+$_lang['formalicious.fieldtype.answertpl.description'] = 'Naam van de chunk die als template voor de veld waarden gebruikt wordt.';
 $_lang['formalicious.fieldtype.values'] = 'Waarden';
 $_lang['formalicious.fieldtype.validation'] = 'Validatie';
-$_lang['formalicious.fieldtype.icon'] = 'Icoontje';
+$_lang['formalicious.fieldtype.validation.description'] = 'Komma-gescheiden lijst van FormIt validators voor dit veld. 
+Kijk bij \'built - in validators\' op https://docs.modx.com/extras/revo/formit/formit.validators.';
+$_lang['formalicious.fieldtype.icon'] = 'Icoon';
+$_lang['formalicious.fieldtype.icon.description'] = 'Bij het toevoegen van een veld aan een formulier wordt dit icoon 
+getoond bij het kiezen van een veld-type.';
 
 
 

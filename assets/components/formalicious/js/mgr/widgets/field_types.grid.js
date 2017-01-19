@@ -141,6 +141,10 @@ Formalicious.window.CreateUpdateFieldType = function(config) {
             ,anchor: '100%'
             ,allowBlank: false
         },{
+            xtype: 'label'
+            ,text: _('formalicious.fieldtype.tpl.description')
+            ,cls: 'desc-under'
+        },{
             xtype: 'checkbox'
             ,fieldLabel: _('formalicious.fieldtype.values')
             ,boxLabel: _('yes')
@@ -156,11 +160,19 @@ Formalicious.window.CreateUpdateFieldType = function(config) {
             ,id: this.ident+'-answertpl'
             ,anchor: '100%'
         },{
+            xtype: 'label'
+            ,text: _('formalicious.fieldtype.answertpl.description')
+            ,cls: 'desc-under'
+        },{
             xtype: 'textfield'
             ,fieldLabel: _('formalicious.fieldtype.validation')
             ,name: 'validation'
             ,id: this.ident+'-validation'
             ,anchor: '100%'
+        },{
+            xtype: 'label'
+            ,text: _('formalicious.fieldtype.validation.description')
+            ,cls: 'desc-under'
         },{
             xtype: 'modx-combo-browser'
             ,name: 'icon'
@@ -168,7 +180,11 @@ Formalicious.window.CreateUpdateFieldType = function(config) {
             ,fieldLabel: _('formalicious.fieldtype.icon')
             ,rootId: Formalicious.config.assetsUrl+'img/types/'
             ,openTo: Formalicious.config.assetsUrl+'img/types/'
-            ,source: 1
+            ,source: MODx.config['default_media_source']
+        },{
+            xtype: 'label'
+            ,text: _('formalicious.fieldtype.icon.description')
+            ,cls: 'desc-under'
         }]
     });
     Formalicious.window.CreateUpdateFieldType.superclass.constructor.call(this,config);

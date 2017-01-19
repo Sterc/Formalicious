@@ -536,7 +536,7 @@ Formalicious.window.UpdateField = function(config) {
         closeAction: 'close'
         ,url: Formalicious.config.connectorUrl
         ,action: 'mgr/field/update'
-        ,height: 250
+        ,height: 550
         ,width: 475
         ,closeAction: 'close'
         ,modal: true
@@ -738,7 +738,8 @@ Formalicious.window.AddValue = function(config) {
     Ext.applyIf(config,{
         title: _('inyourface.field.create')
         ,url: Formalicious.config.connectorUrl
-        ,height: 250
+        // ,height: 450
+        ,autoHeight: true
         ,width: 450
         ,modal: true
         ,saveBtnText: _('done')
