@@ -60,7 +60,17 @@
                 "file": "textTpl.chunk.tpl"
             }],
             "templates": [],
-            "tvs": []
+            "tvs": [{
+                "caption": "Formalicious",
+                "name": "formalicious",
+                "type": "listbox",
+                "description": "",
+                "defaultValue": "",
+                "inputOptionValues": "@SELECT '- Select a form -' AS name, 0 AS id UNION ALL SELECT name,id FROM modx_formalicious_forms WHERE published = 1",
+                "inputProperties": {
+                    "allowBlank": false
+                }
+            }]
         },
         "systemSettings": [{
             "key": "source",
