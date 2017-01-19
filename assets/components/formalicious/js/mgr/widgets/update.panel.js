@@ -159,7 +159,7 @@ Formalicious.panel.Update = function(config) {
                         }
                     },{
                         id: 'preview'
-                        ,fieldLabel: 'preview'
+                        ,fieldLabel: _('formalicious.field.preview')
                         ,xtype: 'image'
                     }]
                 }]

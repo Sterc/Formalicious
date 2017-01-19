@@ -87,6 +87,7 @@ $_lang['formalicious.field.fiaremailfrom'] = 'Afzender e-mail';
 $_lang['formalicious.field.fiarsubject'] = 'Onderwerp';
 $_lang['formalicious.field.fiarcontent'] = 'Inhoud';
 $_lang['formalicious.field.fiarattachment'] = 'Bijlage';
+$_lang['formalicious.field.preview'] = 'Voorvertoning';
 $_lang['formalicious.select_start_date'] = 'Selecteer start datum';
 $_lang['formalicious.select_end_date'] = 'Selecteer eind datum';
 $_lang['formalicious.clear'] = 'Filter wissen';
