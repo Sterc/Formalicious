@@ -97,6 +97,8 @@ $_lang['formalicious.time'] = 'Tijd';
 $_lang['formalicious.title'] = 'Titel';
 $_lang['formalicious.type'] = 'Type';
 
+$_lang['formalicious.item_err_ae'] = 'Er bestaat al een formulier met die naam';
+
 $_lang['formalicious.submit'] = 'Verzenden';
 $_lang['formalicious.next'] = 'Volgende';
 

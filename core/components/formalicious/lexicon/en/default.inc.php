@@ -97,6 +97,8 @@ $_lang['formalicious.time'] = 'Time';
 $_lang['formalicious.title'] = 'Title';
 $_lang['formalicious.type'] = 'Type';
 
+$_lang['formalicious.item_err_ae'] = 'A form already exists with that name';
+
 $_lang['formalicious.submit'] = 'Submit';
 $_lang['formalicious.next'] = 'Next';
 
