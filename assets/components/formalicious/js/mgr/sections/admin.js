@@ -12,7 +12,7 @@ Formalicious.page.Admin = function(config) {
         ,buttons: [{
             text: _('close')
             ,handler: function() {
-                MODx.loadPage('admin', 'namespace='+MODx.request.namespace);
+                MODx.loadPage('home', 'namespace='+MODx.request.namespace);
             }
         }]
     });
