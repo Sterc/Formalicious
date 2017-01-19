@@ -53,6 +53,7 @@ $_lang['formalicious.form_remove'] = 'Formulier verwijderen';
 $_lang['formalicious.form_remove_confirm'] = 'Weet je zeker dat je dit formulier wil verwijderen?';
 $_lang['formalicious.add_field'] = 'Veld toevoegen';
 $_lang['formalicious.field_update'] = 'Veld aanpassen';
+$_lang['formalicious.field_save'] = 'Veld opslaan';
 $_lang['formalicious.field_remove'] = 'Veld verwijderen';
 $_lang['formalicious.field_remove_confirm'] = 'Weet je zeker dat je dit veld wil verwijderen?';
 $_lang['formalicious.values'] = 'Waarden';

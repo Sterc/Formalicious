@@ -53,6 +53,7 @@ $_lang['formalicious.form_remove'] = 'Remove form';
 $_lang['formalicious.form_remove_confirm'] = 'Are you sure you want to remove this form?';
 $_lang['formalicious.add_field'] = 'Add field';
 $_lang['formalicious.field_update'] = 'Update field';
+$_lang['formalicious.field_save'] = 'Save field';
 $_lang['formalicious.field_remove'] = 'Remove field';
 $_lang['formalicious.field_remove_confirm'] = 'Are you sure you want to remove this field?';
 $_lang['formalicious.values'] = 'Values';
