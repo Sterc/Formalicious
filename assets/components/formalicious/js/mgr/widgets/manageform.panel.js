@@ -432,7 +432,7 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
         this.windows.updateField = MODx.load({
             xtype: 'formalicious-window-field-update'
             ,id: 'window-field-update'
-            ,title: _('formalicious.field_update')
+            ,title: _('formalicious.field_save')
             ,record: r
             ,listeners: {
                 'success': {fn:function() { this.refresh(); },scope:this}
@@ -762,7 +762,7 @@ Formalicious.window.AddValue = function(config) {
         },{
             xtype: 'checkbox'
             ,name: 'published'
-            ,fieldLabel: 'published'
+            ,fieldLabel: _('formalicious.field.published')
             ,inputValue: 1
         },{
             xtype: 'hidden'
