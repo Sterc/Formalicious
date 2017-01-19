@@ -20,9 +20,9 @@
 ]]
 
 <hr>
-<form action="[[~[[*id]]? &step=`[[+currentStep]]`]]" method="POST">
-    [[+form]]
+<form action="[[~[[*id]]? &step=`[[!+currentStep]]`]]" method="POST">
+    [[!+form]]
 
-    [[+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[+currentStep:decr=`1`]]">« [[%prev]]</a>`:else=``]]
-    <input type="submit" value="[[+submitTitle]]">
+    [[!+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]">« [[%prev]]</a>`:else=``]]
+    <input type="submit" value="[[!+submitTitle]]">
 </form>

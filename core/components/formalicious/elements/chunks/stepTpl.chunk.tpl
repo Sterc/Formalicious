@@ -1,2 +1,2 @@
-<h2>[[+title]]</h2>
-[[+fields]]
+<h2>[[!+title]]</h2>
+[[!+fields]]
