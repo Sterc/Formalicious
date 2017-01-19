@@ -42,6 +42,10 @@ Ext.extend(Formalicious.panel.Home,MODx.Panel,{
                         Ext.getCmp('formalicious-tabpanel-categories').add({
                             title: tabData.name
                             ,items: [{
+                                html: '<p>'+tabData.description+'</p>'
+                                ,border: false
+                                ,bodyCssClass: 'panel-desc'
+                            },{
                                 xtype: 'formalicious-grid-forms'
                                 ,id: 'formalicious-grid-forms-cat-'+tabData.id
                                 ,category: tabData.id
