@@ -88,6 +88,7 @@ $_lang['formalicious.field.fiarsubject'] = 'Subject';
 $_lang['formalicious.field.fiarcontent'] = 'Content';
 $_lang['formalicious.field.fiarattachment'] = 'Attachment';
 $_lang['formalicious.field.preview'] = 'Preview';
+$_lang['formalicious.field.preview.description'] = 'If the attachment is an image, a preview will be shown here.';
 $_lang['formalicious.select_start_date'] = 'Select start date';
 $_lang['formalicious.select_end_date'] = 'Select end date';
 $_lang['formalicious.clear'] = 'Clear filter';

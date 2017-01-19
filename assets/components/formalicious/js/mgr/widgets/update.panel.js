@@ -159,8 +159,19 @@ Formalicious.panel.Update = function(config) {
                         }
                     },{
                         id: 'preview'
+                        ,name: 'preview'
                         ,fieldLabel: _('formalicious.field.preview')
                         ,xtype: 'image'
+                        ,listeners: {
+                            'afterrender': {
+                                fn: function(data) {
+                                    var newLabel = _('formalicious.field.preview') + ':';
+                                    newLabel += '<br/><span class="desc-under">' + _('formalicious.field.preview.description') + '</span>';
+
+                                    Ext.getCmp('preview').label.update(newLabel);
+                                }
+                            }
+                        }
                     }]
                 }]
             },{
@@ -225,6 +236,7 @@ Formalicious.panel.Update = function(config) {
             }]
         }]
     });
+
     Formalicious.panel.Update.superclass.constructor.call(this,config);
 };
 Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
