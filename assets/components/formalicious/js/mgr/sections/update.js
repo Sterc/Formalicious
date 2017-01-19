@@ -25,7 +25,7 @@ Formalicious.page.Update = function(config) {
             text: _('close')
             ,id: 'modx-abtn-cancel'
             ,handler: function() {
-                MODx.loadPage(MODx.request.a);
+                MODx.loadPage('home', 'namespace='+MODx.request.namespace);
             }
         }]
     });
