@@ -73,6 +73,8 @@ $_lang['formalicious.add_value'] = 'Add value';
 
 $_lang['formalicious.field.name'] = 'Title';
 $_lang['formalicious.field.placeholder'] = 'Placeholder';
+$_lang['formalicious.field.placeholder_description'] = 'Temporary text shown in the field, which explains what a user has to fill in. Example placeholder: Please fill in your name.';
+$_lang['formalicious.field.title'] = 'Title';
 $_lang['formalicious.field.text'] = 'Description';
 $_lang['formalicious.field.required'] = 'Required';
 $_lang['formalicious.field.saveform'] = 'Save submitted form';
@@ -98,6 +100,8 @@ $_lang['formalicious.data'] = 'Data';
 $_lang['formalicious.time'] = 'Time';
 $_lang['formalicious.title'] = 'Title';
 $_lang['formalicious.type'] = 'Type';
+
+$_lang['formalicious.item_err_ae'] = 'A form already exists with that name';
 
 $_lang['formalicious.submit'] = 'Submit';
 $_lang['formalicious.next'] = 'Next';

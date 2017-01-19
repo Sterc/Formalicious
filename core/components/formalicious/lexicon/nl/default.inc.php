@@ -73,6 +73,8 @@ $_lang['formalicious.add_value'] = 'Waarde toevoegen';
 
 $_lang['formalicious.field.name'] = 'Titel';
 $_lang['formalicious.field.placeholder'] = 'Placeholder';
+$_lang['formalicious.field.placeholder_description'] = 'Tijdelijke tekst die getoond wordt in het veld en een gebruiker uitlegt wat hier moet worden ingevuld. Voorbeeld placeholder: Vul hier uw naam in.';
+$_lang['formalicious.field.title'] = 'Titel';
 $_lang['formalicious.field.text'] = 'Omschrijving';
 $_lang['formalicious.field.required'] = 'Verplicht';
 $_lang['formalicious.field.published'] = 'Gepubliceerd';
@@ -98,6 +100,8 @@ $_lang['formalicious.data'] = 'Data';
 $_lang['formalicious.time'] = 'Tijd';
 $_lang['formalicious.title'] = 'Titel';
 $_lang['formalicious.type'] = 'Type';
+
+$_lang['formalicious.item_err_ae'] = 'Er bestaat al een formulier met die naam';
 
 $_lang['formalicious.submit'] = 'Verzenden';
 $_lang['formalicious.next'] = 'Volgende';

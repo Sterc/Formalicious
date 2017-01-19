@@ -120,7 +120,7 @@ Formalicious.window.CreateUpdateCategory = function(config) {
     this.ident = config.ident || 'formalicious-mecitem'+Ext.id();
     Ext.applyIf(config,{
         id: this.ident
-        ,height: 450
+        ,autoHeight:true
         ,width: 475
         ,modal: true
         ,closeAction: 'close'

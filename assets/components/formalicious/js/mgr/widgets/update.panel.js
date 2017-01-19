@@ -292,7 +292,7 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
     }
     ,success: function(o) {
         if(!MODx.request.id){
-            MODx.loadPage(MODx.request.a, "action=update&id=" + o.result.object.id);
+            MODx.loadPage('update', 'namespace='+MODx.request.namespace+'&id=' + o.result.object.id);
         }
     }
     ,beforeSubmit: function(o) {

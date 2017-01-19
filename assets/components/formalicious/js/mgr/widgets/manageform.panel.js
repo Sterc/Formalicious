@@ -83,20 +83,6 @@ Formalicious.panel.ManageForm = function(config) {
                         }
                         ,listeners: {
                             'success':{fn:function(data) {
-                                //console.log(data);
-                                // Ext.each(data.results, function(tabData) {
-                                //     Ext.getCmp('formalicious-panel-form-steps').add({
-                                //         title: tabData.title
-                                //         ,items: [{
-                                //             xtype: 'formalicious-grid-form-fields'
-                                //             ,id: 'formalicious-panel-form-step-'+tabData.id
-                                //             ,step: tabData.id
-                                //             ,preventRender: true
-                                //             ,cls: 'main-wrapper'
-                                //         }]
-                                //     });
-                                // });
-                                // Ext.getCmp('formalicious-panel-form-steps').setActiveTab(0);
 
                                 var tabpanel = Ext.getCmp('formalicious-panel-form-steps');
                                 var active = tabpanel.add({
@@ -104,7 +90,7 @@ Formalicious.panel.ManageForm = function(config) {
                                     ,step: data.object.id
                                     ,closable: true
                                     ,listeners: {
-                                        beforeclose: function(tab) { //CODE BESTAAT 2 KEER!!!!!!!!!!!!!!!!!!!
+                                        beforeclose: function(tab) {
                                             Ext.MessageBox.show({
                                                 title: _('formalicious.step.remove'),
                                                 msg: _('formalicious.step.remove.msg'),
@@ -122,7 +108,7 @@ Formalicious.panel.ManageForm = function(config) {
                                                                     tab.ownerCt.remove(tab);
                                                                 },scope:this}
                                                             }
-                                                        }); 
+                                                        });
                                                     }
                                                 },
                                                 scope: this
@@ -140,11 +126,9 @@ Formalicious.panel.ManageForm = function(config) {
                                 });
                                 tabpanel.setActiveTab(active);
                                 active.fireEvent('dblclick', active);
-                                //console.log(data);
                             },scope:this}
                         }
-                    });                    
-                    
+                    });
                 }
             },{
                 xtype: 'ddtabpanel'
@@ -169,26 +153,9 @@ Formalicious.panel.ManageForm = function(config) {
                                 ,newOrder: newOrder.join(",")
                                 ,form_id: MODx.request.id
                             }
-                            ,listeners: {
-                                
-                            }
                         });
                     }
                 }
-                // ,listeners: {
-                //     beforeclose: this.removeTabConfirm
-                // }
-                // ,items: [{
-                //     title: 'Page 1'
-                //     ,items: [{
-                //         xtype: 'formalicious-grid-form-fields'
-                //     }]
-                // },{
-                //     title: 'Page 2'
-                //     ,items: [{
-                //         xtype: 'formalicious-grid-form-fields'
-                //     }]
-                // }]
             }]
         }]
     });
@@ -255,28 +222,6 @@ Ext.extend(Formalicious.panel.ManageForm,MODx.Panel,{
             });
         },1250);
     }
-    // ,removeTabConfirm: function(tabpanel, tab){
-    //     Ext.MessageBox.show({
-    //       title: 'Save changes?',
-    //       msg: 'Do you want to save changes?',
-    //       buttons: Ext.MessageBox.YESNO,
-    //       fn: function(buttonId){
-    //         switch(buttonId){
-    //           case 'no':
-    //            // tab.ownerCt.remove(tab);   // manually removes tab from tab panel
-    //             break;
-    //           case 'yes':
-    //             this.removeTab(tabpanel, tab);
-    //             break;
-    //           case 'cancel':
-    //             // leave blank if no action required on cancel
-    //             break;
-    //         }
-    //       },
-    //       scope: this
-    //     });
-    //     return false;  // returning false to beforeclose cancels the close event
-    // }
 });
 Ext.reg('formalicious-panel-manage-form',Formalicious.panel.ManageForm);
 
@@ -360,20 +305,6 @@ Formalicious.grid.FormFields = function(config) {
                                     
                                 }
                             });
-
-                            // MODx.Ajax.request({
-                            //     url: Formalicious.config.connectorUrl
-                            //     ,params: {
-                            //         action: 'mgr/field/reorder'
-                            //         ,idItem: records.pop().id
-                            //         ,oldIndex: oldIndex
-                            //         ,newIndex: newIndex
-                            //         ,step_id: config.step
-                            //     }
-                            //     ,listeners: {
-
-                            //     }
-                            // });
                         }
 
                         ,'beforerowcopy': function(objThis, oldIndex, newIndex, records) {
@@ -389,17 +320,9 @@ Formalicious.grid.FormFields = function(config) {
             ,beforedestroy: function(g) {
                 Ext.dd.ScrollManager.unregister(g.getView().getEditorParent());
             }
-
-        }        // [{
-        //     text: _('formalicious.form_create')
-        //     ,autoWidth: false
-        //     ,style: {width: '100%'}
-        //     ,handler: this.createField
-        //     ,scope: this
-        // }]
+        }
 
     });
-    //this.fieldRecord = new Ext.data.Record.create(['id','step_id','name', 'title', 'introtext', 'directional', 'type', 'required', 'published', 'rank']);
     Formalicious.grid.FormFields.superclass.constructor.call(this,config);
 };
 Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
@@ -492,37 +415,6 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
                     this.windows.createField.show(e.target);
                 },scope:this}
             }
-             // ,listeners: {
-            //     'success':{fn:function(data) {
-            //         var count = 1;
-            //         Ext.each(data.results, function(tabData) {
-            //             console.log(items);
-            //             items[mainColumn].items.push({
-            //                 xtype: 'button'
-            //                 ,text: data.name
-            //                 ,name: data.name
-            //                 //,autoWidth: false
-            //                 ,width: '95%'
-            //                 ,handler: this.submit
-            //             });
-            //             count = count+1;
-            //             if(count % 3 == 1){
-            //                 mainColumn = mainColumn+1;
-            //             }
-            //         });
-
-            //         this.windows.createField = MODx.load({
-            //             xtype: 'formalicious-window-field-create'
-            //             ,id: 'window-field-create'
-            //             ,grid: this
-            //             ,title: 'test'
-            //             ,items: items
-            //         });
-
-            //         this.windows.createField.fp.getForm().reset();
-            //         this.windows.createField.show(e.target);
-            //     },scope:this}
-            // }
         });
 
 
@@ -621,26 +513,10 @@ Ext.extend(Formalicious.window.CreateField,MODx.Window,{
 
                     Ext.getCmp('window-field-create').close();
 
-                    // this.updateField = MODx.load({
-                    //     xtype: 'formalicious-window-field-update'
-                    //     ,id: 'window-field-update'
-                    //     //,grid: this
-                    //     ,title: 'test'
-                    //     //,items: items
-                    // });
-
-                    // this.updateField.fp.getForm().reset();
-                    // this.updateField.fp.getForm().setValues(data.object);
-                    // this.updateField.show(e.target);
-
                     data.object.published = true;
                     Ext.getCmp('formalicious-panel-form-step-'+data.object.step_id).updateField({},{},data);
 
                     return false;
-                    // var rec = new window.grid.fieldRecord(btn.data);
-                    // s.add(rec);
-
-                    // return false;
 
                 },scope:this}
             }
@@ -660,7 +536,7 @@ Formalicious.window.UpdateField = function(config) {
         closeAction: 'close'
         ,url: Formalicious.config.connectorUrl
         ,action: 'mgr/field/update'
-        ,height: 450
+        ,height: 250
         ,width: 475
         ,closeAction: 'close'
         ,modal: true
@@ -708,9 +584,6 @@ Formalicious.window.UpdateField = function(config) {
             ,border: true
             ,hidden: (config.record['show-values']) ? false : true
         }]
-        // ,listeners: [{
-        //     beforesubmit: this.addValues
-        // }]
     });
     Formalicious.window.UpdateField.superclass.constructor.call(this,config);
 };
