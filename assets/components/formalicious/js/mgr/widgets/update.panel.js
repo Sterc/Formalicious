@@ -200,9 +200,6 @@ Formalicious.panel.Update = function(config) {
                         ,bodyCssClass: 'panel-desc'
                         ,width: 'auto'
                     },{
-                        xtype: 'hidden'
-                        ,name: 'category_id'
-                    },{
                         name: 'prehooks'
                         ,fieldLabel: _('formalicious.advanced.prehooks')
                         ,width: 500

@@ -73,3 +73,7 @@
 #formalicious-tabpanel-categories__no-results{
     display: none;
 }
+
+#window-field-update {
+    min-height: 700px;
+}
