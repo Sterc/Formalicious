@@ -91,3 +91,7 @@
 .bbar-fullwidth table {
     width: 99.99%;
 }
+
+.x-panel-btns .x-btn {
+    min-width: 80px;
+}
