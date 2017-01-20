@@ -1,15 +1,15 @@
-# Formalicious [beta] #
+# Formalicious #
 
-Formalicious is a tool for MODX content managers, which enables them to manage complex forms using a GUI, without any programming knowledge. The tool makes use of FormIt to render the forms therefore the properties available in FormIt are used in Formalicious. For example hooks and preHooks are optional settings in Formalicious.
+Formalicious is a tool for MODX content managers, which enables them to manage complex forms using a GUI, without any programming knowledge. The tool makes use of FormIt to render the forms, therefore the properties available in FormIt are used in Formalicious. For example hooks and preHooks are optional settings in Formalicious.
 
 ### Requirements ###
 * MODX 2.3.0 or greater
 * FormIt 2.2.2 or greater
 
 ### How do I get set up? ###
-Download it here: http://www.stercx.com/modx-extras/formalicious-beta
 
-Install FormIt 2.2.2 or greater with MODX installer and install the Formalicious package with MODX installer.
+* Install FormIt 2.2.2 or greater with MODX installer
+* Install the Formalicious package with MODX installer
 
 To create a form:
 
@@ -27,19 +27,13 @@ To create a form:
 * Under the Advanced tab you can add prehooks, posthooks and custom parameters just like FormIt (https://docs.modx.com/extras/revo/formit)
  
 To show the form on a page:
+
 * When installing the Formalicious package, a TV named 'formalicious' will be created. This TV can be assigned to a template and in the code add this for example to show the form chosen in the TV: 
 ```html
-[[*formalicious:notempty=`
-  [[!renderForm? &form=`[[!*formalicious]]`]]
-`]]
+[[!renderForm? &form=`[[!*formalicious]]`]]
 ```
 
 ### Options ###
 System settings: 
-* formalicious.assets_path: the assets path to Formalicious
-* formalicious.assets_url: the assets url to Formalicious
-* formalicious.core_path: the core path to Formalicious
-* formalicious.source: the media source id Formalicious will use 
 
-Namespaces:
-* formalicious
+* formalicious.source: the media source id Formalicious will use 
