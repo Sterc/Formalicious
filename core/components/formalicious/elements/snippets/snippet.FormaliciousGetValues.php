@@ -7,4 +7,9 @@ if(!$oldValues) $oldValues = array();
 
 $_SESSION['Formalicious_form_'.$formit->config['formid']] = array_merge($oldValues, $values);
 
+$modx->toPlaceholders(
+    $_SESSION['Formalicious_form_'.$formit->config['formid']],
+    'fi'
+);
+
 return true;
