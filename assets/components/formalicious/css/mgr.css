@@ -2,6 +2,7 @@
     content: "* ";
     color: red;
 }
+
 /*#form-content{
 	min-height: 400px;
 }*/
@@ -14,30 +15,45 @@
 	border:0;
 	cursor: pointer;
 }
+
 .icon-buttons .formalicious-icon:hover{
 	opacity: 0.6;
 }
+
 .formalicious-icon-edit{
 	background: url(../img/edit.png);
 }
+
 .formalicious-icon-duplicate{
     background: url(../img/duplicate.png);
 }
+
 .formalicious-icon-remove{
     background: url(../img/remove.png);
 }
+
 .bbar-fullwidth table{
 	width: 99%;
 }
+
 .button-window .x-btn{
 	margin:10px;
 }
 
+#formalicious-panel-form-steps .x-tab-strip-closable{
+    padding-right: 22px!important;
+}
 
-#formalicious-panel-form-steps .x-tab-strip-closable{padding-right: 22px!important;}
-#formalicious-panel-form-steps .x-tab-strip-close{ display: none; right:4px; top:2px;}
-#formalicious-panel-form-steps .x-tab-strip-active .x-tab-strip-close{ display: block; background-image: url(../img/close-tab.png);}
+#formalicious-panel-form-steps .x-tab-strip-close{ 
+    display: none; 
+    right:4px; 
+    top:2px;
+}
 
+#formalicious-panel-form-steps .x-tab-strip-active .x-tab-strip-close{ 
+    display: block; 
+    background-image: url(../img/close-tab.png);
+}
 
 .dd-arrow-down.dd-arrow-down-invisible {
     display: none;
@@ -57,8 +73,6 @@
     background-repeat: no-repeat;
 }
 
-
-
 .grid-row-inactive .x-grid3-cell-inner.x-grid3-col-main h3{
     color: #999!important;
 }
@@ -66,6 +80,7 @@
 .button-holder {
     padding: 15px 0 0 156px;
 }
+
 .button-holder span{
     margin-right: 15px;
 }
