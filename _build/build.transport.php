@@ -11,11 +11,24 @@ $mtime = $mtime[1] + $mtime[0];
 $tstart = $mtime;
 set_time_limit(0);
 
+/**
+ * @param string $filename
+ * @return mixed|string
+ */
+function getSnippetContent($filename) {
+    $o = file_get_contents($filename);
+    $o = str_replace('<?php','',$o);
+    $o = str_replace('?>','',$o);
+    $o = trim($o);
+    return $o;
+}
+
 if (!defined('MOREPROVIDER_BUILD')) {
     /* define version */
     define('PKG_NAME', 'Formalicious');
+    define('PKG_NAME_LOWER', 'formalicious');
     define('PKG_NAMESPACE', 'formalicious');
-    define('PKG_VERSION', '0.1');
+    define('PKG_VERSION', '0.1.0');
     define('PKG_RELEASE', 'pl');
 
     /* load modx */
