@@ -34,6 +34,7 @@ if ($object->xpdo) {
         case xPDOTransport::ACTION_INSTALL:
         // case xPDOTransport::ACTION_UPGRADE:
             $modx =& $object->xpdo;
+            $iconBaseUrl = trim(MODX_BASE_URL, '/') . '/assets/components/formalicious/img/';
 
             /* setup default types */
             createType($modx,array(

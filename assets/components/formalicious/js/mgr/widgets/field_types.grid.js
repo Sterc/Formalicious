@@ -173,18 +173,18 @@ Formalicious.window.CreateUpdateFieldType = function(config) {
             xtype: 'label'
             ,text: _('formalicious.fieldtype.validation.description')
             ,cls: 'desc-under'
-        },{
-            xtype: 'modx-combo-browser'
-            ,name: 'icon'
-            ,hiddenName: 'icon'
-            ,fieldLabel: _('formalicious.fieldtype.icon')
-            ,rootId: Formalicious.config.assetsUrl+'img/types/'
-            ,openTo: Formalicious.config.assetsUrl+'img/types/'
-            ,source: MODx.config['default_media_source']
-        },{
-            xtype: 'label'
-            ,text: _('formalicious.fieldtype.icon.description')
-            ,cls: 'desc-under'
+        //},{
+        //     xtype: 'modx-combo-browser'
+        //     ,name: 'icon'
+        //     ,hiddenName: 'icon'
+        //     ,fieldLabel: _('formalicious.fieldtype.icon')
+        //     ,rootId: Formalicious.config.assetsUrl+'img/types/'
+        //     ,openTo: Formalicious.config.assetsUrl+'img/types/'
+        //     ,source: MODx.config['default_media_source']
+        // },{
+        //     xtype: 'label'
+        //     ,text: _('formalicious.fieldtype.icon.description')
+        //     ,cls: 'desc-under'
         }]
     });
     Formalicious.window.CreateUpdateFieldType.superclass.constructor.call(this,config);

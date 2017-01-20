@@ -399,7 +399,7 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
                             ,type: fieldType.id
                             //,autoWidth: false
                             ,width: '30%'
-                            ,style: 'float:left; background-image: url(/'+fieldType.icon+'); background-position: center 10px; padding-top:60px;'
+                            //,style: 'float:left; background-image: url(/'+fieldType.icon+'); background-position: center 10px; padding-top:60px;'
                         });
                     });
 
