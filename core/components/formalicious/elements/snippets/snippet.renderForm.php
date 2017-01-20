@@ -137,6 +137,7 @@ if ($form) {
 
             $hooks[] = 'FormaliciousRemoveValues';
             $hooks[] = 'redirect';
+
             $redirectTo = $form->get('redirectto');
             $redirectParams = '';
             $formPhs['submitTitle'] = $modx->lexicon('formalicious.submit');
@@ -147,7 +148,6 @@ if ($form) {
             $redirectParams = $modx->toJSON(array('step' => $currentStep + 1));
             $formPhs['submitTitle'] = $modx->lexicon('formalicious.next');
         }
-
 
         $formPhs['fieldsemailoutput'] = $fieldsemailoutput;
         $formPhs['form'] = $forminner;
