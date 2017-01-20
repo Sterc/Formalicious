@@ -3,7 +3,7 @@
     &hooks=`[[+hooks]]`
     &emailTo=`[[+emailto]]`
     &emailSubject=`[[+subject]]`
-    &emailFrom=`[[+emailfrom]]`
+    &emailFrom=`[[++emailsender]]`
     &redirectTo=`[[+redirectTo]]`
     &redirectParams=`[[+redirectParams]]`
     &formid=`[[+id]]`
