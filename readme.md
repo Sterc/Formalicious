@@ -12,6 +12,7 @@ Download it here: http://www.stercx.com/modx-extras/formalicious-beta
 Install FormIt 2.2.2 or greater with MODX installer and install the Formalicious package with MODX installer.
 
 To create a form:
+
 * Go to Extras > Formalicious
 * Head to the Admin panel and create a category
 * Click the tab Types to add field types which can be used in the forms
