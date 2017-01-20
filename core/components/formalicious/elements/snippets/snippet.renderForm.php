@@ -134,6 +134,8 @@ if ($form) {
             if ($form->get('fiaremailto') && $form->get('fiaremailto')) {
                 $hooks[] = 'FormItAutoResponder';
             }
+
+            $hooks[] = 'FormaliciousRemoveValues';
             $hooks[] = 'redirect';
             $redirectTo = $form->get('redirectto');
             $redirectParams = '';

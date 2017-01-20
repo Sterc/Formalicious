@@ -4,7 +4,7 @@
     "description": "",
     "author": "Sterc",
     "version": "0.6.3",
-    "package":{  
+    "package":{
         "menus": [{
             "text": "formalicious",
             "description": "formalicious.menu_desc",
@@ -21,6 +21,9 @@
             },{
                 "name": "FormaliciousSaveValues",
                 "file": "snippet.FormaliciousSaveValues.php"
+            },{
+                "name": "FormaliciousRemoveValues",
+                "file": "snippet.FormaliciousRemoveValues.php"
             }],
             "chunks": [{
                 "name": "checkboxesTpl",
