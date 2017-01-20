@@ -375,7 +375,7 @@ Ext.extend(Formalicious.grid.AdvancedParams,MODx.grid.LocalGrid,{
         });
 
         paramWindow.fp.getForm().reset();
-        paramWindow.fp.getForm().setValues(this.menu.record);
+        //paramWindow.fp.getForm().setValues(this.menu.record);
         paramWindow.show(e.target);
     }
 
@@ -452,10 +452,10 @@ Ext.extend(Formalicious.window.Param,MODx.Window,{
                 }
                 var rec = new grid.Record({key: v.key, value: v.value});
                 if (this.config.isUpdate) {
-                    // var record = store.getAt(this.config.selected);
-                    // record.set('key', v.key);
-                    // record.set('value', v.value);
-                    // record.commit();
+                    var record = store.getById(this.config.selected);
+                    record.set('key', v.key);
+                    record.set('value', v.value);
+                    record.commit();
                 } else {
                     store.insert(index, rec);
                 }
