@@ -65,7 +65,7 @@ Formalicious.panel.Update = function(config) {
                     },{
                         name: 'emailto'
                         ,fieldLabel: _('formalicious.field.emailto')
-                        ,regex: /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
+                        ,regex: /^(([a-zA-Z0-9_\+\.\-]+)@([a-zA-Z0-9_.\-]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
                     },{
                         name: 'subject'
                         ,fieldLabel: _('formalicious.field.subject')
