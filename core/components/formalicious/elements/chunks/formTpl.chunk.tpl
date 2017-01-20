@@ -24,6 +24,6 @@
 <form action="[[~[[*id]]? &step=`[[!+currentStep]]`]]" method="POST" enctype="multipart/form-data" novalidate>
     [[!+form]]
 
-    [[!+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]">« [[%prev]]</a>`:else=``]]
+    [[!+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]">&laquo; [[%prev]]</a>`:else=``]]
     <input type="submit" value="[[!+submitTitle]]">
 </form>

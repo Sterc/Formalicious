@@ -9,10 +9,10 @@
   'validate' => NULL,
   'vehicle_package' => 'transport',
   'vehicle_class' => 'xPDOObjectVehicle',
-  'guid' => '61ac3ce35b37288f772a51261ed8e5f1',
+  'guid' => '32b6862a8acee7fcfd3f2bea2cda6f43',
   'package' => 'modx',
   'class' => 'modNamespace',
-  'signature' => 'dd3501d5b5e25d7c13de20880e00389f',
+  'signature' => 'b1cdd4a5b4568611f75dac3f5d2b2e72',
   'native_key' => 'formalicious',
   'object' => '{"name":"formalicious","path":"{core_path}components\\/formalicious\\/","assets_path":"{assets_path}components\\/formalicious\\/"}',
 );

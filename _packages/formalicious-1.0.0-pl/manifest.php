@@ -292,10 +292,17 @@ END OF TERMS AND CONDITIONS',
     'readme' => '--------------------
 Formalicious
 --------------------
-Version: 0.6
+Version: 0.6.3
 Author: Sterc <modx@sterc.nl>
 --------------------
-',
+
+Formalicious is a tool for MODX content managers, which enables them to manage complex forms using a GUI, without any programming knowledge. The tool makes use of FormIt to render the forms, therefore the properties available in FormIt are used in Formalicious. For example hooks and preHooks are optional settings in Formalicious.
+
+--------------------
+Requirements
+--------------------
+* MODX 2.3.0 or greater
+* FormIt 2.2.2 or greater',
     'changelog' => 'Changelog for Formalicious.
 
 Formalicious 0.6
@@ -319,9 +326,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modNamespace',
-      'guid' => '61ac3ce35b37288f772a51261ed8e5f1',
+      'guid' => '32b6862a8acee7fcfd3f2bea2cda6f43',
       'native_key' => 'formalicious',
-      'filename' => 'modNamespace/dd3501d5b5e25d7c13de20880e00389f.vehicle',
+      'filename' => 'modNamespace/b1cdd4a5b4568611f75dac3f5d2b2e72.vehicle',
       'namespace' => 'formalicious',
     ),
     1 => 
@@ -329,9 +336,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modSystemSetting',
-      'guid' => '156d1bcad27088d03caa8b1f815d328f',
+      'guid' => 'd610a7c03daa56b376b96737cce1f171',
       'native_key' => 'formalicious.source',
-      'filename' => 'modSystemSetting/397585630632fbc011bd4738dbdb85b5.vehicle',
+      'filename' => 'modSystemSetting/0d159bf358bce5b8b5a6ab9eba40c66d.vehicle',
       'namespace' => 'formalicious',
     ),
     2 => 
@@ -339,9 +346,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modCategory',
-      'guid' => '9014ec51d4bb04dcc6fafadcb64eaf57',
+      'guid' => '0fc68e3d2296f418bd88e4975db6b4be',
       'native_key' => NULL,
-      'filename' => 'modCategory/d81ea571a415208fbaccf50af789d135.vehicle',
+      'filename' => 'modCategory/cd48158c6f102746bb236c8ec2403ce4.vehicle',
       'namespace' => 'formalicious',
     ),
     3 => 
@@ -349,9 +356,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modMenu',
-      'guid' => '4c112a073d148fa90afbd0b7049b3cb2',
+      'guid' => 'ab285873e35f8bfe8873322424d4cd93',
       'native_key' => 'formalicious',
-      'filename' => 'modMenu/68a4a7f04227331fc67dbedf7ab5ae6d.vehicle',
+      'filename' => 'modMenu/ad19552007c64c75ac2a8285effb9e68.vehicle',
       'namespace' => 'formalicious',
     ),
   ),

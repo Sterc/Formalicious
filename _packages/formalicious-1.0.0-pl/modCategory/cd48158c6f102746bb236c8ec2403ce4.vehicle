@@ -1,0 +1,304 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      '4d44b2d8f22133a877cbd43dc2120f45' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"checkboxesTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12 has-error\\">\\n\\t\\t<p class=\\"frm-field-title\\">[[!+title]]:<\\/p>\\n        <input type=\\"hidden\\" name=\\"field_[[!+id]][]\\" value=\\"\\" \\/>\\n\\t\\t[[!+values]]\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12 has-error\\">\\n\\t\\t<p class=\\"frm-field-title\\">[[!+title]]:<\\/p>\\n        <input type=\\"hidden\\" name=\\"field_[[!+id]][]\\" value=\\"\\" \\/>\\n\\t\\t[[!+values]]\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => 'e69b22478ddb8fa51e792fd73476be33',
+        'native_key' => NULL,
+        'signature' => '347abac412f8218c3237e65a26c3b82e',
+      ),
+      '313aa0ffbbb2d319e5e10903b9ca85b4' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"checkboxInnerTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"frm-checkbox-wrap\\">\\n\\t<input type=\\"checkbox\\" name=\\"[[!+fieldname]][]\\" value=\\"[[!+name]]\\" id=\\"[[!+fieldname]][[!+idx]]\\" class=\\"frm-checkbox\\" [[!+curval:FormItIsChecked=`[[!+name]]`]]\\/>\\n\\t<label for=\\"[[!+fieldname]][[!+idx]]\\">[[!+name]]<\\/label>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"frm-checkbox-wrap\\">\\n\\t<input type=\\"checkbox\\" name=\\"[[!+fieldname]][]\\" value=\\"[[!+name]]\\" id=\\"[[!+fieldname]][[!+idx]]\\" class=\\"frm-checkbox\\" [[!+curval:FormItIsChecked=`[[!+name]]`]]\\/>\\n\\t<label for=\\"[[!+fieldname]][[!+idx]]\\">[[!+name]]<\\/label>\\n<\\/div>"}',
+        'guid' => 'eb04592fa06a973a881ec0baeba32f7b',
+        'native_key' => NULL,
+        'signature' => '26c749c7d1a5adea4a1101eaf5216dc5',
+      ),
+      'dba1a1d1e0e0c85dac072ad63589aa90' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"emailTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<input type=\\"email\\" name=\\"field_[[!+id]]\\" id=\\"field_[[!+id]]\\" value=\\"[[!+fi.field_[[!+id]]]]\\" class=\\"form-control\\"\\/>\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<input type=\\"email\\" name=\\"field_[[!+id]]\\" id=\\"field_[[!+id]]\\" value=\\"[[!+fi.field_[[!+id]]]]\\" class=\\"form-control\\"\\/>\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => 'df168fe804592859b361c0455bcb3063',
+        'native_key' => NULL,
+        'signature' => 'e2515c0ad12acb805ad946a6a31bca74',
+      ),
+      'b0a7593fa3388d8b6b64fc739cb02b3f' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"fileTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<input type=\\"file\\" name=\\"field_[[!+id]]\\" id=\\"frm-file\\" value=\\"[[!+fi.field_[[!+id]]]]\\" class=\\"form-control\\"\\/>\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<input type=\\"file\\" name=\\"field_[[!+id]]\\" id=\\"frm-file\\" value=\\"[[!+fi.field_[[!+id]]]]\\" class=\\"form-control\\"\\/>\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => 'e46547509337bb8f8b4232f44d27f076',
+        'native_key' => NULL,
+        'signature' => '0b0bb00f6e7b7834e79075c775597d84',
+      ),
+      '7799b922cb8a77be2cd10748ce54e0de' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"[[!FormIt?\\n    &preHooks=`[[+preHooks]]`\\n    &hooks=`[[+hooks]]`\\n    &emailTo=`[[+emailto]]`\\n    &emailSubject=`[[+subject]]`\\n    &emailFrom=`[[++emailsender]]`\\n    &emailTpl=`@CODE:[[+fieldsemailoutput]]`\\n    &redirectTo=`[[+redirectTo]]`\\n    &redirectParams=`[[+redirectParams]]`\\n    &formid=`[[+id]]`\\n    &validate=`[[+validation]]`\\n    &fieldNames=`[[+fieldNames]]`\\n    &formFields=`[[+formFields]]`\\n\\n    &fiarToField=`field_[[+fiaremailto]]`\\n    &fiarTpl=`@CODE:[[+fiarcontent]]`\\n    &fiarSubject=`[[+fiarsubject]]`\\n    &fiarFrom=`[[+fiaremailfrom]]`\\n    &fiarFiles=`[[+fiarattachment]]`\\n    [[+parameters]]\\n]]\\n\\n<hr>\\n<form action=\\"[[~[[*id]]? &step=`[[!+currentStep]]`]]\\" method=\\"POST\\" enctype=\\"multipart\\/form-data\\" novalidate>\\n    [[!+form]]\\n\\n    [[!+currentStep:neq=`1`:then=`<a href=\\"[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]\\">&laquo; [[%prev]]<\\/a>`:else=``]]\\n    <input type=\\"submit\\" value=\\"[[!+submitTitle]]\\">\\n<\\/form>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"[[!FormIt?\\n    &preHooks=`[[+preHooks]]`\\n    &hooks=`[[+hooks]]`\\n    &emailTo=`[[+emailto]]`\\n    &emailSubject=`[[+subject]]`\\n    &emailFrom=`[[++emailsender]]`\\n    &emailTpl=`@CODE:[[+fieldsemailoutput]]`\\n    &redirectTo=`[[+redirectTo]]`\\n    &redirectParams=`[[+redirectParams]]`\\n    &formid=`[[+id]]`\\n    &validate=`[[+validation]]`\\n    &fieldNames=`[[+fieldNames]]`\\n    &formFields=`[[+formFields]]`\\n\\n    &fiarToField=`field_[[+fiaremailto]]`\\n    &fiarTpl=`@CODE:[[+fiarcontent]]`\\n    &fiarSubject=`[[+fiarsubject]]`\\n    &fiarFrom=`[[+fiaremailfrom]]`\\n    &fiarFiles=`[[+fiarattachment]]`\\n    [[+parameters]]\\n]]\\n\\n<hr>\\n<form action=\\"[[~[[*id]]? &step=`[[!+currentStep]]`]]\\" method=\\"POST\\" enctype=\\"multipart\\/form-data\\" novalidate>\\n    [[!+form]]\\n\\n    [[!+currentStep:neq=`1`:then=`<a href=\\"[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]\\">&laquo; [[%prev]]<\\/a>`:else=``]]\\n    <input type=\\"submit\\" value=\\"[[!+submitTitle]]\\">\\n<\\/form>"}',
+        'guid' => 'c76ab86252d473be50c6e952172a506a',
+        'native_key' => NULL,
+        'signature' => 'ce56d6f1c3d605a40f0b63108ef8eaae',
+      ),
+      'e40f0405def9ba13e4c4eaa9625a2557' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"radiobuttonsInnerTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"frm-radio-wrap\\">\\n\\t<input type=\\"radio\\" name=\\"[[!+fieldname]]\\" value=\\"[[!+name]]\\" id=\\"[[!+fieldname]][[!+idx]]\\" class=\\"frm-radio\\" [[!+curval:FormItIsChecked=`[[!+name]]`]]\\/>\\n\\t<label for=\\"[[!+fieldname]][[!+idx]]\\">[[!+name]]<\\/label>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"frm-radio-wrap\\">\\n\\t<input type=\\"radio\\" name=\\"[[!+fieldname]]\\" value=\\"[[!+name]]\\" id=\\"[[!+fieldname]][[!+idx]]\\" class=\\"frm-radio\\" [[!+curval:FormItIsChecked=`[[!+name]]`]]\\/>\\n\\t<label for=\\"[[!+fieldname]][[!+idx]]\\">[[!+name]]<\\/label>\\n<\\/div>"}',
+        'guid' => 'f50c022635cad7a0bb50df7394ea2f88',
+        'native_key' => NULL,
+        'signature' => '8f31b807f2a761d97e2a8e5a3fcb28f9',
+      ),
+      '1706d3bd8bdb6e5e6ce8584253c6b1f2' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"radiobuttonsTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12 has-error\\">\\n\\t\\t<p class=\\"frm-field-title\\">[[!+title]]:<\\/p>\\n\\t\\t[[!+values]]\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12 has-error\\">\\n\\t\\t<p class=\\"frm-field-title\\">[[!+title]]:<\\/p>\\n\\t\\t[[!+values]]\\n\\t\\t[[!+fi.error.field_[[!+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => '7f0b6039182f6b99a481d2a73240e524',
+        'native_key' => NULL,
+        'signature' => '50cb290c2e4ad4b548261da565a9eda7',
+      ),
+      '4e191a3579f4c9a66b3b01cf7973383a' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"selectInnerTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<option value=\\"[[!+name]]\\" id=\\"[[!+fieldname]][[!+idx]]\\" [[!+curval:FormItIsSelected=`[[!+name]]`]]>[[+name]]<\\/option>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<option value=\\"[[!+name]]\\" id=\\"[[!+fieldname]][[!+idx]]\\" [[!+curval:FormItIsSelected=`[[!+name]]`]]>[[+name]]<\\/option>"}',
+        'guid' => '3298cfd8a375e1650dfb3b91fce0b9b7',
+        'native_key' => NULL,
+        'signature' => '4e24ce39464fddd1c31189ca3a34a551',
+      ),
+      '4e10d9e777f33d5357da6e6a34a40240' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"selectTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<select name=\\"field_[[!+id]]\\" id=\\"field_[[!+id]]\\" class=\\"form-control\\">[[!+values]]<\\/select>\\n\\t\\t[[!+fi.error.field_[[+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<select name=\\"field_[[!+id]]\\" id=\\"field_[[!+id]]\\" class=\\"form-control\\">[[!+values]]<\\/select>\\n\\t\\t[[!+fi.error.field_[[+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => '92f80bfc4628b61ca77ee65607276672',
+        'native_key' => NULL,
+        'signature' => '2d9d09036fe6e3fe94e9827b480f8fb1',
+      ),
+      '54e38d9c1395f67ad4e9c17d5efd5aad' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"stepTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<h2>[[!+title]]<\\/h2>\\n[[!+fields]]","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<h2>[[!+title]]<\\/h2>\\n[[!+fields]]"}',
+        'guid' => 'ff11dc24567bfa545a503693c781278f',
+        'native_key' => NULL,
+        'signature' => '87f2d211a78c54b2858fc11637ed998c',
+      ),
+      '803d54568a5fbb273392a15653a037bc' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"textareaTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<textarea name=\\"field_[[!+id]]\\" class=\\"form-control\\">[[!+fi.field_[[!+id]]]]<\\/textarea>\\n\\t\\t[[!+fi.error.field_[[+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[!+title]]:<\\/label>\\n\\t\\t<textarea name=\\"field_[[!+id]]\\" class=\\"form-control\\">[[!+fi.field_[[!+id]]]]<\\/textarea>\\n\\t\\t[[!+fi.error.field_[[+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => '6010775231f67f6773da9a931b5ea6e8',
+        'native_key' => NULL,
+        'signature' => 'e85f5e3d48f198553cffd2cbfd7bd985',
+      ),
+      '7f311d23868b2c5b311e4436c9ee467d' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"textTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[+title]]:<\\/label>\\n\\t\\t<input type=\\"text\\" name=\\"field_[[!+id]]\\" id=\\"field_[[!+id]]\\" value=\\"[[!+fi.field_[[!+id]]]]\\" class=\\"form-control\\"\\/>\\n\\t\\t[[!+fi.error.field_[[+id]]]]\\n\\t<\\/div>\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"row\\">\\n\\t<div class=\\"form-group col-xs-12\\">\\n\\t\\t<label for=\\"field_[[!+id]]\\">[[+title]]:<\\/label>\\n\\t\\t<input type=\\"text\\" name=\\"field_[[!+id]]\\" id=\\"field_[[!+id]]\\" value=\\"[[!+fi.field_[[!+id]]]]\\" class=\\"form-control\\"\\/>\\n\\t\\t[[!+fi.error.field_[[+id]]]]\\n\\t<\\/div>\\n<\\/div>"}',
+        'guid' => '3b41b55fbd51b12455c573513950f4e2',
+        'native_key' => NULL,
+        'signature' => 'e0cc03e8aa18363d4e950b8964820889',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '61b786dc9357244cf3fcad7ecadd5214' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"renderForm","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * The base Formalicious snippet.\\n *\\n * @package formalicious\\n *\\/\\n$Formalicious = $modx->getService(\'formalicious\',\'Formalicious\',$modx->getOption(\'formalicious.core_path\',null,$modx->getOption(\'core_path\').\'components\\/formalicious\\/\').\'model\\/formalicious\\/\',$scriptProperties);\\nif (!($Formalicious instanceof Formalicious)) return \'\';\\n\\n$form = $modx->getOption(\'form\',$scriptProperties, false);\\n\\/\\/ $preHooks = $modx->getOption(\'preHooks\',$scriptProperties,\'\');\\n\\/\\/ $postHooks = $modx->getOption(\'postHooks\',$scriptProperties,\'\');\\n$fieldsemailoutput = \'\';\\n$fieldSeparator = $modx->getOption(\'fieldSeparator\',$scriptProperties,\\"\\\\n\\");\\n$answerSeparator = $modx->getOption(\'fieldSeparator\',$scriptProperties,\\"\\\\n\\");\\n$stepSeparator = $modx->getOption(\'stepSeparator\',$scriptProperties,\\"\\\\n\\");\\n$formTpl = $modx->getOption(\'formTpl\',$scriptProperties,\\"formTpl\\");\\n$stepTpl = $modx->getOption(\'stepTpl\',$scriptProperties,\\"stepTpl\\");\\n$stepParam = $modx->getOption(\'stepParam\',$scriptProperties,\\"step\\");\\n$currentStep = $modx->getOption($stepParam,$_GET,1);\\n$finishStep = false;\\n$validation = array();\\n$output = array();\\n$hooks = array(\'spam\', \'FormaliciousSaveValues\');\\n$preHooks = array(\'FormaliciousGetValues\');\\n$requestArr = $_REQUEST;\\n\\/* Get form *\\/\\nif ($form) {\\n    $form = $modx->getObject(\'FormaliciousForm\', $form);\\n    if ($form) {\\n        \\/* Merge values stored in Session and request. Request is leading. *\\/\\n        $requestArr = array_merge($_SESSION[\'Formalicious_form_\'.$form->get(\'id\')], $requestArr);   \\n        \\n        if (!$form->get(\'published\')) {\\n            return \'\';\\n        }\\n        $phs = $form->toArray();\\n        \\/* Add the custom hooks *\\/\\n        if ($phs[\'prehooks\']) {\\n            $customPreHooks = explode(\',\', trim($phs[\'prehooks\']));\\n            if (count($customPreHooks)) {\\n                $preHooks = array_merge($preHooks, $customPreHooks);\\n            }\\n        }\\n        if ($phs[\'posthooks\']) {\\n            $customPostHooks = explode(\',\', trim($phs[\'posthooks\']));\\n            if (count($customPostHooks)) {\\n                $hooks = array_merge($hooks, $customPostHooks);\\n            }\\n        }\\n        $stepsC = $modx->newQuery(\'FormaliciousStep\');\\n        $stepsC->sortby(\'rank\', \'ASC\');\\n        $steps = $form->getMany(\'Steps\', $stepsC);\\n        $totalSteps = count($steps);\\n        if ($currentStep == $totalSteps) {\\n            $finishStep = true;\\n        }\\n        foreach ($steps as $step) {\\n            $stepInner = array();\\n            $validationStep = array();\\n            $fieldsC = $modx->newQuery(\'FormaliciousField\');\\n            $fieldsC->where(array(\'published\' => 1));\\n            $fieldsC->sortby(\'rank\', \'ASC\');\\n            $fields = $step->getMany(\'Fields\', $fieldsC);\\n            foreach ($fields as $field) {\\n                $fieldsemailoutput .= \'<strong>\' . $field->get(\'title\') . \'<\\/strong>: [[+\' . \'field_\' . $field->get(\'id\') . \']]<br\\/>\';\\n                $validationStep[\'field_\'.$field->get(\'id\')] = array();\\n                $answerOuter = array();\\n                $type = $field->getOne(\'Type\');\\n                $answerC = $modx->newQuery(\'FormaliciousAnswer\');\\n                $answerC->where(array(\'published\' => 1));\\n                $answerC->sortby(\'rank\', \'ASC\');\\n                $answers = $field->getMany(\'Answers\', $answerC);\\n                $answerIdx = 1;\\n                foreach ($answers as $answer) {\\n                    $answerPhs = $answer->toArray();\\n                    $answerPhs[\'uniqid\'] = uniqid();\\n                    $answerPhs[\'fieldname\'] = \'field_\'.$field->get(\'id\');\\n                    \\/\\/Dirty fix for output filters on checkboxes, radio buttons and selects.\\n                    $answerPhs[\'curval\'] = (is_array($requestArr[\'field_\'.$field->get(\'id\')]))? $modx->toJSON($requestArr[\'field_\'.$field->get(\'id\')]) : $requestArr[\'field_\'.$field->get(\'id\')];\\n                    $answerPhs[\'idx\'] = $answerIdx;\\n                    $answerOuter[] = $modx->getChunk($type->get(\'answertpl\'), $answerPhs);\\n                    $answerIdx++;\\n                }\\n                \\/\\/print_r($requestArr);exit;\\n                $fieldPhs = $field->toArray();\\n                $fieldPhs[\'uniqid\'] = uniqid();\\n                $fieldPhs[\'values\'] = implode($answerSeparator, $answerOuter);\\n                if ($field->get(\'required\')) {\\n                    $validationStep[\'field_\'.$field->get(\'id\')][] = \'required\';\\n                    $fieldPhs[\'title\'] .= \' *\';\\n                }\\n                if ($type) {\\n                    $stepInner[] = $modx->getChunk($type->get(\'tpl\'), $fieldPhs);\\n                    if ($type->get(\'validation\') != \'\') {\\n                        foreach (explode(\',\', $type->get(\'validation\')) as $validate) {\\n                            $validationStep[\'field_\'.$field->get(\'id\')][] = $validate;\\n                        }\\n                    }\\n                    $fieldNames[\'field_\'.$field->get(\'id\')] = $field->get(\'title\');\\n                    \\/\\/$stepInner[] = $field->get(\'name\');\\n                } else {\\n                    \\/\\/ error type doesn\'t exists\\n                }\\n                if (count($validationStep[\'field_\'.$field->get(\'id\')]) == 0) {\\n                    unset($validationStep[\'field_\'.$field->get(\'id\')]);\\n                }\\n            }\\n\\n            $stepPhs = $step->toArray();\\n            $stepPhs[\'fields\'] = implode($fieldSeparator, $stepInner);\\n            if ($stepTpl) {\\n                $stepPhs[\'totalSteps\'] = $totalSteps;\\n                $output[] = $modx->getChunk($stepTpl, $stepPhs);\\n            } else {\\n                $output[] = $stepPhs[\'fields\'];\\n            }\\n            $validation[] = $validationStep;\\n        }\\n        if (!$form->get(\'onepage\')) {\\n            $forminner = $output[$currentStep - 1];\\n            $validationCurrent = $validation[$currentStep - 1];\\n        } else {\\n            $finishStep = true;\\n            $forminner = implode($stepSeparator, $output);\\n            $validationCurrent = implode(\'\', $validation);\\n        }\\n\\n        $formPhs = $form->toArray();\\n\\n        if ($finishStep) {\\n            $hooks[] = \'email\';\\n            if ($form->get(\'saveform\')) {\\n                $hooks[] = \'FormItSaveForm\';\\n            }\\n\\n            if ($form->get(\'fiaremailto\') && $form->get(\'fiaremailto\')) {\\n                $hooks[] = \'FormItAutoResponder\';\\n            }\\n\\n            $hooks[] = \'FormaliciousRemoveValues\';\\n            $hooks[] = \'redirect\';\\n\\n            $redirectTo = $form->get(\'redirectto\');\\n            $redirectParams = \'\';\\n            $formPhs[\'submitTitle\'] = $modx->lexicon(\'formalicious.submit\');\\n        } else {\\n            $hooks[] = \'redirect\';\\n\\n            $redirectTo = $modx->resource->get(\'id\');\\n            $redirectParams = $modx->toJSON(array(\'step\' => $currentStep + 1));\\n            $formPhs[\'submitTitle\'] = $modx->lexicon(\'formalicious.next\');\\n        }\\n\\n        $formPhs[\'fieldsemailoutput\'] = $fieldsemailoutput;\\n        $formPhs[\'form\'] = $forminner;\\n        $formPhs[\'redirectTo\'] = $redirectTo;\\n        $formPhs[\'redirectParams\'] = $redirectParams;\\n        $formPhs[\'currentStep\'] = $currentStep;\\n        $formPhs[\'hooks\'] = implode(\',\', $hooks);\\n        $formPhs[\'preHooks\'] = implode(\',\', $preHooks);\\n        $formPhs[\'validation\'] = implode(\\n            \',\',\\n            array_map(\\n                function ($v, $k) {\\n                    return sprintf(\'%s:%s\', $k, implode(\':\', $v));\\n                },\\n                $validationCurrent,\\n                array_keys($validationCurrent)\\n            )\\n        );\\n        $formPhs[\'fieldNames\'] = implode(\\n            \',\',\\n            array_map(\\n                function ($v, $k) {\\n                    return $k.\'==\'.$v;\\n                },\\n                $fieldNames,\\n                array_keys($fieldNames)\\n            )\\n        );\\n        $formPhs[\'fieldNames\'] = implode(\\n            \',\',\\n            array_map(\\n                function ($v, $k) {\\n                    return $k.\'==\'.$v;\\n                },\\n                $fieldNames,\\n                array_keys($fieldNames)\\n            )\\n        );\\n        $formPhs[\'formFields\'] = implode(\',\', array_keys($fieldNames));\\n\\n        \\/* Set the custom Formit parameters *\\/\\n        $formParams = \'\';\\n        if ($formPhs[\'parameters\']) {\\n            $parameters = json_decode($formPhs[\'parameters\'], true);\\n            if (count($parameters)) {\\n                foreach ($parameters as $param) {\\n                    if ($param[\'key\'] && $param[\'value\']) {\\n                        $formParams .= \'&\' . $param[\'key\'] . \'=`\' . $param[\'value\'] . \'`\';\\n                    }\\n                }\\n            }\\n        }\\n        $formPhs[\'parameters\'] = $formParams;\\n\\n        return $modx->getChunk($formTpl, $formPhs);\\n    }\\n}","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * The base Formalicious snippet.\\n *\\n * @package formalicious\\n *\\/\\n$Formalicious = $modx->getService(\'formalicious\',\'Formalicious\',$modx->getOption(\'formalicious.core_path\',null,$modx->getOption(\'core_path\').\'components\\/formalicious\\/\').\'model\\/formalicious\\/\',$scriptProperties);\\nif (!($Formalicious instanceof Formalicious)) return \'\';\\n\\n$form = $modx->getOption(\'form\',$scriptProperties, false);\\n\\/\\/ $preHooks = $modx->getOption(\'preHooks\',$scriptProperties,\'\');\\n\\/\\/ $postHooks = $modx->getOption(\'postHooks\',$scriptProperties,\'\');\\n$fieldsemailoutput = \'\';\\n$fieldSeparator = $modx->getOption(\'fieldSeparator\',$scriptProperties,\\"\\\\n\\");\\n$answerSeparator = $modx->getOption(\'fieldSeparator\',$scriptProperties,\\"\\\\n\\");\\n$stepSeparator = $modx->getOption(\'stepSeparator\',$scriptProperties,\\"\\\\n\\");\\n$formTpl = $modx->getOption(\'formTpl\',$scriptProperties,\\"formTpl\\");\\n$stepTpl = $modx->getOption(\'stepTpl\',$scriptProperties,\\"stepTpl\\");\\n$stepParam = $modx->getOption(\'stepParam\',$scriptProperties,\\"step\\");\\n$currentStep = $modx->getOption($stepParam,$_GET,1);\\n$finishStep = false;\\n$validation = array();\\n$output = array();\\n$hooks = array(\'spam\', \'FormaliciousSaveValues\');\\n$preHooks = array(\'FormaliciousGetValues\');\\n$requestArr = $_REQUEST;\\n\\/* Get form *\\/\\nif ($form) {\\n    $form = $modx->getObject(\'FormaliciousForm\', $form);\\n    if ($form) {\\n        \\/* Merge values stored in Session and request. Request is leading. *\\/\\n        $requestArr = array_merge($_SESSION[\'Formalicious_form_\'.$form->get(\'id\')], $requestArr);   \\n        \\n        if (!$form->get(\'published\')) {\\n            return \'\';\\n        }\\n        $phs = $form->toArray();\\n        \\/* Add the custom hooks *\\/\\n        if ($phs[\'prehooks\']) {\\n            $customPreHooks = explode(\',\', trim($phs[\'prehooks\']));\\n            if (count($customPreHooks)) {\\n                $preHooks = array_merge($preHooks, $customPreHooks);\\n            }\\n        }\\n        if ($phs[\'posthooks\']) {\\n            $customPostHooks = explode(\',\', trim($phs[\'posthooks\']));\\n            if (count($customPostHooks)) {\\n                $hooks = array_merge($hooks, $customPostHooks);\\n            }\\n        }\\n        $stepsC = $modx->newQuery(\'FormaliciousStep\');\\n        $stepsC->sortby(\'rank\', \'ASC\');\\n        $steps = $form->getMany(\'Steps\', $stepsC);\\n        $totalSteps = count($steps);\\n        if ($currentStep == $totalSteps) {\\n            $finishStep = true;\\n        }\\n        foreach ($steps as $step) {\\n            $stepInner = array();\\n            $validationStep = array();\\n            $fieldsC = $modx->newQuery(\'FormaliciousField\');\\n            $fieldsC->where(array(\'published\' => 1));\\n            $fieldsC->sortby(\'rank\', \'ASC\');\\n            $fields = $step->getMany(\'Fields\', $fieldsC);\\n            foreach ($fields as $field) {\\n                $fieldsemailoutput .= \'<strong>\' . $field->get(\'title\') . \'<\\/strong>: [[+\' . \'field_\' . $field->get(\'id\') . \']]<br\\/>\';\\n                $validationStep[\'field_\'.$field->get(\'id\')] = array();\\n                $answerOuter = array();\\n                $type = $field->getOne(\'Type\');\\n                $answerC = $modx->newQuery(\'FormaliciousAnswer\');\\n                $answerC->where(array(\'published\' => 1));\\n                $answerC->sortby(\'rank\', \'ASC\');\\n                $answers = $field->getMany(\'Answers\', $answerC);\\n                $answerIdx = 1;\\n                foreach ($answers as $answer) {\\n                    $answerPhs = $answer->toArray();\\n                    $answerPhs[\'uniqid\'] = uniqid();\\n                    $answerPhs[\'fieldname\'] = \'field_\'.$field->get(\'id\');\\n                    \\/\\/Dirty fix for output filters on checkboxes, radio buttons and selects.\\n                    $answerPhs[\'curval\'] = (is_array($requestArr[\'field_\'.$field->get(\'id\')]))? $modx->toJSON($requestArr[\'field_\'.$field->get(\'id\')]) : $requestArr[\'field_\'.$field->get(\'id\')];\\n                    $answerPhs[\'idx\'] = $answerIdx;\\n                    $answerOuter[] = $modx->getChunk($type->get(\'answertpl\'), $answerPhs);\\n                    $answerIdx++;\\n                }\\n                \\/\\/print_r($requestArr);exit;\\n                $fieldPhs = $field->toArray();\\n                $fieldPhs[\'uniqid\'] = uniqid();\\n                $fieldPhs[\'values\'] = implode($answerSeparator, $answerOuter);\\n                if ($field->get(\'required\')) {\\n                    $validationStep[\'field_\'.$field->get(\'id\')][] = \'required\';\\n                    $fieldPhs[\'title\'] .= \' *\';\\n                }\\n                if ($type) {\\n                    $stepInner[] = $modx->getChunk($type->get(\'tpl\'), $fieldPhs);\\n                    if ($type->get(\'validation\') != \'\') {\\n                        foreach (explode(\',\', $type->get(\'validation\')) as $validate) {\\n                            $validationStep[\'field_\'.$field->get(\'id\')][] = $validate;\\n                        }\\n                    }\\n                    $fieldNames[\'field_\'.$field->get(\'id\')] = $field->get(\'title\');\\n                    \\/\\/$stepInner[] = $field->get(\'name\');\\n                } else {\\n                    \\/\\/ error type doesn\'t exists\\n                }\\n                if (count($validationStep[\'field_\'.$field->get(\'id\')]) == 0) {\\n                    unset($validationStep[\'field_\'.$field->get(\'id\')]);\\n                }\\n            }\\n\\n            $stepPhs = $step->toArray();\\n            $stepPhs[\'fields\'] = implode($fieldSeparator, $stepInner);\\n            if ($stepTpl) {\\n                $stepPhs[\'totalSteps\'] = $totalSteps;\\n                $output[] = $modx->getChunk($stepTpl, $stepPhs);\\n            } else {\\n                $output[] = $stepPhs[\'fields\'];\\n            }\\n            $validation[] = $validationStep;\\n        }\\n        if (!$form->get(\'onepage\')) {\\n            $forminner = $output[$currentStep - 1];\\n            $validationCurrent = $validation[$currentStep - 1];\\n        } else {\\n            $finishStep = true;\\n            $forminner = implode($stepSeparator, $output);\\n            $validationCurrent = implode(\'\', $validation);\\n        }\\n\\n        $formPhs = $form->toArray();\\n\\n        if ($finishStep) {\\n            $hooks[] = \'email\';\\n            if ($form->get(\'saveform\')) {\\n                $hooks[] = \'FormItSaveForm\';\\n            }\\n\\n            if ($form->get(\'fiaremailto\') && $form->get(\'fiaremailto\')) {\\n                $hooks[] = \'FormItAutoResponder\';\\n            }\\n\\n            $hooks[] = \'FormaliciousRemoveValues\';\\n            $hooks[] = \'redirect\';\\n\\n            $redirectTo = $form->get(\'redirectto\');\\n            $redirectParams = \'\';\\n            $formPhs[\'submitTitle\'] = $modx->lexicon(\'formalicious.submit\');\\n        } else {\\n            $hooks[] = \'redirect\';\\n\\n            $redirectTo = $modx->resource->get(\'id\');\\n            $redirectParams = $modx->toJSON(array(\'step\' => $currentStep + 1));\\n            $formPhs[\'submitTitle\'] = $modx->lexicon(\'formalicious.next\');\\n        }\\n\\n        $formPhs[\'fieldsemailoutput\'] = $fieldsemailoutput;\\n        $formPhs[\'form\'] = $forminner;\\n        $formPhs[\'redirectTo\'] = $redirectTo;\\n        $formPhs[\'redirectParams\'] = $redirectParams;\\n        $formPhs[\'currentStep\'] = $currentStep;\\n        $formPhs[\'hooks\'] = implode(\',\', $hooks);\\n        $formPhs[\'preHooks\'] = implode(\',\', $preHooks);\\n        $formPhs[\'validation\'] = implode(\\n            \',\',\\n            array_map(\\n                function ($v, $k) {\\n                    return sprintf(\'%s:%s\', $k, implode(\':\', $v));\\n                },\\n                $validationCurrent,\\n                array_keys($validationCurrent)\\n            )\\n        );\\n        $formPhs[\'fieldNames\'] = implode(\\n            \',\',\\n            array_map(\\n                function ($v, $k) {\\n                    return $k.\'==\'.$v;\\n                },\\n                $fieldNames,\\n                array_keys($fieldNames)\\n            )\\n        );\\n        $formPhs[\'fieldNames\'] = implode(\\n            \',\',\\n            array_map(\\n                function ($v, $k) {\\n                    return $k.\'==\'.$v;\\n                },\\n                $fieldNames,\\n                array_keys($fieldNames)\\n            )\\n        );\\n        $formPhs[\'formFields\'] = implode(\',\', array_keys($fieldNames));\\n\\n        \\/* Set the custom Formit parameters *\\/\\n        $formParams = \'\';\\n        if ($formPhs[\'parameters\']) {\\n            $parameters = json_decode($formPhs[\'parameters\'], true);\\n            if (count($parameters)) {\\n                foreach ($parameters as $param) {\\n                    if ($param[\'key\'] && $param[\'value\']) {\\n                        $formParams .= \'&\' . $param[\'key\'] . \'=`\' . $param[\'value\'] . \'`\';\\n                    }\\n                }\\n            }\\n        }\\n        $formPhs[\'parameters\'] = $formParams;\\n\\n        return $modx->getChunk($formTpl, $formPhs);\\n    }\\n}"}',
+        'guid' => '3c47605d2caf80585b37d55fc12a7445',
+        'native_key' => NULL,
+        'signature' => '879b38a05f044a701b36ef8d31b52312',
+      ),
+      'f949c249f7f74d1c521e0d80bd8cfd46' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousGetValues","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"$formit =& $hook->formit;\\n$values = $hook->getValues();\\n\\n$oldValues = $_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']];\\nif(!$oldValues) $oldValues = array();\\n\\n$_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']] = array_merge($oldValues, $values);\\n\\n$modx->toPlaceholders(\\n    $_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']],\\n    \'fi\'\\n);\\n\\nreturn true;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$formit =& $hook->formit;\\n$values = $hook->getValues();\\n\\n$oldValues = $_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']];\\nif(!$oldValues) $oldValues = array();\\n\\n$_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']] = array_merge($oldValues, $values);\\n\\n$modx->toPlaceholders(\\n    $_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']],\\n    \'fi\'\\n);\\n\\nreturn true;"}',
+        'guid' => '0e1cbd29c501928d4955664ea88fd213',
+        'native_key' => NULL,
+        'signature' => '18e9be963f3f2e9b2970450dc056d728',
+      ),
+      '168fe492dad9f9329d72b5acc7e88edb' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousSaveValues","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"$formit =& $hook->formit;\\n$values = $hook->getValues();\\n$oldValues = $_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']];\\n\\nif(!$oldValues) $oldValues = array();\\n\\n$_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']] = array_merge($oldValues, $values);\\n\\nforeach ($_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']] as $key => $value) {\\n    $hook->setValue($key, $value);\\n}\\n\\nreturn true;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$formit =& $hook->formit;\\n$values = $hook->getValues();\\n$oldValues = $_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']];\\n\\nif(!$oldValues) $oldValues = array();\\n\\n$_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']] = array_merge($oldValues, $values);\\n\\nforeach ($_SESSION[\'Formalicious_form_\'.$formit->config[\'formid\']] as $key => $value) {\\n    $hook->setValue($key, $value);\\n}\\n\\nreturn true;"}',
+        'guid' => 'dbb019973802913f256db111076da563',
+        'native_key' => NULL,
+        'signature' => '08ad0ddafad8f921e84977065e0deae3',
+      ),
+      '506c3a8a3d551426f8804460ec623ce7' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousRemoveValues","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"$formit =& $hook->formit;\\n\\nunset($_SESSION[\'Formalicious_form_\' . $formit->config[\'formid\']]);\\n\\nreturn true;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"$formit =& $hook->formit;\\n\\nunset($_SESSION[\'Formalicious_form_\' . $formit->config[\'formid\']]);\\n\\nreturn true;"}',
+        'guid' => 'a7254a45acae58275c65d288d68c3496',
+        'native_key' => NULL,
+        'signature' => '4d533807ad9c569e5f02eb83c747f963',
+      ),
+    ),
+    'TemplateVars' => 
+    array (
+      '081ebbbae1047468c0c29eab875803a9' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modTemplateVar',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"type":"listbox","name":"formalicious","caption":"Formalicious form","description":"","editor_type":0,"category":0,"locked":0,"elements":"@SELECT \'- Select a form -\' AS name, 0 AS id UNION ALL SELECT name,id FROM [[+PREFIX]]formalicious_forms WHERE published = 1","rank":0,"display":"","default_text":"","properties":"a:0:{}","input_properties":"a:1:{s:10:\\"allowBlank\\";b:0;}","output_properties":null,"static":0,"static_file":"","content":""}',
+        'guid' => 'f3d54900c485c6bda66c095cb7ed0b3f',
+        'native_key' => NULL,
+        'signature' => '9bdca6f0b3f7343c264e5ea4d6e7fe9d',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'formalicious',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"formalicious-1.0.0-pl\\/modCategory\\/cd48158c6f102746bb236c8ec2403ce4\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"formalicious"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"formalicious-1.0.0-pl\\/modCategory\\/cd48158c6f102746bb236c8ec2403ce4\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"formalicious"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-1.0.0-pl\\/modCategory\\/cd48158c6f102746bb236c8ec2403ce4.gpm.resolve.tables.resolver","type":"php","name":"gpm.resolve.tables"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-1.0.0-pl\\/modCategory\\/cd48158c6f102746bb236c8ec2403ce4.gpm.resolve.tv_templates.resolver","type":"php","name":"gpm.resolve.tv_templates"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-1.0.0-pl\\/modCategory\\/cd48158c6f102746bb236c8ec2403ce4.install.resolver.resolver","type":"php","name":"install.resolver"}',
+    ),
+    5 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-1.0.0-pl\\/modCategory\\/cd48158c6f102746bb236c8ec2403ce4.uninstall.resolver.resolver","type":"php","name":"uninstall.resolver"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '0fc68e3d2296f418bd88e4975db6b4be',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'cd48158c6f102746bb236c8ec2403ce4',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"Formalicious","rank":0}',
+);
