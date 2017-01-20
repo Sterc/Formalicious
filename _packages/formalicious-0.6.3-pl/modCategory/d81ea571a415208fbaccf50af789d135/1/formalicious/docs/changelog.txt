@@ -1,0 +1,10 @@
+Changelog for Formalicious.
+
+Formalicious 0.6
+==============
+- Create form categories
+- Ability to create steps in forms 
+- Ability to save forms in FormIt (FormIt V2.2.2+) CMP
+- Added ability to setup autoresponder in form
+- Updated lexicons
+
