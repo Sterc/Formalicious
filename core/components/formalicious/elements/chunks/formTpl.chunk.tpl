@@ -4,6 +4,7 @@
     &emailTo=`[[+emailto]]`
     &emailSubject=`[[+subject]]`
     &emailFrom=`[[++emailsender]]`
+    &emailTpl=`@CODE:[[+fieldsemailoutput]]`
     &redirectTo=`[[+redirectTo]]`
     &redirectParams=`[[+redirectParams]]`
     &formid=`[[+id]]`
