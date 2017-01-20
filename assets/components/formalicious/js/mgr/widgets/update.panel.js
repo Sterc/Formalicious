@@ -151,19 +151,21 @@ Formalicious.panel.Update = function(config) {
                         ,height: 175
                         ,fieldLabel: _('formalicious.field.fiarcontent')
                     },{
-                        xtype: 'modx-combo-browser'
+                        id: 'fiarattachment'
+                        ,xtype: 'modx-combo-browser'
                         ,source: MODx.config['formalicious.source']
                         ,name: 'fiarattachment'
                         ,fieldLabel: _('formalicious.field.fiarattachment')
                         ,listeners: {
                             'select': {
                                 fn:function(data) {
+                                    console.log(data);
+                                    Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
                                     Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
-                                    //                                   Ext.getCmp('image').setValue(data.fullRelativeUrl);
                                 }
                             }
                         }
-                    },{
+                    }/* @todo tmp disabled ,{
                         id: 'preview'
                         ,name: 'preview'
                         ,fieldLabel: _('formalicious.field.preview')
@@ -178,7 +180,7 @@ Formalicious.panel.Update = function(config) {
                                 }
                             }
                         }
-                    }]
+                    }*/]
                 }]
             },{
                 title: _('formalicious.fields')
@@ -253,7 +255,7 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
                 }
                 ,listeners: {
                     'success': {fn:function(r) {
-                        Ext.getCmp('preview').setSrc(r.object.fiarattachment, MODx.config['formalicious.source']);
+                        // @todo Tmp disabled: Ext.getCmp('preview').setSrc(r.object.fiarattachment, MODx.config['formalicious.source']);
                         Ext.getCmp('modx-page-header').getEl().update('<h2>'+_('formalicious')+': '+r.object.name+'</h2>');
                         this.getForm().setValues(r.object);
 
