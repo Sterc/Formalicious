@@ -62,8 +62,12 @@ if ($form) {
             $fieldsC->where(array('published' => 1));
             $fieldsC->sortby('rank', 'ASC');
             $fields = $step->getMany('Fields', $fieldsC);
+            $fieldsemailoutput .= '<table><tbody>';
             foreach ($fields as $field) {
-                $fieldsemailoutput .= '<strong>' . $field->get('title') . '</strong>: [[+' . 'field_' . $field->get('id') . ']]<br/>';
+                $fieldsemailoutput .= '<tr>';
+                $fieldsemailoutput .= '<td><strong>' . $field->get('title') . ' :</strong></td>';
+                $fieldsemailoutput .= '<td>[[+' . 'field_' . $field->get('id') . ']]</td>';
+                $fieldsemailoutput .= '</tr>';
                 $validationStep['field_'.$field->get('id')] = array();
                 $answerOuter = array();
                 $type = $field->getOne('Type');
@@ -106,6 +110,7 @@ if ($form) {
                     unset($validationStep['field_'.$field->get('id')]);
                 }
             }
+            $fieldsemailoutput .= '</tbody></table>';
 
             $stepPhs = $step->toArray();
             $stepPhs['fields'] = implode($fieldSeparator, $stepInner);
