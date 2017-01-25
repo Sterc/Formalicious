@@ -11,6 +11,7 @@
     &validate=`[[+validation]]`
     &fieldNames=`[[+fieldNames]]`
     &formFields=`[[+formFields]]`
+    &submitVar=`submit-form[[+id]]`
 
     &fiarToField=`field_[[+fiaremailto]]`
     &fiarTpl=`fairTpl`
@@ -25,5 +26,5 @@
     [[!+form]]
 
     [[!+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]">&laquo; [[%prev]]</a>`:else=``]]
-    <input type="submit" value="[[!+submitTitle]]">
+    <input type="submit" name="submit-form[[+id]]" value="[[!+submitTitle]]">
 </form>
