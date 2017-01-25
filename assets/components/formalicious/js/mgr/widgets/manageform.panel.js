@@ -610,9 +610,7 @@ Formalicious.window.UpdateField = function(config) {
             handler: function(btn, event) {
                 var form = Ext.getCmp('update-form').getForm();
 
-                /**
-                 * Add check of gridvalues.
-                 */
+                /* Grid values required check. */
                 if (config.record['show-values'] === true && Ext.getCmp('grid-values').store.data.length <= 0) {
                     Ext.getCmp('grid-values-required').show();
                     return false;
