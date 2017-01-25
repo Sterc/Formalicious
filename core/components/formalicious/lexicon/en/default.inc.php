@@ -10,6 +10,8 @@ $_lang['formalicious.menu_desc'] = 'Manage forms';
 
 $_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
 
+$_lang['formalicious.save'] = 'Save';
+$_lang['formalicious.close'] = 'Close';
 $_lang['formalicious.search...'] = 'Search...';
 $_lang['formalicious.settings'] = 'Form settings';
 $_lang['formalicious.settings.intro_msg'] = 'Here you can change the form settings to your preferred settings.';
@@ -96,6 +98,7 @@ $_lang['formalicious.field.fiaremailfrom'] = 'Email from';
 $_lang['formalicious.field.fiarsubject'] = 'Subject';
 $_lang['formalicious.field.fiarcontent'] = 'Content';
 $_lang['formalicious.field.fiarattachment'] = 'Attachment';
+$_lang['formalicious.field.values_required'] = 'At least one value is required.';
 $_lang['formalicious.field.preview'] = 'Preview';
 $_lang['formalicious.field.preview.description'] = 'If the attachment is an image, a preview will be shown here.';
 $_lang['formalicious.select_start_date'] = 'Select start date';

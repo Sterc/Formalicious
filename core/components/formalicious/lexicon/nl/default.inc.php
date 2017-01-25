@@ -10,6 +10,8 @@ $_lang['formalicious'] = 'Formalicious';
 
 $_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
 
+$_lang['formalicious.save'] = 'Opslaan';
+$_lang['formalicious.close'] = 'Sluiten';
 $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
 $_lang['formalicious.settings.intro_msg'] = 'Hier kun je de formulier instellingen wijzigen naar jouw voorkeursinstellingen.';
@@ -97,6 +99,7 @@ $_lang['formalicious.field.fiaremailfrom'] = 'Afzender e-mail';
 $_lang['formalicious.field.fiarsubject'] = 'Onderwerp';
 $_lang['formalicious.field.fiarcontent'] = 'Inhoud';
 $_lang['formalicious.field.fiarattachment'] = 'Bijlage';
+$_lang['formalicious.field.values_required'] = 'Voeg op zijn minst één waarde toe.';
 $_lang['formalicious.field.preview'] = 'Voorvertoning';
 $_lang['formalicious.field.preview.description'] = 'Indien de bijlage een afbeelding is wordt hier een voorvertoning getoond.';
 $_lang['formalicious.select_start_date'] = 'Selecteer start datum';

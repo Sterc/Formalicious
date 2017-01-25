@@ -229,7 +229,6 @@ Ext.reg('formalicious-panel-manage-form',Formalicious.panel.ManageForm);
 Formalicious.grid.FormFields = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        //id: 'formalicious-grid-forms'
         url: Formalicious.config.connectorUrl
         ,baseParams: {
             action: 'mgr/field/getlist'
@@ -416,8 +415,6 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
                 },scope:this}
             }
         });
-
-
     }
 
     ,updateField: function(btn,e,forcedData) {
@@ -425,7 +422,7 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
         if(!forcedData){
             if (!this.menu.record) return false;
             r = this.menu.record;
-        }else{
+        } else{
             r = forcedData.object;
         }
         
@@ -435,7 +432,10 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
             ,title: _('formalicious.field_save')
             ,record: r
             ,listeners: {
-                'success': {fn:function() { this.refresh(); },scope:this}
+                'success': {
+                    fn:function(e) {
+                        this.refresh();
+                }, scope:this}
             }
         });
 
@@ -475,8 +475,6 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
 });
 Ext.reg('formalicious-grid-form-fields',Formalicious.grid.FormFields);
 
-
-
 Formalicious.window.CreateField = function(config) {
     config = config || {};
     Ext.applyIf(config,{
@@ -506,7 +504,6 @@ Ext.extend(Formalicious.window.CreateField,MODx.Window,{
             }
             ,listeners: {
                 'success':{fn:function(data) {
-                    
                     var window = Ext.getCmp('window-field-create');
                     var s = window.grid.getStore();
                     s.reload();
@@ -520,83 +517,140 @@ Ext.extend(Formalicious.window.CreateField,MODx.Window,{
 
                 },scope:this}
             }
-        });      
-
-
-
+        });
     }
-
 });
 Ext.reg('formalicious-window-field-create',Formalicious.window.CreateField);
 
-
 Formalicious.window.UpdateField = function(config) {
     config = config || {};
+
+
     Ext.applyIf(config,{
         closeAction: 'close'
-        ,url: Formalicious.config.connectorUrl
-        ,action: 'mgr/field/update'
+        ,xtype: 'form'
         ,height: 550
         ,width: 475
-        ,closeAction: 'close'
         ,modal: true
-        ,fields: [{
-            xtype: 'hidden'
-            ,name: 'id'
-        },{
-            xtype: 'hidden'
-            ,name: 'step_id'
-        },{
-            xtype: 'hidden'
-            ,name: 'type'
-        },{
-            xtype: 'textfield'
-            ,fieldLabel: _('formalicious.field.title')
-            ,name: 'title'
-            ,anchor: '100%'
-            ,allowBlank: false
-        },{
-            xtype: 'textfield'
-            ,fieldLabel: _('formalicious.field.placeholder')
-            ,name: 'placeholder'
-            ,anchor: '100%'
-        },{
-            xtype: 'hidden'
-            ,fieldLabel: _('description')
-            ,name: 'introtext'
-            ,anchor: '100%'
-        },{
-            xtype: 'checkbox'
-            ,name: 'required'
-            ,boxLabel: _('formalicious.field.required')
-            ,inputValue: 1
-        },{
-            xtype: 'checkbox'
-            ,name: 'published'
-            ,boxLabel: _('formalicious.field.published')
-            ,inputValue: 1
-        },{
-            xtype: 'hidden'
-            ,name: 'rank'
-        },{
-            xtype: 'formalicious-grid-values'
-            ,field_id: config.record.id
-            ,border: true
-            ,hidden: (config.record['show-values']) ? false : true
+        ,items:[{
+            xtype:'form',
+            'id': 'update-form',
+            url: Formalicious.config.connectorUrl,
+            baseParams: {
+                action: 'mgr/field/update'
+            },
+            action: 'mgr/field/update',
+            items: [{
+                xtype: 'hidden'
+                ,name: 'id'
+                ,value: config.record.id
+            },{
+                xtype: 'hidden'
+                ,name: 'step_id'
+                ,value: config.record.step_id
+            },{
+                xtype: 'hidden'
+                ,name: 'type'
+                ,value: config.record.type
+            },{
+                xtype: 'textfield'
+                ,fieldLabel: _('formalicious.field.title')
+                ,name: 'title'
+                ,anchor: '100%'
+                ,allowBlank: false
+                ,value: config.record.title
+            },{
+                xtype: 'textfield'
+                ,fieldLabel: _('formalicious.field.placeholder')
+                ,name: 'placeholder'
+                ,anchor: '100%'
+                ,value: config.record.placeholder
+            },{
+                xtype: 'hidden'
+                ,fieldLabel: _('description')
+                ,name: 'introtext'
+                ,anchor: '100%'
+                ,value: config.record.description
+            },{
+                xtype: 'checkbox'
+                ,name: 'required'
+                ,boxLabel: _('formalicious.field.required')
+                ,inputValue: 1
+                ,checked: (config.record.required) ? true : false
+            },{
+                xtype: 'checkbox'
+                ,name: 'published'
+                ,boxLabel: _('formalicious.field.published')
+                ,inputValue: 1
+                ,checked: (config.record.published) ? true : false
+            },{
+                xtype: 'hidden'
+                ,name: 'rank'
+                ,value: config.record.rank
+            },{
+                xtype: 'formalicious-grid-values'
+                ,id: 'grid-values'
+                ,field_id: config.record.id
+                ,border: true
+                ,hidden: (config.record['show-values']) ? false : true
+            }, {
+                xtype: 'label'
+                ,id: 'grid-values-required'
+                ,text: _('formalicious.field.values_required')
+                ,cls: 'desc-under'
+                ,style: 'color: #BE0000'
+                ,width: 500
+                ,hidden: true
+            }]
+        }]
+        ,buttons: [{
+            text: _('formalicious.close'),
+            handler: function() {
+                Ext.getCmp('window-field-update').destroy();
+            }
+        }, {
+            text: _('formalicious.save'),
+            handler: function(btn, event) {
+                var form = Ext.getCmp('update-form').getForm();
+
+                /**
+                 * Add check of gridvalues.
+                 */
+                if (config.record['show-values'] === true && Ext.getCmp('grid-values').store.data.length <= 0) {
+                    Ext.getCmp('grid-values-required').show();
+                    return false;
+                } else {
+                    Ext.getCmp('grid-values-required').hide();
+                }
+
+                if (form.isValid()) {
+                    form.submit({
+                        url: Formalicious.config.connectorUrl
+                        ,action: 'mgr/field/update'
+                        ,baseParams: {
+                            action: 'mgr/field/update'
+                        }
+                        ,renderTo: Ext.getBody()
+                        ,success: function(form, action) {
+                            Ext.getCmp('formalicious-panel-form-step-' + config.record.step_id).store.reload();
+                            Ext.getCmp('window-field-update').destroy();
+                        }
+                    });
+                }
+            }
         }]
     });
-    Formalicious.window.UpdateField.superclass.constructor.call(this,config);
+
+    Formalicious.window.UpdateField.superclass.constructor.call(this, config);
 };
 Ext.extend(Formalicious.window.UpdateField,MODx.Window);
 Ext.reg('formalicious-window-field-update',Formalicious.window.UpdateField);
 
-
-
-
 Formalicious.grid.Values = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        autoHeight: true
+        id: 'grid-values'
+        ,autoHeight: true
         ,maxHeight: 300
         ,fields: ['id', 'field_id', 'name', 'rank', 'published', 'subfield_id']
         ,url: Formalicious.config.connectorUrl
@@ -666,7 +720,6 @@ Formalicious.grid.Values = function(config) {
             ,beforedestroy: function(g) {
                 Ext.dd.ScrollManager.unregister(g.getView().getEditorParent());
             }
-
         }
     });
     Formalicious.grid.Values.superclass.constructor.call(this,config);
