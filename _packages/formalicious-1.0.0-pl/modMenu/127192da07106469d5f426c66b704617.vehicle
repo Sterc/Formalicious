@@ -1,0 +1,30 @@
+<?php return array (
+  'preserve_keys' => true,
+  'update_object' => true,
+  'unique_key' => 'text',
+  'related_objects' => true,
+  'related_object_attributes' => 
+  array (
+    'Action' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'namespace',
+        1 => 'controller',
+      ),
+    ),
+  ),
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '4106b6c38f1e30365572162045710c9e',
+  'package' => 'modx',
+  'class' => 'modMenu',
+  'signature' => '127192da07106469d5f426c66b704617',
+  'native_key' => 'formalicious',
+  'object' => '{"text":"formalicious","parent":"components","action":"home","description":"formalicious.menu_desc","icon":"","menuindex":0,"params":"","handler":"","permissions":"","namespace":"formalicious"}',
+);
