@@ -70,7 +70,7 @@ $_lang['formalicious.value_remove_confirm'] = 'Weet je zeker dat je deze waarde 
 
 $_lang['formalicious.field_create'] = 'Veld aanmaken';
 
-$_lang['formalicious.step.create'] = 'Nieuwe stap aanmaken';
+$_lang['formalicious.step.create'] = 'Stap aanmaken';
 $_lang['formalicious.step.remove'] = 'Verwijder stap';
 $_lang['formalicious.step.remove.msg'] = 'Weet je zeker dat je deze stap wilt verwijderen?';
 // $_lang['formalicious.new_step'] = 'Stap [[+number]]';
