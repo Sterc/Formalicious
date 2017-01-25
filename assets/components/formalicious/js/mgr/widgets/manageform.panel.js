@@ -265,7 +265,7 @@ Formalicious.grid.FormFields = function(config) {
                 scope: this
             }
         }]
-        ,tbar: new Ext.Toolbar({
+        ,bbar: new Ext.Toolbar({
             items: [
                 {
                     text: _('formalicious.add_field')
@@ -273,6 +273,7 @@ Formalicious.grid.FormFields = function(config) {
                     ,handler: this.createField
                     ,step: config.step
                     ,scope: this
+                    ,tabPosition:'top',
                 }
             ]
         })
