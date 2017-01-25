@@ -421,8 +421,10 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
         if(!forcedData){
             if (!this.menu.record) return false;
             r = this.menu.record;
+            r.forced = false;
         } else{
             r = forcedData.object;
+            r.forced = true;
         }
         
         this.windows.updateField = MODx.load({
@@ -527,6 +529,7 @@ Formalicious.window.UpdateField = function(config) {
 
     Ext.applyIf(config,{
         closeAction: 'close'
+        ,closable: false
         ,xtype: 'form'
         ,height: 550
         ,width: 475
@@ -604,6 +607,20 @@ Formalicious.window.UpdateField = function(config) {
         ,buttons: [{
             text: _('formalicious.close'),
             handler: function() {
+                if (config.record.forced === true) {
+                    MODx.Ajax.request({
+                      url: Formalicious.config.connector_url
+                      ,params: {
+                        action: 'mgr/field/remove'
+                        ,id: config.record.id
+                      },listeners: {
+                            'success':{fn:function(data) {
+                                Ext.getCmp('formalicious-panel-form-step-' + config.record.step_id).store.reload();
+                            },scope:this}
+                        }
+                    });
+                }
+
                 Ext.getCmp('window-field-update').destroy();
             }
         }, {
