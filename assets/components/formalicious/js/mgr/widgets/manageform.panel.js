@@ -561,7 +561,7 @@ Formalicious.window.UpdateField = function(config) {
             ,name: 'placeholder'
             ,anchor: '100%'
         },{
-            xtype: 'textarea'
+            xtype: 'hidden'
             ,fieldLabel: _('description')
             ,name: 'introtext'
             ,anchor: '100%'
