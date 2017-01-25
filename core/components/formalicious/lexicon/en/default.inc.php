@@ -69,9 +69,9 @@ $_lang['formalicious.value_update'] = 'Update value';
 $_lang['formalicious.value_remove'] = 'Remove value';
 $_lang['formalicious.value_remove_confirm'] = 'Are you sure you want to remove this value?';
 
-$_lang['formalicious.field_create'] = 'Create field';
+$_lang['formalicious.field_create'] = 'Add field';
 
-$_lang['formalicious.step.create'] = 'Create new step';
+$_lang['formalicious.step.create'] = 'Add step';
 $_lang['formalicious.step.remove'] = 'Remove step';
 $_lang['formalicious.step.remove.msg'] = 'Are you sure you want to remove this step?';
 // $_lang['formalicious.new_step'] = 'Step [[+number]]';

@@ -95,3 +95,22 @@
 .x-panel-btns .x-btn {
     min-width: 80px;
 }
+
+@media (min-width: 992px) {
+    #window-field-create {
+        max-width: 600px;
+        max-height: 600px;
+        left: 50% !important;
+        top: 50% !important;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    #window-field-create .x-window-body {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
