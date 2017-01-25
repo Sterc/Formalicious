@@ -597,7 +597,6 @@ Formalicious.window.UpdateField = function(config) {
                 ,text: _('formalicious.field.values_required')
                 ,cls: 'desc-under'
                 ,style: 'color: #BE0000'
-                ,width: 500
                 ,hidden: true
             }]
         }]
@@ -671,7 +670,6 @@ Formalicious.grid.Values = function(config) {
                 {
                     text: _('formalicious.add_value')
                     ,autoWidth: false
-                    ,style: {width: '417px'}
                     ,handler: this.create
                     ,scope: this
                 }
