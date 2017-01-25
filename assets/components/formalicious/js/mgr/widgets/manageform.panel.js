@@ -266,13 +266,11 @@ Formalicious.grid.FormFields = function(config) {
                 scope: this
             }
         }]
-        ,bbar: new Ext.Toolbar({
-            cls: 'bbar-fullwidth'
-            ,items: [
+        ,tbar: new Ext.Toolbar({
+            items: [
                 {
                     text: _('formalicious.add_field')
                     ,autoWidth: false
-                    ,style: {width: '100%'}
                     ,handler: this.createField
                     ,step: config.step
                     ,scope: this
