@@ -1,1 +1,0 @@
-<option value="[[!+name]]" id="[[!+fieldname]][[!+idx]]" [[!+curval:FormItIsSelected=`[[!+name]]`]]>[[+name]]</option>
