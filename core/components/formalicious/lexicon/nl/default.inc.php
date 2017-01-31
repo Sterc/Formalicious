@@ -6,17 +6,17 @@
  * @subpackage lexicon
  */
 $_lang['formalicious'] = 'Formalicious';
+$_lang['formalicious.menu_desc'] = 'De meest krachtige en eenvoudige manier om formulieren in MODX te maken.';
 
-
-$_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
+$_lang['formalicious.no-results'] = 'Voeg eerst enkele categoriën toe. Click daarom op "Admin panel" en voeg sowieso één categorie toe.';
 
 $_lang['formalicious.save'] = 'Opslaan';
 $_lang['formalicious.close'] = 'Sluiten';
 $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
-$_lang['formalicious.settings.intro_msg'] = 'Hier kun je de formulier instellingen wijzigen naar jouw voorkeursinstellingen.';
+$_lang['formalicious.settings.intro_msg'] = 'Formulier instellingen';
 $_lang['formalicious.fields'] = 'Formulier velden';
-$_lang['formalicious.fields.intro_msg'] = 'Hier kun je kiezen welke velden je wil aanpassen of nieuwe velden toevoegen. Een stap kan worden hernoemd door er dubbel op te klikken. Je kunt de stappen ordenen door ze in de gewenste volgorde te slepen.';
+$_lang['formalicious.fields.intro_msg'] = 'Beheer je formulier-velden. De stappen boven de velden kunnen worden hernoemd door op de stap-tekst te dubbelklikken. Je kunt de stappen ordenen door ze in de gewenste volgorde te slepen.';
 $_lang['formalicious.saved_forms'] = 'Opgeslagen formulieren';
 $_lang['formalicious.saved_forms.intro_msg'] = 'Omschrijving';
 $_lang['formalicious.admin'] = 'Administrator';
@@ -84,21 +84,22 @@ $_lang['formalicious.field.name'] = 'Titel';
 $_lang['formalicious.field.placeholder'] = 'Placeholder';
 $_lang['formalicious.field.placeholder_description'] = 'Tijdelijke tekst die getoond wordt in het veld en een gebruiker uitlegt wat hier moet worden ingevuld. Voorbeeld placeholder: Vul hier uw naam in.';
 $_lang['formalicious.field.title'] = 'Titel';
-$_lang['formalicious.field.text'] = 'E-mail hoofd tekst';
+$_lang['formalicious.field.text'] = 'E-mail header tekst';
 $_lang['formalicious.field.required'] = 'Verplicht';
+$_lang['formalicious.field.saveform'] = 'Sla ingevulde formulieren op';
 $_lang['formalicious.field.published'] = 'Gepubliceerd';
 $_lang['formalicious.field.emailto'] = 'Mailen naar';
 $_lang['formalicious.field.submittitle'] = 'Verstuur knop tekst';
 $_lang['formalicious.field.subject'] = 'Onderwerp';
 $_lang['formalicious.field.redirectto'] = 'Bedankt pagina';
-$_lang['formalicious.field.fiar_msg'] = 'Hier kun je de auto-reply instellingen wijzigen naar jouw gewenste auto-reply instellingen.';
+$_lang['formalicious.field.fiar_msg'] = 'Auto-reply instellingen';
 $_lang['formalicious.field.fiaremail'] = 'Auto reply versturen';
 $_lang['formalicious.field.fiaremailto'] = 'Selecteer e-mail veld';
-$_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het veld waar het e-mailadres ingevuld dient te worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier.';
-$_lang['formalicious.field.fiaremailfrom'] = 'Afzender e-mail';
-$_lang['formalicious.field.fiarsubject'] = 'Onderwerp';
-$_lang['formalicious.field.fiarcontent'] = 'Inhoud';
-$_lang['formalicious.field.fiarattachment'] = 'Bijlage';
+$_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het veld waar de auto-reply naartoe gestuurd moet worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier via het tabblad "Formulier velden".';
+$_lang['formalicious.field.fiaremailfrom'] = 'E-mail afzender';
+$_lang['formalicious.field.fiarsubject'] = 'E-mail onderwerp';
+$_lang['formalicious.field.fiarcontent'] = 'E-mail content';
+$_lang['formalicious.field.fiarattachment'] = 'E-mail bijlage';
 $_lang['formalicious.field.values_required'] = 'Voeg op zijn minst één waarde toe.';
 $_lang['formalicious.field.preview'] = 'Voorvertoning';
 $_lang['formalicious.field.preview.description'] = 'Indien de bijlage een afbeelding is wordt hier een voorvertoning getoond.';
@@ -117,13 +118,13 @@ $_lang['formalicious.submit'] = 'Verzenden';
 $_lang['formalicious.next'] = 'Volgende';
 
 $_lang['formalicious.advanced'] = 'Geavanceerd';
-$_lang['formalicious.advanced.intro_msg'] = 'Hier kun je de geavanceerde instellingen aanpassen.';
+$_lang['formalicious.advanced.intro_msg'] = 'Geavanceerde formulier instellingen';
 $_lang['formalicious.advanced.prehooks'] = 'Prehooks';
-$_lang['formalicious.advanced.prehooks.description'] = 'Komma gescheiden lijst van prehooks die uitgevoerd worden zodra het formulier ingeladen wordt.';
+$_lang['formalicious.advanced.prehooks.description'] = 'Komma gescheiden lijst van FormIt prehooks die uitgevoerd worden zodra het formulier ingeladen wordt.';
 $_lang['formalicious.advanced.posthooks'] = 'Posthooks';
-$_lang['formalicious.advanced.posthooks.description'] = 'Komma gescheiden lijst van posthooks die uitgevoerd worden zodra het formulier verzonden is. Deze hooks worden alleen uitgevoerd na succesvolle validatie.';
+$_lang['formalicious.advanced.posthooks.description'] = 'Komma gescheiden lijst van FormIt posthooks die uitgevoerd worden zodra het formulier verzonden is. Deze hooks worden alleen uitgevoerd na succesvolle validatie.';
 $_lang['formalicious.advanced.parameters'] = 'Parameters';
-$_lang['formalicious.advanced.parameters.description'] = 'Voeg hier custom Formit parameters toe, deze worden dan toegevoegd aan de Formit call.';
+$_lang['formalicious.advanced.parameters.description'] = 'Voeg hier custom FormIt parameters toe. Deze parameters worden dan toegevoegd aan de FormIt call.';
 $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Parameter toevoegen';
 $_lang['formalicious.advanced.parameter_remove'] = 'Parameter verwijderen';
