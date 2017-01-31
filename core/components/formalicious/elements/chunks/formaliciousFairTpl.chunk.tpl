@@ -41,7 +41,7 @@
             width: 100%;
             padding: 0;
             margin: 0;
-            background-color: #3a3a3a;
+            background-color: #f5f5f5;
         }
 
         table {
@@ -206,17 +206,17 @@
 
     <![endif]-->
 </head>
-<body style="margin:0; padding:0;" bgcolor="#3a3a3a" marginwidth="0" marginheight="0" margintop="0" marginleft="0" marginright="0">
+<body style="margin:0; padding:0;" bgcolor="#f5f5f5" marginwidth="0" marginheight="0" margintop="0" marginleft="0" marginright="0">
 
 <!-- 100% background wrapper (grey background) -->
-<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#3a3a3a">
+<table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f5f5f5">
     <tr>
-        <td align="center" valign="top" bgcolor="#3a3a3a" style="background-color: #3a3a3a;">
+        <td align="center" valign="top" bgcolor="#f5f5f5" style="background-color: #f5f5f5;">
 
             <!-- row to add space above the container -->
-            <table width="100%" height="40" border="0" cellpadding="0" cellspacing="0" class="spacer" style="width: 600px;border:none;" bgcolor="#3a3a3a">
+            <table width="100%" height="40" border="0" cellpadding="0" cellspacing="0" class="spacer" style="width: 600px;border:none;" bgcolor="#f5f5f5">
                 <tr>
-                    <td height="40" width="100%" bgcolor="#3a3a3a" style="background-color: #3a3a3a;">
+                    <td height="40" width="100%" bgcolor="#f5f5f5" style="background-color: #f5f5f5;">
                         <br>
                     </td>
                 </tr>
@@ -259,7 +259,7 @@
             <!-- 600px container (no background) -->
             <table border="0" width="600" cellpadding="0" cellspacing="0" class="container" style="width:600px;max-width:600px;border:none;">
                 <tr>
-                    <td class="content" align="left" style="background-color:#3a3a3a;border:none;">
+                    <td class="content" align="left" style="background-color:#f5f5f5;border:none;">
                         <table width="600" border="0" cellpadding="0" cellspacing="0" class="force-row" style="width: 600px;border:none;">
                             <tr>
                                 <td style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #5d6561; text-align: left; padding-top: 15px;">

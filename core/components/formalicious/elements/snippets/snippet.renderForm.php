@@ -29,7 +29,9 @@ if ($form) {
     $form = $modx->getObject('FormaliciousForm', $form);
     if ($form) {
         /* Merge values stored in Session and request. Request is leading. */
-        $requestArr = array_merge($_SESSION['Formalicious_form_'.$form->get('id')], $requestArr);
+        if (isset($_SESSION['Formalicious_form_'.$form->get('id')]) && is_array($_SESSION['Formalicious_form_'.$form->get('id')])) {
+            $requestArr = array_merge($_SESSION['Formalicious_form_'.$form->get('id')], $requestArr);
+        }
 
         if (!$form->get('published')) {
             return '';
