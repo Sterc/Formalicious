@@ -5,16 +5,6 @@
  * @package formalicious
  * @subpackage build
  */
-$action= $modx->newObject('modAction');
-$action->fromArray(array(
-    'id' => 1,
-    'namespace' => 'formalicious',
-    'parent' => 0,
-    'controller' => 'index',
-    'haslayout' => 1,
-    'lang_topics' => 'formalicious:default',
-    'assets' => '',
-),'',true,true);
 
 /* load action into menu */
 $menu= $modx->newObject('modMenu');
@@ -26,8 +16,7 @@ $menu->fromArray(array(
     'menuindex' => 0,
     'params' => '',
     'handler' => '',
+    'action' => 'home'
 ),'',true,true);
-$menu->addOne($action);
-unset($action);
 
 return $menu;

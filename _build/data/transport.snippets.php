@@ -14,9 +14,6 @@ $snippets[0]->fromArray(array(
     'description' => '',
     'snippet' => getSnippetContent($sources['source_core'].'/elements/snippets/snippet.renderForm.php'),
 ),'',true,true);
-//$properties = include $sources['build'].'properties/properties.formalicious.php';
-// $snippets[0]->setProperties($properties);
-// unset($properties);
 
 $snippets[1]= $modx->newObject('modSnippet');
 $snippets[1]->fromArray(array(
@@ -25,10 +22,6 @@ $snippets[1]->fromArray(array(
     'description' => '',
     'snippet' => getSnippetContent($sources['source_core'].'/elements/snippets/snippet.FormaliciousGetValues.php'),
 ),'',true,true);
-//$properties = include $sources['build'].'properties/properties.formalicious.php';
-// $snippets[1]->setProperties($properties);
-// unset($properties);
-
 
 $snippets[2]= $modx->newObject('modSnippet');
 $snippets[2]->fromArray(array(
@@ -37,4 +30,13 @@ $snippets[2]->fromArray(array(
     'description' => '',
     'snippet' => getSnippetContent($sources['source_core'].'/elements/snippets/snippet.FormaliciousSaveValues.php'),
 ),'',true,true);
+
+$snippets[3]= $modx->newObject('modSnippet');
+$snippets[3]->fromArray(array(
+    'id' => 3,
+    'name' => 'FormaliciousRemoveValues',
+    'description' => '',
+    'snippet' => getSnippetContent($sources['source_core'].'/elements/snippets/snippet.FormaliciousRemoveValues.php'),
+),'',true,true);
+
 return $snippets;

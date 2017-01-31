@@ -112,6 +112,15 @@ if (!is_array($snippets)) {
     $modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($snippets).' snippets.');
 }
 
+/* add tvs */
+$tvs = include $sources['data'].'transport.tvs.php';
+if (!is_array($tvs)) {
+    $modx->log(modX::LOG_LEVEL_ERROR,'Could not package in tvs.');
+} else {
+    $category->addMany($tvs);
+    $modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($tvs).' tvs.');
+}
+
 /* create category vehicle */
 $attr = array(
     xPDOTransport::UNIQUE_KEY => 'category',
@@ -135,6 +144,11 @@ $attr = array(
                     xPDOTransport::UPDATE_OBJECT => true,
                     xPDOTransport::UNIQUE_KEY => 'name',
                 ),
+                'TemplateVars' => array(
+                    xPDOTransport::PRESERVE_KEYS => false,
+                    xPDOTransport::UPDATE_OBJECT => true,
+                    xPDOTransport::UNIQUE_KEY => 'name',
+                ),
             ),
         ),
         'Snippets' => array(
@@ -143,6 +157,11 @@ $attr = array(
             xPDOTransport::UNIQUE_KEY => 'name',
         ),
         'Chunks' => array (
+            xPDOTransport::PRESERVE_KEYS => false,
+            xPDOTransport::UPDATE_OBJECT => true,
+            xPDOTransport::UNIQUE_KEY => 'name',
+        ),
+        'TemplateVars' => array (
             xPDOTransport::PRESERVE_KEYS => false,
             xPDOTransport::UPDATE_OBJECT => true,
             xPDOTransport::UNIQUE_KEY => 'name',
