@@ -677,7 +677,6 @@ Formalicious.grid.Values = function(config) {
         ,columns: [{
             header: _('formalicious.values')
             ,dataIndex: 'name'
-            ,editor: { xtype: 'textfield' ,allowBlank: false }
         }]
         ,tbar: ['-']
         ,bbar: new Ext.Toolbar({

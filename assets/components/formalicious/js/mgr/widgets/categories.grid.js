@@ -20,12 +20,10 @@ Formalicious.grid.Categories = function(config) {
             header: _('name')
             ,dataIndex: 'name'
             ,width: 200
-            ,editor: { xtype: 'textfield' }
         },{
             header: _('description')
             ,dataIndex: 'description'
             ,width: 250
-            ,editor: { xtype: 'textfield' }
         }]
         ,tbar: [{
             text: _('formalicious.category_create')
