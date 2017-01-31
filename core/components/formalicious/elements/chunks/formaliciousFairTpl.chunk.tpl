@@ -237,7 +237,7 @@
                                     <table border="0" width="600" cellpadding="20" cellspacing="0" class="container" style="width:600px;max-width:600px;border:none;padding: 20px;">
                                         <tr style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;">
                                             <td style="text-align:left;max-width: 100%;" width="560" class="force-row">
-                                                [[+fiarcontent]]
+                                                [[+fiarcontent:nl2br]]
                                             </td>
                                         </tr>
                                         <tr style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;">

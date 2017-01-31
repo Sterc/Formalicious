@@ -150,6 +150,7 @@ Formalicious.panel.Update = function(config) {
                         ,name: 'fiarcontent'
                         ,height: 175
                         ,fieldLabel: _('formalicious.field.fiarcontent')
+                        ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
                     },{
                         id: 'fiarattachment'
                         ,xtype: 'modx-combo-browser'
