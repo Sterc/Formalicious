@@ -67,7 +67,7 @@ if ($form) {
             $fieldsemailoutput .= '<table><tbody>';
             foreach ($fields as $field) {
                 $fieldsemailoutput .= '<tr>';
-                $fieldsemailoutput .= '<td><strong>' . $field->get('title') . ' :</strong></td>';
+                $fieldsemailoutput .= '<td><strong>' . $field->get('title') . '</strong></td>';
                 $fieldsemailoutput .= '<td>[[+' . 'field_' . $field->get('id') . ']]</td>';
                 $fieldsemailoutput .= '</tr>';
                 $validationStep['field_'.$field->get('id')] = array();
