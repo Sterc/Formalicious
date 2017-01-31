@@ -5,6 +5,7 @@
 - #29: Improved this very changelog
 - #40: Create a readme
 - #41: New logo for the modmore site!
+- #XS42: Autoheight for new-field dialog
 
 ++ Formalicious 1.0.0-RC1
 ++ Released on January 26th, 2017

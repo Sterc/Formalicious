@@ -482,6 +482,7 @@ Formalicious.window.CreateField = function(config) {
         closeAction: 'close'
         ,url: Formalicious.config.connectorUrl
         ,maximized: true
+        ,autoHeight: true
         ,maximizable: false
         ,minimizable: false
         ,buttons:[]
