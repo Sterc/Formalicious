@@ -6,7 +6,7 @@
  * @subpackage lexicon
  */
 $_lang['formalicious'] = 'Formalicious';
-$_lang['formalicious.menu_desc'] = 'Manage forms';
+$_lang['formalicious.menu_desc'] = 'The most powerful and easiest way to create forms in MODX.';
 
 $_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
 
@@ -14,9 +14,9 @@ $_lang['formalicious.save'] = 'Save';
 $_lang['formalicious.close'] = 'Close';
 $_lang['formalicious.search...'] = 'Search...';
 $_lang['formalicious.settings'] = 'Form settings';
-$_lang['formalicious.settings.intro_msg'] = 'Here you can change the form settings to your preferred settings.';
+$_lang['formalicious.settings.intro_msg'] = 'Form settings';
 $_lang['formalicious.fields'] = 'Form fields';
-$_lang['formalicious.fields.intro_msg'] = 'Here you can choose which fields you wish to edit or create new fields. A step can be renamed by double-clicking it. You can rearrange the steps by dragging the tabs into the desired order.';
+$_lang['formalicious.fields.intro_msg'] = 'Manage the form fields. A step can be renamed by double-clicking the text. You can rearrange the steps by dragging the tabs into the desired order.';
 $_lang['formalicious.saved_forms'] = 'Saved forms';
 $_lang['formalicious.saved_forms.intro_msg'] = 'Description';
 $_lang['formalicious.admin'] = 'Admin';
@@ -24,26 +24,26 @@ $_lang['formalicious.admin.intro_msg'] = 'Description';
 
 $_lang['formalicious.category'] = 'Category';
 $_lang['formalicious.categories'] = 'Categories';
-$_lang['formalicious.category.intro_msg'] = 'Here you can choose which category you wish to edit or create a new category.';
+$_lang['formalicious.category.intro_msg'] = 'Organising your forms from the start is highly recommended. You can do this by creating categories below. These categories appear as tabs in your forms-overivew.';
 $_lang['formalicious.category_create'] = 'Create category';
 $_lang['formalicious.category_update'] = 'Update category';
 $_lang['formalicious.category_remove'] = 'Remove category';
 $_lang['formalicious.category_remove_confirm'] = 'Are you sure you want to remove this category?';
 //$_lang['formalicious.category_err_ns_name'] = 'Remove category';
 
-$_lang['formalicious.fieldtype'] = 'Types';
-$_lang['formalicious.fieldtype.intro_msg'] = 'Here you can choose which field type you wish to edit or create a new field type.';
-$_lang['formalicious.fieldtype_create'] = 'Create type';
-$_lang['formalicious.fieldtype_update'] = 'Update type';
-$_lang['formalicious.fieldtype_remove'] = 'Remove type';
+$_lang['formalicious.fieldtype'] = 'Field types';
+$_lang['formalicious.fieldtype.intro_msg'] = 'A form consists of fields. These fields can be categorised by type, e.g. text or email. Formalicious is shipped with all the fields required to build powerful forms, but you can create your own types below';
+$_lang['formalicious.fieldtype_create'] = 'Create field type';
+$_lang['formalicious.fieldtype_update'] = 'Update';
+$_lang['formalicious.fieldtype_remove'] = 'Remove';
 $_lang['formalicious.fieldtype_remove_confirm'] = 'Are you sure you want to remove this type?';
 $_lang['formalicious.fieldtype.name'] = 'Name';
-$_lang['formalicious.fieldtype.tpl'] = 'Tpl';
+$_lang['formalicious.fieldtype.tpl'] = 'Chunk template';
 $_lang['formalicious.fieldtype.tpl.description'] = 'Name of the chunk that is used as template for this field.';
-$_lang['formalicious.fieldtype.answertpl'] = 'Value Tpl';
-$_lang['formalicious.fieldtype.answertpl.description'] = 'Name of the chunk that is used as template for the field values.';
-$_lang['formalicious.fieldtype.values'] = 'Values';
-$_lang['formalicious.fieldtype.validation'] = 'Validation';
+$_lang['formalicious.fieldtype.answertpl'] = 'Chunk for values';
+$_lang['formalicious.fieldtype.answertpl.description'] = 'Name of the chunk that is used as template for the field values. Field values are required for select and radio buttons.';
+$_lang['formalicious.fieldtype.values'] = 'Does this field type contain values?';
+$_lang['formalicious.fieldtype.validation'] = 'Validators';
 $_lang['formalicious.fieldtype.validation.description'] = 'Comma separated list of FormIt validators to use for this field. 
 See the built-in validators section on https://docs.modx.com/extras/revo/formit/formit.validators.';
 $_lang['formalicious.fieldtype.icon'] = 'Icon';
@@ -85,22 +85,22 @@ $_lang['formalicious.field.placeholder_description'] = 'Temporary text shown in 
 $_lang['formalicious.field.title'] = 'Title';
 $_lang['formalicious.field.text'] = 'Email header text';
 $_lang['formalicious.field.required'] = 'Required';
-$_lang['formalicious.field.saveform'] = 'Save submitted form';
+$_lang['formalicious.field.saveform'] = 'Save submitted forms';
 $_lang['formalicious.field.published'] = 'Published';
 $_lang['formalicious.field.emailto'] = 'Email to';
 $_lang['formalicious.field.subject'] = 'Subject';
 $_lang['formalicious.field.redirectto'] = 'Redirect to';
-$_lang['formalicious.field.fiar_msg'] = 'Here you can change the auto-reply settings to your preferred auto-reply settings.';
+$_lang['formalicious.field.fiar_msg'] = 'Auto-reply settings';
 $_lang['formalicious.field.fiaremail'] = 'Send auto reply';
 $_lang['formalicious.field.fiaremailto'] = 'Select email field';
-$_lang['formalicious.field.fiaremailto.description'] = 'Select the field where the visitor fills in the e-mailaddress. If no options are shown, please add fields to this form first.';
+$_lang['formalicious.field.fiaremailto.description'] = 'Select the email address to receive the auto-reply. Please note: you need to add an email field in the "Form fields" tab.';
 $_lang['formalicious.field.fiaremailfrom'] = 'Email from';
-$_lang['formalicious.field.fiarsubject'] = 'Subject';
-$_lang['formalicious.field.fiarcontent'] = 'Content';
-$_lang['formalicious.field.fiarattachment'] = 'Attachment';
+$_lang['formalicious.field.fiarsubject'] = 'Email subject';
+$_lang['formalicious.field.fiarcontent'] = 'Email content';
+$_lang['formalicious.field.fiarattachment'] = 'Email attachment';
 $_lang['formalicious.field.values_required'] = 'At least one value is required.';
 $_lang['formalicious.field.preview'] = 'Preview';
-$_lang['formalicious.field.preview.description'] = 'If the attachment is an image, a preview will be shown here.';
+$_lang['formalicious.field.preview.description'] = 'If the attachment is an image, a preview will be shown below.';
 $_lang['formalicious.select_start_date'] = 'Select start date';
 $_lang['formalicious.select_end_date'] = 'Select end date';
 $_lang['formalicious.clear'] = 'Clear filter';
@@ -116,13 +116,13 @@ $_lang['formalicious.submit'] = 'Submit';
 $_lang['formalicious.next'] = 'Next';
 
 $_lang['formalicious.advanced'] = 'Advanced';
-$_lang['formalicious.advanced.intro_msg'] = 'Here you can edit the advanced settings.';
+$_lang['formalicious.advanced.intro_msg'] = 'Advanced form settings';
 $_lang['formalicious.advanced.prehooks'] = 'Prehooks';
-$_lang['formalicious.advanced.prehooks.description'] = 'Comma separated list of Formit prehooks that will be executed when the form loads.';
+$_lang['formalicious.advanced.prehooks.description'] = 'Comma separated list of FormIt prehooks that will be executed when the form loads.';
 $_lang['formalicious.advanced.posthooks'] = 'Posthooks';
-$_lang['formalicious.advanced.posthooks.description'] = 'Comma separated list of Formit posthooks that will be executed when the form is submitted. The hooks only fire after successful validation.';
+$_lang['formalicious.advanced.posthooks.description'] = 'Comma separated list of FormIt posthooks that will be executed when the form is submitted. The hooks fire after successful validation.';
 $_lang['formalicious.advanced.parameters'] = 'Parameters';
-$_lang['formalicious.advanced.parameters.description'] = 'Add custom Formit parameters here. These will be added to the Formit snippet call, for example \'&myParam=`myValue`\'.';
+$_lang['formalicious.advanced.parameters.description'] = 'Add custom FormIt parameters. These will be added to the FormIt snippet call, for example \'&emailTpl=`myOwnEmailTpl`\'.';
 $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Add parameter';
 $_lang['formalicious.advanced.parameter_remove'] = 'Remove parameter';
