@@ -532,6 +532,7 @@ Formalicious.window.UpdateField = function(config) {
         closeAction: 'close'
         ,closable: false
         ,xtype: 'form'
+        ,bodyCssClass: 'formalicious-update-window'
         ,height: 550
         ,width: 475
         ,modal: true
@@ -655,9 +656,74 @@ Formalicious.window.UpdateField = function(config) {
         }]
     });
 
+    // Ext.applyIf(config,{
+    //     url: Formalicious.config.connectorUrl
+    //     ,action: 'mgr/field/update'
+    //     ,height: 550
+    //     ,width: 475
+    //     ,closeAction: 'close'
+    //     ,fields: [{
+    //         xtype: 'hidden'
+    //         ,name: 'id'
+    //     },{
+    //         xtype: 'hidden'
+    //         ,name: 'step_id'
+    //     },{
+    //         xtype: 'hidden'
+    //         ,name: 'type'
+    //     },{
+    //         xtype: 'textfield'
+    //         ,fieldLabel: _('formalicious.field.title')
+    //         ,name: 'title'
+    //         ,anchor: '100%'
+    //         ,allowBlank: false
+    //     },{
+    //         xtype: 'textfield'
+    //         ,fieldLabel: _('formalicious.field.placeholder')
+    //         ,name: 'placeholder'
+    //         ,anchor: '100%'
+    //     },{
+    //         xtype: 'hidden'
+    //         ,fieldLabel: _('description')
+    //         ,name: 'introtext'
+    //         ,anchor: '100%'
+    //     },{
+    //         xtype: 'checkbox'
+    //         ,name: 'required'
+    //         ,boxLabel: _('formalicious.field.required')
+    //         ,inputValue: 1
+    //     },{
+    //         xtype: 'checkbox'
+    //         ,name: 'published'
+    //         ,boxLabel: _('formalicious.field.published')
+    //         ,inputValue: 1
+    //     },{
+    //         xtype: 'hidden'
+    //         ,name: 'rank'
+    //     }, {
+    //         xtype: 'formalicious-grid-values'
+    //         ,id: 'formalicious-grid-values'
+    //         ,field_id: config.record.id
+    //         ,border: true
+    //         ,hidden: (config.record['show-values']) ? false : true
+    //     },{
+    //         xtype: 'hidden'
+    //         ,id: 'formalicious-grid-values-field'
+    //         ,name: 'values_field'
+    //     }]
+    // });
+
     Formalicious.window.UpdateField.superclass.constructor.call(this, config);
 };
 Ext.extend(Formalicious.window.UpdateField,MODx.Window);
+// Ext.extend(Formalicious.window.UpdateField,MODx.Window,{
+//     submit: function() {
+//     },
+//     close: function() {
+//         var values = this.fp.getForm().getValues();
+//         console.log(values.values_field);
+//     }
+// });
 Ext.reg('formalicious-window-field-update',Formalicious.window.UpdateField);
 
 Formalicious.grid.Values = function(config) {
@@ -801,7 +867,7 @@ Ext.reg('formalicious-grid-values',Formalicious.grid.Values);
 Formalicious.window.AddValue = function(config) {
     config = config || {};
     Ext.applyIf(config,{
-        title: _('inyourface.field.create')
+        title: _('formalicious.field.create')
         ,url: Formalicious.config.connectorUrl
         // ,height: 450
         ,autoHeight: true
