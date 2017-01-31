@@ -7,15 +7,13 @@
  */
 $settings = array();
 
-/*
-$settings['gallery.']= $modx->newObject('modSystemSetting');
-$settings['gallery.']->fromArray(array(
-    'key' => 'gallery.',
-    'value' => '',
+$settings['formalicious.source'] = $modx->newObject('modSystemSetting');
+$settings['formalicious.source']->fromArray(array(
+    'key' => 'formalicious.source',
+    'value' => '1',
     'xtype' => 'textfield',
-    'namespace' => 'gallery',
-    'area' => '',
-),'',true,true);
-*/
+    'namespace' => 'formalicious',
+    'area' => 'Paths',
+), '', true, true);
 
 return $settings;
