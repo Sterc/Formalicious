@@ -211,7 +211,7 @@
 <!-- 100% background wrapper (grey background) -->
 <table border="0" width="100%" cellpadding="0" cellspacing="0" bgcolor="#f5f5f5">
     <tr>
-        <td align="center" valign="top" bgcolor="#f5f5f5" style="background-color: #3a3a3a;">
+        <td align="center" valign="top" bgcolor="#f5f5f5" style="background-color: #f5f5f5;">
 
             <!-- row to add space above the container -->
             <table width="100%" height="40" border="0" cellpadding="0" cellspacing="0" class="spacer" style="width: 600px;border:none;" bgcolor="#f5f5f5">
