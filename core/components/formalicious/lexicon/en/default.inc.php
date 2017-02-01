@@ -6,7 +6,7 @@
  * @subpackage lexicon
  */
 $_lang['formalicious'] = 'Formalicious';
-$_lang['formalicious.menu_desc'] = 'The most powerful and easiest way to create forms in MODX.';
+$_lang['formalicious.menu_desc'] = 'The most powerful and easiest form builder for MODX.';
 
 $_lang['formalicious.no-results'] = 'Please add some categories for your forms. Click on "Admin panel" to manage the categories.';
 
