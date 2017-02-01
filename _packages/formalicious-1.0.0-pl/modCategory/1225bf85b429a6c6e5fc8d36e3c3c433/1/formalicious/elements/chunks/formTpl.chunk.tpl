@@ -14,7 +14,7 @@
     &submitVar=`submit-form[[+id]]`
 
     &fiarToField=`field_[[+fiaremailto]]`
-    &fiarTpl=`fairTpl`
+    &fiarTpl=`fiarTpl`
     &fiarSubject=`[[+fiarsubject]]`
     &fiarFrom=`[[+fiaremailfrom]]`
     &fiarFiles=`[[+fiarattachment]]`
