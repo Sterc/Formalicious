@@ -44,6 +44,8 @@ if (!defined('MODMORE_VEHICLE_PRIVATE_KEY')) {
     }
 }
 
+include_once __DIR__ . '/includes/functions.php';
+
 /* define sources */
 $root = dirname(dirname(__FILE__)).'/';
 $sources = array(
