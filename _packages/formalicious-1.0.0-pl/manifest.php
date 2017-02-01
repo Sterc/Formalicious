@@ -303,17 +303,49 @@ Requirements
 --------------------
 * MODX 2.3.0 or greater
 * FormIt 2.2.2 or greater',
-    'changelog' => 'Changelog for Formalicious.
+    'changelog' => '++ Formalicious 1.0.0-RC2
+++ Released on January 27th, 2017
+++++++++++++++++++++++++++
+- #28: Fixed oldstyle actions
+- #29: Improved this very changelog
+- #40: Create a readme
+- #41: New logo for the modmore site!
+- #XS42: Autoheight for new-field dialog
 
-Formalicious 0.6
-==============
+++ Formalicious 1.0.0-RC1
+++ Released on January 26th, 2017
+++++++++++++++++++++++++++
+- #34: Improved handling of empty fields
+- #37: Radio button + Select + Checkbox options are now required
+- #38: Allowed files are now mentioned
+- #36: Improved default emails
+- #32: Unused description field is now removed
+- #31: Improved placeholder field usage
+- #30: Mention context-NAME in the "Redirect to" field when creating a new form
+- #27: Fixed file upload in multistep form
+- #22: Improved emailTpl
+- #20 + #23 + #35: Improved styling of buttons
+- #17: Fixed category_id fallback
+- #9 + #12: Fixed empty fields in multistep form
+- #13: Fixed email validation
+- #10: Fixed adding parameters not working properly
+- #7: Now shipped with TV
+- #8: Fixed uninstallation proces
+- #4: "Update type" dialog is now bigger
+- #2: Fixed select form-email-field when creating a form
+- #1: Fixed empty field when creating a form
+- #6: Improved adding fields
+- #5: Improved step-creation flow
+- #3: Replaced form-description with "Email header text"
+
+++ Formalicious 0.6.0
+++ Released in 2016
+++++++++++++++++++++++++++
 - Create form categories
-- Ability to create steps in forms 
+- Ability to create form steps
 - Ability to save forms in FormIt (FormIt V2.2.2+) CMP
 - Added ability to setup autoresponder in form
-- Updated lexicons
-
-',
+- Updated lexicons',
     'requires' => 
     array (
       'formit' => '>=2.2.2',
@@ -326,9 +358,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modNamespace',
-      'guid' => '4834c87ace202ce98d349779fdb9b59d',
+      'guid' => '3f32a82e3ce38a244d0e34ff59b89d78',
       'native_key' => 'formalicious',
-      'filename' => 'modNamespace/463f204dfd00e75a1dd2e9f0f686953a.vehicle',
+      'filename' => 'modNamespace/d71c61276a8e1d689250465b768039b2.vehicle',
       'namespace' => 'formalicious',
     ),
     1 => 
@@ -336,9 +368,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modSystemSetting',
-      'guid' => 'f48315dccd8720df5704d2cc14a22157',
+      'guid' => '3d684ac09e7189d501e9e2bca8787208',
       'native_key' => 'formalicious.source',
-      'filename' => 'modSystemSetting/266c14ac9ffe962a71fa7819aece57a0.vehicle',
+      'filename' => 'modSystemSetting/b67d0220c16f0f0461f6ca6b003e6579.vehicle',
       'namespace' => 'formalicious',
     ),
     2 => 
@@ -346,9 +378,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modCategory',
-      'guid' => '154d2018cdfa8cf77858ca17815dc0d1',
+      'guid' => '2d4a0831f686cfd7bb7b251ac0bf569f',
       'native_key' => NULL,
-      'filename' => 'modCategory/1da527b06c953c5609ebb3231f539ac8.vehicle',
+      'filename' => 'modCategory/79777dd0620a2ffef888c3ab44115d25.vehicle',
       'namespace' => 'formalicious',
     ),
     3 => 
@@ -356,9 +388,9 @@ Formalicious 0.6
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modMenu',
-      'guid' => '4106b6c38f1e30365572162045710c9e',
+      'guid' => 'fa7f974482898f8160fc6fe920629e0a',
       'native_key' => 'formalicious',
-      'filename' => 'modMenu/127192da07106469d5f426c66b704617.vehicle',
+      'filename' => 'modMenu/520bb087de9baa7f95b55efdb2585366.vehicle',
       'namespace' => 'formalicious',
     ),
   ),
