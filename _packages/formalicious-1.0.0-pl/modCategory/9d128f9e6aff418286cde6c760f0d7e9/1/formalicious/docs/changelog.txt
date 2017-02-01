@@ -1,3 +1,13 @@
+++ Formalicious 1.0.0-pl
+++ Released on February 1st, 2017
+++++++++++++++++++++++++++
+- XS-4 New documentation
+- XS-11 Changed height of several dialog windows
+- XS-12 Spacing adjustments
+- XS-19 Gave the default emails a lighter grey
+- XS-20 Modified all en/nl lexicons
+- XS-21 Fixed inline editing (removed it)
+
 ++ Formalicious 1.0.0-RC2
 ++ Released on January 27th, 2017
 ++++++++++++++++++++++++++
@@ -5,7 +15,7 @@
 - #29: Improved this very changelog
 - #40: Create a readme
 - #41: New logo for the modmore site!
-- #XS42: Autoheight for new-field dialog
+- #XS-42: Autoheight for new-field dialog
 
 ++ Formalicious 1.0.0-RC1
 ++ Released on January 26th, 2017

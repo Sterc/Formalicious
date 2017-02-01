@@ -303,14 +303,24 @@ Requirements
 --------------------
 * MODX 2.3.0 or greater
 * FormIt 2.2.2 or greater',
-    'changelog' => '++ Formalicious 1.0.0-RC2
+    'changelog' => '++ Formalicious 1.0.0-pl
+++ Released on February 1st, 2017
+++++++++++++++++++++++++++
+- XS-4 New documentation
+- XS-11 Changed height of several dialog windows
+- XS-12 Spacing adjustments
+- XS-19 Gave the default emails a lighter grey
+- XS-20 Modified all en/nl lexicons
+- XS-21 Fixed inline editing (removed it)
+
+++ Formalicious 1.0.0-RC2
 ++ Released on January 27th, 2017
 ++++++++++++++++++++++++++
 - #28: Fixed oldstyle actions
 - #29: Improved this very changelog
 - #40: Create a readme
 - #41: New logo for the modmore site!
-- #XS42: Autoheight for new-field dialog
+- #XS-42: Autoheight for new-field dialog
 
 ++ Formalicious 1.0.0-RC1
 ++ Released on January 26th, 2017
@@ -358,9 +368,9 @@ Requirements
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modNamespace',
-      'guid' => '8b905015ee63e49b8c16ab0737141573',
+      'guid' => 'd852c8bc35aa481dd5e1fdd6059e4318',
       'native_key' => 'formalicious',
-      'filename' => 'modNamespace/c63876e890fc6737c37e29e2a59d9d62.vehicle',
+      'filename' => 'modNamespace/892f30ec684c91edd977ec75148a4a12.vehicle',
       'namespace' => 'formalicious',
     ),
     1 => 
@@ -368,9 +378,9 @@ Requirements
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modSystemSetting',
-      'guid' => '5c37e10c737f9d28ee602173e6bca736',
+      'guid' => 'f5b94808389ea7fde89d91848471bc5a',
       'native_key' => 'formalicious.source',
-      'filename' => 'modSystemSetting/084b39e22f21061c1169f6bbb9277b5d.vehicle',
+      'filename' => 'modSystemSetting/7b857b3043e97cd5ef9015ff1dba46f3.vehicle',
       'namespace' => 'formalicious',
     ),
     2 => 
@@ -378,9 +388,9 @@ Requirements
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modCategory',
-      'guid' => '51d3334b0291ce0223ecc693612d2437',
+      'guid' => '40ab4780d1dd47d4cc361fcbc2ce9cef',
       'native_key' => NULL,
-      'filename' => 'modCategory/0ca8ff51c910e8a723ed0d4cb0a5b6ed.vehicle',
+      'filename' => 'modCategory/9d128f9e6aff418286cde6c760f0d7e9.vehicle',
       'namespace' => 'formalicious',
     ),
     3 => 
@@ -388,9 +398,9 @@ Requirements
       'vehicle_package' => 'transport',
       'vehicle_class' => 'xPDOObjectVehicle',
       'class' => 'modMenu',
-      'guid' => '9a564809a0fe981cc16a2cfececbbd15',
+      'guid' => 'ac3583caf154709f8eeb3b5b8b29e934',
       'native_key' => 'formalicious',
-      'filename' => 'modMenu/84ab100c43d26b7cfd2e2b7e453b2b4d.vehicle',
+      'filename' => 'modMenu/4ba05484a365d23e99a5c87085752d0a.vehicle',
       'namespace' => 'formalicious',
     ),
   ),
