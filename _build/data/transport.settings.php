@@ -11,7 +11,7 @@ $settings['formalicious.source'] = $modx->newObject('modSystemSetting');
 $settings['formalicious.source']->fromArray(array(
     'key' => 'formalicious.source',
     'value' => '1',
-    'xtype' => 'textfield',
+    'xtype' => 'modx-combo-source',
     'namespace' => 'formalicious',
     'area' => 'Paths',
 ), '', true, true);
