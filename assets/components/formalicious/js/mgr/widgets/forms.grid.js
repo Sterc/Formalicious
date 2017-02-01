@@ -10,7 +10,7 @@ Formalicious.grid.Forms = function(config) {
         }
         ,save_action: 'mgr/form/updatefromgrid'
         ,autosave: true
-        ,fields: ['id','name','description','emailto', 'published']
+        ,fields: ['id','name','emailto', 'published']
         ,autoHeight: true
         ,paging: true
         ,remoteSort: true
@@ -27,16 +27,12 @@ Formalicious.grid.Forms = function(config) {
         ,columns: [{
             header: _('formalicious.name')
             ,dataIndex: 'name'
-            ,width: 200
+            ,width: 400
             ,id: 'main'
             ,renderer: {
                 fn: this.formTitleRenderer,
                 scope: this
             }
-        },{
-            header: _('description')
-            ,dataIndex: 'description'
-            ,width: 200
         },{
             header: _('formalicious.emailto')
             ,dataIndex: 'emailto'
@@ -95,30 +91,6 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
     }
     ,formTitleRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
         return '<h3>'+value+' ('+record.id+')</h3>';
-        // var tpl = new Ext.XTemplate('<tpl for=".">' + '<h3>{name} ({id})</h3>' + '<tpl if="actions !== null">' + '<ul class="actions">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
-        //     compiled: true
-        // });
-
-        // var values = {
-        //     id: record.id,
-        //     name: value,
-        // };
-        // var h = [];
-
-        // h.push({
-        //     className: 'update green',
-        //     text: _('update')
-        // });
-        // h.push({
-        //     className: 'duplicate',
-        //     text: _('duplicate')
-        // });
-        // h.push({
-        //     className: 'delete red',
-        //     text: _('delete')
-        // });
-        // values.actions = h;
-        // return tpl.apply(values);
     }
     ,actionRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
         var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
@@ -182,10 +154,10 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
     }
 
     ,createForm: function(btn,e) {
-        MODx.loadPage(MODx.request.a, 'action=update&category='+this.category);
+        MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace);
     }
     ,updateForm: function(btn,e) {
-        MODx.loadPage(MODx.request.a, 'action=update&id='+this.menu.record.id);
+        MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+this.menu.record.id);
     }
 
     ,removeForm: function(btn,e) {

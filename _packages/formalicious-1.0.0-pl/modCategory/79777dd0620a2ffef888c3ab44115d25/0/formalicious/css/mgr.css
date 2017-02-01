@@ -1,0 +1,120 @@
+.required:before {
+    content: "* ";
+    color: red;
+}
+/*#form-content{
+	min-height: 400px;
+}*/
+
+.icon-buttons .formalicious-icon{
+	width: 26px;
+	height: 26px;
+	float: left;
+	text-indent: -9999px;
+	border:0;
+	cursor: pointer;
+}
+.icon-buttons .formalicious-icon:hover{
+	opacity: 0.6;
+}
+.formalicious-icon-edit{
+	background: url(../img/edit.png);
+}
+.formalicious-icon-duplicate{
+    background: url(../img/duplicate.png);
+}
+.formalicious-icon-remove{
+    background: url(../img/remove.png);
+}
+.bbar-fullwidth table{
+	width: 99%;
+}
+.button-window .x-btn{
+	margin:10px;
+}
+
+
+#formalicious-panel-form-steps .x-tab-strip-closable{padding-right: 22px!important;}
+#formalicious-panel-form-steps .x-tab-strip-close{ display: none; right:4px; top:2px;}
+#formalicious-panel-form-steps .x-tab-strip-active .x-tab-strip-close{ display: block; background-image: url(../img/close-tab.png);}
+
+
+.dd-arrow-down.dd-arrow-down-invisible {
+    display: none;
+    visibility: hidden;
+}
+
+.dd-arrow-down {
+    background-image: url(../img/dd-arrow-down.gif);
+    display: block;
+    visibility: visible;
+    z-index: 20000;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+}
+
+
+
+.grid-row-inactive .x-grid3-cell-inner.x-grid3-col-main h3{
+    color: #999!important;
+}
+
+.button-holder {
+    padding: 15px 0 0 156px;
+}
+.button-holder span{
+    margin-right: 15px;
+}
+
+#formalicious-tabpanel-categories__no-results{
+    display: none;
+}
+
+#window-field-update {
+    /*min-height: 700px;*/
+}
+
+.x-panel-bbar,
+.x-panel-bbar {
+    max-width: 100%;
+}
+
+.x-btn {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.bbar-fullwidth table {
+    width: 99.99%;
+}
+
+.x-panel-btns .x-btn {
+    min-width: 80px;
+}
+
+@media (min-width: 992px) {
+    #window-field-create {
+        max-width: 600px;
+        max-height: 600px;
+        left: 50% !important;
+        top: 50% !important;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    #window-field-create .x-window-body {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
+.formalicious-update-window {
+    padding-top: 20px !important;
+}

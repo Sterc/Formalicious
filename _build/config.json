@@ -1,0 +1,113 @@
+{
+    "name": "Formalicious",
+    "lowCaseName": "formalicious",
+    "description": "",
+    "author": "Sterc",
+    "version": "1.0.0",
+    "package":{
+        "menus": [{
+            "text": "formalicious",
+            "description": "formalicious.menu_desc",
+            "action": "home"
+        }],
+        "elements": {
+            "plugins": [],
+            "snippets": [{
+                "name": "renderForm",
+                "file": "snippet.renderForm.php"
+            },{
+                "name": "FormaliciousGetValues",
+                "file": "snippet.FormaliciousGetValues.php"
+            },{
+                "name": "FormaliciousSaveValues",
+                "file": "snippet.FormaliciousSaveValues.php"
+            },{
+                "name": "FormaliciousRemoveValues",
+                "file": "snippet.FormaliciousRemoveValues.php"
+            }],
+            "chunks": [{
+                "name": "checkboxesTpl",
+                "file": "checkboxesTpl.chunk.tpl"
+            },{
+                "name": "checkboxInnerTpl",
+                "file": "checkboxInnerTpl.chunk.tpl"
+            },{
+                "name": "emailTpl",
+                "file": "emailTpl.chunk.tpl"
+            },{
+                "name": "fileTpl",
+                "file": "fileTpl.chunk.tpl"
+            },{
+                "name": "emailFormTpl",
+                "file": "formaliciousemailFormTpl.chunk.tpl"
+            },{
+                "name": "fairTpl",
+                "file": "formaliciousFairTpl.chunk.tpl"
+            },{
+                "name": "formTpl",
+                "file": "formTpl.chunk.tpl"
+            },{
+                "name": "radiobuttonsInnerTpl",
+                "file": "radiobuttonsInnerTpl.chunk.tpl"
+            },{
+                "name": "radiobuttonsTpl",
+                "file": "radiobuttonsTpl.chunk.tpl"
+            },{
+                "name": "selectInnerTpl",
+                "file": "selectInnerTpl.chunk.tpl"
+            },{
+                "name": "selectTpl",
+                "file": "selectTpl.chunk.tpl"
+            },{
+                "name": "stepTpl",
+                "file": "stepTpl.chunk.tpl"
+            },{
+                "name": "textareaTpl",
+                "file": "textareaTpl.chunk.tpl"
+            },{
+                "name": "textTpl",
+                "file": "textTpl.chunk.tpl"
+            }],
+            "templates": [],
+            "tvs": [{
+                "caption": "Formalicious form",
+                "name": "formalicious",
+                "type": "listbox",
+                "description": "",
+                "defaultValue": "",
+                "inputOptionValues": "@SELECT '- Select a form -' AS name, 0 AS id UNION ALL SELECT name,id FROM [[+PREFIX]]formalicious_forms WHERE published = 1",
+                "inputProperties": {
+                    "allowBlank": false
+                }
+            }]
+        },
+        "systemSettings": [{
+            "key": "source",
+            "value": "1",
+            "area": "Paths"
+        }]
+    },
+    "database": {
+        "tables": [
+            "FormaliciousCategory",
+            "FormaliciousForm",
+            "FormaliciousStep",
+            "FormaliciousFieldType",
+            "FormaliciousField",
+            "FormaliciousSubField",
+            "FormaliciousAnswer"
+        ]
+    },
+    "dependencies": [{
+        "name": "formit",
+        "version": ">=2.2.2"
+    }],
+    "build": {
+        "resolver": {
+            "after": [
+                "install.resolver.php",
+                "uninstall.resolver.php"
+            ]
+        }
+    }
+}

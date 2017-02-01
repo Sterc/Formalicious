@@ -2,19 +2,21 @@
 /**
  * Resolve creating db tables
  *
+ * THIS RESOLVER IS AUTOMATICALLY GENERATED, NO CHANGES WILL APPLY
+ *
  * @package formalicious
  * @subpackage build
  */
+
 if ($object->xpdo) {
+    $modx =& $object->xpdo;
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
-            $modx =& $object->xpdo;
-            $modelPath = $modx->getOption('formalicious.core_path',null,$modx->getOption('core_path').'components/formalicious/').'model/';
-            $modx->addPackage('formalicious',$modelPath);
+            $modelPath = $modx->getOption('formalicious.core_path', null, $modx->getOption('core_path') . 'components/formalicious/') . 'model/';
+            $modx->addPackage('formalicious', $modelPath, 'modx_');
 
             $manager = $modx->getManager();
-            $loglevel = $modx->setLogLevel(modX::LOG_LEVEL_ERROR);
 
             $manager->createObjectContainer('FormaliciousCategory');
             $manager->createObjectContainer('FormaliciousForm');
@@ -23,14 +25,9 @@ if ($object->xpdo) {
             $manager->createObjectContainer('FormaliciousField');
             $manager->createObjectContainer('FormaliciousSubField');
             $manager->createObjectContainer('FormaliciousAnswer');
-            
-            $manager->addField('FormaliciousForm', 'fiaremailto');
-            $manager->addField('FormaliciousForm', 'saveform');
-            $manager->addField('FormaliciousField', 'placeholder');
 
-            $modx->setLogLevel($loglevel);
             break;
-
     }
 }
+
 return true;
