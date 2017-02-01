@@ -41,8 +41,8 @@
                 "name": "emailFormTpl",
                 "file": "formaliciousemailFormTpl.chunk.tpl"
             },{
-                "name": "fairTpl",
-                "file": "formaliciousFairTpl.chunk.tpl"
+                "name": "fiarTpl",
+                "file": "formaliciousFiarTpl.chunk.tpl"
             },{
                 "name": "formTpl",
                 "file": "formTpl.chunk.tpl"
