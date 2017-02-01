@@ -10,7 +10,7 @@ Formalicious.grid.Forms = function(config) {
         }
         ,save_action: 'mgr/form/updatefromgrid'
         ,autosave: true
-        ,fields: ['id','name','description','emailto', 'published']
+        ,fields: ['id','name','emailto', 'published']
         ,autoHeight: true
         ,paging: true
         ,remoteSort: true
@@ -27,16 +27,12 @@ Formalicious.grid.Forms = function(config) {
         ,columns: [{
             header: _('formalicious.name')
             ,dataIndex: 'name'
-            ,width: 200
+            ,width: 400
             ,id: 'main'
             ,renderer: {
                 fn: this.formTitleRenderer,
                 scope: this
             }
-        },{
-            header: _('description')
-            ,dataIndex: 'description'
-            ,width: 200
         },{
             header: _('formalicious.emailto')
             ,dataIndex: 'emailto'

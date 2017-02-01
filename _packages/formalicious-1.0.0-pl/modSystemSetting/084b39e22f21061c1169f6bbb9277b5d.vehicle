@@ -7,10 +7,10 @@
   'validate' => NULL,
   'vehicle_package' => 'transport',
   'vehicle_class' => 'xPDOObjectVehicle',
-  'guid' => '3d684ac09e7189d501e9e2bca8787208',
+  'guid' => '5c37e10c737f9d28ee602173e6bca736',
   'package' => 'modx',
   'class' => 'modSystemSetting',
-  'signature' => 'b67d0220c16f0f0461f6ca6b003e6579',
+  'signature' => '084b39e22f21061c1169f6bbb9277b5d',
   'native_key' => 'formalicious.source',
   'object' => '{"key":"formalicious.source","value":"1","xtype":"textfield","namespace":"formalicious","area":"Paths","editedon":null}',
 );
