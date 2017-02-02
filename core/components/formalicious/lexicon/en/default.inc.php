@@ -127,3 +127,6 @@ $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Add parameter';
 $_lang['formalicious.advanced.parameter_remove'] = 'Remove parameter';
 $_lang['formalicious.advanced.parameter_remove_confirm'] = 'Are you sure you want to remove this parameter?';
+
+$_lang['formalicious.contentblocks_input'] = 'Formalicious Form Selector';
+$_lang['formalicious.contentblocks_input.description'] = 'Allows you to select one of your created forms to insert into the content.';
