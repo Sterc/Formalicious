@@ -1,5 +1,6 @@
 .DS_Store
 _build/build.config.php
+_build/license.php
 config.core.php
 .idea
 core/components/formit/test/properties.inc.php
