@@ -14,6 +14,7 @@ set_time_limit(0);
 if (!defined('MOREPROVIDER_BUILD')) {
     /* define version */
     define('PKG_NAME', 'Formalicious');
+    define('PKG_NAME_LOWER', 'formalicious');
     define('PKG_NAMESPACE', 'formalicious');
     define('PKG_VERSION', '1.0.0');
     define('PKG_RELEASE', 'pl');
@@ -113,6 +114,15 @@ if (!is_array($snippets)) {
     $category->addMany($snippets);
     $modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($snippets).' snippets.');
 }
+/* add plugins */
+$plugins = include $sources['data'].'transport.plugins.php';
+if (is_array($plugins)) {
+    $category->addMany($plugins,'Plugins');
+    $modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($plugins).' plugins.'); flush();
+}
+else {
+    $modx->log(modX::LOG_LEVEL_FATAL,'Adding plugins failed.');
+}
 
 /* add tvs */
 $tvs = include $sources['data'].'transport.tvs.php';
@@ -167,6 +177,19 @@ $attr = array(
             xPDOTransport::PRESERVE_KEYS => false,
             xPDOTransport::UPDATE_OBJECT => true,
             xPDOTransport::UNIQUE_KEY => 'name',
+        ),
+        'Plugins' => array(
+            xPDOTransport::PRESERVE_KEYS => true,
+            xPDOTransport::UPDATE_OBJECT => true,
+            xPDOTransport::UNIQUE_KEY => 'name',
+            xPDOTransport::RELATED_OBJECTS => true,
+            xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
+                'PluginEvents' => array(
+                    xPDOTransport::PRESERVE_KEYS => true,
+                    xPDOTransport::UPDATE_OBJECT => false,
+                    xPDOTransport::UNIQUE_KEY => array('pluginid','event'),
+                ),
+            ),
         ),
     ),
 
