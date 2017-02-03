@@ -1,3 +1,9 @@
+++ Formalicious 1.0.1-pl
+++ Released on February 3rd, 2017
+++++++++++++++++++++++++++
+- Added ContentBlocks support (thanks Mark!)
+- Fixed installation issues with MODX installations with custom table-prefixes
+
 ++ Formalicious 1.0.0-pl
 ++ Released on February 1st, 2017
 ++++++++++++++++++++++++++
