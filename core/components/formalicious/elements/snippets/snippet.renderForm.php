@@ -141,7 +141,7 @@ if ($form) {
                 $hooks[] = 'FormItSaveForm';
             }
 
-            if ($form->get('fiaremailto') && $form->get('fiaremailto')) {
+            if ($form->get('fiaremail') && $form->get('fiaremail') == 1) {
                 $hooks[] = 'FormItAutoResponder';
             }
 
