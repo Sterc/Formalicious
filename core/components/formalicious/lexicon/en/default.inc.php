@@ -47,7 +47,8 @@ $_lang['formalicious.fieldtype.validation'] = 'Validators';
 $_lang['formalicious.fieldtype.validation.description'] = 'Comma separated list of FormIt validators to use for this field. 
 See the built-in validators section on https://docs.modx.com/extras/revo/formit/formit.validators.';
 $_lang['formalicious.fieldtype.icon'] = 'Icon';
-$_lang['formalicious.fieldtype.icon.description'] = 'When adding a field to the form, this icon is shown when choosing a field type.';
+$_lang['formalicious.fieldtype.icon.description'] = 'When adding a field to the form, 
+this icon is shown when choosing a field type.';
 
 
 
@@ -130,3 +131,5 @@ $_lang['formalicious.advanced.parameter_remove_confirm'] = 'Are you sure you wan
 
 $_lang['formalicious.contentblocks_input'] = 'Formalicious Form Selector';
 $_lang['formalicious.contentblocks_input.description'] = 'Allows you to select one of your created forms to insert into the content.';
+
+$_lang['formalicious.form.notpublished'] = 'The form you are trying to display is not published ([[+form]], ID [[+id]]).';

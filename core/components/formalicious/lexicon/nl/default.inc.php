@@ -129,3 +129,8 @@ $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Parameter toevoegen';
 $_lang['formalicious.advanced.parameter_remove'] = 'Parameter verwijderen';
 $_lang['formalicious.advanced.parameter_remove_confirm'] = 'Weet je zeker dat je deze parameter wil verwijderen?';
+
+$_lang['formalicious.contentblocks_input'] = 'Formalicious formulier';
+$_lang['formalicious.contentblocks_input.description'] = 'Kies een Formalicious formulier om in te voegen in de content.';
+
+$_lang['formalicious.form.notpublished'] = 'Het formulier dat je probeert weer te geven is niet gepubliceerd ([[+form]], ID [[+id]]).';

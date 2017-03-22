@@ -34,7 +34,15 @@ if ($form) {
         }
 
         if (!$form->get('published')) {
-            return '';
+            return '<i>'.
+                $modx->lexicon(
+                    'formalicious.form.notpublished',
+                    array(
+                        'id' => $form->get('id'),
+                        'form' => $form->get('name')
+                    )
+                )
+                . '</i>';
         }
         $phs = $form->toArray();
         /* Add the custom hooks */
