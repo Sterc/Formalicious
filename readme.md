@@ -9,7 +9,7 @@ Formalicious is a tool for MODX content managers, which enables them to manage c
 ### How do I get set up? ###
 
 * Install FormIt 2.2.2 or greater with MODX installer
-* Install the Formalicious package with MODX installer
+* Install the Formalicious package with MODX package management
 
 To create a form:
 
