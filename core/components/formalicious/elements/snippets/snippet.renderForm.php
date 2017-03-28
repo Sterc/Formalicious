@@ -19,6 +19,8 @@ $stepTpl = $modx->getOption('stepTpl', $scriptProperties, 'stepTpl');
 $stepParam = $modx->getOption('stepParam', $scriptProperties, 'step');
 $emailTpl = $modx->getOption('emailTpl', $scriptProperties, 'emailFormTpl');
 $fiarTpl = $modx->getOption('fiarTpl', $scriptProperties, 'fiarTpl');
+$validate = $modx->getOption('validate', $scriptProperties, false);
+$customValidators = $modx->getOption('customValidators', $scriptProperties, '');
 $currentStep = $modx->getOption($stepParam, $_GET, 1);
 $finishStep = false;
 $validation = array();
@@ -109,8 +111,8 @@ if ($form) {
                 if ($type) {
                     $stepInner[] = $modx->getChunk($type->get('tpl'), $fieldPhs);
                     if ($type->get('validation') != '') {
-                        foreach (explode(',', $type->get('validation')) as $validate) {
-                            $validationStep['field_'.$field->get('id')][] = $validate;
+                        foreach (explode(',', $type->get('validation')) as $validationRule) {
+                            $validationStep['field_'.$field->get('id')][] = $validationRule;
                         }
                     }
                     $fieldNames['field_'.$field->get('id')] = $field->get('title');
@@ -172,6 +174,7 @@ if ($form) {
         $formPhs['fieldsemailoutput'] = $fieldsemailoutput;
         $formPhs['form'] = $forminner;
         $formPhs['redirectTo'] = $redirectTo;
+        $formPhs['stepParam'] = $stepParam;
         $formPhs['emailTpl'] = $emailTpl;
         $formPhs['fiarTpl'] = $fiarTpl;
         $formPhs['redirectParams'] = $redirectParams;
@@ -188,6 +191,14 @@ if ($form) {
                 array_keys($validationCurrent)
             )
         );
+        // Add the validate parameter specified in the renderForm snippet call
+        if ($validate) {
+            if (count($validationCurrent)) {
+                $validate = ','.$validate;
+            }
+            $formPhs['validation'] .= $validate;
+        }
+        $formPhs['customValidators'] = $customValidators;
         $formPhs['fieldNames'] = implode(
             ',',
             array_map(
@@ -223,7 +234,6 @@ if ($form) {
             }
         }
         $formPhs['parameters'] = $formParams;
-
         return $modx->getChunk($formTpl, $formPhs);
     }
 }

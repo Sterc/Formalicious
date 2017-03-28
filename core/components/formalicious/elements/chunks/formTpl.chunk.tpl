@@ -9,6 +9,7 @@
     &redirectParams=`[[+redirectParams]]`
     &formid=`[[+id]]`
     &validate=`[[+validation]]`
+    &customValidators=`[[+customValidators]]`
     &fieldNames=`[[+fieldNames]]`
     &formFields=`[[+formFields]]`
     &submitVar=`submit-form[[+id]]`
@@ -22,9 +23,9 @@
 ]]
 
 <hr>
-<form action="[[~[[*id]]? &step=`[[!+currentStep]]`]]" method="POST" enctype="multipart/form-data" novalidate>
+<form action="[[~[[*id]]? &[[!+stepParam]]=`[[!+currentStep]]`]]" method="POST" enctype="multipart/form-data" novalidate>
     [[!+form]]
 
-    [[!+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?step=[[!+currentStep:decr=`1`]]">&laquo; [[%prev]]</a>`:else=``]]
+    [[!+currentStep:neq=`1`:then=`<a href="[[~[[*id]]]]?[[!+stepParam]]=[[!+currentStep:decr=`1`]]">&laquo; [[%prev]]</a>`:else=``]]
     <input type="submit" name="submit-form[[+id]]" value="[[!+submitTitle]]">
 </form>
