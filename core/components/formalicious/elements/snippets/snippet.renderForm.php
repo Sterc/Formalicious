@@ -5,19 +5,21 @@
  * @package formalicious
  */
 $Formalicious = $modx->getService('formalicious','Formalicious',$modx->getOption('formalicious.core_path',null,$modx->getOption('core_path').'components/formalicious/').'model/formalicious/',$scriptProperties);
-if (!($Formalicious instanceof Formalicious)) return '';
+if (!($Formalicious instanceof Formalicious)) {
+    return '';
+}
 
-$form = $modx->getOption('form',$scriptProperties, false);
-// $preHooks = $modx->getOption('preHooks',$scriptProperties,'');
-// $postHooks = $modx->getOption('postHooks',$scriptProperties,'');
+$form = $modx->getOption('form', $scriptProperties, false);
 $fieldsemailoutput = '';
-$fieldSeparator = $modx->getOption('fieldSeparator',$scriptProperties,"\n");
-$answerSeparator = $modx->getOption('fieldSeparator',$scriptProperties,"\n");
-$stepSeparator = $modx->getOption('stepSeparator',$scriptProperties,"\n");
-$formTpl = $modx->getOption('formTpl',$scriptProperties,"formTpl");
-$stepTpl = $modx->getOption('stepTpl',$scriptProperties,"stepTpl");
-$stepParam = $modx->getOption('stepParam',$scriptProperties,"step");
-$currentStep = $modx->getOption($stepParam,$_GET,1);
+$fieldSeparator = $modx->getOption('fieldSeparator', $scriptProperties, "\n");
+$answerSeparator = $modx->getOption('fieldSeparator', $scriptProperties, "\n");
+$stepSeparator = $modx->getOption('stepSeparator', $scriptProperties, "\n");
+$formTpl = $modx->getOption('formTpl', $scriptProperties, 'formTpl');
+$stepTpl = $modx->getOption('stepTpl', $scriptProperties, 'stepTpl');
+$stepParam = $modx->getOption('stepParam', $scriptProperties, 'step');
+$emailTpl = $modx->getOption('emailTpl', $scriptProperties, 'emailFormTpl');
+$fiarTpl = $modx->getOption('fiarTpl', $scriptProperties, 'fiarTpl');
+$currentStep = $modx->getOption($stepParam, $_GET, 1);
 $finishStep = false;
 $validation = array();
 $output = array();
@@ -170,6 +172,8 @@ if ($form) {
         $formPhs['fieldsemailoutput'] = $fieldsemailoutput;
         $formPhs['form'] = $forminner;
         $formPhs['redirectTo'] = $redirectTo;
+        $formPhs['emailTpl'] = $emailTpl;
+        $formPhs['fiarTpl'] = $fiarTpl;
         $formPhs['redirectParams'] = $redirectParams;
         $formPhs['currentStep'] = $currentStep;
         $formPhs['hooks'] = implode(',', $hooks);

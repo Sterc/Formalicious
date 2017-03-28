@@ -4,7 +4,7 @@
     &emailTo=`[[+emailto]]`
     &emailSubject=`[[+subject]]`
     &emailFrom=`[[++emailsender]]`
-    &emailTpl=`emailFormTpl`
+    &emailTpl=`[[+emailTpl]]`
     &redirectTo=`[[+redirectTo]]`
     &redirectParams=`[[+redirectParams]]`
     &formid=`[[+id]]`
@@ -14,7 +14,7 @@
     &submitVar=`submit-form[[+id]]`
 
     &fiarToField=`field_[[+fiaremailto]]`
-    &fiarTpl=`fiarTpl`
+    &fiarTpl=`[[+fiarTpl]]`
     &fiarSubject=`[[+fiarsubject]]`
     &fiarFrom=`[[+fiaremailfrom]]`
     &fiarFiles=`[[+fiarattachment]]`
