@@ -167,7 +167,7 @@ if ($form) {
             $hooks[] = 'redirect';
 
             $redirectTo = $modx->resource->get('id');
-            $redirectParams = $modx->toJSON(array('step' => $currentStep + 1));
+            $redirectParams = $modx->toJSON(array($stepParam => $currentStep + 1));
             $formPhs['submitTitle'] = $modx->lexicon('formalicious.next');
         }
 
