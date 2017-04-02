@@ -1,3 +1,12 @@
+++ Formalicious 1.1.0-pl
+++ Released on April 2017
+++++++++++++++++++++++++++
+- Fix setting placeholder for stepParam parameter for renderForm
+- Show message when trying to display unpublished form (#6)
+- Update radio and checkbox chunks to use correct Bootstrap classes (#28)
+- Allow emailTpl and fiarTpl to be overwritten with renderForm snippet parameters (#23)
+- Add validate and customValidators parameters to renderForm and formTpl (#23)
+
 ++ Formalicious 1.0.1-pl
 ++ Released on February 3rd, 2017
 ++++++++++++++++++++++++++
