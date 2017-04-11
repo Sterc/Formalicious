@@ -15,11 +15,13 @@ class Formalicious {
     function __construct(modX &$modx,array $config = array()) {
         $this->modx =& $modx;
 
-        $corePath = $this->modx->getOption('formalicious.core_path',$config,$this->modx->getOption('core_path').'components/formalicious/');
-        $assetsUrl = $this->modx->getOption('formalicious.assets_url',$config,$this->modx->getOption('assets_url').'components/formalicious/');
+        $corePath = $this->modx->getOption('formalicious.core_path', $config, $this->modx->getOption('core_path').'components/formalicious/');
+        $assetsPath = $this->modx->getOption('formalicious.assets_path', $config, $this->modx->getOption('assets_path').'components/formalicious/');
+        $assetsUrl = $this->modx->getOption('formalicious.assets_url', $config, $this->modx->getOption('assets_url').'components/formalicious/');
         $connectorUrl = $assetsUrl.'connector.php';
 
         $this->config = array_merge(array(
+            'assetsPath' => $assetsPath,
             'assetsUrl' => $assetsUrl,
             'cssUrl' => $assetsUrl.'css/',
             'jsUrl' => $assetsUrl.'js/',
