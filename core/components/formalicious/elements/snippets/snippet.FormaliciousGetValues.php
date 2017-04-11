@@ -1,4 +1,7 @@
 <?php
+/**
+ * Formalicious FormIt prehook for retrieving previously posted values from session
+ */
 $formit =& $hook->formit;
 $values = $hook->getValues();
 
