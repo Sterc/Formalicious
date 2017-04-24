@@ -1,10 +1,10 @@
 ++ Formalicious 1.1.1-pl
-++ Released on April 2017
+++ Released on May 2017
 ++++++++++++++++++++++++++
 - Removing default limit from fiaremailto field (#31)
 
 ++ Formalicious 1.1.0-pl
-++ Released on April 2017
+++ Released on April 19th, 2017
 ++++++++++++++++++++++++++
 - Fix setting placeholder for stepParam parameter for renderForm
 - Show message when trying to display unpublished form (#6)
