@@ -121,6 +121,7 @@ Formalicious.panel.Update = function(config) {
                         ,baseParams: {
                             action: 'mgr/field/getlist'
                             ,form_id: (MODx.request.id) ? MODx.request.id : '-1'
+                            ,limit: 0
                         }
                         ,fields: ['id','title']
                         ,displayField: 'title'
