@@ -58,6 +58,8 @@ $_lang['formalicious.name'] = 'Naam';
 $_lang['formalicious.emailto'] = 'Mailen naar';
 
 $_lang['formalicious.form_create'] = 'Formulier aanmaken';
+$_lang['formalicious.form_duplicate'] = 'Formulier dupliceren';
+$_lang['formalicious.form_duplicate_name'] = 'Vul hier de naam van het nieuwe formulier in';
 $_lang['formalicious.form_remove'] = 'Formulier verwijderen';
 $_lang['formalicious.form_remove_confirm'] = 'Weet je zeker dat je dit formulier wil verwijderen?';
 $_lang['formalicious.add_field'] = 'Veld toevoegen';

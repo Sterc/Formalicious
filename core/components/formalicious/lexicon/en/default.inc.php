@@ -58,6 +58,8 @@ $_lang['formalicious.name'] = 'Name';
 $_lang['formalicious.emailto'] = 'Email to';
 
 $_lang['formalicious.form_create'] = 'Create form';
+$_lang['formalicious.form_duplicate'] = 'Duplicate form';
+$_lang['formalicious.form_duplicate_name'] = 'Enter the name of the duplicated form';
 $_lang['formalicious.form_remove'] = 'Remove form';
 $_lang['formalicious.form_remove_confirm'] = 'Are you sure you want to remove this form?';
 $_lang['formalicious.add_field'] = 'Add field';

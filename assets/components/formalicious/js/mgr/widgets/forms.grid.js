@@ -84,6 +84,11 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
         });
         m.push('-');
         m.push({
+            text: _('duplicate')
+            ,handler: this.duplicateForm
+        });
+        m.push('-');
+        m.push({
             text: _('delete')
             ,handler: this.removeForm
         });
@@ -160,6 +165,25 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
         MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+this.menu.record.id);
     }
 
+    ,duplicateForm: function(btn,e) {
+        if (!this.menu.record) return false;
+        var r = this.menu.record;
+
+        this.windows.duplicateForm = MODx.load({
+            xtype: 'formalicious-window-duplicate-form'
+            ,title: _('formalicious.form_duplicate')
+            ,record: r
+            ,listeners: {
+                'success': {fn:function() {
+                    MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+this.menu.record.id);
+                },scope:this}
+            }
+        });
+        this.windows.duplicateForm.fp.getForm().reset();
+        this.windows.duplicateForm.fp.getForm().setValues(r);
+        this.windows.duplicateForm.show(e.target);
+    }
+
     ,removeForm: function(btn,e) {
         if (!this.menu.record) return false;
 
@@ -189,3 +213,33 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
     }
 });
 Ext.reg('formalicious-grid-forms',Formalicious.grid.Forms);
+
+Formalicious.window.duplicateForm = function(config) {
+    config = config || {};
+    this.ident = config.ident || 'formalicious-mecitem'+Ext.id();
+    Ext.applyIf(config,{
+        id: this.ident
+        ,autoHeight:true
+        ,width: 475
+        ,modal: true
+        ,closeAction: 'close'
+        ,url: Formalicious.config.connectorUrl
+        ,action: 'mgr/form/duplicate'
+        ,fields: [{
+            xtype: 'textfield'
+            ,name: 'id'
+            ,id: this.ident+'-id'
+            ,hidden: true
+        },{
+            xtype: 'textfield'
+            ,fieldLabel: _('name')
+            ,name: 'name'
+            ,id: this.ident+'-name'
+            ,anchor: '100%'
+            ,allowBlank: false
+        }]
+    });
+    Formalicious.window.duplicateForm.superclass.constructor.call(this,config);
+};
+Ext.extend(Formalicious.window.duplicateForm,MODx.Window);
+Ext.reg('formalicious-window-duplicate-form',Formalicious.window.duplicateForm);
