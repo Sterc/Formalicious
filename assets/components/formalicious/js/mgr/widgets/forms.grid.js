@@ -180,7 +180,7 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
             }
         });
         this.windows.duplicateForm.fp.getForm().reset();
-        this.windows.duplicateForm.fp.getForm().setValues(r);
+        this.windows.duplicateForm.fp.getForm().setValues({'id': r.id, 'name': _('duplicate_of',{name: r.name})});
         this.windows.duplicateForm.show(e.target);
     }
 
