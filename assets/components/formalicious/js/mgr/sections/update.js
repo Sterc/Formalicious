@@ -27,6 +27,12 @@ Formalicious.page.Update = function(config) {
             ,handler: function() {
                 MODx.loadPage('home', 'namespace='+MODx.request.namespace);
             }
+        },{
+            text: _('formalicious.back_to_forms')
+            ,id: 'modx-abtn-back'
+            ,handler: function() {
+                MODx.loadPage('home', 'namespace='+MODx.request.namespace);
+            }
         }]
     });
     Formalicious.page.Update.superclass.constructor.call(this,config);

@@ -12,6 +12,7 @@ $_lang['formalicious.no-results'] = 'Please add some categories for your forms. 
 
 $_lang['formalicious.save'] = 'Save';
 $_lang['formalicious.close'] = 'Close';
+$_lang['formalicious.back_to_forms'] = 'Back to forms';
 $_lang['formalicious.search...'] = 'Search...';
 $_lang['formalicious.settings'] = 'Form settings';
 $_lang['formalicious.settings.intro_msg'] = 'Form settings';
