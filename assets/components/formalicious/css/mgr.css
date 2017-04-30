@@ -3,41 +3,29 @@
     color: red;
 }
 
-/*#form-content{
-	min-height: 400px;
-}*/
-
 .icon-buttons .formalicious-icon{
-	width: 26px;
-	height: 26px;
-	float: left;
-	text-indent: -9999px;
-	border:0;
-	cursor: pointer;
+    font-size: 20px;
+    float: left;
+    border:0;
+    cursor: pointer;
+    background: transparent;
+    opacity: 0.6;
+    padding: 2px 4px;
+}
+.icon-buttons .formalicious-icon .icon {
+    display: block;
 }
 
 .icon-buttons .formalicious-icon:hover{
-	opacity: 0.6;
-}
-
-.formalicious-icon-edit{
-	background: url(../img/edit.png);
-}
-
-.formalicious-icon-duplicate{
-    background: url(../img/duplicate.png);
-}
-
-.formalicious-icon-remove{
-    background: url(../img/remove.png);
+    opacity: 1;
 }
 
 .bbar-fullwidth table{
-	width: 99%;
+    width: 99%;
 }
 
 .button-window .x-btn{
-	margin:10px;
+    margin:10px;
 }
 
 #formalicious-panel-form-steps .x-tab-strip-closable{

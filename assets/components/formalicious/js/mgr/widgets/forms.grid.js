@@ -98,25 +98,25 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
         return '<h3>'+value+' ('+record.id+')</h3>';
     }
     ,actionRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
-        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
+        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}" title="{title}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
             compiled: true
         });
-        var values = {
-
-        };
+        var values = {};
         var h = [];
-
         h.push({
-            className: 'update formalicious-icon formalicious-icon-edit',
-            text: _('update')
+            className: "update formalicious-icon icon icon-pencil",
+            text: "",
+            title: _('update')
         });
-        // h.push({
-        //     className: 'duplicate formalicious-icon formalicious-icon-duplicate',
-        //     text: _('duplicate')
-        // });
         h.push({
-            className: 'delete formalicious-icon formalicious-icon-remove',
-            text: _('delete')
+            className: "duplicate formalicious-icon icon icon-clone",
+            text: "",
+            title: _('duplicate')
+        });
+        h.push({
+            className: "delete formalicious-icon icon icon-times",
+            text: "",
+            title: _('remove')
         });
         values.actions = h;
         return tpl.apply(values);
@@ -151,6 +151,10 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
                 this.updateForm(record, e);
             break;
 
+            case 'duplicate':
+                this.duplicateForm(record, e);
+                break;
+
             case 'delete':
                 this.removeForm(record, e);
             break;
@@ -174,8 +178,10 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
             ,title: _('formalicious.form_duplicate')
             ,record: r
             ,listeners: {
-                'success': {fn:function() {
-                    MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+this.menu.record.id);
+                'success': {fn:function(r) {
+                    this.refresh();
+                    var response = Ext.decode(r.a.response.responseText);
+                    MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+response.object.id);
                 },scope:this}
             }
         });
