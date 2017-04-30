@@ -339,7 +339,7 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
         this.addContextMenuItem(m);
     }
     ,actionRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
-        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
+        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}" title="{title}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
             compiled: true
         });
         var values = {
@@ -348,12 +348,14 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
         var h = [];
 
         h.push({
-            className: 'update formalicious-icon formalicious-icon-edit',
-            text: _('update')
+            className: "update formalicious-icon icon icon-pencil",
+            text: "",
+            title: _('update')
         });
         h.push({
-            className: 'delete formalicious-icon formalicious-icon-remove',
-            text: _('delete')
+            className: "delete formalicious-icon icon icon-times",
+            text: "",
+            title: _('remove')
         });
         values.actions = h;
         return tpl.apply(values);
