@@ -13,6 +13,8 @@ class FormaliciousDuplicateProcessor extends modObjectDuplicateProcessor
 
     public function beforeSave()
     {
+        $fiaremailto = $this->object->get('fiaremailto');
+        $newFiaremailto = false;
         /* copy form steps */
         $formSteps = $this->object->getMany('Steps');
         $newSteps = array();
@@ -26,6 +28,10 @@ class FormaliciousDuplicateProcessor extends modObjectDuplicateProcessor
             foreach ($formFields as $field) {
                 $newField = $this->modx->newObject('FormaliciousField');
                 $newField->fromArray($field->toArray());
+                $newField->save(); // calling save function to get the new id
+                if ($field->get('id') === $fiaremailto) {
+                    $newFiaremailto = $newField->get('id');
+                }
                 $newFields[] = $newField;
                 /* Duplicate all the field answers */
                 $formFieldAnswers = $field->getMany('Answers');
@@ -40,7 +46,7 @@ class FormaliciousDuplicateProcessor extends modObjectDuplicateProcessor
             $newStep->addMany($newFields);
         }
         $this->newObject->addMany($newSteps);
-        $this->newObject->set('fiaremailto', 0);
+        $this->newObject->set('fiaremailto', $newFiaremailto);
 
         return parent::beforeSave();
     }
