@@ -73,6 +73,7 @@ Formalicious.panel.ManageForm = function(config) {
             ,items: [{
                 xtype: 'button'
                 ,text: _('formalicious.step.create')
+                ,cls:'primary-button'
                 ,handler: function(btn, e){
                     MODx.Ajax.request({
                         url: Formalicious.config.connector_url
@@ -268,7 +269,8 @@ Formalicious.grid.FormFields = function(config) {
         ,bbar: new Ext.Toolbar({
             items: [
                 {
-                    text: _('formalicious.add_field')
+                    text: '<i class="icon icon-plus"></i>&nbsp;&nbsp;' + _('formalicious.add_field')
+                    ,cls:'primary-button'
                     ,autoWidth: false
                     ,handler: this.createField
                     ,step: config.step
