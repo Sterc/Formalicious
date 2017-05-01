@@ -264,17 +264,22 @@ Formalicious.grid.FormFields = function(config) {
             }
         }]
         ,bbar: new Ext.Toolbar({
-            items: [
-                {
-                    text: '<i class="icon icon-plus"></i>&nbsp;&nbsp;' + _('formalicious.add_field')
-                    ,cls:'primary-button'
-                    ,autoWidth: false
-                    ,handler: this.createField
-                    ,step: config.step
-                    ,scope: this
-                    ,tabPosition:'top',
-                }
-            ]
+            items: [{
+                text: '<i class="icon icon-plus"></i>&nbsp;&nbsp;' + _('formalicious.add_field')
+                ,cls: 'primary-button'
+                ,autoWidth: false
+                ,handler: this.createField
+                ,step: config.step
+                ,scope: this
+                ,tabPosition: 'top'
+            },{
+                text: '<i class="icon icon-search"></i>&nbsp;&nbsp;' + _('formalicious.field.preview')
+                ,autoWidth: false
+                ,handler: this.showPreview
+                ,step: config.step
+                ,scope: this
+                ,tabPosition: 'top'
+            }]
         })
         ,listeners: {
             'render': function(g) {
@@ -460,6 +465,28 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
             }
             ,listeners: {
                 'success': {fn:function(r) { this.refresh(); },scope:this}
+            }
+        });
+    }
+
+    ,showPreview: function(btn,e) {
+        var items = [];
+        MODx.Ajax.request({
+            url: Formalicious.config.connector_url
+            ,params: {
+                action: 'mgr/form/preview'
+            }
+            ,listeners: {
+                'success':{fn:function(data) {
+                    this.windows.preview = MODx.load({
+                        xtype: 'formalicious-window-preview'
+                        ,id: 'window-field-preview'
+                        ,title: _('formalicious.field.preview')
+                    });
+                    this.windows.preview.fp.getForm().reset();
+                    this.windows.preview.show(e.target);
+                    Ext.getCmp('preview-panel').update( data.object.output );
+                },scope:this}
             }
         });
     }
@@ -688,6 +715,24 @@ Formalicious.window.UpdateField = function(config) {
 };
 Ext.extend(Formalicious.window.UpdateField,MODx.Window);
 Ext.reg('formalicious-window-field-update',Formalicious.window.UpdateField);
+
+Formalicious.window.Preview = function(config) {
+    config = config || {};
+    Ext.applyIf(config,{
+        closeAction: 'close'
+        ,height: 550
+        ,width: 475
+        ,modal: true
+        ,autoHeight: true
+        ,items:[{
+            xtype: 'panel',
+            'id': 'preview-panel'
+        }]
+    });
+    Formalicious.window.Preview.superclass.constructor.call(this,config);
+};
+Ext.extend(Formalicious.window.Preview,MODx.Window);
+Ext.reg('formalicious-window-preview',Formalicious.window.Preview);
 
 Formalicious.grid.Values = function(config) {
     config = config || {};
