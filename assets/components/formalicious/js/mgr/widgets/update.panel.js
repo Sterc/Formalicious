@@ -25,7 +25,15 @@ Formalicious.panel.Update = function(config) {
             xtype: 'modx-tabs'
             ,defaults: { border: false ,autoHeight: true }
             ,border: true
-            ,activeItem: 0
+            // ,activeItem: 0
+            ,stateful: true
+            ,stateId: 'formit-panel-home'
+            ,stateEvents: ['tabchange']
+            ,getState: function() {
+                return {
+                    activeTab:this.items.indexOf(this.getActiveTab())
+                };
+            }
             ,hideMode: 'offsets'
             ,items: [{
                 title: _('formalicious.settings')
