@@ -1,32 +1,46 @@
 <?php
 /**
- * Update an Item
+ * Update a form field
  *
  * @package formalicious
  * @subpackage processors
  */
 
-class FormaliciousUpdateProcessor extends modObjectUpdateProcessor {
+class FormaliciousUpdateProcessor extends modObjectUpdateProcessor
+{
     public $classKey = 'FormaliciousField';
     public $languageTopics = array('formalicious:default');
 
-    public function beforeSet() {
-        if(!$this->getProperty('published')) $this->setProperty('published', 'false');
-        if(!$this->getProperty('required')) $this->setProperty('required', 'false');
+    public function beforeSet()
+    {
+        if (!$this->getProperty('published')) {
+            $this->setProperty('published', 'false');
+        }
+        if (!$this->getProperty('required')) {
+            $this->setProperty('required', 'false');
+        }
 
         $this->setCheckbox('published');
         $this->setCheckbox('required');
-        
 
-        // $name = $this->getProperty('name');
-
-        // if (empty($name)) {
-        //     $this->addFieldError('name',$this->modx->lexicon('formalicious.item_err_ns_name'));
-
-        // } else if ($this->modx->getCount($this->classKey, array('name' => $name)) && ($this->object->name != $name)) {
-        //     $this->addFieldError('name',$this->modx->lexicon('formalicious.item_err_ae'));
-        // }
         return parent::beforeSet();
+    }
+
+    public function beforeSave()
+    {
+        /* If field type is set to a non-multiple values type (text, email etc.)
+        remove previously saved answers to prevent redundant data in DB */
+        $fieldType = $this->object->getOne('Type');
+        if ($fieldType) {
+            $enableValues = $fieldType->get('values');
+            if (!$enableValues) {
+                $formFieldAnswers = $this->object->getMany('Answers');
+                foreach ($formFieldAnswers as $answer) {
+                    $answer->remove();
+                }
+            }
+        }
+        return parent::beforeSave();
     }
 
 }
