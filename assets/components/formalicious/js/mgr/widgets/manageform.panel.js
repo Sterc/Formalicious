@@ -470,11 +470,12 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
     }
 
     ,showPreview: function(btn,e) {
-        var items = [];
         MODx.Ajax.request({
             url: Formalicious.config.connector_url
             ,params: {
                 action: 'mgr/form/preview'
+                ,form_id: MODx.request.id
+                ,step_id: this.config.step
             }
             ,listeners: {
                 'success':{fn:function(data) {
@@ -720,10 +721,9 @@ Formalicious.window.Preview = function(config) {
     config = config || {};
     Ext.applyIf(config,{
         closeAction: 'close'
-        ,height: 550
-        ,width: 475
+        ,width: 500
         ,modal: true
-        ,autoHeight: true
+        ,autoScroll: true
         ,items:[{
             xtype: 'panel',
             'id': 'preview-panel'

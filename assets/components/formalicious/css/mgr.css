@@ -121,3 +121,28 @@
 .formalicious-update-window {
     padding-top: 20px !important;
 }
+
+#preview-panel {
+    padding: 20px;
+}
+#preview-panel .form-group {
+    margin-bottom: 12px;
+}
+#preview-panel .form-control {
+    display: block;
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 13px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+#preview-panel label {
+    display: block;
+    margin-bottom: 3px;
+}
+#preview-panel .checkbox label,
+#preview-panel .radio label {
+    display: inline;
+}
