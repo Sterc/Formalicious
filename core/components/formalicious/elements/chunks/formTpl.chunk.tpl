@@ -13,6 +13,8 @@
     &fieldNames=`[[+fieldNames]]`
     &formFields=`[[+formFields]]`
     &submitVar=`submit-form[[+id]]`
+    &formName=`[[+name]]`
+    &saveTmpFiles=`1`
 
     &fiarToField=`field_[[+fiaremailto]]`
     &fiarTpl=`[[+fiarTpl]]`
