@@ -33,8 +33,11 @@ if ($form) {
     $form = $modx->getObject('FormaliciousForm', $form);
     if ($form) {
         /* Merge values stored in Session and request. Request is leading. */
-        if (isset($_SESSION['Formalicious_form_'.$form->get('id')]) && is_array($_SESSION['Formalicious_form_'.$form->get('id')])) {
-            $requestArr = array_merge($_SESSION['Formalicious_form_'.$form->get('id')], $requestArr);
+        $sessionKey = 'Formalicious_form_'.$form->get('id');
+        if (isset($_SESSION[$sessionKey]) &&
+            is_array($_SESSION[$sessionKey])
+        ) {
+            $requestArr = array_merge($_SESSION[$sessionKey], $requestArr);
         }
 
         if (!$form->get('published')) {
@@ -53,7 +56,7 @@ if ($form) {
         if ($phs['prehooks']) {
             $customPreHooks = explode(',', trim($phs['prehooks']));
             if (count($customPreHooks)) {
-                $preHooks = array_merge($preHooks, $customPreHooks);
+                $preHooks = array_merge($customPreHooks, $preHooks);
             }
         }
         if ($phs['posthooks']) {
@@ -95,12 +98,14 @@ if ($form) {
                     $answerPhs['uniqid'] = uniqid();
                     $answerPhs['fieldname'] = 'field_'.$field->get('id');
                     //Dirty fix for output filters on checkboxes, radio buttons and selects.
-                    $answerPhs['curval'] = (is_array($requestArr['field_'.$field->get('id')]))? $modx->toJSON($requestArr['field_'.$field->get('id')]) : $requestArr['field_'.$field->get('id')];
+                    $value = $requestArr['field_'.$field->get('id')];
+                    $value = is_array($value) ? $modx->toJSON($value) : $value;
+                    $answerPhs['curval'] = $value;
+                    $answerPhs['sessionkey'] = $sessionKey;
                     $answerPhs['idx'] = $answerIdx;
                     $answerOuter[] = $modx->getChunk($type->get('answertpl'), $answerPhs);
                     $answerIdx++;
                 }
-                //print_r($requestArr);exit;
                 $fieldPhs = $field->toArray();
                 $fieldPhs['uniqid'] = uniqid();
                 $fieldPhs['values'] = implode($answerSeparator, $answerOuter);

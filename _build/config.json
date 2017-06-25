@@ -24,6 +24,9 @@
             },{
                 "name": "FormaliciousRemoveValues",
                 "file": "snippet.FormaliciousRemoveValues.php"
+            },{
+                "name": "FormaliciousGetSessionValue",
+                "file": "snippet.getsessionvalue.php"
             }],
             "chunks": [{
                 "name": "checkboxesTpl",

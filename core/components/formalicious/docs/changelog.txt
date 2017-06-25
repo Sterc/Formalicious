@@ -1,14 +1,15 @@
 ++ Formalicious 1.1.1-pl
-++ Released on June 2017
+++ Released on ?? June 2017
 ++++++++++++++++++++++++++
 - Removing default limit from fiaremailto field (#31)
 - Add back button to form update view
 - Add duplicate option to forms grid (#32)
 - Update grid action buttons to use modx font-awesome icons
 - Make add step/field buttons more visible
-- Add preview button to form fields tab
+- Add preview option to form fields tab
 - Add saveTmpFiles FormIt property to default formTpl
 - Add formName FormIt property to default formTpl
+- Add FormaliciousGetSessionValue snippet for getting specified formalicious field value from session
 
 ++ Formalicious 1.1.0-pl
 ++ Released on April 19th, 2017
