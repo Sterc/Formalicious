@@ -57,26 +57,22 @@ if ($form) {
          * Load the FormIt class and run the prehooks.
          * This has to be done to be able to get the correct values from $hook->getValue() calls
         */
-        $modelPath = $modx->getOption(
-            'formit.core_path',
-            null,
-            $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/formit/'
-        ) . 'model/formit/';
-        $modx->loadClass('FormIt', $modelPath, true, true);
-        $fi = new FormIt($modx);
-        $fi->initialize('web');
-        $fi->config['preHooks'] = $phs['prehooks'];
-        $request = $fi->loadRequest();
-        $fields = $request->prepare();
-        $request->handle($fields);
+        if ($phs['prehooks']) {
+            $modelPath = $modx->getOption(
+                'formit.core_path',
+                null,
+                $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/formit/'
+            ) . 'model/formit/';
+            $modx->loadClass('FormIt', $modelPath, true, true);
+            $fi = new FormIt($modx);
+            $fi->initialize('web');
+            $fi->config['preHooks'] = $phs['prehooks'];
+            $request = $fi->loadRequest();
+            $fields = $request->prepare();
+            $request->handle($fields);
+        }
 
         /* Add the custom hooks */
-        if ($phs['prehooks']) {
-            $customPreHooks = explode(',', trim($phs['prehooks']));
-            if (count($customPreHooks)) {
-                $preHooks = array_merge($customPreHooks, $preHooks);
-            }
-        }
         if ($phs['posthooks']) {
             $customPostHooks = explode(',', trim($phs['posthooks']));
             if (count($customPostHooks)) {
