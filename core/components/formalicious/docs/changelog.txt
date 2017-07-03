@@ -9,7 +9,6 @@
 - Add preview option to form fields tab
 - Add saveTmpFiles FormIt property to default formTpl
 - Add formName FormIt property to default formTpl
-- Add FormaliciousGetSessionValue snippet for getting specified formalicious field value from session
 
 ++ Formalicious 1.1.0-pl
 ++ Released on April 19th, 2017
