@@ -33,6 +33,14 @@ class FormaliciousCreateProcessor extends modObjectCreateProcessor
             $this->setProperty('category_id', $category);
         }
 
+        $hooks = explode(',', $this->getProperty('posthooks'));
+        foreach ($hooks as $hook) {
+            if (in_array($hook, $this->modx->formalicious->config['disallowedHooks'])) {
+                $this->addFieldError('posthooks', $this->modx->lexicon('formalicious.advanced.posthooks.disallowed'));
+                return $this->modx->lexicon('formalicious.advanced.posthooks.disallowed');
+            }
+        }
+
         return parent::beforeSave();
     }
 }

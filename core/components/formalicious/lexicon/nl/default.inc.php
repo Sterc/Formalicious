@@ -137,3 +137,4 @@ $_lang['formalicious.contentblocks_input'] = 'Formalicious formulier';
 $_lang['formalicious.contentblocks_input.description'] = 'Kies een Formalicious formulier om in te voegen in de content.';
 
 $_lang['formalicious.form.notpublished'] = 'Het formulier dat je probeert weer te geven is niet gepubliceerd ([[+form]], ID [[+id]]).';
+$_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redirect hooks are automatically added by Formalicious. No need to enter them here.';

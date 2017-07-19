@@ -36,6 +36,7 @@ class Formalicious {
             'snippetsPath' => $corePath.'elements/snippets/',
             'processorsPath' => $corePath.'processors/',
             'templatesPath' => $corePath.'templates/',
+            'disallowedHooks' => array('spam', 'email', 'redirect'),
         ),$config);
 
         $this->modx->addPackage('formalicious',$this->config['modelPath']);
