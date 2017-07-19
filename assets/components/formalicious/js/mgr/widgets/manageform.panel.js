@@ -249,6 +249,10 @@ Formalicious.grid.FormFields = function(config) {
             }
         }
         ,columns: [{
+            header: _('id')
+            ,dataIndex: 'id'
+            ,width: 20
+        },{
             header: _('formalicious.title')
             ,dataIndex: 'title'
             ,width: 200
