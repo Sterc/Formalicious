@@ -167,7 +167,10 @@ if ($form) {
         $formPhs = $form->toArray();
 
         if ($finishStep) {
-            $hooks[] = 'email';
+            // Only add email hook when emailto field is set
+            if ($form->get('emailto')) {
+                $hooks[] = 'email';
+            }
             if ($form->get('saveform')) {
                 $hooks[] = 'FormItSaveForm';
             }
