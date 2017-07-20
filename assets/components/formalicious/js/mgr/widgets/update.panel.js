@@ -168,28 +168,12 @@ Formalicious.panel.Update = function(config) {
                         ,listeners: {
                             'select': {
                                 fn:function(data) {
-                                    console.log(data);
                                     Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
-                                    Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
+                                    // Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
                                 }
                             }
                         }
-                    }/* @todo tmp disabled ,{
-                        id: 'preview'
-                        ,name: 'preview'
-                        ,fieldLabel: _('formalicious.field.preview')
-                        ,xtype: 'image'
-                        ,listeners: {
-                            'afterrender': {
-                                fn: function(data) {
-                                    var newLabel = _('formalicious.field.preview') + ':';
-                                    newLabel += '<br/><span class="desc-under">' + _('formalicious.field.preview.description') + '</span>';
-
-                                    Ext.getCmp('preview').label.update(newLabel);
-                                }
-                            }
-                        }
-                    }*/]
+                    }]
                 }]
             },{
                 title: _('formalicious.fields')
