@@ -256,6 +256,11 @@ if ($form) {
             }
         }
         $formPhs['parameters'] = $formParams;
+
+        // Prefix the fiar attachment with the modx base_path
+        if ($formPhs['fiarattachment']) {
+            $formPhs['fiarattachment'] = str_replace('//', '/', MODX_BASE_PATH . $formPhs['fiarattachment']);
+        }
         return $modx->getChunk($formTpl, $formPhs);
     }
 }
