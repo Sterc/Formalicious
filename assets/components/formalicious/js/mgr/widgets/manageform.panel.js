@@ -749,7 +749,9 @@ Formalicious.grid.Values = function(config) {
         ,baseParams: {
             action: 'mgr/answer/getlist'
             ,field_id: config.field_id
+            ,limit: 0
         }
+        ,pageSize: 0
         ,remoteSort: true
         ,ddGroup: 'bxrextraItemDDGroup'
         ,enableDragDrop: true
