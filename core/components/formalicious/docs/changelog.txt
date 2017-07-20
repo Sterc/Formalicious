@@ -1,5 +1,5 @@
-++ Formalicious 1.1.1-pl
-++ Released on ?? June 2017
+++ Formalicious 1.2.0-pl
+++ Released on July ?? 2017
 ++++++++++++++++++++++++++
 - Removing default limit from fiaremailto field (#31)
 - Add back button to form update view
@@ -9,6 +9,12 @@
 - Add preview option to form fields tab
 - Add saveTmpFiles FormIt property to default formTpl
 - Add formName FormIt property to default formTpl
+- Prefix fiar-attachment field with modx base_path
+- Only add email hook when emailto is not empty
+- Remove default limit of 20 from field-values grid
+- Check for common 'spam,email,redirect' hooks added by Formalicious when saving posthooks
+- Add ID field to form-fields grid
+- Make sure prehooks are run before the renderForm snippet
 
 ++ Formalicious 1.1.0-pl
 ++ Released on April 19th, 2017
