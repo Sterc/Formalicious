@@ -2,6 +2,7 @@ Formalicious.panel.Home = function(config) {
     config = config || {};
     Ext.apply(config,{
         border: false
+        ,id: 'formalicious-panel-home'
         ,baseCls: 'modx-formpanel'
         ,cls: 'container'
         ,items: [{

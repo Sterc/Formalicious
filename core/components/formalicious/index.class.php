@@ -9,6 +9,7 @@ abstract class FormaliciousBaseManagerController extends modExtraManagerControll
     public $formalicious;
     public function initialize() {
         $this->formalicious = new Formalicious($this->modx);
+        $this->formalicious->f();
 
         $this->addCss($this->formalicious->config['cssUrl'].'mgr.css');
         $this->addJavascript($this->formalicious->config['jsUrl'].'mgr/formalicious.js');
