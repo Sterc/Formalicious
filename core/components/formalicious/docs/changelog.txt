@@ -1,3 +1,8 @@
+++ Formalicious 1.2.1-pl
+++ Released on September ??, 2017
+++++++++++++++++++++++++++
+- Remove the limit from the ContentBlocks input field
+
 ++ Formalicious 1.2.0-pl
 ++ Released on August 2nd, 2017
 ++++++++++++++++++++++++++

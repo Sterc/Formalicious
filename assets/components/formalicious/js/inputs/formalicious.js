@@ -17,7 +17,8 @@
                 dataType: 'json',
                 url: url,
                 data: {
-                    action: 'mgr/form/getlist'
+                    action: 'mgr/form/getlist',
+                    limit: 0
                 },
                 context: this,
                 beforeSend:function(xhr, settings){
