@@ -14,7 +14,9 @@ if ($object->xpdo) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
             $modelPath = $modx->getOption('formalicious.core_path', null, $modx->getOption('core_path') . 'components/formalicious/') . 'model/';
-            $modx->addPackage('formalicious', $modelPath);
+            
+            $modx->addPackage('formalicious', $modelPath, null);
+
 
             $manager = $modx->getManager();
 
