@@ -1,5 +1,5 @@
 ++ Formalicious 1.2.1-pl
-++ Released on September ??, 2017
+++ Released in October 2017
 ++++++++++++++++++++++++++
 - Remove the limit from the ContentBlocks input field
 - Hide autoreply options when autoreply checkbox is unchecked
