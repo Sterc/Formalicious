@@ -146,3 +146,7 @@
 #preview-panel .radio label {
     display: inline;
 }
+
+#fiarwrapper {
+    border: none;
+}

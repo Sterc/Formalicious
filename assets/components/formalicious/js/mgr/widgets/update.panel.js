@@ -104,75 +104,97 @@ Formalicious.panel.Update = function(config) {
                         ,name: 'published'
                         ,fieldLabel: _('formalicious.field.published')
                         ,inputValue: 1
-                    },/*{
-                     xtype: 'textarea'
-                     ,name: 'thnxcontent'
-                     ,fieldLabel: _('formalicious.field.thnxcontent')
-                     },*/{
+                    },{
                         xtype: 'panel'
                         ,html: '<p>'+_('formalicious.field.fiar_msg')+'</p>'
                         ,border: false
                         ,bodyCssClass: 'panel-desc'
                         ,width: 'auto'
                     },{
-                        xtype: 'checkbox'
+                        xtype: 'xcheckbox'
                         ,name: 'fiaremail'
+                        ,id: 'fiaremail'
                         ,fieldLabel: _('formalicious.field.fiaremail')
                         ,inputValue: 1
-                    },{
-                        xtype: 'modx-combo'
-                        ,name: 'fiaremailto'
-                        ,hiddenName: 'fiaremailto'
-                        ,fieldLabel: _('formalicious.field.fiaremailto')
-                        ,url: Formalicious.config.connector_url
-                        ,baseParams: {
-                            action: 'mgr/field/getlist'
-                            ,form_id: (MODx.request.id) ? MODx.request.id : '-1'
-                            ,limit: 0
-                        }
-                        ,fields: ['id','title']
-                        ,displayField: 'title'
-                        ,valueField: 'id'
                         ,listeners: {
-                            beforequery: function(queryEv){
-                                queryEv.combo.expand();
-                                queryEv.combo.store.load();
-                                return false;
+                            'check': {fn:function(r, checked) {
+                                if (checked) {
+                                    Ext.getCmp('fiarwrapper').show();
+                                } else {
+                                    Ext.getCmp('fiarwrapper').hide();
+                                }
+                            },scope:this}
+                        }
+                    },{
+                        xtype:'fieldset',
+                        id: 'fiarwrapper',
+                        collapsible: false,
+                        autoHeight:true,
+                        hideBorders: true,
+                        width: 555,
+                        border: false,
+                        padding: 0,
+                        defaultType: 'textfield',
+                        defaults: {
+                            anchor: '0',
+                        },
+                        // hidden: Ext.getCmp('fiaremail').getValue() ? false : true,
+                        items :[{
+                            xtype: 'modx-combo'
+                            ,name: 'fiaremailto'
+                            ,hiddenName: 'fiaremailto'
+                            ,fieldLabel: _('formalicious.field.fiaremailto')
+                            ,url: Formalicious.config.connector_url
+                            ,baseParams: {
+                                action: 'mgr/field/getlist'
+                                ,form_id: (MODx.request.id) ? MODx.request.id : '-1'
+                                ,limit: 0
                             }
-                        }
-                    },{
-                        xtype: 'label'
-                        ,text: _('formalicious.field.fiaremailto.description')
-                        ,cls: 'desc-under'
-                        ,style: 'margin: 5px 0 0 155px'
-                        ,width: 500
-                    },{
-                        name: 'fiaremailfrom'
-                        ,fieldLabel: _('formalicious.field.fiaremailfrom')
-                        ,vtype: 'email'
-                    },{
-                        name: 'fiarsubject'
-                        ,fieldLabel: _('formalicious.field.fiarsubject')
-                    },{
-                        xtype: 'textarea'
-                        ,name: 'fiarcontent'
-                        ,height: 175
-                        ,fieldLabel: _('formalicious.field.fiarcontent')
-                        ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
-                    },{
-                        id: 'fiarattachment'
-                        ,xtype: 'modx-combo-browser'
-                        ,source: MODx.config['formalicious.source']
-                        ,name: 'fiarattachment'
-                        ,fieldLabel: _('formalicious.field.fiarattachment')
-                        ,listeners: {
-                            'select': {
-                                fn:function(data) {
-                                    Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
-                                    // Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
+                            ,fields: ['id','title']
+                            ,displayField: 'title'
+                            ,valueField: 'id'
+                            ,listeners: {
+                                beforequery: function(queryEv){
+                                    queryEv.combo.expand();
+                                    queryEv.combo.store.load();
+                                    return false;
                                 }
                             }
-                        }
+                        },{
+                            xtype: 'label'
+                            ,text: _('formalicious.field.fiaremailto.description')
+                            ,cls: 'desc-under'
+                            ,style: 'margin: 5px 0 0 155px'
+                            ,width: 500
+                        },{
+                            name: 'fiaremailfrom'
+                            ,fieldLabel: _('formalicious.field.fiaremailfrom')
+                            ,vtype: 'email'
+                            ,width: 500
+                        },{
+                            name: 'fiarsubject'
+                            ,fieldLabel: _('formalicious.field.fiarsubject')
+                        },{
+                            xtype: 'textarea'
+                            ,name: 'fiarcontent'
+                            ,height: 175
+                            ,fieldLabel: _('formalicious.field.fiarcontent')
+                            ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
+                        },{
+                            id: 'fiarattachment'
+                            ,xtype: 'modx-combo-browser'
+                            ,source: MODx.config['formalicious.source']
+                            ,name: 'fiarattachment'
+                            ,fieldLabel: _('formalicious.field.fiarattachment')
+                            ,listeners: {
+                                'select': {
+                                    fn:function(data) {
+                                        Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
+                                        // Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
+                                    }
+                                }
+                            }
+                        }]
                     }]
                 }]
             },{
@@ -280,6 +302,11 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
             this.getForm().setValues(r);
             this.fireEvent('ready',r);
             MODx.fireEvent('ready');
+        }
+        if (Ext.getCmp('fiaremail').getValue()) {
+            Ext.getCmp('fiarwrapper').show();
+        } else {
+            Ext.getCmp('fiarwrapper').hide();
         }
     }
     ,success: function(o) {
