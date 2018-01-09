@@ -49,7 +49,7 @@ $xpdo_meta_map['FormaliciousField']= array (
     'introtext' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),

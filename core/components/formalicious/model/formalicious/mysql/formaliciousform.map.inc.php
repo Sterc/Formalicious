@@ -49,7 +49,7 @@ $xpdo_meta_map['FormaliciousForm']= array (
     'description' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),
@@ -85,7 +85,7 @@ $xpdo_meta_map['FormaliciousForm']= array (
     'emailto' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),
@@ -119,7 +119,7 @@ $xpdo_meta_map['FormaliciousForm']= array (
     'fiaremailfrom' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),
@@ -142,7 +142,7 @@ $xpdo_meta_map['FormaliciousForm']= array (
     'fiarattachment' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),
@@ -165,7 +165,7 @@ $xpdo_meta_map['FormaliciousForm']= array (
     'parameters' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),

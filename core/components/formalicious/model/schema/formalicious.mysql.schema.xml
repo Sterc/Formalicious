@@ -3,7 +3,7 @@
     <object class="FormaliciousCategory" table="formalicious_categories" extends="xPDOSimpleObject">
         <!-- Category settings -->
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="description" dbtype="text" phptype="text" null="false" default="" />
+        <field key="description" dbtype="text" phptype="string" null="false" default="" />
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
 
         <!-- Indexes -->
@@ -18,27 +18,27 @@
         <field key="category_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
         <!-- Form settings -->
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="description" dbtype="text" phptype="text" null="false" default="" />
+        <field key="description" dbtype="text" phptype="string" null="false" default="" />
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="saveform" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="redirectto" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0"  />
 
         <!-- Email to settings -->
-        <field key="emailto" dbtype="text" phptype="text" null="false" default="" />
+        <field key="emailto" dbtype="text" phptype="string" null="false" default="" />
         <field key="subject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 
         <!-- Email Auto Responder settings -->
         <field key="fiaremail" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="fiaremailto" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" default="0"  />
-        <field key="fiaremailfrom" dbtype="text" phptype="text" null="false" default="" />
+        <field key="fiaremailfrom" dbtype="text" phptype="string" null="false" default="" />
         <field key="fiarsubject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="fiarcontent" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="fiarattachment" dbtype="text" phptype="text" null="false" default="" />
+        <field key="fiarattachment" dbtype="text" phptype="string" null="false" default="" />
 
         <!-- Advanced settings for FormIt -->
         <field key="prehooks" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="posthooks" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="parameters" dbtype="text" phptype="text" null="false" default="" />
+        <field key="parameters" dbtype="text" phptype="string" null="false" default="" />
 
         <!-- Indexes -->
         <index alias="category_id" name="category_id" primary="false" unique="false" type="BTREE">
@@ -58,7 +58,7 @@
 
         <!-- Step settings -->
         <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="introtext" dbtype="text" phptype="text" null="false" default="" />
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
         <field key="rank" dbtype="int" precision="10" phptype="integer" null="false"/>
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
 
@@ -83,7 +83,7 @@
         <field key="tpl" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="answertpl" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="values" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
-        <field key="validation" dbtype="text" phptype="text" null="false" default="" />
+        <field key="validation" dbtype="text" phptype="string" null="false" default="" />
         <field key="icon" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
     </object>
 
@@ -93,7 +93,7 @@
         <!-- Field settings -->
         <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="placeholder" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="introtext" dbtype="text" phptype="text" null="false" default="" />
+        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
         <field key="directional" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
         <field key="type" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
         <field key="required" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />

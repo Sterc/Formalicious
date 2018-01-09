@@ -37,7 +37,7 @@ $xpdo_meta_map['FormaliciousStep']= array (
     'introtext' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),
