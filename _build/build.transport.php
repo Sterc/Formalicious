@@ -16,11 +16,21 @@ if (!defined('MOREPROVIDER_BUILD')) {
     define('PKG_NAME', 'Formalicious');
     define('PKG_NAME_LOWER', 'formalicious');
     define('PKG_NAMESPACE', 'formalicious');
-    define('PKG_VERSION', '1.2.1');
+    define('PKG_VERSION', '1.2.2');
     define('PKG_RELEASE', 'pl');
 
-    /* load modx */
-    require_once dirname(dirname(__FILE__)) . '/config.core.php';
+    $path = dirname(__FILE__);
+    for ($i = 0; $i <= 10; $i++) {
+        if (file_exists($path . '/config.core.php')) {
+            require_once($path . '/config.core.php');
+            break;
+        } else {
+            $path = dirname($path);
+        }
+    }
+    if (!defined('MODX_CORE_PATH')) {
+        exit ('Could not load config.');
+    }
     require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
     $modx= new modX();
     $modx->initialize('mgr');
@@ -35,13 +45,12 @@ if (!defined('MOREPROVIDER_BUILD')) {
 }
 else {
     $targetDirectory = MOREPROVIDER_BUILD_TARGET;
-}
-
-if (!defined('MODMORE_VEHICLE_PRIVATE_KEY')) {
-    if (file_exists(dirname(__FILE__).'/license.php')) {
-        include dirname(__FILE__).'/license.php';
-    } else {
-        exit ('You need a license and license.php file to build a package. Ask Mark.');
+    if (!defined('MODMORE_VEHICLE_PRIVATE_KEY')) {
+        if (file_exists(dirname(__FILE__).'/license.php')) {
+            include dirname(__FILE__).'/license.php';
+        } else {
+            exit ('You need a license and license.php file to build a package. Ask Mark.');
+        }
     }
 }
 
@@ -66,8 +75,6 @@ $sources = array(
 );
 unset($root);
 
-file_put_contents($sources['source_core'] . '/.pubkey', MODMORE_VEHICLE_PUBLIC_KEY, LOCK_EX);
-
 $modx->loadClass('transport.modPackageBuilder','',false, true);
 $builder = new modPackageBuilder($modx);
 $builder->directory = $targetDirectory;
@@ -75,23 +82,25 @@ $builder->createPackage(PKG_NAME_LOWER,PKG_VERSION,PKG_RELEASE);
 $builder->registerNamespace(PKG_NAME_LOWER,false,true,'{core_path}components/'.PKG_NAME_LOWER.'/');
 $modx->log(modX::LOG_LEVEL_INFO,'Created Transport Package and Namespace.');
 
-
-require_once dirname(__FILE__) . '/vehicle/formalicious_vehicle/modmorevehicle.class.php';
-$builder->package->put(
-    array(
-        'source' => dirname(__FILE__) . '/vehicle/formalicious_vehicle/',
-        'target' => "return MODX_CORE_PATH . 'components/';"
-    ),
-    array(
-        'vehicle_class' => 'xPDOFileVehicle',
-        'resolve' => array(
-            array(
-                'type' => 'php',
-                'source' => dirname(__FILE__) . '/vehicle/scripts/resolver.php'
+if (defined('MOREPROVIDER_BUILD')) {
+    file_put_contents($sources['source_core'] . '/.pubkey', MODMORE_VEHICLE_PUBLIC_KEY, LOCK_EX);
+    require_once dirname(__FILE__) . '/vehicle/formalicious_vehicle/modmorevehicle.class.php';
+    $builder->package->put(
+        array(
+            'source' => dirname(__FILE__) . '/vehicle/formalicious_vehicle/',
+            'target' => "return MODX_CORE_PATH . 'components/';"
+        ),
+        array(
+            'vehicle_class' => 'xPDOFileVehicle',
+            'resolve' => array(
+                array(
+                    'type' => 'php',
+                    'source' => dirname(__FILE__) . '/vehicle/scripts/resolver.php'
+                )
             )
         )
-    )
-);
+    );
+}
 
 /* create category */
 $category= $modx->newObject('modCategory');
@@ -102,7 +111,9 @@ $category->set('category',PKG_NAME);
 $chunks = include $sources['data'].'transport.chunks.php';
 if (is_array($chunks)) {
     $category->addMany($chunks,'Chunks');
-} else { $modx->log(modX::LOG_LEVEL_FATAL,'Adding chunks failed.'); }
+} else {
+    $modx->log(modX::LOG_LEVEL_FATAL,'Adding chunks failed.');
+}
 $modx->log(modX::LOG_LEVEL_INFO,'Packaged in '.count($chunks).' chunks.'); flush();
 unset($chunks);
 
@@ -139,6 +150,7 @@ $attr = array(
     xPDOTransport::PRESERVE_KEYS => false,
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::RELATED_OBJECTS => true,
+    xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL => true,
     xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
         'Children' => array(
             xPDOTransport::PRESERVE_KEYS => false,
@@ -192,12 +204,12 @@ $attr = array(
             ),
         ),
     ),
-
-    xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL => true,
-    'vehicle_class' => 'modmoreVehicle',
-    'modmore_public_key' => MODMORE_VEHICLE_PUBLIC_KEY,
-    'modmore_package' => MODMORE_PACKAGE_ID,
 );
+if (defined('MOREPROVIDER_BUILD')) {
+    $attr['vehicle_class'] = 'modmoreVehicle';
+    $attr['modmore_public_key'] = MODMORE_VEHICLE_PUBLIC_KEY;
+    $attr['modmore_package'] = MODMORE_PACKAGE_ID;
+}
 $vehicle = $builder->createVehicle($category,$attr);
 
 $modx->log(modX::LOG_LEVEL_INFO,'Adding file resolvers to category...');
@@ -276,17 +288,17 @@ $builder->setPackageAttributes(array(
 ));
 $modx->log(modX::LOG_LEVEL_INFO,'Added package attributes and setup options.');
 
-/**
- * Add xPDOScriptVehicle to load the modmoreVehicle in uninstall.
- */
-$vehicle = $builder->createVehicle(array(
-    'source' => $sources['resolvers'] . 'modmorevehicle.resolver.php',
-),
-    array(
+if (defined('MOREPROVIDER_BUILD')) {
+    /**
+     * Add xPDOScriptVehicle to load the modmoreVehicle in uninstall.
+     */
+    $vehicle = $builder->createVehicle(array(
+        'source' => $sources['resolvers'] . 'modmorevehicle.resolver.php',
+    ), array(
         'vehicle_class' => 'xPDOScriptVehicle',
-    )
-);
-$builder->putVehicle($vehicle);
+    ));
+    $builder->putVehicle($vehicle);
+}
 
 /* zip up package */
 $modx->log(modX::LOG_LEVEL_INFO,'Packing up transport package zip...');

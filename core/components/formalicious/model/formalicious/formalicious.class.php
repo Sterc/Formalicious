@@ -92,12 +92,76 @@ class Formalicious {
     }
 
 
-    public function f()
-    {
+    public function f() {
         // Only run if we're in the manager
         if (!$this->modx->context || $this->modx->context->get('key') !== 'mgr') {
             return;
         }
+
+        $c = $this->modx->newQuery('transport.modTransportPackage', array('package_name' => __CLASS__));
+        $c->innerJoin('transport.modTransportProvider', 'modTransportProvider', 'modTransportProvider.id = modTransportPackage.provider');
+        $c->select('modTransportProvider.service_url');
+        $c->sortby('modTransportPackage.created', 'desc');
+        $c->limit(1);
+        if ($c->prepare() && $c->stmt->execute()) {
+            $url = $c->stmt->fetchColumn();
+            if (stripos($url, 'modstore')) {
+                $this->ms();
+                return;
+            }
+        }
+
+        $this->mm();
+    }
+
+
+    /**
+     * @return bool
+     */
+    protected function ms() {
+        $result = true;
+        $key = strtolower(__CLASS__);
+        /** @var modDbRegister $registry */
+        $registry = $this->modx->getService('registry', 'registry.modRegistry')
+            ->getRegister('user', 'registry.modDbRegister');
+        $registry->connect();
+        $registry->subscribe('/modstore/' . md5($key));
+        if ($res = $registry->read(array('poll_limit' => 1, 'remove_read' => false))) {
+            return $res[0];
+        }
+        $c = $this->modx->newQuery('transport.modTransportProvider', array('service_url:LIKE' => '%modstore%'));
+        $c->select('username,api_key');
+        /** @var modRest $rest */
+        $rest = $this->modx->getService('modRest', 'rest.modRest', '', array(
+            'baseUrl' => 'https://modstore.pro/extras',
+            'suppressSuffix' => true,
+            'timeout' => 1,
+            'connectTimeout' => 1,
+            'format' => 'xml',
+        ));
+
+        if ($rest) {
+            $level = $this->modx->getLogLevel();
+            $this->modx->setLogLevel(modX::LOG_LEVEL_FATAL);
+            /** @var RestClientResponse $response */
+            $response = $rest->get('stat', array(
+                'package' => $key,
+                'host' => @$_SERVER['HTTP_HOST'],
+                'keys' => $c->prepare() && $c->stmt->execute()
+                    ? $c->stmt->fetchAll(PDO::FETCH_ASSOC)
+                    : array(),
+            ));
+            $result = $response->process() == 'true';
+            $this->modx->setLogLevel($level);
+        }
+        $registry->subscribe('/modstore/');
+        $registry->send('/modstore/', array(md5($key) => $result), array('ttl' => 3600 * 24));
+
+        return $result;
+    }
+
+
+    protected function mm() {
         // Get the public key from the .pubkey file contained in the package directory
         $pubKeyFile = $this->config['corePath'] . '.pubkey';
         $key = file_exists($pubKeyFile) ? file_get_contents($pubKeyFile) : '';
