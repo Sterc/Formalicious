@@ -13,6 +13,7 @@ $_lang['formalicious.no-results'] = 'Please add some categories for your forms. 
 $_lang['formalicious.save'] = 'Save';
 $_lang['formalicious.close'] = 'Close';
 $_lang['formalicious.back_to_forms'] = 'Back to forms';
+$_lang['formalicious.admin_panel'] = 'Admin panel';
 $_lang['formalicious.search...'] = 'Search...';
 $_lang['formalicious.settings'] = 'Form settings';
 $_lang['formalicious.settings.intro_msg'] = 'Form settings';
@@ -56,6 +57,7 @@ this icon is shown when choosing a field type.';
 
 $_lang['formalicious.name'] = 'Name';
 $_lang['formalicious.emailto'] = 'Email to';
+$_lang['formalicious.actions'] = 'Actions';
 
 $_lang['formalicious.form_create'] = 'Create form';
 $_lang['formalicious.form_duplicate'] = 'Duplicate form';

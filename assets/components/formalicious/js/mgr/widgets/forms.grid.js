@@ -42,7 +42,7 @@ Formalicious.grid.Forms = function(config) {
                 scope: this
             }
         },{
-            header: 'Actions'
+            header: _('formalicious.actions')
             ,renderer: {
                 fn: this.actionRenderer,
                 scope: this

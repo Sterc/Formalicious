@@ -1,5 +1,6 @@
 ++ Formalicious 1.2.2-pl
 ++++++++++++++++++++++++++
+- Added russian lexicon
 - Fixed phptype of some fields in schema of tables
 
 ++ Formalicious 1.2.1-pl

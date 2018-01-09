@@ -13,6 +13,7 @@ $_lang['formalicious.no-results'] = 'Voeg eerst enkele categoriën toe. Click da
 $_lang['formalicious.save'] = 'Opslaan';
 $_lang['formalicious.close'] = 'Sluiten';
 $_lang['formalicious.back_to_forms'] = 'Terug naar formulieren';
+$_lang['formalicious.admin_panel'] = 'Administratie Paneel';
 $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
 $_lang['formalicious.settings.intro_msg'] = 'Formulier instellingen';
@@ -56,6 +57,7 @@ getoond bij het kiezen van een veld-type.';
 
 $_lang['formalicious.name'] = 'Naam';
 $_lang['formalicious.emailto'] = 'Mailen naar';
+$_lang['formalicious.actions'] = 'Acties';
 
 $_lang['formalicious.form_create'] = 'Formulier aanmaken';
 $_lang['formalicious.form_duplicate'] = 'Formulier dupliceren';

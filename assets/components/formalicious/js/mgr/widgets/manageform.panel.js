@@ -261,7 +261,7 @@ Formalicious.grid.FormFields = function(config) {
             ,dataIndex: 'typetext'
             ,width: 250
         },{
-            header: 'Actions'
+            header: _('formalicious.actions')
             ,renderer: {
                 fn: this.actionRenderer,
                 scope: this
