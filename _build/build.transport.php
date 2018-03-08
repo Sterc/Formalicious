@@ -18,6 +18,7 @@ if (!defined('MOREPROVIDER_BUILD')) {
     define('PKG_NAMESPACE', 'formalicious');
     define('PKG_VERSION', '1.2.2');
     define('PKG_RELEASE', 'pl');
+    define('PKG_PROVIDER_ID', 2);
 
     $path = dirname(__FILE__);
     for ($i = 0; $i <= 10; $i++) {
@@ -41,7 +42,6 @@ if (!defined('MOREPROVIDER_BUILD')) {
     echo '<pre>';
     flush();
     $targetDirectory = dirname(dirname(__FILE__)) . '/_packages/';
-    //$targetDirectory = '/Applications/MAMP/htdocs/modx-stable2/core/packages/';
 }
 else {
     $targetDirectory = MOREPROVIDER_BUILD_TARGET;
@@ -64,14 +64,14 @@ $sources = array(
     'data' => $root . '_build/data/',
     'resolvers' => $root . '_build/resolvers/',
     'gpm_resolvers' => $root . '_build/gpm_resolvers/',
-    'chunks' => $root.'core/components/'.PKG_NAME_LOWER.'/elements/chunks/',
-    'snippets' => $root.'core/components/'.PKG_NAME_LOWER.'/elements/snippets/',
-    'plugins' => $root.'core/components/'.PKG_NAME_LOWER.'/elements/plugins/',
-    'lexicon' => $root . 'core/components/'.PKG_NAME_LOWER.'/lexicon/',
-    'docs' => $root.'core/components/'.PKG_NAME_LOWER.'/docs/',
-    'pages' => $root.'core/components/'.PKG_NAME_LOWER.'/elements/pages/',
-    'source_assets' => $root.'assets/components/'.PKG_NAME_LOWER,
-    'source_core' => $root.'core/components/'.PKG_NAME_LOWER,
+    'chunks' => $root . 'core/components/' . PKG_NAME_LOWER . '/elements/chunks/',
+    'snippets' => $root . 'core/components/' . PKG_NAME_LOWER . '/elements/snippets/',
+    'plugins' => $root . 'core/components/' . PKG_NAME_LOWER . '/elements/plugins/',
+    'lexicon' => $root . 'core/components/' . PKG_NAME_LOWER . '/lexicon/',
+    'docs' => $root . 'core/components/' . PKG_NAME_LOWER . '/docs/',
+    'pages' => $root . 'core/components/' . PKG_NAME_LOWER . '/elements/pages/',
+    'source_assets' => $root . 'assets/components/' . PKG_NAME_LOWER . '/',
+    'source_core' => $root . 'core/components/' . PKG_NAME_LOWER . '/',
 );
 unset($root);
 
@@ -82,6 +82,7 @@ $builder->createPackage(PKG_NAME_LOWER,PKG_VERSION,PKG_RELEASE);
 $builder->registerNamespace(PKG_NAME_LOWER,false,true,'{core_path}components/'.PKG_NAME_LOWER.'/');
 $modx->log(modX::LOG_LEVEL_INFO,'Created Transport Package and Namespace.');
 
+// Encrypt package
 if (defined('MOREPROVIDER_BUILD')) {
     file_put_contents($sources['source_core'] . '/.pubkey', MODMORE_VEHICLE_PUBLIC_KEY, LOCK_EX);
     require_once dirname(__FILE__) . '/vehicle/formalicious_vehicle/modmorevehicle.class.php';
@@ -100,6 +101,43 @@ if (defined('MOREPROVIDER_BUILD')) {
             )
         )
     );
+} else {
+    /** @var modTransportProvider $provider */
+    if ($provider = $modx->getObject('transport.modTransportProvider', PKG_PROVIDER_ID)) {
+        $provider->xpdo->setOption('contentType', 'default');
+        $params = array(
+            'package' => PKG_NAME_LOWER,
+            'version' => PKG_VERSION . '-' . PKG_RELEASE,
+            'username' => $provider->username,
+            'api_key' => $provider->api_key,
+            'vehicle_version' => '2.0.0',
+        );
+        $response = $provider->request('package/encode', 'POST', $params);
+        if ($response->isError()) {
+            $msg = $response->getError();
+            $modx->log(xPDO::LOG_LEVEL_ERROR, $msg);
+        } else {
+            $data = $response->toXml();
+            if (!empty($data->key)) {
+                define('PKG_ENCODE_KEY', $data->key);
+            } elseif (!empty($data->message)) {
+                $modx->log(xPDO::LOG_LEVEL_ERROR, $data->message);
+            }
+        }
+    }
+    require_once $sources['source_core'] . 'model/encryptedvehicle.class.php';
+    $builder->package->put(array(
+        'source' => $sources['source_core'],
+        'target' => "return MODX_CORE_PATH . 'components/';",
+    ), array(
+        'vehicle_class' => 'xPDOFileVehicle',
+        'resolve' => array(
+            array(
+                'type' => 'php',
+                'source' => $sources['resolvers'] . 'resolve.encryption.php',
+            ),
+        ),
+    ));
 }
 
 /* create category */
@@ -209,6 +247,8 @@ if (defined('MOREPROVIDER_BUILD')) {
     $attr['vehicle_class'] = 'modmoreVehicle';
     $attr['modmore_public_key'] = MODMORE_VEHICLE_PUBLIC_KEY;
     $attr['modmore_package'] = MODMORE_PACKAGE_ID;
+} else {
+    $attr['vehicle_class'] = 'encryptedVehicle';
 }
 $vehicle = $builder->createVehicle($category,$attr);
 
@@ -288,16 +328,20 @@ $builder->setPackageAttributes(array(
 ));
 $modx->log(modX::LOG_LEVEL_INFO,'Added package attributes and setup options.');
 
+// Encryption resolver
 if (defined('MOREPROVIDER_BUILD')) {
-    /**
-     * Add xPDOScriptVehicle to load the modmoreVehicle in uninstall.
-     */
     $vehicle = $builder->createVehicle(array(
         'source' => $sources['resolvers'] . 'modmorevehicle.resolver.php',
     ), array(
         'vehicle_class' => 'xPDOScriptVehicle',
     ));
     $builder->putVehicle($vehicle);
+} else {
+    $builder->putVehicle($builder->createVehicle(array(
+        'source' => $sources['resolvers'] . 'resolve.encryption.php',
+    ), array(
+        'vehicle_class' => 'xPDOScriptVehicle',
+    )));
 }
 
 /* zip up package */
