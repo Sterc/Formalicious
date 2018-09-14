@@ -86,6 +86,11 @@
             "value": "1",
             "xtype": "modx-combo-source",
             "area": "Paths"
+        }, {
+            "key": "option.allow_savesubmittedforms",
+            "value": "1",
+            "xtype": "combo-boolean",
+            "area": "Options"
         }]
     },
     "database": {
