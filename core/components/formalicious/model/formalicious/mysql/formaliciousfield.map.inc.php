@@ -7,6 +7,10 @@ $xpdo_meta_map['FormaliciousField']= array (
   'version' => NULL,
   'table' => 'formalicious_fields',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'step_id' => 0,

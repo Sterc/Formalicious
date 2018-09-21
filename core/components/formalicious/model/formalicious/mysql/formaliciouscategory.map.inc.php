@@ -7,6 +7,10 @@ $xpdo_meta_map['FormaliciousCategory']= array (
   'version' => NULL,
   'table' => 'formalicious_categories',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'name' => '',

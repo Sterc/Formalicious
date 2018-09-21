@@ -6,6 +6,10 @@
  *
  * @package formalicious
  * @subpackage build
+ *
+ * @var mixed $object
+ * @var modX $modx
+ * @var array $options
  */
 
 if ($object->xpdo) {
@@ -18,6 +22,7 @@ if ($object->xpdo) {
             $modx->addPackage('formalicious', $modelPath, null);
 
 
+
             $manager = $modx->getManager();
 
             $manager->createObjectContainer('FormaliciousCategory');
@@ -27,6 +32,7 @@ if ($object->xpdo) {
             $manager->createObjectContainer('FormaliciousField');
             $manager->createObjectContainer('FormaliciousSubField');
             $manager->createObjectContainer('FormaliciousAnswer');
+
 
             break;
     }
