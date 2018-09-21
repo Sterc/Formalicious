@@ -139,3 +139,6 @@ $_lang['formalicious.contentblocks_input.description'] = 'Allows you to select o
 
 $_lang['formalicious.form.notpublished'] = 'The form you are trying to display is not published ([[+form]], ID [[+id]]).';
 $_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redirect hooks are automatically added by Formalicious. No need to enter them here.';
+
+/* Settings. */
+$_lang['setting_formalicious.option.allow_savesubmittedforms'] = 'Allow user to save submitted forms?';

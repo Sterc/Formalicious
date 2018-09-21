@@ -1,5 +1,77 @@
 Formalicious.panel.Update = function(config) {
     config = config || {};
+
+    var formSettings = [];
+
+    formSettings.push({
+        xtype: 'panel'
+        ,html: '<p>'+_('formalicious.settings.intro_msg')+'</p>'
+        ,border: false
+        ,bodyCssClass: 'panel-desc'
+        ,width: 'auto'
+    },{
+        xtype: 'hidden'
+        ,name: 'category_id'
+    },{
+        name: 'name'
+        ,fieldLabel: _('formalicious.field.name')
+        ,allowBlank: false
+        ,enableKeyEvents: true
+        ,listeners: {
+            'keyup': {
+                scope:this,fn:function(f,e) {
+                    var title = Ext.util.Format.stripTags(f.getValue());
+                    Ext.getCmp('modx-page-header').getEl().update('<h2>'+_('formalicious')+': '+title+'</h2>');
+                }
+            }
+        }
+    },{
+        xtype: 'textarea'
+        ,name: 'description'
+        ,fieldLabel: _('formalicious.field.text')
+    },{
+        name: 'emailto'
+        ,fieldLabel: _('formalicious.field.emailto')
+        ,regex: /^(([a-zA-Z0-9_\+\.\-]+)@([a-zA-Z0-9_.\-]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
+    },{
+        name: 'subject'
+        ,fieldLabel: _('formalicious.field.subject')
+    },{
+        xtype: 'modx-combo'
+        ,name: 'redirectto'
+        ,hiddenName: 'redirectto'
+        ,fieldLabel: _('formalicious.field.redirectto')
+        ,displayField: 'pagetitle'
+        ,valueField: 'id'
+        ,mode: 'remote'
+        ,fields: ['id','pagetitle']
+        ,forceSelection: true
+        ,editable: true
+        ,typeAhead: true
+        ,enableKeyEvents: true
+        ,pageSize: 20
+        ,url: Formalicious.config.connector_url
+        ,baseParams: {
+            action: 'mgr/resource/getlist'
+        }
+    });
+
+    if (parseInt(MODx.config['formalicious.option.allow_savesubmittedforms']) === 1) {
+        formSettings.push({
+            xtype: 'checkbox'
+            ,name: 'saveform'
+            ,fieldLabel: _('formalicious.field.saveform')
+            ,inputValue: 1
+        });
+    }
+
+    formSettings.push({
+        xtype: 'checkbox'
+        ,name: 'published'
+        ,fieldLabel: _('formalicious.field.published')
+        ,inputValue: 1
+    });
+
     Ext.apply(config,{
         url: Formalicious.config.connector_url
         ,baseParams: {
@@ -43,68 +115,7 @@ Formalicious.panel.Update = function(config) {
                     ,layout: 'form'
                     ,labelWidth: 150
                     ,defaults: {xtype: 'textfield',width: 400,msgTarget: 'under'}
-                    ,items: [{
-                        xtype: 'panel'
-                        ,html: '<p>'+_('formalicious.settings.intro_msg')+'</p>'
-                        ,border: false
-                        ,bodyCssClass: 'panel-desc'
-                        ,width: 'auto'
-                    },{
-                        xtype: 'hidden'
-                        ,name: 'category_id'
-                    },{
-                        name: 'name'
-                        ,fieldLabel: _('formalicious.field.name')
-                        ,allowBlank: false
-                        ,enableKeyEvents: true
-                        ,listeners: {
-                            'keyup': {
-                                scope:this,fn:function(f,e) {
-                                    var title = Ext.util.Format.stripTags(f.getValue());
-                                    Ext.getCmp('modx-page-header').getEl().update('<h2>'+_('formalicious')+': '+title+'</h2>');
-                                }
-                            }
-                        }
-                    },{
-                        xtype: 'textarea'
-                        ,name: 'description'
-                        ,fieldLabel: _('formalicious.field.text')
-                    },{
-                        name: 'emailto'
-                        ,fieldLabel: _('formalicious.field.emailto')
-                        ,regex: /^(([a-zA-Z0-9_\+\.\-]+)@([a-zA-Z0-9_.\-]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
-                    },{
-                        name: 'subject'
-                        ,fieldLabel: _('formalicious.field.subject')
-                    },{
-                        xtype: 'modx-combo'
-                        ,name: 'redirectto'
-                        ,hiddenName: 'redirectto'
-                        ,fieldLabel: _('formalicious.field.redirectto')
-                        ,displayField: 'pagetitle'
-                        ,valueField: 'id'
-                        ,mode: 'remote'
-                        ,fields: ['id','pagetitle']
-                        ,forceSelection: true
-                        ,editable: true
-                        ,typeAhead: true
-                        ,enableKeyEvents: true
-                        ,pageSize: 20
-                        ,url: Formalicious.config.connector_url
-                        ,baseParams: {
-                            action: 'mgr/resource/getlist'
-                        }
-                    },{
-                        xtype: 'checkbox'
-                        ,name: 'saveform'
-                        ,fieldLabel: _('formalicious.field.saveform')
-                        ,inputValue: 1
-                    },{
-                        xtype: 'checkbox'
-                        ,name: 'published'
-                        ,fieldLabel: _('formalicious.field.published')
-                        ,inputValue: 1
-                    },{
+                    ,items: [formSettings, {
                         xtype: 'panel'
                         ,html: '<p>'+_('formalicious.field.fiar_msg')+'</p>'
                         ,border: false

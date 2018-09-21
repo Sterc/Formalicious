@@ -140,3 +140,6 @@ $_lang['formalicious.contentblocks_input.description'] = 'Kies een Formalicious 
 
 $_lang['formalicious.form.notpublished'] = 'Het formulier dat je probeert weer te geven is niet gepubliceerd ([[+form]], ID [[+id]]).';
 $_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redirect hooks are automatically added by Formalicious. No need to enter them here.';
+
+/* Settings. */
+$_lang['setting_formalicious.option.allow_savesubmittedforms'] = 'Sta gebruikers toe om verstuurde formulieren op te slaan?';
