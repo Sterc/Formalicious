@@ -1,9 +1,9 @@
 {
     "name": "Formalicious",
     "lowCaseName": "formalicious",
-    "description": "",
+    "description": "The most powerful and easiest form builder for MODX.",
     "author": "Sterc",
-    "version": "1.0.0",
+    "version": "1.3.0-pl",
     "package":{
         "menus": [{
             "text": "formalicious",
@@ -84,7 +84,13 @@
         "systemSettings": [{
             "key": "source",
             "value": "1",
+            "xtype": "modx-combo-source",
             "area": "Paths"
+        }, {
+            "key": "option.allow_savesubmittedforms",
+            "value": "1",
+            "xtype": "combo-boolean",
+            "area": "Options"
         }]
     },
     "database": {
@@ -105,9 +111,14 @@
     "build": {
         "resolver": {
             "after": [
+                "setupoptions.resolver.php",
+                "stercextra.resolver.php",
                 "install.resolver.php",
                 "uninstall.resolver.php"
             ]
+        },
+        "setupOptions":{
+            "source": "setup.options.php"
         }
     }
 }

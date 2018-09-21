@@ -10,7 +10,7 @@ Formalicious.page.Home = function(config) {
             ,renderTo: 'formalicious-panel-home-div'
         }]
         ,buttons: [{
-            text: 'Admin panel'
+            text: _('formalicious.admin_panel')
             ,handler: function() {
                 MODx.loadPage('admin', 'namespace='+MODx.request.namespace);
             }

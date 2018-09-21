@@ -7,6 +7,10 @@ $xpdo_meta_map['FormaliciousStep']= array (
   'version' => NULL,
   'table' => 'formalicious_steps',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'form_id' => 0,
@@ -37,7 +41,7 @@ $xpdo_meta_map['FormaliciousStep']= array (
     'introtext' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),

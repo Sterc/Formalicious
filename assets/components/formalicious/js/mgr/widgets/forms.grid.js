@@ -42,7 +42,7 @@ Formalicious.grid.Forms = function(config) {
                 scope: this
             }
         },{
-            header: 'Actions'
+            header: _('formalicious.actions')
             ,renderer: {
                 fn: this.actionRenderer,
                 scope: this
@@ -84,6 +84,11 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
         });
         m.push('-');
         m.push({
+            text: _('duplicate')
+            ,handler: this.duplicateForm
+        });
+        m.push('-');
+        m.push({
             text: _('delete')
             ,handler: this.removeForm
         });
@@ -93,25 +98,25 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
         return '<h3>'+value+' ('+record.id+')</h3>';
     }
     ,actionRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
-        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
+        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}" title="{title}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
             compiled: true
         });
-        var values = {
-
-        };
+        var values = {};
         var h = [];
-
         h.push({
-            className: 'update formalicious-icon formalicious-icon-edit',
-            text: _('update')
+            className: "update formalicious-icon icon icon-pencil",
+            text: "",
+            title: _('update')
         });
-        // h.push({
-        //     className: 'duplicate formalicious-icon formalicious-icon-duplicate',
-        //     text: _('duplicate')
-        // });
         h.push({
-            className: 'delete formalicious-icon formalicious-icon-remove',
-            text: _('delete')
+            className: "duplicate formalicious-icon icon icon-clone",
+            text: "",
+            title: _('duplicate')
+        });
+        h.push({
+            className: "delete formalicious-icon icon icon-times",
+            text: "",
+            title: _('remove')
         });
         values.actions = h;
         return tpl.apply(values);
@@ -146,6 +151,10 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
                 this.updateForm(record, e);
             break;
 
+            case 'duplicate':
+                this.duplicateForm(record, e);
+                break;
+
             case 'delete':
                 this.removeForm(record, e);
             break;
@@ -158,6 +167,27 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
     }
     ,updateForm: function(btn,e) {
         MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+this.menu.record.id);
+    }
+
+    ,duplicateForm: function(btn,e) {
+        if (!this.menu.record) return false;
+        var r = this.menu.record;
+
+        this.windows.duplicateForm = MODx.load({
+            xtype: 'formalicious-window-duplicate-form'
+            ,title: _('formalicious.form_duplicate')
+            ,record: r
+            ,listeners: {
+                'success': {fn:function(r) {
+                    this.refresh();
+                    var response = Ext.decode(r.a.response.responseText);
+                    MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+response.object.id);
+                },scope:this}
+            }
+        });
+        this.windows.duplicateForm.fp.getForm().reset();
+        this.windows.duplicateForm.fp.getForm().setValues({'id': r.id, 'name': _('duplicate_of',{name: r.name})});
+        this.windows.duplicateForm.show(e.target);
     }
 
     ,removeForm: function(btn,e) {
@@ -189,3 +219,33 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
     }
 });
 Ext.reg('formalicious-grid-forms',Formalicious.grid.Forms);
+
+Formalicious.window.duplicateForm = function(config) {
+    config = config || {};
+    this.ident = config.ident || 'formalicious-mecitem'+Ext.id();
+    Ext.applyIf(config,{
+        id: this.ident
+        ,autoHeight:true
+        ,width: 475
+        ,modal: true
+        ,closeAction: 'close'
+        ,url: Formalicious.config.connectorUrl
+        ,action: 'mgr/form/duplicate'
+        ,fields: [{
+            xtype: 'textfield'
+            ,name: 'id'
+            ,id: this.ident+'-id'
+            ,hidden: true
+        },{
+            xtype: 'textfield'
+            ,fieldLabel: _('name')
+            ,name: 'name'
+            ,id: this.ident+'-name'
+            ,anchor: '100%'
+            ,allowBlank: false
+        }]
+    });
+    Formalicious.window.duplicateForm.superclass.constructor.call(this,config);
+};
+Ext.extend(Formalicious.window.duplicateForm,MODx.Window);
+Ext.reg('formalicious-window-duplicate-form',Formalicious.window.duplicateForm);

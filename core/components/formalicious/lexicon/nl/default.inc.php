@@ -12,6 +12,8 @@ $_lang['formalicious.no-results'] = 'Voeg eerst enkele categoriën toe. Click da
 
 $_lang['formalicious.save'] = 'Opslaan';
 $_lang['formalicious.close'] = 'Sluiten';
+$_lang['formalicious.back_to_forms'] = 'Terug naar formulieren';
+$_lang['formalicious.admin_panel'] = 'Administratie Paneel';
 $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
 $_lang['formalicious.settings.intro_msg'] = 'Formulier instellingen';
@@ -55,8 +57,11 @@ getoond bij het kiezen van een veld-type.';
 
 $_lang['formalicious.name'] = 'Naam';
 $_lang['formalicious.emailto'] = 'Mailen naar';
+$_lang['formalicious.actions'] = 'Acties';
 
 $_lang['formalicious.form_create'] = 'Formulier aanmaken';
+$_lang['formalicious.form_duplicate'] = 'Formulier dupliceren';
+$_lang['formalicious.form_duplicate_name'] = 'Vul hier de naam van het nieuwe formulier in';
 $_lang['formalicious.form_remove'] = 'Formulier verwijderen';
 $_lang['formalicious.form_remove_confirm'] = 'Weet je zeker dat je dit formulier wil verwijderen?';
 $_lang['formalicious.add_field'] = 'Veld toevoegen';
@@ -129,3 +134,12 @@ $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Parameter toevoegen';
 $_lang['formalicious.advanced.parameter_remove'] = 'Parameter verwijderen';
 $_lang['formalicious.advanced.parameter_remove_confirm'] = 'Weet je zeker dat je deze parameter wil verwijderen?';
+
+$_lang['formalicious.contentblocks_input'] = 'Formalicious formulier';
+$_lang['formalicious.contentblocks_input.description'] = 'Kies een Formalicious formulier om in te voegen in de content.';
+
+$_lang['formalicious.form.notpublished'] = 'Het formulier dat je probeert weer te geven is niet gepubliceerd ([[+form]], ID [[+id]]).';
+$_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redirect hooks are automatically added by Formalicious. No need to enter them here.';
+
+/* Settings. */
+$_lang['setting_formalicious.option.allow_savesubmittedforms'] = 'Sta gebruikers toe om verstuurde formulieren op te slaan?';

@@ -12,6 +12,8 @@ $_lang['formalicious.no-results'] = 'Please add some categories for your forms. 
 
 $_lang['formalicious.save'] = 'Save';
 $_lang['formalicious.close'] = 'Close';
+$_lang['formalicious.back_to_forms'] = 'Back to forms';
+$_lang['formalicious.admin_panel'] = 'Admin panel';
 $_lang['formalicious.search...'] = 'Search...';
 $_lang['formalicious.settings'] = 'Form settings';
 $_lang['formalicious.settings.intro_msg'] = 'Form settings';
@@ -47,15 +49,19 @@ $_lang['formalicious.fieldtype.validation'] = 'Validators';
 $_lang['formalicious.fieldtype.validation.description'] = 'Comma separated list of FormIt validators to use for this field. 
 See the built-in validators section on https://docs.modx.com/extras/revo/formit/formit.validators.';
 $_lang['formalicious.fieldtype.icon'] = 'Icon';
-$_lang['formalicious.fieldtype.icon.description'] = 'When adding a field to the form, this icon is shown when choosing a field type.';
+$_lang['formalicious.fieldtype.icon.description'] = 'When adding a field to the form, 
+this icon is shown when choosing a field type.';
 
 
 
 
 $_lang['formalicious.name'] = 'Name';
 $_lang['formalicious.emailto'] = 'Email to';
+$_lang['formalicious.actions'] = 'Actions';
 
 $_lang['formalicious.form_create'] = 'Create form';
+$_lang['formalicious.form_duplicate'] = 'Duplicate form';
+$_lang['formalicious.form_duplicate_name'] = 'Enter the name of the duplicated form';
 $_lang['formalicious.form_remove'] = 'Remove form';
 $_lang['formalicious.form_remove_confirm'] = 'Are you sure you want to remove this form?';
 $_lang['formalicious.add_field'] = 'Add field';
@@ -127,3 +133,12 @@ $_lang['formalicious.advanced.parameter'] = 'Parameter key';
 $_lang['formalicious.advanced.add_parameter'] = 'Add parameter';
 $_lang['formalicious.advanced.parameter_remove'] = 'Remove parameter';
 $_lang['formalicious.advanced.parameter_remove_confirm'] = 'Are you sure you want to remove this parameter?';
+
+$_lang['formalicious.contentblocks_input'] = 'Formalicious Form Selector';
+$_lang['formalicious.contentblocks_input.description'] = 'Allows you to select one of your created forms to insert into the content.';
+
+$_lang['formalicious.form.notpublished'] = 'The form you are trying to display is not published ([[+form]], ID [[+id]]).';
+$_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redirect hooks are automatically added by Formalicious. No need to enter them here.';
+
+/* Settings. */
+$_lang['setting_formalicious.option.allow_savesubmittedforms'] = 'Allow user to save submitted forms?';

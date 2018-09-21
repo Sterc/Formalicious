@@ -6,6 +6,10 @@
  *
  * @package formalicious
  * @subpackage build
+ *
+ * @var mixed $object
+ * @var modX $modx
+ * @var array $options
  */
 
 if ($object->xpdo) {
@@ -14,7 +18,10 @@ if ($object->xpdo) {
         case xPDOTransport::ACTION_INSTALL:
         case xPDOTransport::ACTION_UPGRADE:
             $modelPath = $modx->getOption('formalicious.core_path', null, $modx->getOption('core_path') . 'components/formalicious/') . 'model/';
-            $modx->addPackage('formalicious', $modelPath, 'modx_');
+            
+            $modx->addPackage('formalicious', $modelPath, null);
+
+
 
             $manager = $modx->getManager();
 
@@ -25,6 +32,7 @@ if ($object->xpdo) {
             $manager->createObjectContainer('FormaliciousField');
             $manager->createObjectContainer('FormaliciousSubField');
             $manager->createObjectContainer('FormaliciousAnswer');
+
 
             break;
     }

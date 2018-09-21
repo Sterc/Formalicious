@@ -5,19 +5,23 @@
  * @package formalicious
  */
 $Formalicious = $modx->getService('formalicious','Formalicious',$modx->getOption('formalicious.core_path',null,$modx->getOption('core_path').'components/formalicious/').'model/formalicious/',$scriptProperties);
-if (!($Formalicious instanceof Formalicious)) return '';
+if (!($Formalicious instanceof Formalicious)) {
+    return '';
+}
 
-$form = $modx->getOption('form',$scriptProperties, false);
-// $preHooks = $modx->getOption('preHooks',$scriptProperties,'');
-// $postHooks = $modx->getOption('postHooks',$scriptProperties,'');
+$form = $modx->getOption('form', $scriptProperties, false);
 $fieldsemailoutput = '';
-$fieldSeparator = $modx->getOption('fieldSeparator',$scriptProperties,"\n");
-$answerSeparator = $modx->getOption('fieldSeparator',$scriptProperties,"\n");
-$stepSeparator = $modx->getOption('stepSeparator',$scriptProperties,"\n");
-$formTpl = $modx->getOption('formTpl',$scriptProperties,"formTpl");
-$stepTpl = $modx->getOption('stepTpl',$scriptProperties,"stepTpl");
-$stepParam = $modx->getOption('stepParam',$scriptProperties,"step");
-$currentStep = $modx->getOption($stepParam,$_GET,1);
+$fieldSeparator = $modx->getOption('fieldSeparator', $scriptProperties, "\n");
+$answerSeparator = $modx->getOption('fieldSeparator', $scriptProperties, "\n");
+$stepSeparator = $modx->getOption('stepSeparator', $scriptProperties, "\n");
+$formTpl = $modx->getOption('formTpl', $scriptProperties, 'formTpl');
+$stepTpl = $modx->getOption('stepTpl', $scriptProperties, 'stepTpl');
+$stepParam = $modx->getOption('stepParam', $scriptProperties, 'step');
+$emailTpl = $modx->getOption('emailTpl', $scriptProperties, 'emailFormTpl');
+$fiarTpl = $modx->getOption('fiarTpl', $scriptProperties, 'fiarTpl');
+$validate = $modx->getOption('validate', $scriptProperties, false);
+$customValidators = $modx->getOption('customValidators', $scriptProperties, '');
+$currentStep = $modx->getOption($stepParam, $_GET, 1);
 $finishStep = false;
 $validation = array();
 $output = array();
@@ -29,21 +33,46 @@ if ($form) {
     $form = $modx->getObject('FormaliciousForm', $form);
     if ($form) {
         /* Merge values stored in Session and request. Request is leading. */
-        if (isset($_SESSION['Formalicious_form_'.$form->get('id')]) && is_array($_SESSION['Formalicious_form_'.$form->get('id')])) {
-            $requestArr = array_merge($_SESSION['Formalicious_form_'.$form->get('id')], $requestArr);
+        $sessionKey = 'Formalicious_form_'.$form->get('id');
+        if (isset($_SESSION[$sessionKey]) &&
+            is_array($_SESSION[$sessionKey])
+        ) {
+            $requestArr = array_merge($_SESSION[$sessionKey], $requestArr);
         }
 
         if (!$form->get('published')) {
-            return '';
+            return '<i>'.
+                $modx->lexicon(
+                    'formalicious.form.notpublished',
+                    array(
+                        'id' => $form->get('id'),
+                        'form' => $form->get('name')
+                    )
+                )
+                . '</i>';
         }
         $phs = $form->toArray();
-        /* Add the custom hooks */
+
+        /**
+         * Load the FormIt class and run the prehooks.
+         * This has to be done to be able to get the correct values from $hook->getValue() calls
+        */
         if ($phs['prehooks']) {
-            $customPreHooks = explode(',', trim($phs['prehooks']));
-            if (count($customPreHooks)) {
-                $preHooks = array_merge($preHooks, $customPreHooks);
-            }
+            $modelPath = $modx->getOption(
+                'formit.core_path',
+                null,
+                $modx->getOption('core_path', null, MODX_CORE_PATH) . 'components/formit/'
+            ) . 'model/formit/';
+            $modx->loadClass('FormIt', $modelPath, true, true);
+            $fi = new FormIt($modx);
+            $fi->initialize('web');
+            $fi->config['preHooks'] = $phs['prehooks'];
+            $request = $fi->loadRequest();
+            $fields = $request->prepare();
+            $request->handle($fields);
         }
+
+        /* Add the custom hooks */
         if ($phs['posthooks']) {
             $customPostHooks = explode(',', trim($phs['posthooks']));
             if (count($customPostHooks)) {
@@ -68,7 +97,7 @@ if ($form) {
             foreach ($fields as $field) {
                 $fieldsemailoutput .= '<tr>';
                 $fieldsemailoutput .= '<td><strong>' . $field->get('title') . '</strong></td>';
-                $fieldsemailoutput .= '<td>[[+' . 'field_' . $field->get('id') . ']]</td>';
+                $fieldsemailoutput .= '<td>[[+field_' . $field->get('id') . ':default=``]]</td>';
                 $fieldsemailoutput .= '</tr>';
                 $validationStep['field_'.$field->get('id')] = array();
                 $answerOuter = array();
@@ -83,12 +112,14 @@ if ($form) {
                     $answerPhs['uniqid'] = uniqid();
                     $answerPhs['fieldname'] = 'field_'.$field->get('id');
                     //Dirty fix for output filters on checkboxes, radio buttons and selects.
-                    $answerPhs['curval'] = (is_array($requestArr['field_'.$field->get('id')]))? $modx->toJSON($requestArr['field_'.$field->get('id')]) : $requestArr['field_'.$field->get('id')];
+                    $value = $requestArr['field_'.$field->get('id')];
+                    $value = is_array($value) ? $modx->toJSON($value) : $value;
+                    $answerPhs['curval'] = $value;
+                    $answerPhs['sessionkey'] = $sessionKey;
                     $answerPhs['idx'] = $answerIdx;
                     $answerOuter[] = $modx->getChunk($type->get('answertpl'), $answerPhs);
                     $answerIdx++;
                 }
-                //print_r($requestArr);exit;
                 $fieldPhs = $field->toArray();
                 $fieldPhs['uniqid'] = uniqid();
                 $fieldPhs['values'] = implode($answerSeparator, $answerOuter);
@@ -99,8 +130,8 @@ if ($form) {
                 if ($type) {
                     $stepInner[] = $modx->getChunk($type->get('tpl'), $fieldPhs);
                     if ($type->get('validation') != '') {
-                        foreach (explode(',', $type->get('validation')) as $validate) {
-                            $validationStep['field_'.$field->get('id')][] = $validate;
+                        foreach (explode(',', $type->get('validation')) as $validationRule) {
+                            $validationStep['field_'.$field->get('id')][] = $validationRule;
                         }
                     }
                     $fieldNames['field_'.$field->get('id')] = $field->get('title');
@@ -136,12 +167,15 @@ if ($form) {
         $formPhs = $form->toArray();
 
         if ($finishStep) {
-            $hooks[] = 'email';
+            // Only add email hook when emailto field is set
+            if ($form->get('emailto')) {
+                $hooks[] = 'email';
+            }
             if ($form->get('saveform')) {
                 $hooks[] = 'FormItSaveForm';
             }
 
-            if ($form->get('fiaremailto') && $form->get('fiaremailto')) {
+            if ($form->get('fiaremail') && $form->get('fiaremail') == 1) {
                 $hooks[] = 'FormItAutoResponder';
             }
 
@@ -155,13 +189,16 @@ if ($form) {
             $hooks[] = 'redirect';
 
             $redirectTo = $modx->resource->get('id');
-            $redirectParams = $modx->toJSON(array('step' => $currentStep + 1));
+            $redirectParams = $modx->toJSON(array($stepParam => $currentStep + 1));
             $formPhs['submitTitle'] = $modx->lexicon('formalicious.next');
         }
 
         $formPhs['fieldsemailoutput'] = $fieldsemailoutput;
         $formPhs['form'] = $forminner;
         $formPhs['redirectTo'] = $redirectTo;
+        $formPhs['stepParam'] = $stepParam;
+        $formPhs['emailTpl'] = $emailTpl;
+        $formPhs['fiarTpl'] = $fiarTpl;
         $formPhs['redirectParams'] = $redirectParams;
         $formPhs['currentStep'] = $currentStep;
         $formPhs['hooks'] = implode(',', $hooks);
@@ -176,6 +213,14 @@ if ($form) {
                 array_keys($validationCurrent)
             )
         );
+        // Add the validate parameter specified in the renderForm snippet call
+        if ($validate) {
+            if (count($validationCurrent)) {
+                $validate = ','.$validate;
+            }
+            $formPhs['validation'] .= $validate;
+        }
+        $formPhs['customValidators'] = $customValidators;
         $formPhs['fieldNames'] = implode(
             ',',
             array_map(
@@ -212,6 +257,10 @@ if ($form) {
         }
         $formPhs['parameters'] = $formParams;
 
+        // Prefix the fiar attachment with the modx base_path
+        if ($formPhs['fiarattachment']) {
+            $formPhs['fiarattachment'] = str_replace('//', '/', MODX_BASE_PATH . $formPhs['fiarattachment']);
+        }
         return $modx->getChunk($formTpl, $formPhs);
     }
 }

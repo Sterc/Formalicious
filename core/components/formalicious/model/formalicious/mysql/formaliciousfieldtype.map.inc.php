@@ -7,6 +7,10 @@ $xpdo_meta_map['FormaliciousFieldType']= array (
   'version' => NULL,
   'table' => 'formalicious_fields_types',
   'extends' => 'xPDOSimpleObject',
+  'tableMeta' => 
+  array (
+    'engine' => 'MyISAM',
+  ),
   'fields' => 
   array (
     'name' => '',
@@ -55,7 +59,7 @@ $xpdo_meta_map['FormaliciousFieldType']= array (
     'validation' => 
     array (
       'dbtype' => 'text',
-      'phptype' => 'text',
+      'phptype' => 'string',
       'null' => false,
       'default' => '',
     ),

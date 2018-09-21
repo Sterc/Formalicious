@@ -25,7 +25,18 @@ $sources = array(
 );
 
 /* load modx and configs */
-require_once dirname(__FILE__) . '/build.config.php';
+$path = dirname(__FILE__);
+for ($i = 0; $i <= 10; $i++) {
+    if (file_exists($path . '/config.core.php')) {
+        require_once($path . '/config.core.php');
+        break;
+    } else {
+        $path = dirname($path);
+    }
+}
+if (!defined('MODX_CORE_PATH')) {
+    exit ('Could not load config.');
+}
 include_once MODX_CORE_PATH . 'model/modx/modx.class.php';
 $modx= new modX();
 $modx->initialize('mgr');

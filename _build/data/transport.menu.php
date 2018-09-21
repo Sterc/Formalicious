@@ -16,6 +16,7 @@ $menu->fromArray(array(
     'menuindex' => 0,
     'params' => '',
     'handler' => '',
+    'namespace' => 'formalicious',
     'action' => 'home'
 ),'',true,true);
 

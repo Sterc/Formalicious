@@ -3,41 +3,29 @@
     color: red;
 }
 
-/*#form-content{
-	min-height: 400px;
-}*/
-
 .icon-buttons .formalicious-icon{
-	width: 26px;
-	height: 26px;
-	float: left;
-	text-indent: -9999px;
-	border:0;
-	cursor: pointer;
+    font-size: 20px;
+    float: left;
+    border:0;
+    cursor: pointer;
+    background: transparent;
+    opacity: 0.6;
+    padding: 2px 4px;
+}
+.icon-buttons .formalicious-icon .icon {
+    display: block;
 }
 
 .icon-buttons .formalicious-icon:hover{
-	opacity: 0.6;
-}
-
-.formalicious-icon-edit{
-	background: url(../img/edit.png);
-}
-
-.formalicious-icon-duplicate{
-    background: url(../img/duplicate.png);
-}
-
-.formalicious-icon-remove{
-    background: url(../img/remove.png);
+    opacity: 1;
 }
 
 .bbar-fullwidth table{
-	width: 99%;
+    width: 99%;
 }
 
 .button-window .x-btn{
-	margin:10px;
+    margin:10px;
 }
 
 #formalicious-panel-form-steps .x-tab-strip-closable{
@@ -132,4 +120,33 @@
 
 .formalicious-update-window {
     padding-top: 20px !important;
+}
+
+#preview-panel {
+    padding: 20px;
+}
+#preview-panel .form-group {
+    margin-bottom: 12px;
+}
+#preview-panel .form-control {
+    display: block;
+    width: 100%;
+    padding: 4px 8px;
+    font-size: 13px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+#preview-panel label {
+    display: block;
+    margin-bottom: 3px;
+}
+#preview-panel .checkbox label,
+#preview-panel .radio label {
+    display: inline;
+}
+
+#fiarwrapper {
+    border: none;
 }
