@@ -14,6 +14,7 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         $settings = array(
             'user_name',
             'user_email',
+            'option.allow_savesubmittedforms'
         );
         foreach ($settings as $key) {
             if (isset($options[$key])) {

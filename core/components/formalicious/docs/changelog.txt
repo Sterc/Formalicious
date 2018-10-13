@@ -1,5 +1,10 @@
 Version 1.3.0-pl
 --------------------------
+- Add system setting for disable form saving on install
+- Change fiarcontent from varchar to text
+
+Version 1.3.0-pl
+--------------------------
 - Fixed phptype of some fields in schema of tables (PHP 7 compatibility)
 - Added system setting to disable overall form saving functionality
 - Added russian lexicon

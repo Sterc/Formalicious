@@ -32,7 +32,7 @@
         <field key="fiaremailto" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" default="0"  />
         <field key="fiaremailfrom" dbtype="text" phptype="string" null="false" default="" />
         <field key="fiarsubject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="fiarcontent" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="fiarcontent" dbtype="text" phptype="string" null="false" default=""  />
         <field key="fiarattachment" dbtype="text" phptype="string" null="false" default="" />
 
         <!-- Advanced settings for FormIt -->
