@@ -164,6 +164,7 @@ Formalicious.panel.Update = function(config) {
                             ,fields: ['id','title']
                             ,displayField: 'title'
                             ,valueField: 'id'
+                            ,pageSize: 10
                             ,listeners: {
                                 beforequery: function(queryEv){
                                     queryEv.combo.expand();
