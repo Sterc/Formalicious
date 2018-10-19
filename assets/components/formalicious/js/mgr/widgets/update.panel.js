@@ -72,6 +72,169 @@ Formalicious.panel.Update = function(config) {
         ,inputValue: 1
     });
 
+    var tabs = [{
+        title: _('formalicious.settings')
+        ,items: [{
+            xtype: 'panel'
+            ,border: false
+            ,cls: 'container'
+            ,layout: 'form'
+            ,labelWidth: 150
+            ,defaults: {xtype: 'textfield',width: 400,msgTarget: 'under'}
+            ,items: [formSettings, {
+                xtype: 'panel'
+                ,html: '<p>'+_('formalicious.field.fiar_msg')+'</p>'
+                ,border: false
+                ,bodyCssClass: 'panel-desc'
+                ,width: 'auto'
+            },{
+                xtype: 'xcheckbox'
+                ,name: 'fiaremail'
+                ,id: 'fiaremail'
+                ,fieldLabel: _('formalicious.field.fiaremail')
+                ,inputValue: 1
+                ,listeners: {
+                    'check': {fn:function(r, checked) {
+                            if (checked) {
+                                Ext.getCmp('fiarwrapper').show();
+                            } else {
+                                Ext.getCmp('fiarwrapper').hide();
+                            }
+                        },scope:this}
+                }
+            },{
+                xtype:'fieldset',
+                id: 'fiarwrapper',
+                collapsible: false,
+                autoHeight:true,
+                hideBorders: true,
+                width: 555,
+                border: false,
+                padding: 0,
+                defaultType: 'textfield',
+                defaults: {
+                    anchor: '0',
+                },
+                items :[{
+                    xtype: 'modx-combo'
+                    ,name: 'fiaremailto'
+                    ,hiddenName: 'fiaremailto'
+                    ,fieldLabel: _('formalicious.field.fiaremailto')
+                    ,url: Formalicious.config.connector_url
+                    ,baseParams: {
+                        action: 'mgr/field/getlist'
+                        ,form_id: (MODx.request.id) ? MODx.request.id : '-1'
+                        ,limit: 0
+                    }
+                    ,fields: ['id','title']
+                    ,displayField: 'title'
+                    ,valueField: 'id'
+                    ,listeners: {
+                        beforequery: function(queryEv){
+                            queryEv.combo.expand();
+                            queryEv.combo.store.load();
+                            return false;
+                        }
+                    }
+                },{
+                    xtype: 'label'
+                    ,text: _('formalicious.field.fiaremailto.description')
+                    ,cls: 'desc-under'
+                    ,style: 'margin: 5px 0 0 155px'
+                    ,width: 500
+                },{
+                    name: 'fiaremailfrom'
+                    ,fieldLabel: _('formalicious.field.fiaremailfrom')
+                    ,vtype: 'email'
+                    ,width: 500
+                },{
+                    name: 'fiarsubject'
+                    ,fieldLabel: _('formalicious.field.fiarsubject')
+                },{
+                    xtype: 'textarea'
+                    ,name: 'fiarcontent'
+                    ,height: 175
+                    ,fieldLabel: _('formalicious.field.fiarcontent')
+                    ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
+                },{
+                    id: 'fiarattachment'
+                    ,xtype: 'modx-combo-browser'
+                    ,source: MODx.config['formalicious.source']
+                    ,name: 'fiarattachment'
+                    ,fieldLabel: _('formalicious.field.fiarattachment')
+                    ,listeners: {
+                        'select': {
+                            fn:function(data) {
+                                Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
+                                // Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
+                            }
+                        }
+                    }
+                }]
+            }]
+        }]
+    },{
+        title: _('formalicious.fields')
+        ,xtype: 'formalicious-panel-manage-form'
+        ,disabled: (MODx.request.id) ? false : true
+    }];
+
+    if () {
+        tabs.push({
+            title: _('formalicious.advanced')
+            ,items: [{
+                xtype: 'panel'
+                ,border: false
+                ,cls: 'container'
+                ,layout: 'form'
+                ,labelWidth: 150
+                ,defaults: {xtype: 'textfield',msgTarget: 'under'}
+                ,items: [{
+                    xtype: 'panel'
+                    ,html: '<p>'+_('formalicious.advanced.intro_msg')+'</p>'
+                    ,border: false
+                    ,bodyCssClass: 'panel-desc'
+                    ,width: 'auto'
+                },{
+                    name: 'prehooks'
+                    ,fieldLabel: _('formalicious.advanced.prehooks')
+                    ,width: 500
+                    ,allowBlank: true
+                },{
+                    xtype: 'label'
+                    ,text: _('formalicious.advanced.prehooks.description')
+                    ,cls: 'desc-under'
+                    ,style: 'margin: 5px 0 0 155px'
+                    ,width: 500
+                },{
+                    name: 'posthooks'
+                    ,fieldLabel: _('formalicious.advanced.posthooks')
+                    ,width: 500
+                    ,allowBlank: true
+                },{
+                    xtype: 'label'
+                    ,text: _('formalicious.advanced.posthooks.description')
+                    ,cls: 'desc-under'
+                    ,style: 'margin: 5px 0 0 155px'
+                    ,width: 500
+                },{
+                    xtype: 'label'
+                    ,fieldLabel: _('formalicious.advanced.parameters')
+                    ,style: 'margin: 15px 0 0 0'
+                },{
+                    xtype: 'label'
+                    ,text: _('formalicious.advanced.parameters.description')
+                    ,cls: 'desc-under'
+                    ,style: 'margin: 0 0 15px 0'
+                },{
+                    xtype: 'formalicious-grid-advanced-params'
+                    ,id: 'formalicious-grid-advanced-params'
+                }]
+
+            }]
+        });
+    }
+
     Ext.apply(config,{
         url: Formalicious.config.connector_url
         ,baseParams: {
@@ -82,7 +245,6 @@ Formalicious.panel.Update = function(config) {
         ,baseCls: 'modx-formpanel'
         ,cls: 'container'
         ,id: 'formalicious-panel-update'
-        //,useLoadingMask: true
         ,listeners: {
             'setup': {fn:this.setup,scope:this}
             ,'success': {fn:this.success,scope:this}
@@ -106,165 +268,7 @@ Formalicious.panel.Update = function(config) {
                 };
             }
             ,hideMode: 'offsets'
-            ,items: [{
-                title: _('formalicious.settings')
-                ,items: [{
-                    xtype: 'panel'
-                    ,border: false
-                    ,cls: 'container'
-                    ,layout: 'form'
-                    ,labelWidth: 150
-                    ,defaults: {xtype: 'textfield',width: 400,msgTarget: 'under'}
-                    ,items: [formSettings, {
-                        xtype: 'panel'
-                        ,html: '<p>'+_('formalicious.field.fiar_msg')+'</p>'
-                        ,border: false
-                        ,bodyCssClass: 'panel-desc'
-                        ,width: 'auto'
-                    },{
-                        xtype: 'xcheckbox'
-                        ,name: 'fiaremail'
-                        ,id: 'fiaremail'
-                        ,fieldLabel: _('formalicious.field.fiaremail')
-                        ,inputValue: 1
-                        ,listeners: {
-                            'check': {fn:function(r, checked) {
-                                if (checked) {
-                                    Ext.getCmp('fiarwrapper').show();
-                                } else {
-                                    Ext.getCmp('fiarwrapper').hide();
-                                }
-                            },scope:this}
-                        }
-                    },{
-                        xtype:'fieldset',
-                        id: 'fiarwrapper',
-                        collapsible: false,
-                        autoHeight:true,
-                        hideBorders: true,
-                        width: 555,
-                        border: false,
-                        padding: 0,
-                        defaultType: 'textfield',
-                        defaults: {
-                            anchor: '0',
-                        },
-                        // hidden: Ext.getCmp('fiaremail').getValue() ? false : true,
-                        items :[{
-                            xtype: 'modx-combo'
-                            ,name: 'fiaremailto'
-                            ,hiddenName: 'fiaremailto'
-                            ,fieldLabel: _('formalicious.field.fiaremailto')
-                            ,url: Formalicious.config.connector_url
-                            ,baseParams: {
-                                action: 'mgr/field/getlist'
-                                ,form_id: (MODx.request.id) ? MODx.request.id : '-1'
-                                ,limit: 0
-                            }
-                            ,fields: ['id','title']
-                            ,displayField: 'title'
-                            ,valueField: 'id'
-                            ,listeners: {
-                                beforequery: function(queryEv){
-                                    queryEv.combo.expand();
-                                    queryEv.combo.store.load();
-                                    return false;
-                                }
-                            }
-                        },{
-                            xtype: 'label'
-                            ,text: _('formalicious.field.fiaremailto.description')
-                            ,cls: 'desc-under'
-                            ,style: 'margin: 5px 0 0 155px'
-                            ,width: 500
-                        },{
-                            name: 'fiaremailfrom'
-                            ,fieldLabel: _('formalicious.field.fiaremailfrom')
-                            ,vtype: 'email'
-                            ,width: 500
-                        },{
-                            name: 'fiarsubject'
-                            ,fieldLabel: _('formalicious.field.fiarsubject')
-                        },{
-                            xtype: 'textarea'
-                            ,name: 'fiarcontent'
-                            ,height: 175
-                            ,fieldLabel: _('formalicious.field.fiarcontent')
-                            ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
-                        },{
-                            id: 'fiarattachment'
-                            ,xtype: 'modx-combo-browser'
-                            ,source: MODx.config['formalicious.source']
-                            ,name: 'fiarattachment'
-                            ,fieldLabel: _('formalicious.field.fiarattachment')
-                            ,listeners: {
-                                'select': {
-                                    fn:function(data) {
-                                        Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
-                                        // Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
-                                    }
-                                }
-                            }
-                        }]
-                    }]
-                }]
-            },{
-                title: _('formalicious.fields')
-                ,xtype: 'formalicious-panel-manage-form'
-                ,disabled: (MODx.request.id) ? false : true
-            },{
-                title: _('formalicious.advanced')
-                ,items: [{
-                    xtype: 'panel'
-                    ,border: false
-                    ,cls: 'container'
-                    ,layout: 'form'
-                    ,labelWidth: 150
-                    ,defaults: {xtype: 'textfield',msgTarget: 'under'}
-                    ,items: [{
-                        xtype: 'panel'
-                        ,html: '<p>'+_('formalicious.advanced.intro_msg')+'</p>'
-                        ,border: false
-                        ,bodyCssClass: 'panel-desc'
-                        ,width: 'auto'
-                    },{
-                        name: 'prehooks'
-                        ,fieldLabel: _('formalicious.advanced.prehooks')
-                        ,width: 500
-                        ,allowBlank: true
-                    },{
-                        xtype: 'label'
-                        ,text: _('formalicious.advanced.prehooks.description')
-                        ,cls: 'desc-under'
-                        ,style: 'margin: 5px 0 0 155px'
-                        ,width: 500
-                    },{
-                        name: 'posthooks'
-                        ,fieldLabel: _('formalicious.advanced.posthooks')
-                        ,width: 500
-                        ,allowBlank: true
-                    },{
-                        xtype: 'label'
-                        ,text: _('formalicious.advanced.posthooks.description')
-                        ,cls: 'desc-under'
-                        ,style: 'margin: 5px 0 0 155px'
-                        ,width: 500
-                    },{
-                        xtype: 'label'
-                        ,fieldLabel: _('formalicious.advanced.parameters')
-                        ,style: 'margin: 15px 0 0 0'
-                    },{
-                        xtype: 'label'
-                        ,text: _('formalicious.advanced.parameters.description')
-                        ,cls: 'desc-under'
-                        ,style: 'margin: 0 0 15px 0'
-                    },{
-                        xtype: 'formalicious-grid-advanced-params'
-                        ,id: 'formalicious-grid-advanced-params'
-                    }]
-
-                }]
-            }]
+            ,items: tabs
         }]
     });
 
