@@ -166,7 +166,6 @@ Formalicious.panel.Update = function(config) {
                         'select': {
                             fn:function(data) {
                                 Ext.getCmp('fiarattachment').setValue(data.fullRelativeUrl);
-                                // Ext.getCmp('preview').setSrc(data.url, MODx.config['formalicious.source']);
                             }
                         }
                     }
@@ -179,7 +178,7 @@ Formalicious.panel.Update = function(config) {
         ,disabled: (MODx.request.id) ? false : true
     }];
 
-    if () {
+    if (MODx.perm.formalicious_advanced) {
         tabs.push({
             title: _('formalicious.advanced')
             ,items: [{
