@@ -27,11 +27,6 @@ Formalicious.panel.Update = function(config) {
             }
         }
     },{
-        xtype: 'textarea'
-        ,name: 'description'
-        ,fieldLabel: _('formalicious.field.text') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-        ,description: _('formalicious.field.text.description')
-    },{
         name: 'emailto'
         ,fieldLabel: _('formalicious.field.emailto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
         ,regex: /^(([a-zA-Z0-9_\+\.\-]+)@([a-zA-Z0-9_.\-]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
@@ -40,6 +35,11 @@ Formalicious.panel.Update = function(config) {
         name: 'subject'
         ,fieldLabel: _('formalicious.field.subject') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
         ,description: _('formalicious.field.subject.description')
+    },{
+        xtype: 'textarea'
+        ,name: 'description'
+        ,fieldLabel: _('formalicious.field.text') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,description: _('formalicious.field.text.description')
     },{
         xtype: 'modx-combo'
         ,name: 'redirectto'
