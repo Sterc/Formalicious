@@ -47,7 +47,7 @@ if ($object->xpdo) {
             ));
 
             createType($modx,array(
-                'name' => 'Select',
+                'name' => 'Dropdown',
                 'tpl' => 'selectTpl',
                 'answertpl' => 'selectInnerTpl',
                 'values' => 1,
@@ -103,6 +103,24 @@ if ($object->xpdo) {
             createType($modx,array(
                 'name' => 'File',
                 'tpl' => 'fileTpl',
+                'answertpl' => '',
+                'values' => 0,
+                'validation' => '',
+                'icon' => ''
+            ));
+
+            createType($modx,array(
+                'name' => 'Heading',
+                'tpl' => 'headingTpl',
+                'answertpl' => '',
+                'values' => 0,
+                'validation' => '',
+                'icon' => ''
+            ));
+
+            createType($modx,array(
+                'name' => 'Description',
+                'tpl' => 'descriptionTpl',
                 'answertpl' => '',
                 'values' => 0,
                 'validation' => '',

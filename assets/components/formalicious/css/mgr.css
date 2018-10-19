@@ -150,3 +150,9 @@
 #fiarwrapper {
     border: none;
 }
+
+.fl-icon {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}

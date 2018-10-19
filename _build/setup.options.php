@@ -9,21 +9,11 @@ $package = 'Formalicious';
 
 $settings = [
     [
-        'key' => 'user_name', 'value' => '', 'name' => 'Name',
+        'key' => 'user_name', 'value' => '', 'type' => 'text', 'name' => 'Name',
     ], [
-        'key' => 'user_email', 'value' => '', 'name' => 'E-mailaddress',
+        'key' => 'user_email', 'value' => '', 'type' => 'text', 'name' => 'E-mailaddress',
     ], [
-        'key' => 'option.allow_savesubmittedforms', 'value' => '1', 'name' => 'Save submitted forms',
-    ],
-];
-
-/**
- * The needed permissions.
- */
-$permissions = [
-    [
-        'name'      => 'formalicious_advanced', 'description' => 'To view the advanced tab.',
-        'templates' => ['AdministratorTemplate'],
+        'key' => 'option.allow_savesubmittedforms', 'value' => '1', 'type' => 'checkbox', 'name' => 'Save submitted forms',
     ],
 ];
 
@@ -39,53 +29,6 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
                 $settings[$key]['value'] = $settingObject->get('value');
             }
         }
-
-        /**
-         * Add the needed permissions.
-         */
-        foreach ($modx->getCollection('modAccessPolicyTemplate') as $templateObject) {
-            foreach ($permissions as $permission) {
-                if (!isset($permission['templates']) ||
-                    in_array($templateObject->get('name'), $permission['templates'])) {
-                    $permission = array_merge(
-                        $permission,
-                        ['template' => $templateObject->get('id'), 'value' => 1,]
-                    );
-
-                    $c = [
-                        'name' => $permission['name'], 'template' => $permission['template'],
-                    ];
-
-                    if (null === $modx->getObject('modAccessPermission', $c)) {
-                        if (null !== ($permissionObject = $modx->newObject('modAccessPermission'))) {
-                            $permissionObject->fromArray($permission);
-                            $permissionObject->save();
-                        }
-                    }
-                }
-            }
-        }
-
-        foreach ($modx->getCollection('modAccessPolicy') as $policyObject) {
-            $data = $policyObject->get('data');
-
-            foreach ($permissions as $permission) {
-                if (isset($permission['policies'])) {
-                    if (in_array($policyObject->get('name'), $permission['policies'])) {
-                        $data[$permission['name']] = true;
-                    } else {
-                        $data[$permission['name']] = false;
-                    }
-                } else {
-                    $data[$permission['name']] = true;
-                }
-            }
-
-            $policyObject->set('data', $data);
-            $policyObject->save();
-        }
-
-
         break;
     case xPDOTransport::ACTION_UNINSTALL:
         break;
@@ -109,8 +52,8 @@ Be the first to know about updates and new features.
 
 foreach ($settings as $setting) {
     $str = '<label for="'. $setting['key'] .'">'. $setting['name'] .' (optional)</label>';
-    $str .= '<input type="text" name="'. $setting['key'] .'"';
-    $str .= ' id="'. $setting['key'] .'" width="300" value="'. $setting['value'] .'" />';
+    $str .= '<input type="' . $setting['type'] . '" name="'. $setting['key'] .'"';
+    $str .= ' id="'. $setting['key'] .'" value="'. $setting['value'] .'" />';
 
     $output[] = $str;
 }

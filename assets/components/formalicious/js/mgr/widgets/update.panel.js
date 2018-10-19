@@ -14,7 +14,8 @@ Formalicious.panel.Update = function(config) {
         ,name: 'category_id'
     },{
         name: 'name'
-        ,fieldLabel: _('formalicious.field.name')
+        ,fieldLabel: _('formalicious.field.name') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,description: _('formalicious.field.name.description')
         ,allowBlank: false
         ,enableKeyEvents: true
         ,listeners: {
@@ -28,19 +29,23 @@ Formalicious.panel.Update = function(config) {
     },{
         xtype: 'textarea'
         ,name: 'description'
-        ,fieldLabel: _('formalicious.field.text')
+        ,fieldLabel: _('formalicious.field.text') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,description: _('formalicious.field.text.description')
     },{
         name: 'emailto'
-        ,fieldLabel: _('formalicious.field.emailto')
+        ,fieldLabel: _('formalicious.field.emailto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
         ,regex: /^(([a-zA-Z0-9_\+\.\-]+)@([a-zA-Z0-9_.\-]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
+        ,description: _('formalicious.field.emailto.description')
     },{
         name: 'subject'
-        ,fieldLabel: _('formalicious.field.subject')
+        ,fieldLabel: _('formalicious.field.subject') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,description: _('formalicious.field.subject.description')
     },{
         xtype: 'modx-combo'
         ,name: 'redirectto'
         ,hiddenName: 'redirectto'
-        ,fieldLabel: _('formalicious.field.redirectto')
+        ,fieldLabel: _('formalicious.field.redirectto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,description: _('formalicious.field.redirectto.description')
         ,displayField: 'pagetitle'
         ,valueField: 'id'
         ,mode: 'remote'
@@ -60,16 +65,18 @@ Formalicious.panel.Update = function(config) {
         formSettings.push({
             xtype: 'checkbox'
             ,name: 'saveform'
-            ,fieldLabel: _('formalicious.field.saveform')
+            ,fieldLabel: _('formalicious.field.saveform') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
             ,inputValue: 1
+            ,description: _('formalicious.field.saveform.description')
         });
     }
 
     formSettings.push({
         xtype: 'checkbox'
         ,name: 'published'
-        ,fieldLabel: _('formalicious.field.published')
+        ,fieldLabel: _('formalicious.field.published') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
         ,inputValue: 1
+        ,description: _('formalicious.field.published.description')
     });
 
     var tabs = [{
@@ -79,7 +86,7 @@ Formalicious.panel.Update = function(config) {
             ,border: false
             ,cls: 'container'
             ,layout: 'form'
-            ,labelWidth: 150
+            ,labelWidth: 180
             ,defaults: {xtype: 'textfield',width: 400,msgTarget: 'under'}
             ,items: [formSettings, {
                 xtype: 'panel'
@@ -87,11 +94,12 @@ Formalicious.panel.Update = function(config) {
                 ,border: false
                 ,bodyCssClass: 'panel-desc'
                 ,width: 'auto'
+                ,description: _('formalicious.field.fiar_msg.description')
             },{
                 xtype: 'xcheckbox'
                 ,name: 'fiaremail'
                 ,id: 'fiaremail'
-                ,fieldLabel: _('formalicious.field.fiaremail')
+                ,fieldLabel: _('formalicious.field.fiaremail') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
                 ,inputValue: 1
                 ,listeners: {
                     'check': {fn:function(r, checked) {
@@ -102,6 +110,7 @@ Formalicious.panel.Update = function(config) {
                             }
                         },scope:this}
                 }
+                ,description: _('formalicious.field.fiaremail.description')
             },{
                 xtype:'fieldset',
                 id: 'fiarwrapper',
@@ -119,7 +128,7 @@ Formalicious.panel.Update = function(config) {
                     xtype: 'modx-combo'
                     ,name: 'fiaremailto'
                     ,hiddenName: 'fiaremailto'
-                    ,fieldLabel: _('formalicious.field.fiaremailto')
+                    ,fieldLabel: _('formalicious.field.fiaremailto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
                     ,url: Formalicious.config.connector_url
                     ,baseParams: {
                         action: 'mgr/field/getlist'
@@ -136,32 +145,31 @@ Formalicious.panel.Update = function(config) {
                             return false;
                         }
                     }
-                },{
-                    xtype: 'label'
-                    ,text: _('formalicious.field.fiaremailto.description')
-                    ,cls: 'desc-under'
-                    ,style: 'margin: 5px 0 0 155px'
-                    ,width: 500
+                    ,description: _('formalicious.field.fiaremailto.description')
                 },{
                     name: 'fiaremailfrom'
-                    ,fieldLabel: _('formalicious.field.fiaremailfrom')
+                    ,description: _('formalicious.field.fiaremailfrom.description')
+                    ,fieldLabel: _('formalicious.field.fiaremailfrom') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
                     ,vtype: 'email'
                     ,width: 500
                 },{
                     name: 'fiarsubject'
-                    ,fieldLabel: _('formalicious.field.fiarsubject')
+                    ,fieldLabel: _('formalicious.field.fiarsubject') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+                    ,description: _('formalicious.field.fiarsubject.description')
                 },{
                     xtype: 'textarea'
                     ,name: 'fiarcontent'
                     ,height: 175
-                    ,fieldLabel: _('formalicious.field.fiarcontent')
+                    ,fieldLabel: _('formalicious.field.fiarcontent') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+                    ,description: _('formalicious.field.fiarcontent.description')
                     ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
                 },{
                     id: 'fiarattachment'
                     ,xtype: 'modx-combo-browser'
                     ,source: MODx.config['formalicious.source']
                     ,name: 'fiarattachment'
-                    ,fieldLabel: _('formalicious.field.fiarattachment')
+                    ,fieldLabel: _('formalicious.field.fiarattachment') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+                    ,description: _('formalicious.field.fiarattachment.description')
                     ,listeners: {
                         'select': {
                             fn:function(data) {
@@ -178,7 +186,7 @@ Formalicious.panel.Update = function(config) {
         ,disabled: (MODx.request.id) ? false : true
     }];
 
-    if (MODx.perm.formalicious_advanced) {
+    if (Formalicious.config.permissions.advanced) {
         tabs.push({
             title: _('formalicious.advanced')
             ,items: [{
@@ -233,7 +241,6 @@ Formalicious.panel.Update = function(config) {
             }]
         });
     }
-
     Ext.apply(config,{
         url: Formalicious.config.connector_url
         ,baseParams: {
@@ -291,18 +298,19 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
                         /* Add the data from the parameters field to the parameters grid (advanced tab) */
                         var i = 0;
                         var grid = Ext.getCmp('formalicious-grid-advanced-params');
-                        var store = grid.getStore();
-                        store.removeAll(true);
+                        if (grid) {
+                            var store = grid.getStore();
+                            store.removeAll(true);
 
-                        /* Read the images json to object array */
-                        var parameters = Ext.decode(r.object.parameters);
-                        if (parameters.length > 0) {
-                            parameters.forEach(function(value) {
-                                var rec = new grid.Record({key: value.key, value: value.value});
-                                store.insert(i,rec);
-                            });
+                            /* Read the images json to object array */
+                            var parameters = Ext.decode(r.object.parameters);
+                            if (parameters.length > 0) {
+                                parameters.forEach(function(value) {
+                                    var rec = new grid.Record({key: value.key, value: value.value});
+                                    store.insert(i,rec);
+                                });
+                            }
                         }
-
                         this.fireEvent('ready',r.object);
                         MODx.fireEvent('ready');
                     },scope:this}
@@ -329,17 +337,19 @@ Ext.extend(Formalicious.panel.Update,MODx.FormPanel,{
         }
     }
     ,beforeSubmit: function(o) {
-        var paramStore = Ext.pluck(Ext.getCmp('formalicious-grid-advanced-params').getStore().data.items, 'data');
-        var parameters = [];
-        paramStore.forEach(function(e) {
-            parameters.push(e);
-        });
-        if (parameters.length > 0) {
-            parameters = Ext.encode(parameters);
-        } else {
-            parameters = '';
+        if (Ext.getCmp('formalicious-grid-advanced-params')) {
+            var paramStore = Ext.pluck(Ext.getCmp('formalicious-grid-advanced-params').getStore().data.items, 'data');
+            var parameters = [];
+            paramStore.forEach(function (e) {
+                parameters.push(e);
+            });
+            if (parameters.length > 0) {
+                parameters = Ext.encode(parameters);
+            } else {
+                parameters = '';
+            }
+            this.baseParams.parameters = parameters;
         }
-        this.baseParams.parameters = parameters;
     }
 
 });
