@@ -1,7 +1,7 @@
 <div class="row">
     <div class="form-group col-xs-12">
         <p>
-            [[+description]]
+            [[!+description]]
         </p>
     </div>
 </div>

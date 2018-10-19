@@ -630,7 +630,7 @@ Formalicious.window.UpdateField = function(config) {
                 ,anchor: '100%'
                 ,value: config.record.placeholder
             },{
-                xtype: 'hidden'
+                xtype: 'textarea'
                 ,fieldLabel: _('description')
                 ,name: 'description'
                 ,anchor: '100%'
