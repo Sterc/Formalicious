@@ -232,7 +232,7 @@ Formalicious.grid.FormFields = function(config) {
             action: 'mgr/field/getlist'
             ,step_id: config.step
         }
-        ,fields: ['id','step_id', 'title', 'placeholder', 'introtext', 'directional', 'type', 'typetext', 'required', 'published', 'rank', 'show-values']
+        ,fields: ['id','step_id', 'title', 'placeholder', 'description', 'directional', 'type', 'typetext', 'required', 'published', 'rank', 'show-values']
         ,autoHeight: true
         ,paging: false
         ,remoteSort: true
@@ -630,9 +630,9 @@ Formalicious.window.UpdateField = function(config) {
                 ,anchor: '100%'
                 ,value: config.record.placeholder
             },{
-                xtype: 'hidden'
+                xtype: 'textarea'
                 ,fieldLabel: _('description')
-                ,name: 'introtext'
+                ,name: 'description'
                 ,anchor: '100%'
                 ,value: config.record.description
             },{

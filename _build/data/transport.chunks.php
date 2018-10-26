@@ -122,4 +122,21 @@ $chunks[14]->fromArray(array(
     'snippet' => file_get_contents($sources['chunks'].'formaliciousemailFormTpl.chunk.tpl'),
 ));
 
+$chunks[15]= $modx->newObject('modChunk');
+$chunks[15]->fromArray(array(
+   'id' => 15,
+   'name' => 'headingTpl',
+   'description' => '',
+   'snippet' => file_get_contents($sources['chunks'].'headingTpl.chunk.tpl'),
+));
+
+
+$chunks[16]= $modx->newObject('modChunk');
+$chunks[16]->fromArray(array(
+   'id' => 16,
+   'name' => 'descriptionTpl',
+   'description' => '',
+   'snippet' => file_get_contents($sources['chunks'].'descriptionTpl.chunk.tpl'),
+));
+
 return $chunks;

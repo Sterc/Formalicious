@@ -15,7 +15,7 @@ $xpdo_meta_map['FormaliciousStep']= array (
   array (
     'form_id' => 0,
     'title' => '',
-    'introtext' => '',
+    'description' => '',
     'rank' => NULL,
     'published' => 0,
   ),
@@ -38,7 +38,7 @@ $xpdo_meta_map['FormaliciousStep']= array (
       'null' => false,
       'default' => '',
     ),
-    'introtext' => 
+    'description' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
