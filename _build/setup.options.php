@@ -12,9 +12,7 @@ $settings = [
         'key' => 'user_name', 'value' => '', 'type' => 'text', 'name' => 'Name',
     ], [
         'key' => 'user_email', 'value' => '', 'type' => 'text', 'name' => 'E-mailaddress',
-    ], [
-        'key' => 'option.allow_savesubmittedforms', 'value' => '1', 'type' => 'checkbox', 'name' => 'Save submitted forms',
-    ],
+    ]
 ];
 
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {

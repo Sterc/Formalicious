@@ -9,7 +9,7 @@
 /* load action into menu */
 $menu= $modx->newObject('modMenu');
 $menu->fromArray(array(
-    'text' => 'formalicious',
+    'text' => 'Formalicious',
     'parent' => 'components',
     'description' => 'formalicious.menu_desc',
     'icon' => 'images/icons/plugin.gif',
