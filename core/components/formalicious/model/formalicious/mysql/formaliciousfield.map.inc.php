@@ -101,6 +101,14 @@ $xpdo_meta_map['FormaliciousField']= array (
       'phptype' => 'integer',
       'null' => false,
     ),
+    'property' =>
+    array (
+        'dbtype' => 'varchar',
+        'precision' => '255',
+        'phptype' => 'string',
+        'null' => false,
+        'default' => '',
+    )
   ),
   'indexes' => 
   array (

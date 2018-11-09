@@ -452,6 +452,24 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
 
         this.windows.updateField.fp.getForm().reset();
         this.windows.updateField.fp.getForm().setValues(r);
+
+        if (r.type == 10) {
+            Ext.getCmp('formalicious-create-placeholder-field').hide();
+            Ext.getCmp('formalicious-create-required-field').hide();
+            Ext.getCmp('formalicious-create-heading-field').hide();
+        } else
+        if (r.type == 9) {
+            Ext.getCmp('formalicious-create-placeholder-field').hide();
+            Ext.getCmp('formalicious-create-required-field').hide();
+            Ext.getCmp('formalicious-create-description-field').hide();
+            Ext.getCmp('formalicious-create-heading-field').show();
+        } else {
+            Ext.getCmp('formalicious-create-placeholder-field').show();
+            Ext.getCmp('formalicious-create-required-field').show();
+            Ext.getCmp('formalicious-create-description-field').show();
+            Ext.getCmp('formalicious-create-heading-field').hide();
+        }
+
         this.windows.updateField.show(e.target);
 
     }
@@ -528,7 +546,6 @@ Formalicious.window.CreateField = function(config) {
 };
 Ext.extend(Formalicious.window.CreateField,MODx.Window,{
     submit: function(btn, e) {
-        //console.log(btn);
         MODx.Ajax.request({
             url: Formalicious.config.connector_url
             ,params: {
@@ -547,7 +564,22 @@ Ext.extend(Formalicious.window.CreateField,MODx.Window,{
 
                     data.object.published = true;
                     Ext.getCmp('formalicious-panel-form-step-'+data.object.step_id).updateField({},{},data);
-
+                    if (data.object.type == 10) {
+                        Ext.getCmp('formalicious-create-placeholder-field').hide();
+                        Ext.getCmp('formalicious-create-required-field').hide();
+                        Ext.getCmp('formalicious-create-heading-field').hide();
+                    } else
+                    if (data.object.type == 9) {
+                        Ext.getCmp('formalicious-create-placeholder-field').hide();
+                        Ext.getCmp('formalicious-create-required-field').hide();
+                        Ext.getCmp('formalicious-create-description-field').hide();
+                        Ext.getCmp('formalicious-create-heading-field').show();
+                    } else {
+                        Ext.getCmp('formalicious-create-placeholder-field').show();
+                        Ext.getCmp('formalicious-create-required-field').show();
+                        Ext.getCmp('formalicious-create-description-field').show();
+                        Ext.getCmp('formalicious-create-heading-field').hide();
+                    }
                     return false;
 
                 },scope:this}
@@ -559,7 +591,6 @@ Ext.reg('formalicious-window-field-create',Formalicious.window.CreateField);
 
 Formalicious.window.UpdateField = function(config) {
     config = config || {};
-
 
     Ext.applyIf(config,{
         closeAction: 'close'
@@ -614,39 +645,86 @@ Formalicious.window.UpdateField = function(config) {
                         } else {
                             Ext.getCmp('grid-values').hide();
                         }
+
+                        if (r.getValue() == 10) {
+                            Ext.getCmp('formalicious-create-placeholder-field').hide();
+                            Ext.getCmp('formalicious-create-required-field').hide();
+                            Ext.getCmp('formalicious-create-heading-field').hide();
+                        } else
+                        if (r.getValue() == 9) {
+                            Ext.getCmp('formalicious-create-placeholder-field').hide();
+                            Ext.getCmp('formalicious-create-required-field').hide();
+                            Ext.getCmp('formalicious-create-description-field').hide();
+                            Ext.getCmp('formalicious-create-heading-field').show();
+                        } else {
+                            Ext.getCmp('formalicious-create-placeholder-field').show();
+                            Ext.getCmp('formalicious-create-required-field').show();
+                            Ext.getCmp('formalicious-create-description-field').show();
+                            Ext.getCmp('formalicious-create-heading-field').hide();
+                        }
+
                     },scope:this}
                 }
+            },{
+                xtype: 'modx-combo'
+                ,name: 'property'
+                ,fieldLabel: _('formalicious.heading.select')
+                ,value: config.record.propertie
+                ,anchor: '100%'
+                ,forceSelection: true
+                ,store: new Ext.data.SimpleStore({
+                     data: [
+                         [0, 'h1'],
+                         [1, 'h2'],
+                         [2, 'h3'],
+                         [3, 'h4'],
+                         [4, 'h5'],
+                         [5, 'h6'],
+                     ],
+                     id: 0,
+                     fields: ["id","heading"]
+                 })
+                ,valueField: "heading"
+                ,displayField: "heading"
+                ,mode: "local"
+                ,id : 'formalicious-create-heading-field'
+                ,hideMode: 'offsets'
             },{
                 xtype: 'textfield'
                 ,fieldLabel: _('formalicious.field.title')
                 ,name: 'title'
                 ,anchor: '100%'
-                ,allowBlank: false
                 ,value: config.record.title
+                ,allowBlank: false
+                ,id : 'formalicious-create-title-field'
             },{
                 xtype: 'textfield'
                 ,fieldLabel: _('formalicious.field.placeholder')
                 ,name: 'placeholder'
                 ,anchor: '100%'
                 ,value: config.record.placeholder
+                ,id : 'formalicious-create-placeholder-field'
             },{
                 xtype: 'textarea'
                 ,fieldLabel: _('description')
                 ,name: 'description'
                 ,anchor: '100%'
                 ,value: config.record.description
+                ,id : 'formalicious-create-description-field'
             },{
                 xtype: 'checkbox'
                 ,name: 'required'
                 ,boxLabel: _('formalicious.field.required')
                 ,inputValue: 1
                 ,checked: (config.record.required) ? true : false
+                ,id : 'formalicious-create-required-field'
             },{
                 xtype: 'checkbox'
                 ,name: 'published'
                 ,boxLabel: _('formalicious.field.published')
                 ,inputValue: 1
                 ,checked: (config.record.published) ? true : false
+                ,id : 'formalicious-create-published-field'
             },{
                 xtype: 'hidden'
                 ,name: 'rank'
@@ -657,7 +735,7 @@ Formalicious.window.UpdateField = function(config) {
                 ,field_id: config.record.id
                 ,border: true
                 ,hidden: (config.record['show-values']) ? false : true
-            }, {
+            },{
                 xtype: 'label'
                 ,id: 'grid-values-required'
                 ,text: _('formalicious.field.values_required')

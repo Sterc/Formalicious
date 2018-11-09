@@ -160,3 +160,5 @@ $_lang['formalicious.field.fiaremailfrom.description'] = 'Enter the e-mail addre
 $_lang['formalicious.field.fiarsubject.description'] =  'Enter the subject of the automatic e-mail here. This is the subject the visitor sees when they receive this e-mail in their mailbox. ';
 $_lang['formalicious.field.fiarcontent.description'] = 'Enter the content that the automatic e-mail should contain. For example: Hello! Thank you for filling in our contact form. Within 2 - 3 days you can expect a response from us. With kind regards, company name X. ';
 $_lang['formalicious.field.fiarattachment.description'] = 'Optionally, one file can be uploaded as an attachment to the automatic e-mail. This file is limited to the following file types: pdf, doc, docx, png, jpg, gif. The file must have a maximum file size of 8 MB. ';
+
+$_lang['formalicious.heading.select'] = 'Size';
