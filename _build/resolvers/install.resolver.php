@@ -32,7 +32,7 @@ function createCategory(&$modx, $data)
 if ($object->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
-            // case xPDOTransport::ACTION_UPGRADE:
+        case xPDOTransport::ACTION_UPGRADE:
             $modx        =& $object->xpdo;
             $iconBaseUrl = trim(MODX_BASE_URL, '/') . '/assets/components/formalicious/img/';
 
@@ -111,8 +111,7 @@ if ($object->xpdo) {
                 'published' => 1,
             ]
             );
-            break;
-        case xPDOTransport::ACTION_UPGRADE:
+
             $table = $modx->getTableName('FormaliciousForm');
             $c     = $modx->prepare("SHOW COLUMNS IN {$table} WHERE Field = 'fiarcontent';");
             if ($c->execute() && $data = $c->fetch(PDO::FETCH_ASSOC)) {
