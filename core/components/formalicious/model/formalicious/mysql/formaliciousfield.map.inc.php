@@ -22,6 +22,7 @@ $xpdo_meta_map['FormaliciousField']= array (
     'required' => 0,
     'published' => 0,
     'rank' => NULL,
+    'property' => ''
   ),
   'fieldMeta' => 
   array (
