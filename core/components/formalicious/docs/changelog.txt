@@ -5,7 +5,7 @@ Version 1.4.0-pl
 - Add heading & description fields
 - Add field description
 - Change fiarcontent from varchar to text for bigger mails
-
+- Added German translation (thanks to Fabian Christen)
 
 Version 1.3.1-pl
 --------------------------

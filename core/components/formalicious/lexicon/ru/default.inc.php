@@ -51,10 +51,6 @@ $_lang['formalicious.fieldtype.validation.description'] = 'Список вали
 $_lang['formalicious.fieldtype.icon'] = 'Иконка';
 $_lang['formalicious.fieldtype.icon.description'] = 'Иконка будет показана при выборе этого типа поля для добавления в форму.';
 
-
-
-
-
 $_lang['formalicious.name'] = 'Название';
 $_lang['formalicious.emailto'] = 'Отправить на email';
 $_lang['formalicious.actions'] = 'Действия';
@@ -80,10 +76,8 @@ $_lang['formalicious.field_create'] = 'Создать поле';
 $_lang['formalicious.step.create'] = 'Добавить этап';
 $_lang['formalicious.step.remove'] = 'Удалить этап';
 $_lang['formalicious.step.remove.msg'] = 'Вы уверены, что хотите удалить этот этап?';
-// $_lang['formalicious.new_step'] = 'Этап [[+number]]';
 $_lang['formalicious.new_step'] = 'Новый этап';
 $_lang['formalicious.add_value'] = 'Добавить значение';
-
 
 $_lang['formalicious.field.name'] = 'Название';
 $_lang['formalicious.field.placeholder'] = 'Плейсхолдер';

@@ -80,7 +80,6 @@ $_lang['formalicious.field_create'] = 'Veld aanmaken';
 $_lang['formalicious.step.create'] = 'Stap aanmaken';
 $_lang['formalicious.step.remove'] = 'Verwijder stap';
 $_lang['formalicious.step.remove.msg'] = 'Weet je zeker dat je deze stap wilt verwijderen?';
-// $_lang['formalicious.new_step'] = 'Stap [[+number]]';
 $_lang['formalicious.new_step'] = 'Nieuwe stap';
 $_lang['formalicious.add_value'] = 'Waarde toevoegen';
 
