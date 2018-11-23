@@ -14,8 +14,7 @@ Formalicious.panel.Update = function(config) {
         ,name: 'category_id'
     },{
         name: 'name'
-        ,fieldLabel: _('formalicious.field.name') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-        ,description: _('formalicious.field.name.description')
+        ,fieldLabel: _('formalicious.field.name') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.name.description') + '</span></div>'
         ,allowBlank: false
         ,enableKeyEvents: true
         ,listeners: {
@@ -28,24 +27,20 @@ Formalicious.panel.Update = function(config) {
         }
     },{
         name: 'emailto'
-        ,fieldLabel: _('formalicious.field.emailto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,fieldLabel: _('formalicious.field.emailto') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.emailto.description') + '</span></div>'
         ,regex: /^(([a-zA-Z0-9_\+\.\-]+)@([a-zA-Z0-9_.\-]+)\.([a-zA-Z]{2,5}){1,25})+([;,.](([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+)*$/
-        ,description: _('formalicious.field.emailto.description')
     },{
         name: 'subject'
-        ,fieldLabel: _('formalicious.field.subject') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-        ,description: _('formalicious.field.subject.description')
+        ,fieldLabel: _('formalicious.field.subject') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.subject.description') + '</span></div>'
     },{
         xtype: 'textarea'
         ,name: 'description'
-        ,fieldLabel: _('formalicious.field.text') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-        ,description: _('formalicious.field.text.description')
+        ,fieldLabel: _('formalicious.field.text') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.text.description') + '</span></div>'
     },{
         xtype: 'modx-combo'
         ,name: 'redirectto'
         ,hiddenName: 'redirectto'
-        ,fieldLabel: _('formalicious.field.redirectto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-        ,description: _('formalicious.field.redirectto.description')
+        ,fieldLabel: _('formalicious.field.redirectto') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.redirectto.description') + '</span></div>'
         ,displayField: 'pagetitle'
         ,valueField: 'id'
         ,mode: 'remote'
@@ -65,18 +60,16 @@ Formalicious.panel.Update = function(config) {
         formSettings.push({
             xtype: 'checkbox'
             ,name: 'saveform'
-            ,fieldLabel: _('formalicious.field.saveform') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+            ,fieldLabel: _('formalicious.field.saveform') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.saveform.description') + '</span></div>'
             ,inputValue: 1
-            ,description: _('formalicious.field.saveform.description')
         });
     }
 
     formSettings.push({
         xtype: 'checkbox'
         ,name: 'published'
-        ,fieldLabel: _('formalicious.field.published') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+        ,fieldLabel: _('formalicious.field.published') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.published.description') + '</span></div>'
         ,inputValue: 1
-        ,description: _('formalicious.field.published.description')
     });
 
     var tabs = [{
@@ -94,12 +87,11 @@ Formalicious.panel.Update = function(config) {
                 ,border: false
                 ,bodyCssClass: 'panel-desc'
                 ,width: 'auto'
-                ,description: _('formalicious.field.fiar_msg.description')
             },{
                 xtype: 'xcheckbox'
                 ,name: 'fiaremail'
                 ,id: 'fiaremail'
-                ,fieldLabel: _('formalicious.field.fiaremail') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+                ,fieldLabel: _('formalicious.field.fiaremail') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.fiaremail.description') + '</span></div>'
                 ,inputValue: 1
                 ,listeners: {
                     'check': {fn:function(r, checked) {
@@ -110,7 +102,6 @@ Formalicious.panel.Update = function(config) {
                             }
                         },scope:this}
                 }
-                ,description: _('formalicious.field.fiaremail.description')
             },{
                 xtype:'fieldset',
                 id: 'fiarwrapper',
@@ -128,7 +119,7 @@ Formalicious.panel.Update = function(config) {
                     xtype: 'modx-combo'
                     ,name: 'fiaremailto'
                     ,hiddenName: 'fiaremailto'
-                    ,fieldLabel: _('formalicious.field.fiaremailto') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+                    ,fieldLabel: _('formalicious.field.fiaremailto') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.fiaremailto.description') + '</span></div>'
                     ,url: Formalicious.config.connector_url
                     ,baseParams: {
                         action: 'mgr/field/getlist'
@@ -145,31 +136,26 @@ Formalicious.panel.Update = function(config) {
                             return false;
                         }
                     }
-                    ,description: _('formalicious.field.fiaremailto.description')
                 },{
                     name: 'fiaremailfrom'
-                    ,description: _('formalicious.field.fiaremailfrom.description')
-                    ,fieldLabel: _('formalicious.field.fiaremailfrom') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
+                    ,fieldLabel: _('formalicious.field.fiaremailfrom') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.fiaremailfrom.description') + '</span></div>'
                     ,vtype: 'email'
                     ,width: 500
                 },{
                     name: 'fiarsubject'
-                    ,fieldLabel: _('formalicious.field.fiarsubject') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-                    ,description: _('formalicious.field.fiarsubject.description')
+                    ,fieldLabel: _('formalicious.field.fiarsubject') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.fiarsubject.description') + '</span></div>'
                 },{
                     xtype: 'textarea'
                     ,name: 'fiarcontent'
                     ,height: 175
-                    ,fieldLabel: _('formalicious.field.fiarcontent') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-                    ,description: _('formalicious.field.fiarcontent.description')
+                    ,fieldLabel: _('formalicious.field.fiarcontent') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.fiarcontent.description') + '</span></div>'
                     ,style: 'font: normal 13px/1.4 "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;'
                 },{
                     id: 'fiarattachment'
                     ,xtype: 'modx-combo-browser'
                     ,source: MODx.config['formalicious.source']
                     ,name: 'fiarattachment'
-                    ,fieldLabel: _('formalicious.field.fiarattachment') + '<i class="icon-info-circle icon icon-large fl-icon"></i>'
-                    ,description: _('formalicious.field.fiarattachment.description')
+                    ,fieldLabel: _('formalicious.field.fiarattachment') + '<div class="tooltip"><i class="icon-info-circle icon icon-large fl-icon"></i> <span class="tooltiptext">' + _('formalicious.field.fiarattachment.description') + '</span></div>'
                     ,listeners: {
                         'select': {
                             fn:function(data) {

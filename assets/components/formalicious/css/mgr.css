@@ -20,6 +20,32 @@
     opacity: 1;
 }
 
+.tooltip {
+    position: absolute;
+    right: 5px;
+    top: 6px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background: #575757;
+    border-radius: 3px;
+    padding: 5px;
+    width: 400px;
+    text-align: left;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    color: #f0f0f0;
+    font: normal 12px "Helvetica Neue", Helvetica, Arial, Tahoma, sans-serif;
+
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
 .bbar-fullwidth table{
     width: 99%;
 }
@@ -149,10 +175,4 @@
 
 #fiarwrapper {
     border: none;
-}
-
-.fl-icon {
-    position: absolute;
-    right: 5px;
-    top: 10px;
 }

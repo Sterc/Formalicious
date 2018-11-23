@@ -22,6 +22,7 @@ $xpdo_meta_map['FormaliciousField']= array (
     'required' => 0,
     'published' => 0,
     'rank' => NULL,
+    'property' => '',
   ),
   'fieldMeta' => 
   array (
@@ -100,6 +101,14 @@ $xpdo_meta_map['FormaliciousField']= array (
       'precision' => '10',
       'phptype' => 'integer',
       'null' => false,
+    ),
+    'property' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
     ),
   ),
   'indexes' => 

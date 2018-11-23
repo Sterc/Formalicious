@@ -161,3 +161,5 @@ $_lang['formalicious.field.fiaremailfrom.description'] = 'Vul hier het e-mailadr
 $_lang['formalicious.field.fiarsubject.description'] = 'Vul hier het onderwerp van de automatische e-mail in. Dit is het onderwerp die de bezoeker ziet wanneer ze deze e-mail ontvangen in hun mailbox.';
 $_lang['formalicious.field.fiarcontent.description'] = 'Vul hier de content in die de automatische e-mail moet bevatten. Bijvoorbeeld: Hallo! Bedankt voor het invullen van ons contactformulier. Binnen 2 - 3 dagen kun je een reactie van ons verwachten. Met vriendelijke groet, bedrijfsnaam X.';
 $_lang['formalicious.field.fiarattachment.description'] = 'Hier kan optioneel één bestand als bijlage van de automatische e-mail geüpload worden. Dit bestand is gelimiteerd tot de volgende bestandstypes: pdf, doc, docx, png, jpg, gif. Het bestand dient een maximale bestandsgrootte te hebben van 8 MB.';
+
+$_lang['formalicious.heading.select'] = 'Grootte';

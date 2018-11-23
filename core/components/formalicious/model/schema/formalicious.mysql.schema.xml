@@ -99,6 +99,7 @@
         <field key="required" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="rank" dbtype="int" precision="10" phptype="integer" null="false"/>
+        <field key="property" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 
         <!-- Indexes -->
         <index alias="step_id" name="step_id" primary="false" unique="false" type="BTREE">
