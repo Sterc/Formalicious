@@ -7,25 +7,21 @@
  */
 $package = 'Formalicious';
 
-$settings = array(
-    array(
-        'key' => 'user_name',
-        'value' => '',
-        'name' => 'Name'
-    ),
-    array(
-        'key' => 'user_email',
-        'value' => '',
-        'name' => 'E-mailaddress'
-    ),
-);
+$settings = [
+    [
+        'key' => 'user_name', 'value' => '', 'type' => 'text', 'name' => 'Name',
+    ], [
+        'key' => 'user_email', 'value' => '', 'type' => 'text', 'name' => 'E-mailaddress',
+    ]
+];
+
 switch ($options[xPDOTransport::PACKAGE_ACTION]) {
     case xPDOTransport::ACTION_INSTALL:
     case xPDOTransport::ACTION_UPGRADE:
         foreach ($settings as $key => $setting) {
             $settingObject = $modx->getObject(
                 'modSystemSetting',
-                array('key' => strtolower($package) . '.' . $setting['key'])
+                ['key' => strtolower($package) . '.' . $setting['key']]
             );
             if ($settingObject) {
                 $settings[$key]['value'] = $settingObject->get('value');
@@ -54,8 +50,8 @@ Be the first to know about updates and new features.
 
 foreach ($settings as $setting) {
     $str = '<label for="'. $setting['key'] .'">'. $setting['name'] .' (optional)</label>';
-    $str .= '<input type="text" name="'. $setting['key'] .'"';
-    $str .= ' id="'. $setting['key'] .'" width="300" value="'. $setting['value'] .'" />';
+    $str .= '<input type="' . $setting['type'] . '" name="'. $setting['key'] .'"';
+    $str .= ' id="'. $setting['key'] .'" value="'. $setting['value'] .'" />';
 
     $output[] = $str;
 }

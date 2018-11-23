@@ -16,7 +16,7 @@ $_lang['formalicious.back_to_forms'] = 'Terug naar formulieren';
 $_lang['formalicious.admin_panel'] = 'Administratie Paneel';
 $_lang['formalicious.search...'] = 'Zoeken...';
 $_lang['formalicious.settings'] = 'Formulier instellingen';
-$_lang['formalicious.settings.intro_msg'] = 'Formulier instellingen';
+$_lang['formalicious.settings.intro_msg'] = 'In de volgende velden kun je de e-mail instellingen richting jullie zelf invullen. Verder is het mogelijk om een bedankt pagina te koppelen aan het formulier waar de bezoekers op terecht komen.';
 $_lang['formalicious.fields'] = 'Formulier velden';
 $_lang['formalicious.fields.intro_msg'] = 'Beheer je formulier-velden. De stappen boven de velden kunnen worden hernoemd door op de stap-tekst te dubbelklikken. Je kunt de stappen ordenen door ze in de gewenste volgorde te slepen.';
 $_lang['formalicious.saved_forms'] = 'Opgeslagen formulieren';
@@ -80,7 +80,6 @@ $_lang['formalicious.field_create'] = 'Veld aanmaken';
 $_lang['formalicious.step.create'] = 'Stap aanmaken';
 $_lang['formalicious.step.remove'] = 'Verwijder stap';
 $_lang['formalicious.step.remove.msg'] = 'Weet je zeker dat je deze stap wilt verwijderen?';
-// $_lang['formalicious.new_step'] = 'Stap [[+number]]';
 $_lang['formalicious.new_step'] = 'Nieuwe stap';
 $_lang['formalicious.add_value'] = 'Waarde toevoegen';
 
@@ -97,9 +96,9 @@ $_lang['formalicious.field.emailto'] = 'Mailen naar';
 $_lang['formalicious.field.submittitle'] = 'Verstuur knop tekst';
 $_lang['formalicious.field.subject'] = 'Onderwerp';
 $_lang['formalicious.field.redirectto'] = 'Bedankt pagina';
-$_lang['formalicious.field.fiar_msg'] = 'Auto-reply instellingen';
+$_lang['formalicious.field.fiar_msg'] = 'Wil je dat er een automatische e-mail verstuurd wordt richting de bezoeker na het invullen van een formulier? Vink dan de checkbox aan & pas de instelling aan.';
 $_lang['formalicious.field.fiaremail'] = 'Auto reply versturen';
-$_lang['formalicious.field.fiaremailto'] = 'Selecteer e-mail veld';
+$_lang['formalicious.field.fiaremailto'] = 'Selecteer email veld';
 $_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het veld waar de auto-reply naartoe gestuurd moet worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier via het tabblad "Formulier velden".';
 $_lang['formalicious.field.fiaremailfrom'] = 'E-mail afzender';
 $_lang['formalicious.field.fiarsubject'] = 'E-mail onderwerp';
@@ -143,3 +142,24 @@ $_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redi
 
 /* Settings. */
 $_lang['setting_formalicious.option.allow_savesubmittedforms'] = 'Sta gebruikers toe om verstuurde formulieren op te slaan?';
+
+$_lang['formalicious.field.name.description'] = 'Dit is de titel van het formulier die binnen Formalicious opgeslagen wordt. Dit is alleen zichtbaar binnen formalicious en is voor jullie eigen overzicht.';
+$_lang['formalicious.field.placeholder.description'] = 'Placeholder';
+$_lang['formalicious.field.placeholder_description.description'] = 'Temporary text shown in the field, which explains what a user has to fill in. Example placeholder: Please fill in your name.';
+$_lang['formalicious.field.title.description'] = 'Dit is de titel van het formulier die binnen Formalicious opgeslagen wordt. Dit is alleen zichtbaar binnen formalicious en is voor jullie eigen overzicht.';
+$_lang['formalicious.field.text.description'] = 'Dit is de tekst van de e-mail die jullie ontvangen als een bezoeker het formulier heeft ingevuld. Bijvoorbeeld Er is een contactformulier ingevuld binnen de website. Binnen 2 - 3 dagen dient er een antwoord gestuurd te worden. ';
+$_lang['formalicious.field.required.description'] = 'Required';
+$_lang['formalicious.field.saveform.description'] = 'Wil je dat de ingevulde formulieren opgeslagen worden? Vink dan de checkbox aan. De formulieren worden vervolgens opgeslagen binnen FormIt.';
+$_lang['formalicious.field.published.description'] = 'Is je formulier klaar voor gebruik? Vink dan de checkbox aan. Vervolgens kan de contentmanager dit selecteren in de pagina’s binnen de website.';
+$_lang['formalicious.field.emailto.description'] = 'Vul hier in naar wie de ingevulde formulieren gemaild moet worden. Vul bij meerdere adressen dit komma gescheiden in, bijvoorbeeld: info@bedrijfsnaam.com,admin@bedrijfsnaam.com';
+$_lang['formalicious.field.subject.description'] = 'Dit is de onderwerp van de e-mail die jullie ontvangen als een bezoeker het formulier ingevuld heeft. bijvoorbeeld: Er is een contactformulier ingevuld.';
+$_lang['formalicious.field.redirectto.description'] = 'Koppel hier de bedankt pagina aan waar de bezoeker op moet landen wanneer ze het formulier ingevuld hebben. Dit kun je zelf aanmaken binnen de boomstructuur. Zorg altijd dat de bedankt pagina niet gevonden kan worden binnen Google en jullie website door dit uit te schakelen in de SEO tab van de bedankt pagina zelf.';
+$_lang['formalicious.field.fiar_msg.description'] = 'Auto-reply settings';
+$_lang['formalicious.field.fiaremail.description'] = 'Send auto reply';
+$_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het e-mail veld waar de auto-reply naartoe gestuurd moet worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier via het tabblad "Formulier velden".';
+$_lang['formalicious.field.fiaremailfrom.description'] = 'Vul hier het e-mailadres die moet dienen als afzender van de automatische e-mail. Bijvoorbeeld info@bedrijfsnaam.com. Dit ziet de bezoeker als afzender in zijn/haar mailbox.';
+$_lang['formalicious.field.fiarsubject.description'] = 'Vul hier het onderwerp van de automatische e-mail in. Dit is het onderwerp die de bezoeker ziet wanneer ze deze e-mail ontvangen in hun mailbox.';
+$_lang['formalicious.field.fiarcontent.description'] = 'Vul hier de content in die de automatische e-mail moet bevatten. Bijvoorbeeld: Hallo! Bedankt voor het invullen van ons contactformulier. Binnen 2 - 3 dagen kun je een reactie van ons verwachten. Met vriendelijke groet, bedrijfsnaam X.';
+$_lang['formalicious.field.fiarattachment.description'] = 'Hier kan optioneel één bestand als bijlage van de automatische e-mail geüpload worden. Dit bestand is gelimiteerd tot de volgende bestandstypes: pdf, doc, docx, png, jpg, gif. Het bestand dient een maximale bestandsgrootte te hebben van 8 MB.';
+
+$_lang['formalicious.heading.select'] = 'Grootte';

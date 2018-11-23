@@ -13,15 +13,19 @@ class FormaliciousUpdateProcessor extends modObjectUpdateProcessor
 
     public function beforeSet()
     {
+        $this->setProperty('hidden', 'false');
         if (!$this->getProperty('published')) {
             $this->setProperty('published', 'false');
         }
         if (!$this->getProperty('required')) {
             $this->setProperty('required', 'false');
         }
-
         $this->setCheckbox('published');
         $this->setCheckbox('required');
+
+        if ($this->object->type == 10) {
+            $this->setProperty('hidden', 'true');
+        }
 
         return parent::beforeSet();
     }

@@ -3,10 +3,10 @@
     "lowCaseName": "formalicious",
     "description": "The most powerful and easiest form builder for MODX.",
     "author": "Sterc",
-    "version": "1.3.0-pl",
+    "version": "1.4.0-pl",
     "package":{
         "menus": [{
-            "text": "formalicious",
+            "text": "Formalicious",
             "description": "formalicious.menu_desc",
             "action": "home"
         }],
@@ -67,6 +67,12 @@
             },{
                 "name": "textTpl",
                 "file": "textTpl.chunk.tpl"
+            },{
+                "name": "descriptionTpl",
+                "file": "descriptionTpl.chunk.tpl"
+            },{
+                "name": "headingTpl",
+                "file": "headingTpl.chunk.tpl"
             }],
             "templates": [],
             "tvs": [{

@@ -3,5 +3,6 @@
         <label for="field_[[!+id]]">[[!+title]]:</label>
         <textarea name="field_[[!+id]]" class="form-control" [[!+placeholder:notempty=`placeholder="[[!+placeholder]]"`]]>[[!+fi.field_[[!+id]]]]</textarea>
         [[!+fi.error.field_[[+id]]]]
+        <p class="frm-field-description">[[!+description]]</p>
     </div>
 </div>

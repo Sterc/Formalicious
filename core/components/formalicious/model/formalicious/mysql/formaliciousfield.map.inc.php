@@ -16,12 +16,13 @@ $xpdo_meta_map['FormaliciousField']= array (
     'step_id' => 0,
     'title' => '',
     'placeholder' => '',
-    'introtext' => '',
+    'description' => '',
     'directional' => 0,
     'type' => 0,
     'required' => 0,
     'published' => 0,
     'rank' => NULL,
+    'property' => '',
   ),
   'fieldMeta' => 
   array (
@@ -50,7 +51,7 @@ $xpdo_meta_map['FormaliciousField']= array (
       'null' => false,
       'default' => '',
     ),
-    'introtext' => 
+    'description' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
@@ -100,6 +101,14 @@ $xpdo_meta_map['FormaliciousField']= array (
       'precision' => '10',
       'phptype' => 'integer',
       'null' => false,
+    ),
+    'property' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
+      'phptype' => 'string',
+      'null' => false,
+      'default' => '',
     ),
   ),
   'indexes' => 

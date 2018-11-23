@@ -32,7 +32,7 @@
         <field key="fiaremailto" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" default="0"  />
         <field key="fiaremailfrom" dbtype="text" phptype="string" null="false" default="" />
         <field key="fiarsubject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="fiarcontent" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="fiarcontent" dbtype="text" phptype="string" null="false" default=""  />
         <field key="fiarattachment" dbtype="text" phptype="string" null="false" default="" />
 
         <!-- Advanced settings for FormIt -->
@@ -58,7 +58,7 @@
 
         <!-- Step settings -->
         <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="description" dbtype="text" phptype="string" null="false" default="" />
         <field key="rank" dbtype="int" precision="10" phptype="integer" null="false"/>
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
 
@@ -93,12 +93,13 @@
         <!-- Field settings -->
         <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="placeholder" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="introtext" dbtype="text" phptype="string" null="false" default="" />
+        <field key="description" dbtype="text" phptype="string" null="false" default="" />
         <field key="directional" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
         <field key="type" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
         <field key="required" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="rank" dbtype="int" precision="10" phptype="integer" null="false"/>
+        <field key="property" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 
         <!-- Indexes -->
         <index alias="step_id" name="step_id" primary="false" unique="false" type="BTREE">
