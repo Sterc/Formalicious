@@ -29,6 +29,63 @@ function createCategory(&$modx, $data)
         $category->save();
     }
 }
+
+/**
+ * Resolve changes to db model on install and upgrade.
+ *
+ * @package goodnews
+ * @subpackage build
+ */
+
+/**
+ * Checks if a field in a specified database table exist
+ *
+ * @param mixed &$modx A reference to the MODX object
+ * @param string $xpdoTableClass xPDO schema class name for the database table
+ * @param string $field Name of the field to check
+ * @return boolean
+ */
+if (!function_exists('existsField')) {
+    function existsField(&$modx, $xpdoTableClass, $field) {
+
+        $existsField = true;
+
+        $table = $modx->getTableName($xpdoTableClass);
+        $sql = "SHOW COLUMNS FROM {$table} LIKE '".$field."'";
+        $stmt = $modx->prepare($sql);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+        $stmt->closeCursor();
+
+        if ($count < 1) {
+            $existsField = false;
+        }
+        return $existsField;
+    }
+}
+
+/**
+ * Checks if a field in a specified database table exist and creates it if not.
+ * (this prevents the annoying erro messages in MODX install log)
+ *
+ * @param mixed &$modx A reference to the MODX object
+ * @param mixed &$manager A reference to the Manager object
+ * @param string $xpdoTableClass xPDO schema class name for the database table
+ * @param string $field Name of the field to create
+ * @param string $after Name of the field after which the new field should be placed (Optional)
+ * @return void
+ */
+if (!function_exists('checkAddField')) {
+    function checkAddField(&$modx, &$manager, $xpdoTableClass, $field, $after = '') {
+
+        if (existsField($modx, $xpdoTableClass, $field)) { return; }
+
+        $options = array();
+        if (!empty($after)) $options['after'] = $after;
+        $manager->addField($xpdoTableClass, $field, $options);
+    }
+}
+
 if ($object->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
@@ -121,6 +178,15 @@ if ($object->xpdo) {
                 }
             }
             break;
+
+            $modx->addPackage('formalicious', $modelPath, null);
+
+            $manager = $modx->getManager();
+            // First add the new field
+            checkAddField($modx, $manager, 'FormaliciousStep', 'description');
+            checkAddField($modx, $manager, 'FormaliciousField', 'description');
+            checkAddField($modx, $manager, 'FormaliciousField', 'property');
+
     }
 }
 
