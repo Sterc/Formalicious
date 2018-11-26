@@ -309,6 +309,9 @@ if (empty($menu)) {
     $vehicle->resolve('php',array(
         'source' => $sources['resolvers'] . 'install.resolver.php',
     ));
+    $vehicle->resolve('php',array(
+        'source' => $sources['resolvers'] . 'resolve.tables.php',
+    ));
     $builder->putVehicle($vehicle);
     $modx->log(modX::LOG_LEVEL_INFO,'Packaged in menu.');
 }

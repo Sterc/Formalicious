@@ -21,7 +21,10 @@ if ($object->xpdo) {
             
             $modx->addPackage('formalicious', $modelPath, null);
 
+
+
             $manager = $modx->getManager();
+
             $manager->createObjectContainer('FormaliciousCategory');
             $manager->createObjectContainer('FormaliciousForm');
             $manager->createObjectContainer('FormaliciousStep');
@@ -29,9 +32,7 @@ if ($object->xpdo) {
             $manager->createObjectContainer('FormaliciousField');
             $manager->createObjectContainer('FormaliciousSubField');
             $manager->createObjectContainer('FormaliciousAnswer');
-            $manager->addField('FormaliciousStep', 'description');
-            $manager->addField('FormaliciousField', 'description');
-            $manager->addField('FormaliciousField', 'property');
+
 
             break;
     }
