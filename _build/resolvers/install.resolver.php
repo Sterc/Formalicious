@@ -29,6 +29,7 @@ function createCategory(&$modx, $data)
         $category->save();
     }
 }
+
 if ($object->xpdo) {
     switch ($options[xPDOTransport::PACKAGE_ACTION]) {
         case xPDOTransport::ACTION_INSTALL:
@@ -121,6 +122,7 @@ if ($object->xpdo) {
                 }
             }
             break;
+
     }
 }
 

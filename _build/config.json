@@ -3,7 +3,7 @@
     "lowCaseName": "formalicious",
     "description": "The most powerful and easiest form builder for MODX.",
     "author": "Sterc",
-    "version": "1.4.0-pl",
+    "version": "1.4.1-pl",
     "package":{
         "menus": [{
             "text": "Formalicious",
@@ -117,6 +117,7 @@
     "build": {
         "resolver": {
             "after": [
+                "resolve.tables.php",
                 "setupoptions.resolver.php",
                 "stercextra.resolver.php",
                 "install.resolver.php",
