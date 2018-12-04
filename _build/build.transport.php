@@ -16,7 +16,7 @@ if (!defined('MOREPROVIDER_BUILD')) {
     define('PKG_NAME', 'Formalicious');
     define('PKG_NAME_LOWER', 'formalicious');
     define('PKG_NAMESPACE', 'formalicious');
-    define('PKG_VERSION', '1.4.1');
+    define('PKG_VERSION', '1.4.2');
     define('PKG_RELEASE', 'pl');
     define('PKG_PROVIDER_ID', 2);
 
@@ -326,7 +326,7 @@ $builder->setPackageAttributes(array(
         'source' => $sources['build'].'setup.options.php',
     ),
     'requires' => array(
-        'formit' => '>=2.2.2',
+        'formit' => '>=4.1.1',
     ),
 ));
 $modx->log(modX::LOG_LEVEL_INFO,'Added package attributes and setup options.');
