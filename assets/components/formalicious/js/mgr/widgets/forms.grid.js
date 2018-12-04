@@ -1,20 +1,85 @@
-
 Formalicious.grid.Forms = function(config) {
     config = config || {};
-    Ext.applyIf(config,{
-        id: 'formalicious-grid-forms'
-        ,url: Formalicious.config.connectorUrl
-        ,baseParams: {
-            action: 'mgr/form/getlist'
-            ,category: config.category
+
+    config.tbar = [{
+        text        : _('formalicious.form_create'),
+        cls         : 'primary-button',
+        handler     : this.createForm,
+        scope       : this
+    }, '->', {
+        xtype       : 'textfield',
+        name        : 'formalicious-filter-form-' + config.category + '-search',
+        id          : 'formalicious-filter-form-' + config.category + '-search',
+        emptyText   : _('search') + '...',
+        listeners   : {
+            'change'    : {
+                fn          : this.filterSearch,
+                scope       : this
+            },
+            'render'    : {
+                fn          : function(cmp) {
+                    new Ext.KeyMap(cmp.getEl(), {
+                        keys    : Ext.EventObject.ENTER,
+                        fn      : this.blur,
+                        scope   : cmp
+                    });
+                },
+                scope       : this
+            }
         }
-        ,save_action: 'mgr/form/updatefromgrid'
-        ,autosave: true
-        ,fields: ['id','name','emailto', 'published']
-        ,autoHeight: true
-        ,paging: true
-        ,remoteSort: true
-        ,viewConfig: {
+    }, {
+        xtype       : 'button',
+        cls         : 'x-form-filter-clear',
+        id          : 'formalicious-filter-forms-' + config.category + '-clear',
+        text        : _('filter_clear'),
+        listeners   : {
+            'click'     : {
+                fn          : this.clearFilter,
+                scope       : this
+            }
+        }
+    }];
+
+    var columns = [{
+        header      : _('id'),
+        dataIndex   : 'id',
+        width       : 50,
+        fixed       : true
+    }, {
+        header      : _('formalicious.name'),
+        dataIndex   : 'name'
+    }, {
+        header      : _('formalicious.emailto'),
+        dataIndex   : 'emailto',
+        width       : 250,
+        fixed       : true
+    }, {
+        header      : _('published'),
+        dataIndex   : 'published',
+        width       : 125,
+        fixed       : true,
+        renderer    : this.renderBoolean
+    }, {
+        header      : _('formalicious.actions'),
+        width       : 125,
+        fixed       : true,
+        renderer    : this.renderActions
+    }];
+
+    Ext.applyIf(config, {
+        columns     : columns,
+        url         : Formalicious.config.connectorUrl,
+        baseParams  : {
+            action      : 'mgr/form/getlist',
+            category    : config.category
+        },
+        autosave    : true,
+        save_action : 'mgr/form/updatefromgrid',
+        fields      : ['id','name','emailto', 'published'],
+        paging      : true,
+        pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
+        remoteSort  : true
+        /*,viewConfig: {
             forceFit:true
             ,enableRowBody:true
             ,scrollOffset: 0
@@ -23,81 +88,92 @@ Formalicious.grid.Forms = function(config) {
             ,getRowClass : function(rec){
                 return rec.data.published ? 'grid-row-active' : 'grid-row-inactive';
             }
-        }
-        ,columns: [{
-            header: _('formalicious.name')
-            ,dataIndex: 'name'
-            ,width: 400
-            ,id: 'main'
-            ,renderer: {
-                fn: this.formTitleRenderer,
-                scope: this
-            }
-        },{
-            header: _('formalicious.emailto')
-            ,dataIndex: 'emailto'
-            ,width: 250
-            ,renderer: {
-                fn: this.formEmailToRenderer,
-                scope: this
-            }
-        },{
-            header: _('formalicious.actions')
-            ,renderer: {
-                fn: this.actionRenderer,
-                scope: this
-            }
-        }]
-        ,tbar: [{
-            text: _('formalicious.form_create')
-            ,handler: this.createForm
-            ,scope: this
-        },'->',{
-            xtype: 'textfield'
-            ,id: config.id+'-search-filter'
-            ,emptyText: _('formalicious.search...')
-            ,listeners: {
-                'change': {fn:this.search,scope:this}
-                ,'render': {fn: function(cmp) {
-                    new Ext.KeyMap(cmp.getEl(), {
-                        key: Ext.EventObject.ENTER
-                        ,fn: function() {
-                            this.fireEvent('change',this);
-                            this.blur();
-                            return true;
-                        }
-                        ,scope: cmp
-                    });
-                },scope:this}
-            }
-        }]
+        }*/
     });
-    Formalicious.grid.Forms.superclass.constructor.call(this,config);
+
+    Formalicious.grid.Forms.superclass.constructor.call(this, config);
 };
-Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
-    windows: {}
-    ,getMenu: function() {
-        var m = [];
-        m.push({
-            text: _('update')
-            ,handler: this.updateForm
+
+Ext.extend(Formalicious.grid.Forms, MODx.grid.Grid, {
+    filterSearch : function(tf, nv, ov) {
+        this.getStore().baseParams.query = tf.getValue();
+
+        this.getBottomToolbar().changePage(1);
+    },
+    clearFilter : function() {
+        this.getStore().baseParams.query = '';
+
+        Ext.getCmp('formalicious-filter-form-' + this.config.category + '-search').reset();
+
+        this.getBottomToolbar().changePage(1);
+    },
+    getMenu : function() {
+        return [{
+            text    : _('update'),
+            handler : this.updateForm
+        }, '-', {
+            text    : _('duplicate'),
+            handler : this.duplicateForm
+        }, '-', {
+            text    : _('delete'),
+            handler : this.removeForm
+        }];
+    },
+    createForm : function(btn, e) {
+        MODx.loadPage('update', 'category=' + this.category + '&namespace=' + MODx.request.namespace);
+    },
+    updateForm : function(btn, e) {
+        MODx.loadPage('update', 'category=' + this.category + '&namespace=' + MODx.request.namespace + '&id=' + this.menu.record.id);
+    },
+    duplicateForm : function(btn, e) {
+        if (this.duplicateFormWindow) {
+            this.duplicateFormWindow.destroy();
+        }
+
+        var record = Ext.apply({}, {
+            name : _('duplicate_of', {
+                name : this.menu.record.name
+            })
+        }, this.menu.record);
+
+        this.duplicateFormWindow = MODx.load({
+            xtype       : 'formalicious-window-form-duplicate',
+            record      : record,
+            closeAction : 'close',
+            listeners   : {
+                'success'   : {
+                     fn          : function (response) {
+                         MODx.loadPage('update', 'category=' + this.config.category + '&namespace=' + MODx.request.namespace + '&id=' + response.a.result.object.id);
+                     },
+                     scope       : this
+                }
+            }
         });
-        m.push('-');
-        m.push({
-            text: _('duplicate')
-            ,handler: this.duplicateForm
+
+        this.duplicateFormWindow.setValues(record);
+        this.duplicateFormWindow.show(e.target);
+    },
+    removeForm : function(btn, e) {
+        MODx.msg.confirm({
+            title   : _('formalicious.form_remove'),
+            text    : _('formalicious.form_remove_confirm'),
+            url     : this.config.url,
+            params  : {
+                action  : 'mgr/form/remove',
+                id      : this.menu.record.id
+            },
+            listeners   : {
+                'success'   : {
+                    fn          : this.refresh,
+                    scope       : this
+                }
+            }
         });
-        m.push('-');
-        m.push({
-            text: _('delete')
-            ,handler: this.removeForm
-        });
-        this.addContextMenuItem(m);
-    }
-    ,formTitleRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
-        return '<h3>'+value+' ('+record.id+')</h3>';
-    }
-    ,actionRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
+    },
+    renderTitle: function(d, c, e) {
+        return '<h3>' + d + ' (' + e.id + ')</h3>';
+    },
+    renderActions: function(value, metaData, record, rowIndex, colIndex, store) {
         var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}" title="{title}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
             compiled: true
         });
@@ -120,22 +196,34 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
         });
         values.actions = h;
         return tpl.apply(values);
-    }
-    ,formEmailToRenderer: function(value, metaData, record, rowIndex, colIndex, store) {
-        var tpl = new Ext.XTemplate('<tpl for=".">' + '<ul class="emailto">' + '<tpl for="emailto">' + '<li>{emailaddress}</li>' + '</tpl>' + '</ul>' + '</tpl>', {
-            compiled: true
+    },
+    renderEmails: function(d) {
+        var tpl = new Ext.XTemplate('<tpl for=".">' +
+            '<ul class="emailto">' +
+                '<tpl for="emails">' +
+                    '<li>{ email }</li>' +
+                '</tpl>' +
+            '</ul>' +
+        '</tpl>', {
+            compiled : true
         });
-        var values = {
-            emailto: []
-        };
 
-        var res = value.split(",");
-        Ext.each(res, function(val) {
-            values.emailto.push({
-                emailaddress: val
+        var emails = [];
+
+        d.split(',').forEach(function (email) {
+            emails.push({
+                email : email
             });
         });
-        return tpl.apply(values);
+
+        return tpl.apply({
+            emails : emails
+        });
+    },
+    renderBoolean: function(d, c) {
+        c.css = 1 === parseInt(d) || d ? 'green' : 'red';
+
+        return 1 === parseInt(d) || d ? _('yes') : _('no');
     }
     ,onClick: function(e) {
 
@@ -161,91 +249,35 @@ Ext.extend(Formalicious.grid.Forms,MODx.grid.Grid,{
             }
         }
     }
-
-    ,createForm: function(btn,e) {
-        MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace);
-    }
-    ,updateForm: function(btn,e) {
-        MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+this.menu.record.id);
-    }
-
-    ,duplicateForm: function(btn,e) {
-        if (!this.menu.record) return false;
-        var r = this.menu.record;
-
-        this.windows.duplicateForm = MODx.load({
-            xtype: 'formalicious-window-duplicate-form'
-            ,title: _('formalicious.form_duplicate')
-            ,record: r
-            ,listeners: {
-                'success': {fn:function(r) {
-                    this.refresh();
-                    var response = Ext.decode(r.a.response.responseText);
-                    MODx.loadPage('update', 'category='+this.category+'&namespace='+MODx.request.namespace+'&id='+response.object.id);
-                },scope:this}
-            }
-        });
-        this.windows.duplicateForm.fp.getForm().reset();
-        this.windows.duplicateForm.fp.getForm().setValues({'id': r.id, 'name': _('duplicate_of',{name: r.name})});
-        this.windows.duplicateForm.show(e.target);
-    }
-
-    ,removeForm: function(btn,e) {
-        if (!this.menu.record) return false;
-
-        MODx.msg.confirm({
-            title: _('formalicious.form_remove')
-            ,text: _('formalicious.form_remove_confirm')
-            ,url: this.config.url
-            ,params: {
-                action: 'mgr/form/remove'
-                ,id: this.menu.record.id
-            }
-            ,listeners: {
-                'success': {fn:function(r) { this.refresh(); },scope:this}
-            }
-        });
-    }
-
-    ,search: function(tf,nv,ov) {
-        var s = this.getStore();
-        s.baseParams.query = tf.getValue();
-        this.getBottomToolbar().changePage(1);
-        this.refresh();
-    }
-
-    ,getDragDropText: function(){
-        return this.selModel.selections.items[0].data.name;
-    }
 });
-Ext.reg('formalicious-grid-forms',Formalicious.grid.Forms);
 
-Formalicious.window.duplicateForm = function(config) {
+Ext.reg('formalicious-grid-forms', Formalicious.grid.Forms);
+
+Formalicious.window.DuplicateForm = function(config) {
     config = config || {};
-    this.ident = config.ident || 'formalicious-mecitem'+Ext.id();
-    Ext.applyIf(config,{
-        id: this.ident
-        ,autoHeight:true
-        ,width: 475
-        ,modal: true
-        ,closeAction: 'close'
-        ,url: Formalicious.config.connectorUrl
-        ,action: 'mgr/form/duplicate'
-        ,fields: [{
-            xtype: 'textfield'
-            ,name: 'id'
-            ,id: this.ident+'-id'
-            ,hidden: true
-        },{
-            xtype: 'textfield'
-            ,fieldLabel: _('name')
-            ,name: 'name'
-            ,id: this.ident+'-name'
-            ,anchor: '100%'
-            ,allowBlank: false
+
+    Ext.applyIf(config, {
+        autoHeight  : true,
+        title       : _('formalicious.form_duplicate'),
+        url         : Formalicious.config.connector_url,
+        baseParams  : {
+            action      : 'mgr/form/duplicate'
+        },
+        fields      : [{
+            xtype       : 'hidden',
+            name        : 'id'
+        }, {
+            xtype       : 'textfield',
+            fieldLabel  : _('name'),
+            name        : 'name',
+            anchor      : '100%',
+            allowBlank  : false
         }]
     });
-    Formalicious.window.duplicateForm.superclass.constructor.call(this,config);
+
+    Formalicious.window.DuplicateForm.superclass.constructor.call(this, config);
 };
-Ext.extend(Formalicious.window.duplicateForm,MODx.Window);
-Ext.reg('formalicious-window-duplicate-form',Formalicious.window.duplicateForm);
+
+Ext.extend(Formalicious.window.DuplicateForm, MODx.Window);
+
+Ext.reg('formalicious-window-form-duplicate', Formalicious.window.DuplicateForm);

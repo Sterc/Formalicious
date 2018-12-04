@@ -1,156 +1,176 @@
-
 Formalicious.grid.Categories = function(config) {
     config = config || {};
-    Ext.applyIf(config,{
-        id: 'formalicious-grid-categories'
-        ,url: Formalicious.config.connectorUrl
-        ,baseParams: {
-            action: 'mgr/category/getlist'
-        }
-        ,autosave: true
-        ,fields: ['id','name','description']
-        ,autoHeight: true
-        ,paging: true
-        ,remoteSort: true
-        ,columns: [{
-            header: _('id')
-            ,dataIndex: 'id'
-            ,width: 70
-        },{
-            header: _('name')
-            ,dataIndex: 'name'
-            ,width: 200
-        },{
-            header: _('description')
-            ,dataIndex: 'description'
-            ,width: 250
-        }]
-        ,tbar: [{
-            text: _('formalicious.category_create')
-            ,handler: this.createCategory
-            ,scope: this
-        }]
+
+    config.tbar = [{
+        text    : _('formalicious.category_create'),
+        cls     : 'primary-button',
+        handler : this.createCategory,
+        scope   : this
+    }];
+
+    var columns = [{
+        header      : _('name'),
+        dataIndex   : 'name',
+        width       : 200,
+        fixed       : true
+    }, {
+        header      : _('description'),
+        dataIndex   : 'description',
+        width       : 250
+    }];
+
+    Ext.applyIf(config, {
+        columns     : columns,
+        id          : 'formalicious-grid-categories',
+        url         : Formalicious.config.connectorUrl,
+        baseParams  : {
+            action      : 'mgr/category/getlist'
+        },
+        autosave    : true,
+        fields      : ['id','name','description'],
+        paging      : true,
+        pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
+        remoteSort  : true
     });
-    Formalicious.grid.Categories.superclass.constructor.call(this,config);
+
+    Formalicious.grid.Categories.superclass.constructor.call(this, config);
 };
 Ext.extend(Formalicious.grid.Categories,MODx.grid.Grid,{
-    windows: {}
-
-    ,getMenu: function() {
-        var m = [];
-        m.push({
-            text: _('formalicious.category_update')
-            ,handler: this.updateCategory
-        });
-        m.push('-');
-        m.push({
-            text: _('formalicious.category_remove')
-            ,handler: this.removeCategory
-        });
-        this.addContextMenuItem(m);
-    }
-
-    ,createCategory: function(btn,e) {
-        this.createUpdateCategory(btn, e, false);
-    }
-
-    ,updateCategory: function(btn,e) {
-        this.createUpdateCategory(btn, e, true);
-    }
-
-    ,createUpdateCategory: function(btn,e,isUpdate) {
-        var r;
-
-        if(isUpdate){
-            if (!this.menu.record || !this.menu.record.id) return false;
-            r = this.menu.record;
-        }else{
-            r = {};
+    getMenu : function() {
+        return [{
+            text    : _('formalicious.category_update'),
+            handler : this.updateCategory
+        }, '-', {
+            text    : _('formalicious.category_remove'),
+            handler : this.removeCategory
+        }];
+    },
+    createCategory :  function(btn, e) {
+        if (this.createCategoryWindow) {
+            this.createCategoryWindow.destroy();
         }
 
-        this.windows.createUpdateCategory = MODx.load({
-            xtype: 'formalicious-window-category-create-update'
-            ,isUpdate: isUpdate
-            ,title: (isUpdate) ?  _('formalicious.category_update') : _('formalicious.category_create')
-            ,record: r
-            ,listeners: {
-                'success': {fn:function() { this.refresh(); },scope:this}
+        this.createCategoryWindow = MODx.load({
+            xtype       : 'formalicious-window-category-create',
+            closeAction : 'close',
+            listeners   : {
+                'success'   : {
+                    fn          : this.refresh,
+                    scope       : this
+                }
             }
         });
 
-        this.windows.createUpdateCategory.fp.getForm().reset();
-        this.windows.createUpdateCategory.fp.getForm().setValues(r);
-        this.windows.createUpdateCategory.show(e.target);
-    }
+        this.createCategoryWindow.show(e.target);
+    },
+    updateCategory : function(btn, e) {
+        if (this.updateCategoryWindow) {
+            this.updateCategoryWindow.destroy();
+        }
 
-    ,removeCategory: function(btn,e) {
-        if (!this.menu.record) return false;
+        this.updateCategoryWindow = MODx.load({
+            xtype       : 'formalicious-window-category-update',
+            record      : this.menu.record,
+            closeAction : 'close',
+            listeners   : {
+                'success'   : {
+                    fn          : this.refresh,
+                    scope       : this
+                }
+            }
+        });
 
+        this.updateCategoryWindow.setValues(this.menu.record);
+        this.updateCategoryWindow.show(e.target);
+    },
+    removeCategory : function(btn, e) {
         MODx.msg.confirm({
-            title: _('formalicious.category_remove')
-            ,text: _('formalicious.category_remove_confirm')
-            ,url: this.config.url
-            ,params: {
-                action: 'mgr/category/remove'
-                ,id: this.menu.record.id
-            }
-            ,listeners: {
-                'success': {fn:function(r) { this.refresh(); },scope:this}
+            title   : _('formalicious.category_remove'),
+            text    : _('formalicious.category_remove_confirm'),
+            url     : this.config.url,
+            params  : {
+                action  : 'mgr/category/remove',
+                id      : this.menu.record.id
+            },
+            listeners   : {
+                'success'   : {
+                    fn          : this.refresh,
+                    scope       : this
+                }
             }
         });
-    }
-
-    ,search: function(tf,nv,ov) {
-        var s = this.getStore();
-        s.baseParams.query = tf.getValue();
-        this.getBottomToolbar().changePage(1);
-        this.refresh();
-    }
-
-    ,getDragDropText: function(){
-        return this.selModel.selections.items[0].data.name;
     }
 });
-Ext.reg('formalicious-grid-categories',Formalicious.grid.Categories);
 
-Formalicious.window.CreateUpdateCategory = function(config) {
+Ext.reg('formalicious-grid-categories', Formalicious.grid.Categories);
+
+Formalicious.window.CreateCategory = function(config) {
     config = config || {};
-    this.ident = config.ident || 'formalicious-mecitem'+Ext.id();
+
     Ext.applyIf(config,{
-        id: this.ident
-        ,autoHeight:true
-        ,width: 475
-        ,modal: true
-        ,closeAction: 'close'
-        ,url: Formalicious.config.connectorUrl
-        ,action: (config.isUpdate)? 'mgr/category/update' : 'mgr/category/create'
-        ,fields: [{
-            xtype: 'textfield'
-            ,name: 'id'
-            ,id: this.ident+'-id'
-            ,hidden: true
-        },{
-            xtype: 'textfield'
-            ,fieldLabel: _('name')
-            ,name: 'name'
-            ,id: this.ident+'-name'
-            ,anchor: '100%'
-            ,allowBlank: false
-        },{
-            xtype: 'textarea'
-            ,fieldLabel: _('description')
-            ,name: 'description'
-            ,id: this.ident+'-description'
-            ,anchor: '100%'
-        },{
-            xtype: 'textfield'
-            ,name: 'position'
-            ,id: this.ident+'-position'
-            ,hidden: true
+        autoHeight  : true,
+        title       : _('formalicious.category_create'),
+        url         : Formalicious.config.connector_url,
+        baseParams  : {
+            action      : 'mgr/category/create'
+        },
+        fields      : [{
+            xtype       : 'textfield',
+            fieldLabel  : _('name'),
+            name        : 'name',
+            anchor      : '100%',
+            allowBlank  : false
+        }, {
+            xtype       : 'textarea',
+            fieldLabel  : _('description'),
+            name        : 'description',
+            anchor      : '100%'
+        }, {
+            xtype       : 'hidden',
+            name        : 'position'
         }]
     });
-    Formalicious.window.CreateUpdateCategory.superclass.constructor.call(this,config);
-};
-Ext.extend(Formalicious.window.CreateUpdateCategory,MODx.Window);
-Ext.reg('formalicious-window-category-create-update',Formalicious.window.CreateUpdateCategory);
 
+    Formalicious.window.CreateCategory.superclass.constructor.call(this,config);
+};
+
+Ext.extend(Formalicious.window.CreateCategory, MODx.Window);
+
+Ext.reg('formalicious-window-category-create', Formalicious.window.CreateCategory);
+
+Formalicious.window.UpdateCategory = function(config) {
+    config = config || {};
+
+    Ext.applyIf(config,{
+        autoHeight  : true,
+        title       : _('formalicious.category_update'),
+        url         : Formalicious.config.connector_url,
+        baseParams  : {
+            action      : 'mgr/category/update'
+        },
+        fields      : [{
+            xtype       : 'hidden',
+            name        : 'id'
+        }, {
+            xtype       : 'textfield',
+            fieldLabel  : _('name'),
+            name        : 'name',
+            anchor      : '100%',
+            allowBlank  : false
+        }, {
+            xtype       : 'textarea',
+            fieldLabel  : _('description'),
+            name        : 'description',
+            anchor      : '100%'
+        }, {
+            xtype       : 'hidden',
+            name        : 'position'
+        }]
+    });
+
+    Formalicious.window.UpdateCategory.superclass.constructor.call(this,config);
+};
+
+Ext.extend(Formalicious.window.UpdateCategory, MODx.Window);
+
+Ext.reg('formalicious-window-category-update', Formalicious.window.UpdateCategory);

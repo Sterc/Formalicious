@@ -1,41 +1,49 @@
 Ext.onReady(function() {
-    MODx.load({ xtype: 'formalicious-page-update'});
+    MODx.load({
+        xtype : 'formalicious-page-update'
+    });
 });
 
 Formalicious.page.Update = function(config) {
     config = config || {};
-    Ext.applyIf(config,{
-    	formpanel: 'formalicious-panel-update'
-        ,components: [{
-            xtype: 'formalicious-panel-update'
-            ,renderTo: 'formalicious-panel-update-div'
+
+    config.buttons = [];
+
+    config.buttons.push({
+        text    : '<i class="icon icon-arrow-left"></i>' + _('formalicious.back_to_forms'),
+        handler : this.toDefaultView,
+        scope   : this
+    }, {
+
+        text    : _('save'),
+        cls     : 'primary-button',
+        method  : 'remote',
+        process : MODx.request.id ? 'mgr/form/update' : 'mgr/form/new',
+        //checkDirty: true,
+        keys    : [{
+            ctrl    : true,
+            keys    : MODx.config.keymap_save || 's'
         }]
-        ,buttons: [{
-            process: MODx.request.id ? 'mgr/form/update' : 'mgr/form/new'
-            ,text: _('save')
-            ,id: 'modx-abtn-save'
-            ,cls: 'primary-button'
-            ,method: 'remote'
-            // ,checkDirty: true
-            ,keys: [{
-                key: MODx.config.keymap_save || 's'
-                ,ctrl: true
-            }]
-        },{
-            text: _('close')
-            ,id: 'modx-abtn-cancel'
-            ,handler: function() {
-                MODx.loadPage('home', 'namespace='+MODx.request.namespace);
-            }
-        },{
-            text: _('formalicious.back_to_forms')
-            ,id: 'modx-abtn-back'
-            ,handler: function() {
-                MODx.loadPage('home', 'namespace='+MODx.request.namespace);
-            }
+    }, {
+        text    : _('close'),
+        handler : this.toDefaultView,
+        scope   : this
+    });
+
+    Ext.applyIf(config, {
+        formpanel   : 'formalicious-panel-update',
+        components  : [{
+            xtype       : 'formalicious-panel-update',
+            renderTo    : 'formalicious-panel-update-div'
         }]
     });
-    Formalicious.page.Update.superclass.constructor.call(this,config);
+    Formalicious.page.Update.superclass.constructor.call(this, config);
 };
-Ext.extend(Formalicious.page.Update,MODx.Component);
-Ext.reg('formalicious-page-update',Formalicious.page.Update);
+
+Ext.extend(Formalicious.page.Update, MODx.Component, {
+    toDefaultView : function() {
+        MODx.loadPage('home', 'namespace=' + MODx.request.namespace);
+    }
+});
+
+Ext.reg('formalicious-page-update', Formalicious.page.Update);

@@ -457,12 +457,6 @@ Ext.extend(Formalicious.grid.FormFields,MODx.grid.Grid,{
             Ext.getCmp('formalicious-create-placeholder-field').hide();
             Ext.getCmp('formalicious-create-required-field').hide();
             Ext.getCmp('formalicious-create-heading-field').hide();
-        } else
-        if (r.type == 9) {
-            Ext.getCmp('formalicious-create-placeholder-field').hide();
-            Ext.getCmp('formalicious-create-required-field').hide();
-            Ext.getCmp('formalicious-create-description-field').hide();
-            Ext.getCmp('formalicious-create-heading-field').show();
         } else {
             Ext.getCmp('formalicious-create-placeholder-field').show();
             Ext.getCmp('formalicious-create-required-field').show();
@@ -568,12 +562,6 @@ Ext.extend(Formalicious.window.CreateField,MODx.Window,{
                         Ext.getCmp('formalicious-create-placeholder-field').hide();
                         Ext.getCmp('formalicious-create-required-field').hide();
                         Ext.getCmp('formalicious-create-heading-field').hide();
-                    } else
-                    if (data.object.type == 9) {
-                        Ext.getCmp('formalicious-create-placeholder-field').hide();
-                        Ext.getCmp('formalicious-create-required-field').hide();
-                        Ext.getCmp('formalicious-create-description-field').hide();
-                        Ext.getCmp('formalicious-create-heading-field').show();
                     } else {
                         Ext.getCmp('formalicious-create-placeholder-field').show();
                         Ext.getCmp('formalicious-create-required-field').show();
@@ -650,12 +638,6 @@ Formalicious.window.UpdateField = function(config) {
                             Ext.getCmp('formalicious-create-placeholder-field').hide();
                             Ext.getCmp('formalicious-create-required-field').hide();
                             Ext.getCmp('formalicious-create-heading-field').hide();
-                        } else
-                        if (r.getValue() == 9) {
-                            Ext.getCmp('formalicious-create-placeholder-field').hide();
-                            Ext.getCmp('formalicious-create-required-field').hide();
-                            Ext.getCmp('formalicious-create-description-field').hide();
-                            Ext.getCmp('formalicious-create-heading-field').show();
                         } else {
                             Ext.getCmp('formalicious-create-placeholder-field').show();
                             Ext.getCmp('formalicious-create-required-field').show();
