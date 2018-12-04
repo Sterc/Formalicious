@@ -1,4 +1,24 @@
-Version 1.4.3-pl
+<?php return array (
+  'manifest-version' => '1.1',
+  'manifest-attributes' => 
+  array (
+    'license' => 'Formalicious is proprietary software, developed by Sterc and distributed through modmore.com. By purchasing Formalicious via https://www.modmore.com/formalicious/, you have received a usage license for a single (1) MODX Revolution installation, including one year (starting on date of purchase) of email support.
+
+While we hope Formalicious is useful to you and we will try to help you successfully use Formalicious, modmore or Sterc is not liable for loss of revenue, data, damages or other financial loss resulting from the installation or use of Formalicious.
+
+By using and installing this package, you acknowledge that you shall only use this on a single MODX installation.
+
+Redistribution in any shape or form is strictly prohibited. You may customize or change the provided source code to tailor Formalicious for your own use, as long as no attempt is made to remove license protection measures. By changing source code you acknowledge you void the right to support unless coordinated with modmore support.
+',
+    'readme' => '--------------------
+Formalicious
+--------------------
+Author: Sterc <modx@sterc.nl>
+--------------------
+
+Formalicious is the most powerful and easiest MODX form builder, with built-in multi-step forms, 8 field types, validation and the ability to use hooks and other advanced FormIt features.
+',
+    'changelog' => 'Version 1.4.3-pl
 --------------------------
 - Fixed multi-step radiobuttons/checkboxes/selects
 - Refactored ExtJs
@@ -49,7 +69,7 @@ Version 1.2.0-pl (August 2nd, 2017)
 - Prefix fiar-attachment field with modx base_path
 - Only add email hook when emailto is not empty
 - Remove default limit of 20 from field-values grid
-- Check for common 'spam,email,redirect' hooks added by Formalicious when saving posthooks
+- Check for common \'spam,email,redirect\' hooks added by Formalicious when saving posthooks
 - Add ID field to form-fields grid
 - Make sure prehooks are run before the renderForm snippet
 
@@ -115,3 +135,64 @@ Version 0.6.0 (2016)
 - Ability to save forms in FormIt (FormIt V2.2.2#) CMP
 - Added ability to setup autoresponder in form
 - Updated lexicons
+',
+    'setup-options' => 'formalicious-1.4.3-pl/setup-options.php',
+    'requires' => 
+    array (
+      'formit' => '>=4.1.1',
+    ),
+  ),
+  'manifest-vehicles' => 
+  array (
+    0 => 
+    array (
+      'vehicle_package' => 'transport',
+      'vehicle_class' => 'xPDOObjectVehicle',
+      'class' => 'modNamespace',
+      'guid' => '4c278ca62c209306edd44cd81e828c7d',
+      'native_key' => 'formalicious',
+      'filename' => 'modNamespace/1cbb30fccbd40a7938e90aaf83b2564d.vehicle',
+      'namespace' => 'formalicious',
+    ),
+    1 => 
+    array (
+      'vehicle_package' => 'transport',
+      'vehicle_class' => 'xPDOObjectVehicle',
+      'class' => 'modSystemSetting',
+      'guid' => '2dabaacb909d976e1aa2a7304e49e754',
+      'native_key' => 'formalicious.source',
+      'filename' => 'modSystemSetting/f1fbc2bea77c357551d04529ce9e9ab9.vehicle',
+      'namespace' => 'formalicious',
+    ),
+    2 => 
+    array (
+      'vehicle_package' => 'transport',
+      'vehicle_class' => 'xPDOObjectVehicle',
+      'class' => 'modSystemSetting',
+      'guid' => '9ecbc30565b30c20eab8bf0d7afb2053',
+      'native_key' => 'formalicious.option.allow_savesubmittedforms',
+      'filename' => 'modSystemSetting/31d8ac1c1deaae2fbd0bf174eb0f7d84.vehicle',
+      'namespace' => 'formalicious',
+    ),
+    3 => 
+    array (
+      'vehicle_package' => 'transport',
+      'vehicle_class' => 'xPDOObjectVehicle',
+      'class' => 'modCategory',
+      'guid' => '19a20fdd37f69c4eda581433a749fb66',
+      'native_key' => NULL,
+      'filename' => 'modCategory/b7b44a6e12600e10b98f1cd9a80c8bc4.vehicle',
+      'namespace' => 'formalicious',
+    ),
+    4 => 
+    array (
+      'vehicle_package' => 'transport',
+      'vehicle_class' => 'xPDOObjectVehicle',
+      'class' => 'modMenu',
+      'guid' => '86156c4e18ec028142f57c8c8ec91cfc',
+      'native_key' => 'Formalicious',
+      'filename' => 'modMenu/a3ba30eb1735f71f2584ad69dd83b9df.vehicle',
+      'namespace' => 'formalicious',
+    ),
+  ),
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '2dabaacb909d976e1aa2a7304e49e754',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'f1fbc2bea77c357551d04529ce9e9ab9',
+  'native_key' => 'formalicious.source',
+  'object' => '{"key":"formalicious.source","value":"1","xtype":"textfield","namespace":"formalicious","area":"Paths","editedon":null}',
+);
