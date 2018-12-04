@@ -33,7 +33,7 @@ $lastStep = false;
 $currentStep = $modx->getOption($stepParam, $_GET, 1);
 
 $hooks = array('spam', 'FormaliciousHookSetForm');
-$preHooks = array();
+$preHooks = array('FormaliciousHookGetForm');
 $postHooks = array();
 $renderHooks = array('FormaliciousHookRenderForm');
 
@@ -124,8 +124,8 @@ if ($modx->getOption('form', $scriptProperties, false)) {
                     $fieldNames[$fieldName] = $field->get('title');
                     
                     $emailOutput[] = '<tr>
-                        <td width="30%><strong>' . $field->get('title') . '</strong></td>
-                        <td width="70%">[[+field_' . $field->get('id') . ':default=``]]</td>
+                        <td width="30%"><strong>' . $field->get('title') . '</strong></td>
+                        <td width="70%">[[!+fi.'. $fieldName . ':default=``]]</td>
                     </tr>';
                 }
             }

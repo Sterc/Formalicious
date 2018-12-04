@@ -60,7 +60,7 @@ if ($object->xpdo) {
 
             createType(
                 $modx, [
-                'name'       => 'Checkboxes', 'tpl' => 'checkboxesTpl', 'answertpl' => 'checkboxInnerTpl',
+                'name'       => 'Checkboxes', 'tpl' => 'checkboxesTpl', 'answertpl' => 'checkboxesInnerTpl',
                 'values'     => 1, 'validation' => '', 'icon' => ''
             ]
             );

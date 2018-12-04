@@ -32,8 +32,8 @@
                 "name": "checkboxesTpl",
                 "file": "checkboxesTpl.chunk.tpl"
             },{
-                "name": "checkboxInnerTpl",
-                "file": "checkboxInnerTpl.chunk.tpl"
+                "name": "checkboxesInnerTpl",
+                "file": "checkboxesInnerTpl.chunk.tpl"
             },{
                 "name": "emailTpl",
                 "file": "emailTpl.chunk.tpl"
