@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '4bc0df994b61e72fe2ea5bf940b38915',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '4a9b4f0eb30c877683349658ecd58ed9',
+  'native_key' => 'formalicious.option.allow_savesubmittedforms',
+  'object' => '{"key":"formalicious.option.allow_savesubmittedforms","value":"1","xtype":"textfield","namespace":"formalicious","area":"Options","editedon":null}',
+);
