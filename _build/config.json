@@ -3,7 +3,7 @@
     "lowCaseName": "formalicious",
     "description": "The most powerful and easiest form builder for MODX.",
     "author": "Sterc",
-    "version": "1.4.3-pl",
+    "version": "1.4.4-pl",
     "package":{
         "menus": [{
             "text": "Formalicious",

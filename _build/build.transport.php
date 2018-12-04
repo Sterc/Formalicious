@@ -16,7 +16,7 @@ if (!defined('MOREPROVIDER_BUILD')) {
     define('PKG_NAME', 'Formalicious');
     define('PKG_NAME_LOWER', 'formalicious');
     define('PKG_NAMESPACE', 'formalicious');
-    define('PKG_VERSION', '1.4.3');
+    define('PKG_VERSION', '1.4.4');
     define('PKG_RELEASE', 'pl');
     define('PKG_PROVIDER_ID', 2);
 
