@@ -7,8 +7,8 @@
     $formit =& $hook->formit;
     $values = $hook->getValues();
 
-    $stepTpl = $modx->getOption('stepTpl', $scriptProperties, 'stepTpl');
-    $stepParam = $modx->getOption('stepParam', $scriptProperties, 'step');
+    $stepTpl = $modx->getOption('stepTpl', $formit->config, 'stepTpl');
+    $stepParam = $modx->getOption('stepParam', $formit->config, 'step');
     $currentStep = $modx->getOption($stepParam, $_GET, 1);
 
     $form = $modx->getObject('FormaliciousForm', [
