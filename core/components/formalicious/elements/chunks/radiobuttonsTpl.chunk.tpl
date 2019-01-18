@@ -1,8 +1,6 @@
-<div class="row">
-    <div class="form-group col-xs-12">
-        <p class="frm-field-title">[[!+title]]:</p>
-        [[!+values]]
-        [[!+fi.error.field_[[!+id]]]]
-        <p class="frm-field-description">[[!+description]]</p>
-    </div>
+<div class="form-group [[!+error:notempty=`has-error`]]">
+    <label>[[!+title]][[!+required:notempty=`*`:empty=``]]:</label>
+    [[!+values]]
+    [[!+error]]
+    [[!+description:notempty=`<p class="form-control--description">[[!+description]]</p>`]]
 </div>

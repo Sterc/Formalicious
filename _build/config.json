@@ -3,7 +3,7 @@
     "lowCaseName": "formalicious",
     "description": "The most powerful and easiest form builder for MODX.",
     "author": "Sterc",
-    "version": "1.4.1-pl",
+    "version": "1.4.4-pl",
     "package":{
         "menus": [{
             "text": "Formalicious",
@@ -16,21 +16,24 @@
                 "name": "renderForm",
                 "file": "snippet.renderForm.php"
             },{
-                "name": "FormaliciousGetValues",
-                "file": "snippet.FormaliciousGetValues.php"
+                "name": "FormaliciousHookGetForm",
+                "file": "snippet.formalicioushookgetform.php"
             },{
-                "name": "FormaliciousSaveValues",
-                "file": "snippet.FormaliciousSaveValues.php"
+                "name": "FormaliciousHookRemoveForm",
+                "file": "snippet.formalicioushookremoveform.php"
             },{
-                "name": "FormaliciousRemoveValues",
-                "file": "snippet.FormaliciousRemoveValues.php"
+                "name": "FormaliciousHookRenderForm",
+                "file": "snippet.formalicioushookrenderform.php"
+            },{
+                "name": "FormaliciousHookSetForm",
+                "file": "snippet.formalicioushooksetform.php"
             }],
             "chunks": [{
                 "name": "checkboxesTpl",
                 "file": "checkboxesTpl.chunk.tpl"
             },{
-                "name": "checkboxInnerTpl",
-                "file": "checkboxInnerTpl.chunk.tpl"
+                "name": "checkboxesInnerTpl",
+                "file": "checkboxesInnerTpl.chunk.tpl"
             },{
                 "name": "emailTpl",
                 "file": "emailTpl.chunk.tpl"
@@ -112,7 +115,7 @@
     },
     "dependencies": [{
         "name": "formit",
-        "version": ">=2.2.2"
+        "version": ">=4.1.1"
     }],
     "build": {
         "resolver": {
