@@ -1,11 +1,19 @@
-Version 1.4.3-pl
+Version 2.0.0-pl
 --------------------------
-- Fixed multi-step radiobuttons/checkboxes/selects
-- Refactored ExtJs
-
-Version 1.4.2-pl
---------------------------
-- Refactored ExtJs
+- Add form DB fields published_from and published_till to auto (de)publication forms
+- Add field answer DB field selected to set default selected
+- Rich text support for field description and form email content.
+- Steps (navigation) above the form
+- New parameter stepRedirect to redirect a step to a non resource ID (if stepRedirect is set to 'request' the step will be redirected to the current REQUEST URL)
+- New permissions added
+    - formalicious_admin to show/hide admin panel
+    - formalicious_tab_fields to show/hide fields tab
+    - formalicious_tab_advanced to show/hide advanced tab (formalicious_advanced renamed to formalicious_tab_advanced)
+- ExtJS refactored for faster and better UI/UX
+    - Step preview fixed
+    - Toggleable description, placeholder, required and heading fields for each fieldtype
+- RenderForm replaced with FormaliciousRenderForm
+- All snippets and chunks are prefixed with Formalicious
 
 Version 1.4.1-pl
 --------------------------
@@ -18,7 +26,6 @@ Version 1.4.0-pl
 - Add heading & description fields
 - Add field description
 - Change fiarcontent from varchar to text for bigger mails
-
 
 Version 1.3.1-pl
 --------------------------

@@ -18,22 +18,25 @@
         <field key="category_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
         <!-- Form settings -->
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="description" dbtype="text" phptype="string" null="false" default="" />
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+        <field key="published_from" dbtype="timestamp" precision="1" phptype="timestamp" null="false" default="0000-00-00 00:00:00" />
+        <field key="published_till" dbtype="timestamp" precision="1" phptype="timestamp" null="false" default="0000-00-00 00:00:00" />
         <field key="saveform" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="redirectto" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0"  />
 
         <!-- Email to settings -->
+        <field key="email" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="emailto" dbtype="text" phptype="string" null="false" default="" />
-        <field key="subject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="emailsubject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="emailcontent" dbtype="text" phptype="string" null="false" default="" />
 
         <!-- Email Auto Responder settings -->
         <field key="fiaremail" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="fiaremailto" dbtype="int" precision="11" attributes="unsigned" phptype="integer" null="false" default="0"  />
         <field key="fiaremailfrom" dbtype="text" phptype="string" null="false" default="" />
-        <field key="fiarsubject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-        <field key="fiarcontent" dbtype="text" phptype="string" null="false" default=""  />
-        <field key="fiarattachment" dbtype="text" phptype="string" null="false" default="" />
+        <field key="fiaremailsubject" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+        <field key="fiaremailcontent" dbtype="text" phptype="string" null="false" default=""  />
+        <field key="fiaremailattachment" dbtype="text" phptype="string" null="false" default="" />
 
         <!-- Advanced settings for FormIt -->
         <field key="prehooks" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -51,7 +54,6 @@
         <!-- Relations -->
         <aggregate alias="Category" class="FormaliciousCategory" local="category_id" foreign="id" cardinality="one" owner="foreign" />
         <composite alias="Steps" class="FormaliciousStep" local="id" foreign="form_id" cardinality="many" owner="local" />
-
     </object>
     <object class="FormaliciousStep" table="formalicious_steps" extends="xPDOSimpleObject">
         <field key="form_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
@@ -59,8 +61,9 @@
         <!-- Step settings -->
         <field key="title" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="description" dbtype="text" phptype="string" null="false" default="" />
+        <field key="button" dbtype="varchar" precision="75" phptype="string" null="false" default="" />
         <field key="rank" dbtype="int" precision="10" phptype="integer" null="false"/>
-        <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+        <field key="published" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
 
         <!-- Indexes -->
         <index alias="form_id" name="form_id" primary="false" unique="false" type="BTREE">
@@ -76,7 +79,6 @@
         <!-- Relations -->
         <aggregate alias="Form" class="FormaliciousForm" local="form_id" foreign="id" cardinality="one" owner="foreign" />
         <composite alias="Fields" class="FormaliciousField" local="id" foreign="step_id" cardinality="many" owner="local" />
-
     </object>
     <object class="FormaliciousFieldType" table="formalicious_fields_types" extends="xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -85,8 +87,11 @@
         <field key="values" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
         <field key="validation" dbtype="text" phptype="string" null="false" default="" />
         <field key="icon" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
-    </object>
+        <field key="fields" dbtype="text" phptype="string" null="false" default="" />
 
+        <!-- Relations -->
+        <composite alias="Fields" class="FormaliciousField" local="id" foreign="type" cardinality="many" owner="local" />
+    </object>
     <object class="FormaliciousField" table="formalicious_fields" extends="xPDOSimpleObject">
         <field key="step_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
 
@@ -116,10 +121,6 @@
         <aggregate alias="Step" class="FormaliciousStep" local="step_id" foreign="id" cardinality="one" owner="foreign" />
         <aggregate alias="Type" class="FormaliciousFieldType" local="type" foreign="id" cardinality="one" owner="foreign" />
         <composite alias="Answers" class="FormaliciousAnswer" local="id" foreign="field_id" cardinality="many" owner="local" />
-
-    </object>
-    <object class="FormaliciousSubField" table="formalicious_subfields" extends="FormaliciousField">
-
     </object>
     <object class="FormaliciousAnswer" table="formalicious_answers" extends="xPDOSimpleObject">
         <field key="field_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
@@ -127,6 +128,7 @@
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
         <field key="rank" dbtype="int" precision="10" phptype="integer" null="false"/>
         <field key="published" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+        <field key="selected" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
 
         <field key="subfield_id" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index" />
 
@@ -137,13 +139,14 @@
         <index alias="published" name="published" primary="false" unique="false" type="BTREE">
             <column key="published" length="" collation="A" null="false" />
         </index>
+        <index alias="selected" name="published" primary="false" unique="false" type="BTREE">
+            <column key="selected" length="" collation="A" null="false" />
+        </index>
         <index alias="rank" name="rank" primary="false" unique="false" type="BTREE">
             <column key="rank" length="" collation="A" null="false" />
         </index>
 
         <!-- Relations -->
         <aggregate alias="Field" class="FormaliciousField" local="field_id" foreign="id" cardinality="one" owner="foreign" />
-        <composite alias="SubField" class="FormaliciousSubField" local="subfield_id" foreign="id" cardinality="many" owner="local" />
-
     </object>
 </model>

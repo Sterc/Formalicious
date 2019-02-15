@@ -1,34 +1,52 @@
 <?php
 
+/**
+ * Formalicious
+ *
+ * Copyright 2019 by Sterc <modx@sterc.nl>
+ */
+
+require_once dirname(__DIR__) . '/index.class.php';
+
+class FormaliciousAdminManagerController extends FormaliciousBaseManagerController
+{
     /**
-     * Loads the home page.
-     *
-     * @package formalicious
-     * @subpackage controllers
+     * @access public.
      */
-    require_once dirname(__DIR__) . '/index.class.php';
-
-    class FormaliciousAdminManagerController extends FormaliciousBaseManagerController
+    public function loadCustomCssJs()
     {
-        public function loadCustomCssJs()
-        {
-            $this->addJavascript($this->formalicious->config['jsUrl'] . 'mgr/widgets/admin.panel.js');
+        $this->addJavascript($this->modx->formalicious->config['js_url'] . 'mgr/widgets/admin.panel.js');
 
-            $this->addJavascript($this->formalicious->config['jsUrl'] . 'mgr/widgets/categories.grid.js');
-            $this->addJavascript($this->formalicious->config['jsUrl'] . 'mgr/widgets/fieldtypes.grid.js');
+        $this->addJavascript($this->modx->formalicious->config['js_url'] . 'mgr/widgets/categories.grid.js');
+        $this->addJavascript($this->modx->formalicious->config['js_url'] . 'mgr/widgets/fieldtypes.grid.js');
 
-            $this->addLastJavascript($this->formalicious->config['jsUrl'] . 'mgr/sections/admin.js');
-        }
-
-        public function getPageTitle()
-        {
-            return $this->modx->lexicon('formalicious');
-        }
-
-        public function getTemplateFile()
-        {
-            return $this->formalicious->config['templatesPath'] . 'admin.tpl';
-        }
+        $this->addLastJavascript($this->modx->formalicious->config['js_url'] . 'mgr/sections/admin.js');
     }
 
-?>
+    /**
+     * @access public.
+     * @return String.
+     */
+    public function getPageTitle()
+    {
+        return $this->modx->lexicon('formalicious');
+    }
+
+    /**
+     * @access public.
+     * @return String.
+     */
+    public function getTemplateFile()
+    {
+        return $this->modx->formalicious->config['templates_path'] . 'admin.tpl';
+    }
+
+    /**
+     * @access public.
+     * @returns Boolean.
+     */
+    public function checkPermissions()
+    {
+        return $this->modx->hasPermission('formalicious_admin');
+    }
+}

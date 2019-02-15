@@ -15,7 +15,8 @@ Formalicious.panel.Home = function(config) {
 
     Formalicious.panel.Home.superclass.constructor.call(this, config);
 };
-Ext.extend(Formalicious.panel.Home, MODx.Panel, {
+
+Ext.extend(Formalicious.panel.Home, MODx.FormPanel, {
     getTabs : function() {
         var tabs = [];
 
@@ -37,10 +38,10 @@ Ext.extend(Formalicious.panel.Home, MODx.Panel, {
             });
         } else {
             tabs.push({
-                title   : 'test',
+                title   : _('formalicious'),
                 items   : [{
                     cls     : 'container',
-                    html    : _('formalicious.no-results')
+                    html    : _('formalicious.no_forms')
                 }]
             });
         }

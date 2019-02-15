@@ -3,7 +3,7 @@
 
 class FormaliciousInput extends cbBaseInput {
     public $defaultIcon = 'form';
-    public $defaultTpl = '[[!renderForm? &form=`[[+value]]`]]';
+    public $defaultTpl = '[[!FormaliciousRenderForm? &form=`[[+value]]`]]';
 
     /**
      * Returns an array with lexicon topics to load when this input type is used.

@@ -1,13 +1,18 @@
 <?php
+
 /**
- * Properties English Lexicon Entries for Formalicious
+ * Formalicious
  *
- * @package formalicious
- * @subpackage lexicon
+ * Copyright 2019 by Sterc <modx@sterc.nl>
  */
-$_lang['prop_formalicious.limit_desc'] = 'The number of Items to limit per page.';
-$_lang['prop_formalicious.outputseparator_desc'] = 'A string to separate each row with.';
-$_lang['prop_formalicious.sortby_desc'] = 'The field to sort by.';
-$_lang['prop_formalicious.sortdir_desc'] = 'The direction to sort by.';
-$_lang['prop_formalicious.tpl_desc'] = 'The chunk to use for each row of Items.';
-$_lang['prop_formalicious.toplaceholder_desc'] = 'If set, will output the content to the placeholder specified in this property, rather than outputting the content directly.';
+
+$_lang['formalicious']                                          = 'Formalicious';
+
+$_lang['formalicious.snippet_tplform_desc']                     = 'The template of the form, this can be a chunk name, @FILE or @INLINE.';
+$_lang['formalicious.snippet_tplstep_desc']                     = 'The template of a step, this can be a chunk name, @FILE or @INLINE.';
+$_lang['formalicious.snippet_tplnavigationitem_desc']           = 'The template of a step in the steps navigation, this can be a chunk name, @FILE or @INLINE.';
+$_lang['formalicious.snippet_tplnavigationwrapper_desc']        = 'The template of the steps navigation, this can be a chunk name, @FILE or @INLINE.';
+$_lang['formalicious.snippet_tplemail_desc']                    = 'The template of the email, this can only be a chunk name.';
+$_lang['formalicious.snippet_tplemailfieldsitem_desc']          = 'The template of a field in the email, this can be a chunk name, @FILE or @INLINE.';
+$_lang['formalicious.snippet_tplemailfieldswrapper_desc']       = 'The template of the wrapper of the fields in the email, this can be a chunk name, @FILE or @INLINE.';
+$_lang['formalicious.snippet_tplfiaremail_desc']                = 'The template of the auto-reply email, this can only be a chunk name.';

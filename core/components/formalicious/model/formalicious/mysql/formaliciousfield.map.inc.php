@@ -1,195 +1,183 @@
 <?php
+
 /**
- * @package formalicious
+ * Formalicious
+ *
+ * Copyright 2019 by Sterc <modx@sterc.nl>
  */
-$xpdo_meta_map['FormaliciousField']= array (
-  'package' => 'formalicious',
-  'version' => NULL,
-  'table' => 'formalicious_fields',
-  'extends' => 'xPDOSimpleObject',
-  'tableMeta' => 
-  array (
-    'engine' => 'MyISAM',
-  ),
-  'fields' => 
-  array (
-    'step_id' => 0,
-    'title' => '',
-    'placeholder' => '',
-    'description' => '',
-    'directional' => 0,
-    'type' => 0,
-    'required' => 0,
-    'published' => 0,
-    'rank' => NULL,
-    'property' => '',
-  ),
-  'fieldMeta' => 
-  array (
-    'step_id' => 
-    array (
-      'dbtype' => 'int',
-      'precision' => '10',
-      'phptype' => 'integer',
-      'null' => false,
-      'default' => 0,
-      'index' => 'index',
+
+$xpdo_meta_map['FormaliciousField'] = array(
+    'package'       => 'formalicious',
+    'version'       => '1.0',
+    'table'         => 'formalicious_fields',
+    'extends'       => 'xPDOSimpleObject',
+    'tableMeta'     => array(
+        'engine'        => 'MyISAM'
     ),
-    'title' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '255',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
+    'fields'        => array(
+        'id'            => '',
+        'step_id'       => '',
+        'title'         => '',
+        'placeholder'   => '',
+        'description'   => '',
+        'directional'   => '',
+        'type'          => '',
+        'required'      => '',
+        'published'     => '',
+        'rank'          => '',
+        'property'      => ''
     ),
-    'placeholder' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '255',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-    'description' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-    'directional' => 
-    array (
-      'dbtype' => 'tinyint',
-      'precision' => '1',
-      'attributes' => 'unsigned',
-      'phptype' => 'boolean',
-      'null' => false,
-      'default' => 0,
-    ),
-    'type' => 
-    array (
-      'dbtype' => 'int',
-      'precision' => '10',
-      'phptype' => 'integer',
-      'null' => false,
-      'default' => 0,
-      'index' => 'index',
-    ),
-    'required' => 
-    array (
-      'dbtype' => 'tinyint',
-      'precision' => '1',
-      'attributes' => 'unsigned',
-      'phptype' => 'boolean',
-      'null' => false,
-      'default' => 0,
-    ),
-    'published' => 
-    array (
-      'dbtype' => 'tinyint',
-      'precision' => '1',
-      'attributes' => 'unsigned',
-      'phptype' => 'boolean',
-      'null' => false,
-      'default' => 0,
-      'index' => 'index',
-    ),
-    'rank' => 
-    array (
-      'dbtype' => 'int',
-      'precision' => '10',
-      'phptype' => 'integer',
-      'null' => false,
-    ),
-    'property' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '255',
-      'phptype' => 'string',
-      'null' => false,
-      'default' => '',
-    ),
-  ),
-  'indexes' => 
-  array (
-    'step_id' => 
-    array (
-      'alias' => 'step_id',
-      'primary' => false,
-      'unique' => false,
-      'type' => 'BTREE',
-      'columns' => 
-      array (
-        'step_id' => 
-        array (
-          'length' => '',
-          'collation' => 'A',
-          'null' => false,
+    'fieldMeta'     => array(
+        'step_id'       => array(
+            'dbtype'        => 'int',
+            'precision'     => '10',
+            'phptype'       => 'integer',
+            'null'          => false,
+            'default'       => 0,
+            'index'         => 'index'
         ),
-      ),
-    ),
-    'published' => 
-    array (
-      'alias' => 'published',
-      'primary' => false,
-      'unique' => false,
-      'type' => 'BTREE',
-      'columns' => 
-      array (
-        'published' => 
-        array (
-          'length' => '',
-          'collation' => 'A',
-          'null' => false,
+        'title'         => array(
+            'dbtype'        => 'varchar',
+            'precision'     => '255',
+            'phptype'       => 'string',
+            'null'          => false,
+            'default'       => ''
         ),
-      ),
-    ),
-    'rank' => 
-    array (
-      'alias' => 'rank',
-      'primary' => false,
-      'unique' => false,
-      'type' => 'BTREE',
-      'columns' => 
-      array (
-        'rank' => 
-        array (
-          'length' => '',
-          'collation' => 'A',
-          'null' => false,
+        'placeholder'   => array(
+            'dbtype'        => 'varchar',
+            'precision'     => '255',
+            'phptype'       => 'string',
+            'null'          => false,
+            'default'       => ''
         ),
-      ),
+        'description'   => array(
+            'dbtype'        => 'text',
+            'phptype'       => 'string',
+            'null'          => false,
+            'default'       => ''
+        ),
+        'directional'   => array(
+            'dbtype'        => 'tinyint',
+            'precision'     => '1',
+            'attributes'    => 'unsigned',
+            'phptype'       => 'boolean',
+            'null'          => false,
+            'default'       => 0
+        ),
+        'type'          => array(
+            'dbtype'        => 'int',
+            'precision'     => '10',
+            'phptype'       => 'integer',
+            'null'          => false,
+            'default'       => 0,
+            'index'         => 'index'
+        ),
+        'required'      => array (
+            'dbtype'        => 'tinyint',
+            'precision'     => '1',
+            'attributes'    => 'unsigned',
+            'phptype'       => 'boolean',
+            'null'          => false,
+            'default'       => 0
+        ),
+        'published'     => array (
+            'dbtype'        => 'tinyint',
+            'precision'     => '1',
+            'attributes'    => 'unsigned',
+            'phptype'       => 'boolean',
+            'null'          => false,
+            'default'       => 0,
+            'index'         => 'index',
+        ),
+        'rank'          => array(
+            'dbtype'        => 'int',
+            'precision'     => '10',
+            'phptype'       => 'integer',
+            'null'          => false,
+            ),
+        'property'      => array(
+            'dbtype'        => 'varchar',
+            'precision'     => '255',
+            'phptype'       => 'string',
+            'null'          => false,
+            'default'       => ''
+        )
     ),
-  ),
-  'composites' => 
-  array (
-    'Answers' => 
-    array (
-      'class' => 'FormaliciousAnswer',
-      'local' => 'id',
-      'foreign' => 'field_id',
-      'cardinality' => 'many',
-      'owner' => 'local',
+    'indexes'       => array(
+        'PRIMARY'       => array(
+            'alias'         => 'PRIMARY',
+            'primary'       => true,
+            'unique'        => true,
+            'columns'       => array(
+                'id'            => array(
+                    'collation'     => 'A',
+                    'null'          => false
+                )
+            )
+        ),
+        'step_id'       => array(
+            'alias'         => 'step_id',
+            'primary'       => false,
+            'unique'        => false,
+            'type'          => 'BTREE',
+            'columns'       => array(
+                'step_id'       => array(
+                    'length'        => '',
+                    'collation'     => 'A',
+                    'null'          => false
+                )
+            )
+        ),
+        'published'     => array(
+            'alias'         => 'published',
+            'primary'       => false,
+            'unique'        => false,
+            'type'          => 'BTREE',
+            'columns'       => array(
+                'published'     => array(
+                    'length'        => '',
+                    'collation'     => 'A',
+                    'null'          => false
+                )
+            )
+        ),
+        'rank'      => array(
+            'alias'     => 'rank',
+            'primary'   => false,
+            'unique'    => false,
+            'type'      => 'BTREE',
+            'columns'   => array(
+                'rank'      => array(
+                    'length'    => '',
+                    'collation' => 'A',
+                    'null'      => false
+                )
+            )
+        )
     ),
-  ),
-  'aggregates' => 
-  array (
-    'Step' => 
-    array (
-      'class' => 'FormaliciousStep',
-      'local' => 'step_id',
-      'foreign' => 'id',
-      'cardinality' => 'one',
-      'owner' => 'foreign',
+    'composites'    => array(
+        'Answers'       => array(
+            'class'         => 'FormaliciousAnswer',
+            'local'         => 'id',
+            'foreign'       => 'field_id',
+            'cardinality'   => 'many',
+            'owner'         => 'local'
+        )
     ),
-    'Type' => 
-    array (
-      'class' => 'FormaliciousFieldType',
-      'local' => 'type',
-      'foreign' => 'id',
-      'cardinality' => 'one',
-      'owner' => 'foreign',
-    ),
-  ),
+    'aggregates'    => array(
+        'Step'          => array(
+            'class'         => 'FormaliciousStep',
+            'local'         => 'step_id',
+            'foreign'       => 'id',
+            'cardinality'   => 'one',
+            'owner'         => 'foreign'
+        ),
+        'Type'          => array(
+            'class'         => 'FormaliciousFieldType',
+            'local'         => 'type',
+            'foreign'       => 'id',
+            'cardinality'   => 'one',
+            'owner'         => 'foreign'
+        )
+    )
 );

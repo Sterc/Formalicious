@@ -1,170 +1,213 @@
 <?php
+
 /**
- * Dutch Lexicon Entries for Formalicious
+ * Formalicious
  *
- * @package formalicious
- * @subpackage lexicon
+ * Copyright 2019 by Sterc <modx@sterc.nl>
  */
-$_lang['formalicious'] = 'Formalicious';
-$_lang['formalicious.menu_desc'] = 'De meest krachtige en eenvoudigste formulieren bouwer voor MODX.';
 
-$_lang['formalicious.no-results'] = 'Voeg eerst enkele categoriën toe. Click daarom op "Admin panel" en voeg sowieso één categorie toe.';
+$_lang['formalicious']                                          = 'Formalicious';
+$_lang['formalicious.desc']                                     = 'De meest krachtige en eenvoudigste formulieren bouwer voor MODX.';
 
-$_lang['formalicious.save'] = 'Opslaan';
-$_lang['formalicious.close'] = 'Sluiten';
-$_lang['formalicious.back_to_forms'] = 'Terug naar formulieren';
-$_lang['formalicious.admin_panel'] = 'Administratie Paneel';
-$_lang['formalicious.search...'] = 'Zoeken...';
-$_lang['formalicious.settings'] = 'Formulier instellingen';
-$_lang['formalicious.settings.intro_msg'] = 'In de volgende velden kun je de e-mail instellingen richting jullie zelf invullen. Verder is het mogelijk om een bedankt pagina te koppelen aan het formulier waar de bezoekers op terecht komen.';
-$_lang['formalicious.fields'] = 'Formulier velden';
-$_lang['formalicious.fields.intro_msg'] = 'Beheer je formulier-velden. De stappen boven de velden kunnen worden hernoemd door op de stap-tekst te dubbelklikken. Je kunt de stappen ordenen door ze in de gewenste volgorde te slepen.';
-$_lang['formalicious.saved_forms'] = 'Opgeslagen formulieren';
-$_lang['formalicious.saved_forms.intro_msg'] = 'Omschrijving';
-$_lang['formalicious.admin'] = 'Administrator';
-$_lang['formalicious.admin.intro_msg'] = 'Omschrijving';
+$_lang['area_formalicious']                                     = 'Formalicious';
+$_lang['area_formalicious_editor']                              = 'Formalicious (rich text editor)';
 
-$_lang['formalicious.category'] = 'Categorie';
-$_lang['formalicious.categories'] = 'Categorieen';
-$_lang['formalicious.category.intro_msg'] = 'Hier kun je kiezen welke categorieen je wil aanpassen of nieuwe categorieen toevoegen.';
-$_lang['formalicious.category_create'] = 'Categorie aanmaken';
-$_lang['formalicious.category_update'] = 'Categorie aanpassen';
-$_lang['formalicious.category_remove'] = 'Categorie verwijderen';
-$_lang['formalicious.category_remove_confirm'] = 'Weet je zeker dat je deze categorie wil verwijderen?';
-//$_lang['formalicious.category_err_ns_name'] = 'Categorie verwijderen';
+$_lang['setting_formalicious.branding_url']                     = 'Branding';
+$_lang['setting_formalicious.branding_url_desc']                = 'De URL waar de branding knop heen verwijst, indien leeg wordt de branding knop niet getoond.';
+$_lang['setting_formalicious.branding_url_help']                = 'Branding (help)';
+$_lang['setting_formalicious.branding_url_help_desc']           = 'De URL waar de branding help knop heen verwijst, indien leeg wordt de branding help knop niet getoond.';
+$_lang['setting_formalicious.saveforms']                        = 'Formulieren opslaan';
+$_lang['setting_formalicious.saveforms_desc']                   = 'Gebruikers kunnen aangeven of formulier opgeslagen mogen worden in FormIt.';
+$_lang['setting_formalicious.saveforms_prefix']                 = 'Formulieren opslaan prefix';
+$_lang['setting_formalicious.saveforms_prefix_desc']            = 'Indien formulier opgeslagen kunnen worden in FormIt word de naam geprefixt met deze prefix.';
+$_lang['setting_formalicious.disallowed_hooks']                 = 'Niet toegestane hooks';
+$_lang['setting_formalicious.disallowed_hooks_desc']            = 'De niet toegestane FormIt snippet call hooks. Meerdere hooks scheiden met een comma, standaard is "spam,email,redirect".';
+$_lang['setting_formalicious.preview_css']                      = 'Formulier voorvertoning CSS';
+$_lang['setting_formalicious.preview_css_desc']                 = 'De URL van het CSS bestand die ingeladen word voor de voorvertoning van een formuluer.';
+$_lang['setting_formalicious.use_editor']                       = 'Gebruik richt text editor';
+$_lang['setting_formalicious.use_editor_desc']                  = 'Gebruik een rich text editor voor de chatbot.';
+$_lang['setting_formalicious.editor_plugins']                    = 'Plugins';
+$_lang['setting_formalicious.editor_plugins_desc']              = 'De \'plugins\' config voor de rich text editor.';
+$_lang['setting_formalicious.editor_toolbar1']                  = 'Toolbar 1';
+$_lang['setting_formalicious.editor_toolbar1_desc']             = 'De \'toolbar1\' config voor de rich text editor.';
+$_lang['setting_formalicious.editor_toolbar2']                  = 'Toolbar 2';
+$_lang['setting_formalicious.editor_toolbar2_desc']             = 'De \'toolbar2\' config voor de rich text editor.';
+$_lang['setting_formalicious.editor_toolbar3']                  = 'Toolbar 3';
+$_lang['setting_formalicious.editor_toolbar3_desc']             = 'De \'toolbar3\' config voor de rich text editor.';
+$_lang['setting_formalicious.editor_menubar']                   = 'Menubar';
+$_lang['setting_formalicious.editor_menubar_desc']              = 'De \'menubar\' config voor de rich text editor.';
+$_lang['setting_formalicious.editor_statusbar']                 = 'Statusbar';
+$_lang['setting_formalicious.editor_statusbar_desc']            = 'De \'statusbar\' config voor de rich text editor.';
 
-$_lang['formalicious.fieldtype'] = 'Types';
-$_lang['formalicious.fieldtype.intro_msg'] = 'Hier kun je kiezen welke types je wil aanpassen of nieuwe types toevoegen.';
-$_lang['formalicious.fieldtype_create'] = 'Type aanmaken';
-$_lang['formalicious.fieldtype_update'] = 'Type aanpassen';
-$_lang['formalicious.fieldtype_remove'] = 'Type verwijderen';
-$_lang['formalicious.fieldtype_remove_confirm'] = 'Weet je zeker dat je dit type wil verwijderen?';
-$_lang['formalicious.fieldtype.name'] = 'Naam';
-$_lang['formalicious.fieldtype.tpl'] = 'Template';
-$_lang['formalicious.fieldtype.tpl.description'] = 'Naam van de chunk die als template voor dit veld gebruikt wordt.';
-$_lang['formalicious.fieldtype.answertpl'] = 'Waarden template';
-$_lang['formalicious.fieldtype.answertpl.description'] = 'Naam van de chunk die als template voor de veld waarden gebruikt wordt.';
-$_lang['formalicious.fieldtype.values'] = 'Waarden';
-$_lang['formalicious.fieldtype.validation'] = 'Validatie';
-$_lang['formalicious.fieldtype.validation.description'] = 'Komma-gescheiden lijst van FormIt validators voor dit veld. 
-Kijk bij \'built - in validators\' op https://docs.modx.com/extras/revo/formit/formit.validators.';
-$_lang['formalicious.fieldtype.icon'] = 'Icoon';
-$_lang['formalicious.fieldtype.icon.description'] = 'Bij het toevoegen van een veld aan een formulier wordt dit icoon 
-getoond bij het kiezen van een veld-type.';
+$_lang['formalicious.category']                                 = 'Categorie';
+$_lang['formalicious.categories']                               = 'Categorieën';
+$_lang['formalicious.categories.desc']                          = 'Het ordenen van je formulieren is een aangeraden, dat kan doormiddel van het aanmaken van Categorieën hier onder. Deze categorieën zullen beschikbaar zijn als tabs in de formulieren overzicht.';
+$_lang['formalicious.categories.create']                        = 'Nieuwe categorie';
+$_lang['formalicious.categories.update']                        = 'Categorie bewerken';
+$_lang['formalicious.categories.remove']                        = 'Categorie verwijderen';
+$_lang['formalicious.categories.remove_confirm']                = 'Weet je zeker dat je deze categorie wilt verwijderen?';
 
+$_lang['formalicious.categories.label_name']                    = 'Naam';
+$_lang['formalicious.categories.label_name_desc']               = '';
+$_lang['formalicious.categories.label_description']             = 'Omschrijving';
+$_lang['formalicious.categories.label_description_desc']        = '';
+$_lang['formalicious.categories.label_published']               = 'Gepubliceerd';
+$_lang['formalicious.categories.label_published_desc']          = '';
 
+$_lang['formalicious.fieldtype']                                = 'Veldtype';
+$_lang['formalicious.fieldtypes']                               = 'Veldtypes';
+$_lang['formalicious.fieldtypes.desc']                          = 'Een formulier bestaand uit velden, deze velden kunnen bijvoorbeeld bestaan uit het type text of email. Formalicious bestaat standaard uit meerdere veldtypes die nodig zijn om een krachtig en eenvouding formulier te maken. Hieronder kun je eigen velden aanmaken.';
+$_lang['formalicious.fieldtypes.create']                        = 'Nieuwe veldtype';
+$_lang['formalicious.fieldtypes.update']                        = 'Veldtype bewerken';
+$_lang['formalicious.fieldtypes.remove']                        = 'Veldtype verwijderen';
+$_lang['formalicious.fieldtypes.remove_confirm']                = 'Weet je zeker dat je dit veldtype wil verwijderen? Dit verwijderd ook alle velden die gekoppeld zijn aan dit veldtype.';
+$_lang['formalicious.fieldtypes.duplicate']                     = 'Veldtype dupliceren';
 
+$_lang['formalicious.fieldtypes.label_name']                    = 'Naam';
+$_lang['formalicious.fieldtypes.label_name_desc']               = '';
+$_lang['formalicious.fieldtypes.label_tpl']                     = 'Chunk';
+$_lang['formalicious.fieldtypes.label_tpl_desc']                = 'De naam van de chunk die als template voor dit veldtype gebruikt wordt.';
+$_lang['formalicious.fieldtypes.label_fields']                  = 'Velden';
+$_lang['formalicious.fieldtypes.label_fields_desc']             = '';
+$_lang['formalicious.fieldtypes.label_values']                  = 'Waarden';
+$_lang['formalicious.fieldtypes.label_values_desc']             = 'Dit veldtype kan waarden bevatten.';
+$_lang['formalicious.fieldtypes.label_answertpl']               = 'Waarden chunk';
+$_lang['formalicious.fieldtypes.label_answertpl_desc']          = 'De naam van de chunk die als template voor de waarden van dit veldtype gebruikt wordt. Waardes zijn verplicht voor selectboxes, checkboxes en radio buttons.';
+$_lang['formalicious.fieldtypes.label_validation']              = 'Validatie';
+$_lang['formalicious.fieldtypes.label_validation_desc']         = 'Komma-gescheiden lijst van FormIt validators voor dit veldtype. Kijk bij built - in validators op https://docs.modx.com/extras/revo/formit/formit.validators.';
+$_lang['formalicious.fieldtypes.label_icon']                    = 'Icoon';
+$_lang['formalicious.fieldtypes.label_icon_desc']               = 'Bij het toevoegen van een veld aan een formulier wordt dit icoon getoond bij het kiezen van een veldtype.';
 
-$_lang['formalicious.name'] = 'Naam';
-$_lang['formalicious.emailto'] = 'Mailen naar';
-$_lang['formalicious.actions'] = 'Acties';
+$_lang['formalicious.form']                                     = 'Formulier';
+$_lang['formalicious.forms']                                    = 'Formulieren';
+$_lang['formalicious.forms.create']                             = 'Nieuw formulier';
+$_lang['formalicious.forms.update']                             = 'Formulier bewerken';
+$_lang['formalicious.forms.remove']                             = 'Formulier verwijderen';
+$_lang['formalicious.forms.remove_confirm']                     = 'Weet je zeker dat je dit formulier wil verwijderen? Dit verwijderd ook alle onderliggende stappen en velden.';
+$_lang['formalicious.forms.duplicate']                          = 'Formulier dupliceren';
 
-$_lang['formalicious.form_create'] = 'Formulier aanmaken';
-$_lang['formalicious.form_duplicate'] = 'Formulier dupliceren';
-$_lang['formalicious.form_duplicate_name'] = 'Vul hier de naam van het nieuwe formulier in';
-$_lang['formalicious.form_remove'] = 'Formulier verwijderen';
-$_lang['formalicious.form_remove_confirm'] = 'Weet je zeker dat je dit formulier wil verwijderen?';
-$_lang['formalicious.add_field'] = 'Veld toevoegen';
-$_lang['formalicious.field_update'] = 'Veld aanpassen';
-$_lang['formalicious.field_save'] = 'Veld opslaan';
-$_lang['formalicious.field_remove'] = 'Veld verwijderen';
-$_lang['formalicious.field_remove_confirm'] = 'Weet je zeker dat je dit veld wil verwijderen?';
-$_lang['formalicious.values'] = 'Waarden';
-$_lang['formalicious.add_value'] = 'Waarde toevoegen';
-$_lang['formalicious.value_update'] = 'Waarde aanpassen';
-$_lang['formalicious.value_remove'] = 'Waarde verwijderen';
-$_lang['formalicious.value_remove_confirm'] = 'Weet je zeker dat je deze waarde wil verwijderen?';
+$_lang['formalicious.settings']                                 = 'Instellingen';
+$_lang['formalicious.settings.desc']                            = 'Hier kun je de formulier instellingen instellen. Hier is het oa mogelijk om een \'bedankt pagina\' aan het formulier te koppelen waar de bezoekers op terecht zal komen nadat die het formulier ingevuld heeft.';
 
-$_lang['formalicious.field_create'] = 'Veld aanmaken';
+$_lang['formalicious.settings.email.desc']                      = 'Hier kun je de e-mail instellen die verstuurd word zodra de bezoeker het formulier invuld, om een email te kunnen versturen dien je de onderstaande instellingen in te stellen.';
+$_lang['formalicious.settings.fair.desc']                       = 'Hier kun je de auto-reply e-mail instellen die naar de bezoeker verstuurd word zodra hij of zij het formulier invuld, om een auto-reply te kunnen versturen dien je de onderstaande instellingen in te stellen.';
 
-$_lang['formalicious.step.create'] = 'Stap aanmaken';
-$_lang['formalicious.step.remove'] = 'Verwijder stap';
-$_lang['formalicious.step.remove.msg'] = 'Weet je zeker dat je deze stap wilt verwijderen?';
-// $_lang['formalicious.new_step'] = 'Stap [[+number]]';
-$_lang['formalicious.new_step'] = 'Nieuwe stap';
-$_lang['formalicious.add_value'] = 'Waarde toevoegen';
+$_lang['formalicious.settings.label_name']                      = 'Naam';
+$_lang['formalicious.settings.label_name_desc']                 = 'De naam van het formulier, deze naam word alleen binnen de MODx manager gebruikt.';
+$_lang['formalicious.settings.label_email']                     = 'E-mail';
+$_lang['formalicious.settings.label_email_desc']                = 'Indien aangevinkt zal er een e-mail verstuurd worden zodra de bezoeker het formulier invuld.';
+$_lang['formalicious.settings.label_emailto']                   = 'E-mail ontvanger';
+$_lang['formalicious.settings.label_emailto_desc']              = 'Indien gevuldt zal het formulier naar dit e-mail adres gestuurd worden. Vul bij meerdere adressen dit komma gescheiden in, bijvoorbeeld \'info@domein.com,admin@domein.com\'.';
+$_lang['formalicious.settings.label_emailsubject']              = 'E-mail onderwerp';
+$_lang['formalicious.settings.label_emailsubject_desc']         = 'Het onderwerp van de e-mail die verstuurd wordt als een formulier ingevuldt word. Bijvoorbeeld \'Er is een contactformulier ingevuld\'.';
+$_lang['formalicious.settings.label_emailcontent']              = 'E-mail introtekst';
+$_lang['formalicious.settings.label_emailcontent_desc']         = 'De introtekst van de e-mail die verstuurd wordt als een formulier ingevuldt word. Bijvoorbeeld \'Er is een contactformulier ingevuld binnen de website. Binnen 2 - 3 dagen dient er een antwoord gestuurd te worden\'.';
+$_lang['formalicious.settings.label_redirectto']                = 'Bedankt pagina';
+$_lang['formalicious.settings.label_redirectto_desc']           = 'Zodra de bezoeker het formulier ingevuldt heeft word hij of zij doorgestuurd naar deze pagina, indien leeg dan blijft de bezoeker op dezelfde pagina. Zorg er altijd voor dat de bedankt pagina niet gevonden kan worden binnen Google en de website door dit uit te schakelen in de SEO tab van de pagina.';
+$_lang['formalicious.settings.label_saveform']                  = 'Ingevulde formulieren opslaan';
+$_lang['formalicious.settings.label_saveform_desc']             = 'Indien aangevinkt zullen alle ingevulde formulieren opgeslagen worden. De formulieren worden opgeslagen in de FormIt extra.';
+$_lang['formalicious.settings.label_published']                 = 'Gepubliceerd';
+$_lang['formalicious.settings.label_published_desc']            = 'Indien aangevinkt zal het formulier beschikbaar zijn op de website.';
+$_lang['formalicious.settings.label_published_from']            = 'Publicatie datum';
+$_lang['formalicious.settings.label_published_from_desc']       = 'Indien een publicatie datum ingesteld word, dan zal het formulier zichtbaar worden zodra deze datum bereikt is.';
+$_lang['formalicious.settings.label_published_till']            = 'De-publicatie datum';
+$_lang['formalicious.settings.label_published_till_desc']       = 'Indien een de-publicatie datum ingesteld word, dan zal de formulier publicatie ongemaakt worden zodra deze datum bereikt is.';
+$_lang['formalicious.settings.label_fiaremail']                 = 'Auto-reply e-mail';
+$_lang['formalicious.settings.label_fiaremail_desc']            = 'Indien aangevinkt zal er een auto-reply e-mail verstuurd worden zodra de bezoeker het formulier invuld.';
+$_lang['formalicious.settings.label_fiaremailto']               = 'Auto-reply e-mail veld';
+$_lang['formalicious.settings.label_fiaremailto_desc']          = 'Selecteer het e-mail veld waar de auto-reply e-mail naartoe gestuurd moet worden. Als er geen velden getoond worden, voeg dan eerst velden toe aan het formulier via het tabblad \'Formulier velden\'.';
+$_lang['formalicious.settings.label_fiaremailfrom']             = 'Auto-reply e-mail afzender';
+$_lang['formalicious.settings.label_fiaremailfrom_desc']        = 'Het e-mailadres waarmee de auto-reply e-mail verstuurd wordt, dit e-mailadres ziet de bezoeker als afzender in zijn/haar mailbox. Bijvoorbeeld \'info@domein.com\'.';
+$_lang['formalicious.settings.label_fiaremailsubject']          = 'Auto-reply e-mail onderwerp';
+$_lang['formalicious.settings.label_fiaremailsubject_desc']     = 'Het onderwerp waarmee de auto-reply e-mail verstuurd wordt. Bijvoorbeeld \'Bedankt voor je interesse\'.';
+$_lang['formalicious.settings.label_fiaremailcontent']          = 'Auto-reply e-email introtekst';
+$_lang['formalicious.settings.label_fiaremailcontent_desc']     = 'De introtekst van de auto-reply e-email die verstuurd wordt. Bijvoorbeeld \'Hallo! Bedankt voor het invullen van ons contactformulier. Binnen 2 - 3 dagen kun je een reactie van ons verwachten. Met vriendelijke groet\'.';
+$_lang['formalicious.settings.label_fiaremailattachment']       = 'Auto-reply e-mail bijlage';
+$_lang['formalicious.settings.label_fiaremailattachment_desc']  = 'Het bestand die als bijlage met de auto-reply e-email die verstuurd wordt. Het bestand dient een maximale bestandsgrootte te hebben van 8 MB (afhankelijk van de server instellingen).';
 
+$_lang['formalicious.step']                                     = 'Veld';
+$_lang['formalicious.steps']                                    = 'Velden';
+$_lang['formalicious.steps.desc']                               = 'Hier kun je de formulier velden instellen, De stappen boven de velden kunnen worden hernoemd door op de stap-tekst te dubbelklikken. Je kunt de stappen ordenen door ze in de gewenste volgorde te slepen.';
+$_lang['formalicious.step.create']                              = 'Nieuwe stap';
+$_lang['formalicious.step.update']                              = 'Stap bewerken';
+$_lang['formalicious.step.remove']                              = 'Stap verwijderen';
+$_lang['formalicious.step.remove_confirm']                      = 'Weet je zeker dat je deze stap wil verwijderen? Dit verwijderd ook alle onderliggende velden.';
+$_lang['formalicious.step.preview']                             = 'Stap voorvertoning';
 
-$_lang['formalicious.field.name'] = 'Titel';
-$_lang['formalicious.field.placeholder'] = 'Placeholder';
-$_lang['formalicious.field.placeholder_description'] = 'Tijdelijke tekst die getoond wordt in het veld en een gebruiker uitlegt wat hier moet worden ingevuld. Voorbeeld placeholder: Vul hier uw naam in.';
-$_lang['formalicious.field.title'] = 'Titel';
-$_lang['formalicious.field.text'] = 'E-mail header tekst';
-$_lang['formalicious.field.required'] = 'Verplicht';
-$_lang['formalicious.field.saveform'] = 'Sla ingevulde formulieren op';
-$_lang['formalicious.field.published'] = 'Gepubliceerd';
-$_lang['formalicious.field.emailto'] = 'Mailen naar';
-$_lang['formalicious.field.submittitle'] = 'Verstuur knop tekst';
-$_lang['formalicious.field.subject'] = 'Onderwerp';
-$_lang['formalicious.field.redirectto'] = 'Bedankt pagina';
-$_lang['formalicious.field.fiar_msg'] = 'Wil je dat er een automatische e-mail verstuurd wordt richting de bezoeker na het invullen van een formulier? Vink dan de checkbox aan & pas de instelling aan.';
-$_lang['formalicious.field.fiaremail'] = 'Auto reply versturen';
-$_lang['formalicious.field.fiaremailto'] = 'Selecteer email veld';
-$_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het veld waar de auto-reply naartoe gestuurd moet worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier via het tabblad "Formulier velden".';
-$_lang['formalicious.field.fiaremailfrom'] = 'E-mail afzender';
-$_lang['formalicious.field.fiarsubject'] = 'E-mail onderwerp';
-$_lang['formalicious.field.fiarcontent'] = 'E-mail content';
-$_lang['formalicious.field.fiarattachment'] = 'E-mail bijlage';
-$_lang['formalicious.field.values_required'] = 'Voeg op zijn minst één waarde toe.';
-$_lang['formalicious.field.preview'] = 'Voorvertoning';
-$_lang['formalicious.field.preview.description'] = 'Indien de bijlage een afbeelding is wordt hier een voorvertoning getoond.';
-$_lang['formalicious.select_start_date'] = 'Selecteer start datum';
-$_lang['formalicious.select_end_date'] = 'Selecteer eind datum';
-$_lang['formalicious.clear'] = 'Filter wissen';
-$_lang['formalicious.export'] = 'Exporteren';
-$_lang['formalicious.data'] = 'Data';
-$_lang['formalicious.time'] = 'Tijd';
-$_lang['formalicious.title'] = 'Titel';
-$_lang['formalicious.type'] = 'Type';
+$_lang['formalicious.step.label_title']                         = 'Titel';
+$_lang['formalicious.step.label_title_desc']                    = 'De titel van de stap.';
+$_lang['formalicious.step.label_button']                        = 'Knop titel';
+$_lang['formalicious.step.label_button_desc']                   = 'De titel van de submit of volgende knop, indien leeg dan word standaard "Verzenden" or "Volgende" gebruikt.';
 
-$_lang['formalicious.item_err_ae'] = 'Er bestaat al een formulier met die naam';
+$_lang['formalicious.field.create']                             = 'Veld toevoegen';
+$_lang['formalicious.field.update']                             = 'Veld bewerken';
+$_lang['formalicious.field.remove']                             = 'Veld verwijderen';
+$_lang['formalicious.field.remove_confirm']                     = 'Weet je zeker dat je dit veld wilt verwijderen?';
+$_lang['formalicious.field.duplicate']                          = 'Veld dupliceren';
 
-$_lang['formalicious.submit'] = 'Verzenden';
-$_lang['formalicious.next'] = 'Volgende';
-$_lang['formalicious.prev'] = 'Vorige';
+$_lang['formalicious.field.label_type']                         = 'Type';
+$_lang['formalicious.field.label_type_desc']                    = 'De type van het veld.';
+$_lang['formalicious.field.label_title']                        = 'Label';
+$_lang['formalicious.field.label_title_desc']                   = 'De label van het veld, deze wordt naast het veld getoond.';
+$_lang['formalicious.field.label_description']                  = 'Omschrijving';
+$_lang['formalicious.field.label_description_desc']             = 'De begeleidende omschrijving, deze wordt onder of boven het veld getoond.';
+$_lang['formalicious.field.label_placeholder']                  = 'Placeholder';
+$_lang['formalicious.field.label_placeholder_desc']             = 'De tijdelijke tekst, deze wordt getoond in het veld en legt een gebruiker uit wat in het veld moet worden ingevuld. Voorbeeld placeholder: Vul hier uw naam in.';
+$_lang['formalicious.field.label_property']                     = 'Heading grootte';
+$_lang['formalicious.field.label_property_desc']                = 'De lettertype grootte van de heading.';
+$_lang['formalicious.field.label_published']                    = 'Gepubliceerd';
+$_lang['formalicious.field.label_published_desc']               = '';
+$_lang['formalicious.field.label_required']                     = 'Verplicht';
+$_lang['formalicious.field.label_required_desc']                = '';
 
-$_lang['formalicious.advanced'] = 'Geavanceerd';
-$_lang['formalicious.advanced.intro_msg'] = 'Geavanceerde formulier instellingen';
-$_lang['formalicious.advanced.prehooks'] = 'Prehooks';
-$_lang['formalicious.advanced.prehooks.description'] = 'Komma gescheiden lijst van FormIt prehooks die uitgevoerd worden zodra het formulier ingeladen wordt.';
-$_lang['formalicious.advanced.posthooks'] = 'Posthooks';
-$_lang['formalicious.advanced.posthooks.description'] = 'Komma gescheiden lijst van FormIt posthooks die uitgevoerd worden zodra het formulier verzonden is. Deze hooks worden alleen uitgevoerd na succesvolle validatie.';
-$_lang['formalicious.advanced.parameters'] = 'Parameters';
-$_lang['formalicious.advanced.parameters.description'] = 'Voeg hier custom FormIt parameters toe. Deze parameters worden dan toegevoegd aan de FormIt call.';
-$_lang['formalicious.advanced.parameter'] = 'Parameter key';
-$_lang['formalicious.advanced.add_parameter'] = 'Parameter toevoegen';
-$_lang['formalicious.advanced.parameter_remove'] = 'Parameter verwijderen';
-$_lang['formalicious.advanced.parameter_remove_confirm'] = 'Weet je zeker dat je deze parameter wil verwijderen?';
+$_lang['formalicious.field.value']                              = 'Waarde';
+$_lang['formalicious.field.values']                             = 'Waardes';
+$_lang['formalicious.field.value.create']                       = 'Nieuwe waarde';
+$_lang['formalicious.field.value.update']                       = 'Waarde bewerken';
+$_lang['formalicious.field.value.remove']                       = 'Waarde verwijderen';
+$_lang['formalicious.field.value.remove_confirm']               = 'Weet je zeker dat je deze wilt verwijderen?';
 
-$_lang['formalicious.contentblocks_input'] = 'Formalicious formulier';
-$_lang['formalicious.contentblocks_input.description'] = 'Kies een Formalicious formulier om in te voegen in de content.';
+$_lang['formalicious.field.value.label_name']                   = 'Naam';
+$_lang['formalicious.field.value.label_name_desc']              = '';
+$_lang['formalicious.field.value.label_published']              = 'Gepubliceerd';
+$_lang['formalicious.field.value.label_published_desc']         = '';
+$_lang['formalicious.field.value.label_selected']               = 'Geselecteerd';
+$_lang['formalicious.field.value.label_selected_desc']          = '';
 
-$_lang['formalicious.form.notpublished'] = 'Het formulier dat je probeert weer te geven is niet gepubliceerd ([[+form]], ID [[+id]]).';
-$_lang['formalicious.advanced.posthooks.disallowed'] = 'The spam, email and redirect hooks are automatically added by Formalicious. No need to enter them here.';
+$_lang['formalicious.advanced']                                 = 'Geavanceerde instellingen';
+$_lang['formalicious.advanced.desc']                            = 'Geavanceerde formulier instellingen.';
 
-/* Settings. */
-$_lang['setting_formalicious.option.allow_savesubmittedforms'] = 'Sta gebruikers toe om verstuurde formulieren op te slaan?';
+$_lang['formalicious.advanced.label_prehooks']                  = 'Prehooks';
+$_lang['formalicious.advanced.label_prehooks_desc']             = 'Komma gescheiden lijst van FormIt prehooks die uitgevoerd worden zodra het formulier ingeladen wordt.';
+$_lang['formalicious.advanced.label_posthooks']                 = 'Posthooks';
+$_lang['formalicious.advanced.label_posthooks_desc']            = 'Komma gescheiden lijst van FormIt posthooks die uitgevoerd worden zodra het formulier verzonden is. Deze hooks worden alleen uitgevoerd na succesvolle validatie.';
 
-$_lang['formalicious.field.name.description'] = 'Dit is de titel van het formulier die binnen Formalicious opgeslagen wordt. Dit is alleen zichtbaar binnen formalicious en is voor jullie eigen overzicht.';
-$_lang['formalicious.field.placeholder.description'] = 'Placeholder';
-$_lang['formalicious.field.placeholder_description.description'] = 'Temporary text shown in the field, which explains what a user has to fill in. Example placeholder: Please fill in your name.';
-$_lang['formalicious.field.title.description'] = 'Dit is de titel van het formulier die binnen Formalicious opgeslagen wordt. Dit is alleen zichtbaar binnen formalicious en is voor jullie eigen overzicht.';
-$_lang['formalicious.field.text.description'] = 'Dit is de tekst van de e-mail die jullie ontvangen als een bezoeker het formulier heeft ingevuld. Bijvoorbeeld Er is een contactformulier ingevuld binnen de website. Binnen 2 - 3 dagen dient er een antwoord gestuurd te worden. ';
-$_lang['formalicious.field.required.description'] = 'Required';
-$_lang['formalicious.field.saveform.description'] = 'Wil je dat de ingevulde formulieren opgeslagen worden? Vink dan de checkbox aan. De formulieren worden vervolgens opgeslagen binnen FormIt.';
-$_lang['formalicious.field.published.description'] = 'Is je formulier klaar voor gebruik? Vink dan de checkbox aan. Vervolgens kan de contentmanager dit selecteren in de pagina’s binnen de website.';
-$_lang['formalicious.field.emailto.description'] = 'Vul hier in naar wie de ingevulde formulieren gemaild moet worden. Vul bij meerdere adressen dit komma gescheiden in, bijvoorbeeld: info@bedrijfsnaam.com,admin@bedrijfsnaam.com';
-$_lang['formalicious.field.subject.description'] = 'Dit is de onderwerp van de e-mail die jullie ontvangen als een bezoeker het formulier ingevuld heeft. bijvoorbeeld: Er is een contactformulier ingevuld.';
-$_lang['formalicious.field.redirectto.description'] = 'Koppel hier de bedankt pagina aan waar de bezoeker op moet landen wanneer ze het formulier ingevuld hebben. Dit kun je zelf aanmaken binnen de boomstructuur. Zorg altijd dat de bedankt pagina niet gevonden kan worden binnen Google en jullie website door dit uit te schakelen in de SEO tab van de bedankt pagina zelf.';
-$_lang['formalicious.field.fiar_msg.description'] = 'Auto-reply settings';
-$_lang['formalicious.field.fiaremail.description'] = 'Send auto reply';
-$_lang['formalicious.field.fiaremailto.description'] = 'Selecteer het e-mail veld waar de auto-reply naartoe gestuurd moet worden. Als er geen opties getoond worden, voeg dan eerst velden toe aan het formulier via het tabblad "Formulier velden".';
-$_lang['formalicious.field.fiaremailfrom.description'] = 'Vul hier het e-mailadres die moet dienen als afzender van de automatische e-mail. Bijvoorbeeld info@bedrijfsnaam.com. Dit ziet de bezoeker als afzender in zijn/haar mailbox.';
-$_lang['formalicious.field.fiarsubject.description'] = 'Vul hier het onderwerp van de automatische e-mail in. Dit is het onderwerp die de bezoeker ziet wanneer ze deze e-mail ontvangen in hun mailbox.';
-$_lang['formalicious.field.fiarcontent.description'] = 'Vul hier de content in die de automatische e-mail moet bevatten. Bijvoorbeeld: Hallo! Bedankt voor het invullen van ons contactformulier. Binnen 2 - 3 dagen kun je een reactie van ons verwachten. Met vriendelijke groet, bedrijfsnaam X.';
-$_lang['formalicious.field.fiarattachment.description'] = 'Hier kan optioneel één bestand als bijlage van de automatische e-mail geüpload worden. Dit bestand is gelimiteerd tot de volgende bestandstypes: pdf, doc, docx, png, jpg, gif. Het bestand dient een maximale bestandsgrootte te hebben van 8 MB.';
+$_lang['formalicious.advanced.parameters']                      = 'Parameters';
+$_lang['formalicious.advanced.parameters.desc']                 = 'Hier kun je custom FormIt parameters toevoegen. Deze parameters worden toegevoegd aan de FormIt snippet call, bijvoorbeeld \'&formTpl=`customFormTpl`\'.';
+$_lang['formalicious.advanced.parameters.create']               = 'Parameter toevoegen';
+$_lang['formalicious.advanced.parameters.update']               = 'Parameter bewerken';
+$_lang['formalicious.advanced.parameters.remove']               = 'Parameter verwijderen';
+$_lang['formalicious.advanced.parameters.remove_confirm']       = 'Weet je zeker dat je deze parameter wilt verwijderen?';
 
-$_lang['formalicious.heading.select'] = 'Grootte';
+$_lang['formalicious.advanced.parameters.label_key']            = 'Parameter key';
+$_lang['formalicious.advanced.parameters.label_key_desc']       = '';
+$_lang['formalicious.advanced.parameters.label_value']          = 'Parameter waarde';
+$_lang['formalicious.advanced.parameters.label_value_desc']     = '';
 
 $_lang['formalicious.default_view']                             = 'Standaard weergave';
 $_lang['formalicious.admin_view']                               = 'Admin weergave';
+$_lang['formalicious.back_to_forms']                            = 'Terug naar formulieren';
+$_lang['formalicious.active_step']                              = 'Active stap';
+$_lang['formalicious.new_step']                                 = 'Nieuwe stap';
+$_lang['formalicious.no_forms']                                 = 'Voeg eerst enkele categoriën toe. Klik daarom op "Admin weergave" en voeg sowieso één categorie toe.';
+$_lang['formalicious.form_err_ae']                              = 'Een formulier met dezelfde naam bestaat al, specificeer een andere naam.';
+$_lang['formalicious.form_err_posthooks']                       = 'De spam, email and redirect hooks worden automatisch toegevoegd aan de FormIt snippet call door Formalicious. Het is niet nodig om ze hier te specificeren.';
+$_lang['formalicious.form_not_exists']                          = 'Form met het ID "[[+id]]" is niet gevonden.';
+$_lang['formalicious.formit_view_form']                         = 'Bekijk in FormIt';
+
+$_lang['formalicious.submit']                                   = 'Verzenden';
+$_lang['formalicious.next']                                     = 'Volgende';
+$_lang['formalicious.prev']                                     = 'Vorige';
+
+$_lang['formalicious.contentblocks_input']                      = 'Formalicious formulier';
+$_lang['formalicious.contentblocks_input.description']          = 'Kies een Formalicious formulier om in te voegen in de content.';

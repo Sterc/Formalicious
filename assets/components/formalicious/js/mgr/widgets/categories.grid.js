@@ -2,32 +2,48 @@ Formalicious.grid.Categories = function(config) {
     config = config || {};
 
     config.tbar = [{
-        text    : _('formalicious.category_create'),
-        cls     : 'primary-button',
-        handler : this.createCategory,
-        scope   : this
+        text        : _('formalicious.categories.create'),
+        cls         : 'primary-button',
+        handler     : this.createCategory,
+        scope       : this
     }];
 
     var columns = [{
-        header      : _('name'),
+        header      : _('formalicious.categories.label_name'),
         dataIndex   : 'name',
+        sortable    : true,
+        editable    : false,
         width       : 200,
         fixed       : true
     }, {
-        header      : _('description'),
+        header      : _('formalicious.categories.label_description'),
         dataIndex   : 'description',
+        sortable    : true,
+        editable    : false,
         width       : 250
+    }, {
+        header      : _('formalicious.categories.label_published'),
+        dataIndex   : 'published',
+        sortable    : true,
+        editable    : false,
+        width       : 125,
+        fixed       : true,
+        renderer    : this.renderBoolean,
+        editor      : {
+            xtype       : 'modx-combo-boolean'
+        }
     }];
 
     Ext.applyIf(config, {
         columns     : columns,
         id          : 'formalicious-grid-categories',
-        url         : Formalicious.config.connectorUrl,
+        url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/category/getlist'
+            action      : 'mgr/categories/getlist'
         },
         autosave    : true,
-        fields      : ['id','name','description'],
+        save_action : 'mgr/categories/updatefromgrid',
+        fields      : ['id', 'name', 'description', 'published'],
         paging      : true,
         pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
         remoteSort  : true
@@ -35,13 +51,14 @@ Formalicious.grid.Categories = function(config) {
 
     Formalicious.grid.Categories.superclass.constructor.call(this, config);
 };
-Ext.extend(Formalicious.grid.Categories,MODx.grid.Grid,{
+
+Ext.extend(Formalicious.grid.Categories, MODx.grid.Grid, {
     getMenu : function() {
         return [{
-            text    : _('formalicious.category_update'),
+            text    : '<i class="x-menu-item-icon icon icon-edit"></i>' + _('formalicious.categories.update'),
             handler : this.updateCategory
         }, '-', {
-            text    : _('formalicious.category_remove'),
+            text    : '<i class="x-menu-item-icon icon icon-times"></i>' + _('formalicious.categories.remove'),
             handler : this.removeCategory
         }];
     },
@@ -85,11 +102,11 @@ Ext.extend(Formalicious.grid.Categories,MODx.grid.Grid,{
     },
     removeCategory : function(btn, e) {
         MODx.msg.confirm({
-            title   : _('formalicious.category_remove'),
-            text    : _('formalicious.category_remove_confirm'),
+            title   : _('formalicious.categories.remove'),
+            text    : _('formalicious.categories.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/category/remove',
+                action  : 'mgr/categories/remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -99,6 +116,11 @@ Ext.extend(Formalicious.grid.Categories,MODx.grid.Grid,{
                 }
             }
         });
+    },
+    renderBoolean: function(d, c) {
+        c.css = 1 === parseInt(d) || d ? 'green' : 'red';
+
+        return 1 === parseInt(d) || d ? _('yes') : _('no');
     }
 });
 
@@ -109,29 +131,42 @@ Formalicious.window.CreateCategory = function(config) {
 
     Ext.applyIf(config,{
         autoHeight  : true,
-        title       : _('formalicious.category_create'),
+        title       : _('formalicious.categories.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/category/create'
+            action      : 'mgr/categories/create'
         },
         fields      : [{
             xtype       : 'textfield',
-            fieldLabel  : _('name'),
+            fieldLabel  : _('formalicious.categories.label_name'),
+            description : MODx.expandHelp ? '' : _('formalicious.categories.label_name_desc'),
             name        : 'name',
             anchor      : '100%',
             allowBlank  : false
         }, {
+            xtype       : 'label',
+            text        : _('formalicious.categories.label_name_desc'),
+            cls         : 'desc-under'
+        }, {
             xtype       : 'textarea',
-            fieldLabel  : _('description'),
+            fieldLabel  : _('formalicious.categories.label_description'),
+            description : MODx.expandHelp ? '' : _('formalicious.categories.label_description_desc'),
             name        : 'description',
             anchor      : '100%'
         }, {
-            xtype       : 'hidden',
-            name        : 'position'
+            xtype       : 'label',
+            text        : _('formalicious.categories.label_description_desc'),
+            cls         : 'desc-under'
+        }, {
+            xtype       : 'checkbox',
+            hideLabel   : true,
+            boxLabel    : _('formalicious.categories.label_published'),
+            name        : 'published',
+            inputValue  : 1
         }]
     });
 
-    Formalicious.window.CreateCategory.superclass.constructor.call(this,config);
+    Formalicious.window.CreateCategory.superclass.constructor.call(this, config);
 };
 
 Ext.extend(Formalicious.window.CreateCategory, MODx.Window);
@@ -143,32 +178,45 @@ Formalicious.window.UpdateCategory = function(config) {
 
     Ext.applyIf(config,{
         autoHeight  : true,
-        title       : _('formalicious.category_update'),
+        title       : _('formalicious.categories.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/category/update'
+            action      : 'mgr/categories/update'
         },
         fields      : [{
             xtype       : 'hidden',
             name        : 'id'
         }, {
             xtype       : 'textfield',
-            fieldLabel  : _('name'),
+            fieldLabel  : _('formalicious.categories.label_name'),
+            description : MODx.expandHelp ? '' : _('formalicious.categories.label_name_desc'),
             name        : 'name',
             anchor      : '100%',
             allowBlank  : false
         }, {
+            xtype       : 'label',
+            text        : _('formalicious.categories.label_name_desc'),
+            cls         : 'desc-under'
+        }, {
             xtype       : 'textarea',
-            fieldLabel  : _('description'),
+            fieldLabel  : _('formalicious.categories.label_description'),
+            description : MODx.expandHelp ? '' : _('formalicious.categories.label_description_desc'),
             name        : 'description',
             anchor      : '100%'
         }, {
-            xtype       : 'hidden',
-            name        : 'position'
+            xtype       : 'label',
+            text        : _('formalicious.categories.label_description_desc'),
+            cls         : 'desc-under'
+        }, {
+            xtype       : 'checkbox',
+            hideLabel   : true,
+            boxLabel    : _('formalicious.categories.label_published'),
+            name        : 'published',
+            inputValue  : 1
         }]
     });
 
-    Formalicious.window.UpdateCategory.superclass.constructor.call(this,config);
+    Formalicious.window.UpdateCategory.superclass.constructor.call(this, config);
 };
 
 Ext.extend(Formalicious.window.UpdateCategory, MODx.Window);

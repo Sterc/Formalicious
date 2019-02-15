@@ -2,24 +2,30 @@ Formalicious.grid.FieldTypes = function(config) {
     config = config || {};
 
     config.tbar = [{
-        text    : _('formalicious.fieldtype_create'),
+        text    : _('formalicious.fieldtypes.create'),
         cls     : 'primary-button',
         handler : this.createFieldType,
         scope   : this
     }];
 
     var columns = [{
-        header      : _('name'),
+        header      : _('formalicious.fieldtypes.label_name'),
         dataIndex   : 'name',
+        sortable    : true,
+        editable    : false,
         width       : 200
     }, {
-        header      : _('formalicious.fieldtype.validation'),
+        header      : _('formalicious.fieldtypes.label_validation'),
         dataIndex   : 'validation',
+        sortable    : true,
+        editable    : false,
         width       : 275,
         fixed       : true
     }, {
-        header      : _('formalicious.fieldtype.values'),
+        header      : _('formalicious.fieldtypes.label_values'),
         dataIndex   : 'values',
+        sortable    : true,
+        editable    : false,
         width       : 200,
         fixed       : true,
         renderer    : this.renderBoolean
@@ -28,12 +34,13 @@ Formalicious.grid.FieldTypes = function(config) {
     Ext.applyIf(config, {
         columns     : columns,
         id          : 'formalicious-grid-fieldtypes',
-        url         : Formalicious.config.connectorUrl,
+        url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtype/getlist'
+            action      : 'mgr/fieldtypes/getlist'
         },
         autosave    : true,
-        fields      : ['id','name','tpl','answertpl', 'values', 'validation', 'icon'],
+        save_action : 'mgr/fieldtypes/updatefromgrid',
+        fields      : ['id', 'name', 'tpl', 'answertpl', 'values', 'validation', 'icon', 'fields'],
         paging      : true,
         pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
         remoteSort  : true
@@ -45,10 +52,13 @@ Formalicious.grid.FieldTypes = function(config) {
 Ext.extend(Formalicious.grid.FieldTypes, MODx.grid.Grid,{
     getMenu : function() {
         return [{
-            text    : _('formalicious.fieldtype_update'),
+            text    : '<i class="x-menu-item-icon icon icon-edit"></i>' + _('formalicious.fieldtypes.update'),
             handler : this.updateFieldType
         }, '-', {
-            text    : _('formalicious.fieldtype_remove'),
+            text    : '<i class="x-menu-item-icon icon icon-copy"></i>' + _('formalicious.fieldtypes.duplicate'),
+            handler : this.duplicateFieldType
+        }, '-', {
+            text    : '<i class="x-menu-item-icon icon icon-times"></i>' + _('formalicious.fieldtypes.remove'),
             handler : this.removeFieldType
         }];
     },
@@ -90,13 +100,39 @@ Ext.extend(Formalicious.grid.FieldTypes, MODx.grid.Grid,{
         this.updateFieldTypeWindow.setValues(this.menu.record);
         this.updateFieldTypeWindow.show(e.target);
     },
+    duplicateFieldType : function(btn, e) {
+        if (this.duplicateFieldTypeWindow) {
+            this.duplicateFieldTypeWindow.destroy();
+        }
+
+        var record = Ext.apply({}, {
+            name : _('duplicate_of', {
+                name : this.menu.record.name
+            })
+        }, this.menu.record);
+
+        this.duplicateFieldTypeWindow = MODx.load({
+            xtype       : 'formalicious-window-fieldtype-duplicate',
+            record      : record,
+            closeAction : 'close',
+            listeners   : {
+                'success'   : {
+                    fn          : this.refresh,
+                    scope       : this
+                }
+            }
+        });
+
+        this.duplicateFieldTypeWindow.setValues(record);
+        this.duplicateFieldTypeWindow.show(e.target);
+    },
     removeFieldType : function(btn, e) {
         MODx.msg.confirm({
-            title   : _('formalicious.fieldtype_remove'),
-            text    : _('formalicious.fieldtype_remove_confirm'),
+            title   : _('formalicious.fieldtypes.remove'),
+            text    : _('formalicious.fieldtypes.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/fieldtype/remove',
+                action  : 'mgr/fieldtypes/remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -121,31 +157,73 @@ Formalicious.window.CreateFieldType = function(config) {
 
     Ext.applyIf(config,{
         autoHeight  : true,
-        title       : _('formalicious.fieldtype_create'),
+        title       : _('formalicious.fieldtypes.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtype/create'
+            action      : 'mgr/fieldtypes/create'
         },
         fields      : [{
             xtype       : 'textfield',
-            fieldLabel  : _('formalicious.fieldtype.name'),
+            fieldLabel  : _('formalicious.fieldtypes.label_name'),
+            description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_name_desc'),
             name        : 'name',
             anchor      : '100%',
             allowBlank  : false
         }, {
+            xtype       : 'label',
+            html        : _('formalicious.fieldtypes.label_name_desc'),
+            cls         : 'desc-under'
+        }, {
             xtype       : 'textfield',
-            fieldLabel  : _('formalicious.fieldtype.tpl'),
+            fieldLabel  : _('formalicious.fieldtypes.label_tpl'),
+            description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_tpl_desc'),
             name        : 'tpl',
             anchor      : '100%',
             allowBlank  : false
         }, {
-            xtype       : MODx.expandHelp ? 'label' : 'hidden',
-            html        : _('formalicious.fieldtype.tpl.description'),
+            xtype       : 'label',
+            html        : _('formalicious.fieldtypes.label_tpl_desc'),
             cls         : 'desc-under'
         }, {
+            xtype       : 'checkboxgroup',
+            fieldLabel  : _('formalicious.fieldtypes.label_fields'),
+            description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_fields_desc'),
+            columns     : 2,
+            items       : [{
+                boxLabel    : _('formalicious.field.label_title'),
+                name        : 'fields[]',
+                inputValue  : 'title',
+                checked     : true,
+                disabled    : true
+            }, {
+                boxLabel    : _('formalicious.field.label_description'),
+                name        : 'fields[]',
+                inputValue  : 'description',
+                checked     : true,
+                disabled    : true
+            }, {
+                boxLabel    : _('formalicious.field.label_placeholder'),
+                name        : 'fields[]',
+                inputValue  : 'placeholder'
+            }, {
+                boxLabel    : _('formalicious.field.label_property'),
+                name        : 'fields[]',
+                inputValue  : 'property'
+            }, {
+                boxLabel    : _('formalicious.field.label_required'),
+                name        : 'fields[]',
+                inputValue  : 'required'
+            }, {
+                boxLabel    : _('formalicious.field.label_published'),
+                name        : 'fields[]',
+                inputValue  : 'published',
+                checked     : true,
+                disabled    : true
+            }]
+        }, {
             xtype       : 'checkbox',
-            fieldLabel  : _('formalicious.fieldtype.values'),
-            boxLabel    : _('yes'),
+            fieldLabel  : _('formalicious.fieldtypes.label_values'),
+            boxLabel    : _('formalicious.fieldtypes.label_values_desc'),
             name        : 'values',
             anchor      : '100%',
             inputValue  : 1,
@@ -167,35 +245,25 @@ Formalicious.window.CreateFieldType = function(config) {
             labelSeparator : '',
             items       : [{
                 xtype       : 'textfield',
-                fieldLabel  : _('formalicious.fieldtype.answertpl'),
+                fieldLabel  : _('formalicious.fieldtypes.label_answertpl'),
+                description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_answertpl_desc'),
                 name        : 'answertpl',
                 anchor      : '100%'
             }, {
-                xtype       : MODx.expandHelp ? 'label' : 'hidden',
-                html        : _('formalicious.fieldtype.answertpl.description'),
+                xtype       : 'label',
+                html        : _('formalicious.fieldtypes.label_answertpl_desc'),
                 cls         : 'desc-under'
             }]
         }, {
             xtype       : 'textfield',
-            fieldLabel  : _('formalicious.fieldtype.validation'),
+            fieldLabel  : _('formalicious.fieldtypes.label_validation'),
             name        : 'validation',
             anchor      : '100%'
         }, {
-            xtype       : MODx.expandHelp ? 'label' : 'hidden',
-            html        : _('formalicious.fieldtype.validation.description'),
+            xtype       : 'label',
+            html        : _('formalicious.fieldtypes.label_validation_desc'),
             cls         : 'desc-under'
-        }/*, {
-            xtype       : 'modx-combo-browser',
-            fieldLabel  : _('formalicious.fieldtype.icon'),
-            name        : 'icon',
-            rootId      : Formalicious.config.assetsUrl + 'img/types/',
-            openTo      : Formalicious.config.assetsUrl + 'img/types/',
-            source      : MODx.config['default_media_source']
-        }, {
-            xtype       : MODx.expandHelp ? 'label' : 'hidden',
-            html        : _('formalicious.fieldtype.icon.description'),
-            cls         : 'desc-under'
-        }*/]
+        }]
     });
 
     Formalicious.window.CreateFieldType.superclass.constructor.call(this, config);
@@ -218,34 +286,79 @@ Formalicious.window.UpdateFieldType = function(config) {
 
     Ext.applyIf(config,{
         autoHeight  : true,
-        title       : _('formalicious.fieldtype_update'),
+        title       : _('formalicious.fieldtypes.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtype/update'
+            action      : 'mgr/fieldtypes/update'
         },
         fields      : [{
             xtype       : 'hidden',
             name        : 'id'
         }, {
             xtype       : 'textfield',
-            fieldLabel  : _('formalicious.fieldtype.name'),
+            fieldLabel  : _('formalicious.fieldtypes.label_name'),
+            description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_name_desc'),
             name        : 'name',
             anchor      : '100%',
             allowBlank  : false
         }, {
+            xtype       : 'label',
+            html        : _('formalicious.fieldtypes.label_name_desc'),
+            cls         : 'desc-under'
+        }, {
             xtype       : 'textfield',
-            fieldLabel  : _('formalicious.fieldtype.tpl'),
+            fieldLabel  : _('formalicious.fieldtypes.label_tpl'),
+            description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_tpl_desc'),
             name        : 'tpl',
             anchor      : '100%',
             allowBlank  : false
         }, {
-            xtype       : MODx.expandHelp ? 'label' : 'hidden',
-            html        : _('formalicious.fieldtype.tpl.description'),
+            xtype       : 'label',
+            html        : _('formalicious.fieldtypes.label_tpl_desc'),
             cls         : 'desc-under'
         }, {
+            xtype       : 'checkboxgroup',
+            fieldLabel  : _('formalicious.fieldtypes.label_fields'),
+            description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_fields_desc'),
+            columns     : 2,
+            items       : [{
+                boxLabel    : _('formalicious.field.label_title'),
+                name        : 'fields[]',
+                inputValue  : 'title',
+                checked     : true,
+                disabled    : true
+            }, {
+                boxLabel    : _('formalicious.field.label_description'),
+                name        : 'fields[]',
+                inputValue  : 'description',
+                checked     : true,
+                disabled    : true
+            }, {
+                boxLabel    : _('formalicious.field.label_placeholder'),
+                name        : 'fields[]',
+                inputValue  : 'placeholder',
+                checked     : -1 !== config.record.fields.indexOf('placeholder')
+            }, {
+                boxLabel    : _('formalicious.field.label_property'),
+                name        : 'fields[]',
+                inputValue  : 'property',
+                checked     : -1 !== config.record.fields.indexOf('property')
+            }, {
+                boxLabel    : _('formalicious.field.label_required'),
+                name        : 'fields[]',
+                inputValue  : 'required',
+                checked     : -1 !== config.record.fields.indexOf('required')
+            }, {
+                boxLabel    : _('formalicious.field.label_published'),
+                name        : 'fields[]',
+                inputValue  : 'published',
+                checked     : true,
+                disabled    : true
+            }]
+        }, {
             xtype       : 'checkbox',
-            fieldLabel  : _('formalicious.fieldtype.values'),
-            boxLabel    : _('yes'),
+            fieldLabel  : _('formalicious.fieldtypes.label_values'),
+            boxLabel    : _('formalicious.fieldtypes.label_values_desc'),
             name        : 'values',
             anchor      : '100%',
             inputValue  : 1,
@@ -267,35 +380,25 @@ Formalicious.window.UpdateFieldType = function(config) {
             labelSeparator : '',
             items       : [{
                 xtype       : 'textfield',
-                fieldLabel  : _('formalicious.fieldtype.answertpl'),
+                fieldLabel  : _('formalicious.fieldtypes.label_answertpl'),
+                description : MODx.expandHelp ? '' : _('formalicious.fieldtypes.label_answertpl_desc'),
                 name        : 'answertpl',
                 anchor      : '100%'
             }, {
-                xtype       : MODx.expandHelp ? 'label' : 'hidden',
-                html        : _('formalicious.fieldtype.answertpl.description'),
+                xtype       : 'label',
+                html        : _('formalicious.fieldtypes.label_answertpl_desc'),
                 cls         : 'desc-under'
             }]
         }, {
             xtype       : 'textfield',
-            fieldLabel  : _('formalicious.fieldtype.validation'),
+            fieldLabel  : _('formalicious.fieldtypes.label_validation'),
             name        : 'validation',
             anchor      : '100%'
         }, {
-            xtype       : MODx.expandHelp ? 'label' : 'hidden',
-            html        : _('formalicious.fieldtype.validation.description'),
+            xtype       : 'label',
+            html        : _('formalicious.fieldtypes.label_validation_desc'),
             cls         : 'desc-under'
-        }/*, {
-            xtype       : 'modx-combo-browser',
-            fieldLabel  : _('formalicious.fieldtype.icon'),
-            name        : 'icon',
-            rootId      : Formalicious.config.assetsUrl + 'img/types/',
-            openTo      : Formalicious.config.assetsUrl + 'img/types/',
-            source      : MODx.config['default_media_source']
-        }, {
-            xtype       : MODx.expandHelp ? 'label' : 'hidden',
-            html        : _('formalicious.fieldtype.icon.description'),
-            cls         : 'desc-under'
-        }*/]
+        }]
     });
 
     Formalicious.window.UpdateFieldType.superclass.constructor.call(this, config);
@@ -313,34 +416,31 @@ Ext.extend(Formalicious.window.UpdateFieldType, MODx.Window, {
 
 Ext.reg('formalicious-window-fieldtype-update', Formalicious.window.UpdateFieldType);
 
-/*&
-Formalicious.combo.FieldTypes = function(config) {
+Formalicious.window.DuplicateFieldType = function(config) {
     config = config || {};
-    Ext.applyIf(config,{
-        store: new Ext.data.SimpleStore({
-            fields: ['d','v']
-            ,data: [
-                [_('formalicious.fieldtype.textfield'),'text'],
-                [_('formalicious.fieldtype.textarea'),'textarea'],
-                [_('formalicious.fieldtype.checkbox'),'checkbox'],
-                [_('formalicious.fieldtype.'),''],
-                [_('formalicious.fieldtype.'),''],
-                [_('formalicious.fieldtype.'),''],
-                [_('formalicious.fieldtype.'),''],
-                [_('formalicious.fieldtype.'),''],
-            ]
-        })
-        ,displayField: 'd'
-        ,valueField: 'v'
-        ,mode: 'local'
-        ,triggerAction: 'all'
-        ,editable: false
-        ,selectOnFocus: false
-        ,preventRender: true
-        ,forceSelection: true
-        ,enableKeyEvents: true
+
+    Ext.applyIf(config, {
+        autoHeight  : true,
+        title       : _('formalicious.fieldtypes.duplicate'),
+        url         : Formalicious.config.connector_url,
+        baseParams  : {
+            action      : 'mgr/fieldtypes/duplicate'
+        },
+        fields      : [{
+            xtype       : 'hidden',
+            name        : 'id'
+        }, {
+            xtype       : 'textfield',
+            fieldLabel  : _('formalicious.fieldtypes.label_name'),
+            name        : 'name',
+            anchor      : '100%',
+            allowBlank  : false
+        }]
     });
-    Formalicious.combo.FieldTypes.superclass.constructor.call(this,config);
+
+    Formalicious.window.DuplicateFieldType.superclass.constructor.call(this, config);
 };
-Ext.extend(Formalicious.combo.FieldTypes,MODx.combo.ComboBox);
-Ext.reg('formalicious-combo-fieldtypes',Formalicious.combo.FieldTypes);*/
+
+Ext.extend(Formalicious.window.DuplicateFieldType, MODx.Window);
+
+Ext.reg('formalicious-window-fieldtype-duplicate', Formalicious.window.DuplicateFieldType);

@@ -1,54 +1,68 @@
 <?php
 
+/**
+ * Formalicious
+ *
+ * Copyright 2019 by Sterc <modx@sterc.nl>
+ */
+
+abstract class FormaliciousBaseManagerController extends modExtraManagerController
+{
     /**
-     * @package formalicious
-     * @subpackage controllers
+     * @access public.
+     * @return Mixed.
      */
-    require_once __DIR__ . '/model/formalicious/formalicious.class.php';
-
-    abstract class FormaliciousBaseManagerController extends modExtraManagerController {
-        public $formalicious;
-
-        public function initialize()
-        {
-            $this->formalicious = new Formalicious($this->modx);
-            $this->formalicious->f();
-
-            $this->formalicious->config['permissions'] = [
-                'advanced' => $this->modx->hasPermission('formalicious_advanced'),
-            ];
-
-            $this->addCss($this->formalicious->config['cssUrl'] . 'mgr/formalicious.css');
-
-            $this->addJavascript($this->formalicious->config['jsUrl'] . 'mgr/formalicious.js');
-
-            $this->addHtml('<script type="text/javascript">
-                Ext.onReady(function() {
-                    Formalicious.config = '.$this->modx->toJSON($this->formalicious->config).';
-                    Formalicious.config.connector_url = "'.$this->formalicious->config['connectorUrl'].'";
-                });
-            </script>');
-
-            return parent::initialize();
-        }
-
-        public function getLanguageTopics()
-        {
-            return array('formalicious:default');
-        }
-
-        public function checkPermissions()
-        {
-            return true;
-        }
-    }
-
-    class IndexManagerController extends FormaliciousBaseManagerController
+    public function initialize()
     {
-        public static function getDefaultController()
-        {
-            return 'home';
-        }
+        $this->modx->getService('formalicious', 'Formalicious', $this->modx->getOption('formalicious.core_path', null, $this->modx->getOption('core_path') . 'components/formalicious/') . 'model/formalicious/');
+
+        $this->addCss($this->modx->formalicious->config['css_url'] . 'mgr/formalicious.css');
+
+        $this->addJavascript($this->modx->formalicious->config['js_url'] . 'mgr/formalicious.js');
+
+        $this->addHtml('<script type="text/javascript">
+            Ext.onReady(function() {
+                MODx.config.help_url = "' . $this->modx->formalicious->getHelpUrl() . '";
+                
+                Formalicious.config = ' . $this->modx->toJSON(array_merge($this->modx->formalicious->config, [
+                    'branding_url'      => $this->modx->formalicious->getBrandingUrl(),
+                    'branding_url_help' => $this->modx->formalicious->getHelpUrl()
+                ])) . ';
+            });
+        </script>');
+
+        $this->modx->formalicious->f();
+
+        return parent::initialize();
     }
 
-?>
+    /**
+     * @access public.
+     * @return Array.
+     */
+    public function getLanguageTopics()
+    {
+        return $this->modx->formalicious->config['lexicons'];
+    }
+
+    /**
+     * @access public.
+     * @returns Boolean.
+     */
+    public function checkPermissions()
+    {
+        return $this->modx->hasPermission('formalicious');
+    }
+}
+
+class IndexManagerController extends FormaliciousBaseManagerController
+{
+    /**
+     * @access public.
+     * @return String.
+     */
+    public static function getDefaultController()
+    {
+        return 'home';
+    }
+}

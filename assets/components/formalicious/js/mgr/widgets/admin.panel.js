@@ -12,7 +12,7 @@ Formalicious.panel.Admin = function(config) {
             items   : [{
                 title   : _('formalicious.categories'),
                 items   : [{
-                    html            : '<p>' + _('formalicious.category.intro_msg') + '</p>',
+                    html            : '<p>' + _('formalicious.categories.desc') + '</p>',
                     bodyCssClass    : 'panel-desc'
                 }, {
                     xtype           : 'formalicious-grid-categories',
@@ -20,9 +20,9 @@ Formalicious.panel.Admin = function(config) {
                     cls             : 'main-wrapper'
                 }]
             }, {
-                title   : _('formalicious.fieldtype'),
+                title   : _('formalicious.fieldtypes'),
                 items   : [{
-                    html            : '<p>' + _('formalicious.fieldtype.intro_msg') + '</p>',
+                    html            : '<p>' + _('formalicious.fieldtypes.desc') + '</p>',
                     bodyCssClass    : 'panel-desc'
                 },{
                     xtype           : 'formalicious-grid-fieldtypes',
@@ -36,6 +36,6 @@ Formalicious.panel.Admin = function(config) {
     Formalicious.panel.Admin.superclass.constructor.call(this,config);
 };
 
-Ext.extend(Formalicious.panel.Admin, MODx.Panel);
+Ext.extend(Formalicious.panel.Admin, MODx.FormPanel);
 
 Ext.reg('formalicious-panel-admin', Formalicious.panel.Admin);

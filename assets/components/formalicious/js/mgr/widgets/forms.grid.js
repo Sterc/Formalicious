@@ -2,7 +2,7 @@ Formalicious.grid.Forms = function(config) {
     config = config || {};
 
     config.tbar = [{
-        text        : _('formalicious.form_create'),
+        text        : _('formalicious.forms.create'),
         cls         : 'primary-button',
         handler     : this.createForm,
         scope       : this
@@ -43,24 +43,52 @@ Formalicious.grid.Forms = function(config) {
     var columns = [{
         header      : _('id'),
         dataIndex   : 'id',
+        sortable    : true,
+        editable    : false,
         width       : 50,
         fixed       : true
     }, {
-        header      : _('formalicious.name'),
-        dataIndex   : 'name'
+        header      : _('formalicious.settings.label_name'),
+        dataIndex   : 'name',
+        sortable    : true,
+        editable    : false,
+        width       : 200
     }, {
-        header      : _('formalicious.emailto'),
+        header      : _('formalicious.settings.label_email'),
         dataIndex   : 'emailto',
-        width       : 250,
-        fixed       : true
+        sortable    : true,
+        editable    : false,
+        width       : 175,
+        fixed       : true,
+        renderer    : this.renderEmailTo
     }, {
-        header      : _('published'),
+        header      : _('formalicious.settings.label_fiaremail'),
+        dataIndex   : 'fiaremail',
+        sortable    : true,
+        editable    : false,
+        width       : 175,
+        fixed       : true,
+        renderer    : this.renderBoolean
+    }, {
+        header      : _('formalicious.settings.label_saveform'),
+        dataIndex   : 'saveform',
+        sortable    : true,
+        editable    : false,
+        width       : 125,
+        fixed       : true,
+        renderer    : this.renderFormSave
+    }, {
+        header      : _('formalicious.settings.label_published'),
         dataIndex   : 'published',
+        sortable    : true,
+        editable    : false,
         width       : 125,
         fixed       : true,
         renderer    : this.renderBoolean
     }, {
-        header      : _('formalicious.actions'),
+        header      : _('actions'),
+        sortable    : true,
+        editable    : false,
         width       : 125,
         fixed       : true,
         renderer    : this.renderActions
@@ -68,27 +96,15 @@ Formalicious.grid.Forms = function(config) {
 
     Ext.applyIf(config, {
         columns     : columns,
-        url         : Formalicious.config.connectorUrl,
+        url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/form/getlist',
+            action      : 'mgr/forms/getlist',
             category    : config.category
         },
-        autosave    : true,
-        save_action : 'mgr/form/updatefromgrid',
-        fields      : ['id','name','emailto', 'published'],
+        fields      : ['id', 'name', 'email', 'emailto', 'fiaremail', 'published'],
         paging      : true,
         pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
         remoteSort  : true
-        /*,viewConfig: {
-            forceFit:true
-            ,enableRowBody:true
-            ,scrollOffset: 0
-            ,autoFill: true
-            ,showPreview: true
-            ,getRowClass : function(rec){
-                return rec.data.published ? 'grid-row-active' : 'grid-row-inactive';
-            }
-        }*/
     });
 
     Formalicious.grid.Forms.superclass.constructor.call(this, config);
@@ -109,13 +125,13 @@ Ext.extend(Formalicious.grid.Forms, MODx.grid.Grid, {
     },
     getMenu : function() {
         return [{
-            text    : _('update'),
+            text    : '<i class="x-menu-item-icon icon icon-edit"></i>' + _('formalicious.forms.update'),
             handler : this.updateForm
         }, '-', {
-            text    : _('duplicate'),
+            text    : '<i class="x-menu-item-icon icon icon-copy"></i>' + _('formalicious.forms.duplicate'),
             handler : this.duplicateForm
         }, '-', {
-            text    : _('delete'),
+            text    : '<i class="x-menu-item-icon icon icon-edit"></i>' + _('formalicious.forms.remove'),
             handler : this.removeForm
         }];
     },
@@ -155,11 +171,11 @@ Ext.extend(Formalicious.grid.Forms, MODx.grid.Grid, {
     },
     removeForm : function(btn, e) {
         MODx.msg.confirm({
-            title   : _('formalicious.form_remove'),
-            text    : _('formalicious.form_remove_confirm'),
+            title   : _('formalicious.forms.remove'),
+            text    : _('formalicious.forms.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/form/remove',
+                action  : 'mgr/forms/remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -173,81 +189,78 @@ Ext.extend(Formalicious.grid.Forms, MODx.grid.Grid, {
     renderTitle: function(d, c, e) {
         return '<h3>' + d + ' (' + e.id + ')</h3>';
     },
-    renderActions: function(value, metaData, record, rowIndex, colIndex, store) {
-        var tpl = new Ext.XTemplate('<tpl for=".">' + '<tpl if="actions !== null">' + '<ul class="icon-buttons">' + '<tpl for="actions">' + '<li><button type="button" class="controlBtn {className}" title="{title}">{text}</button></li>' + '</tpl>' + '</ul>' + '</tpl>' + '</tpl>', {
-            compiled: true
-        });
-        var values = {};
-        var h = [];
-        h.push({
-            className: "update formalicious-icon icon icon-pencil",
-            text: "",
-            title: _('update')
-        });
-        h.push({
-            className: "duplicate formalicious-icon icon icon-clone",
-            text: "",
-            title: _('duplicate')
-        });
-        h.push({
-            className: "delete formalicious-icon icon icon-times",
-            text: "",
-            title: _('remove')
-        });
-        values.actions = h;
-        return tpl.apply(values);
+    renderFormSave: function(d, c, e) {
+        if (parseInt(e.json.saveform) === 1 || e.json.saveform) {
+            var formItLink = Formalicious.config.formit_manager_link + '&form=' + encodeURIComponent(Formalicious.config.save_forms_prefix + ': ' + d);
+
+            return String.format('<a href="{0}" title="{1}">{2}</a>', formItLink, _('formalicious.formit_view_form'), _('formalicious.formit_view_form'));
+        }
+
+        c.css = 'red';
+
+        return _('no');
     },
-    renderEmails: function(d) {
+    renderEmailTo: function(d, c, e) {
+        if (parseInt(e.json.email) === 1 || e.json.email) {
+            return d;
+        }
+
+        c.css = 'red';
+
+        return _('no');
+    },
+    renderActions: function(value, metaData, record, rowIndex, colIndex, store) {
         var tpl = new Ext.XTemplate('<tpl for=".">' +
-            '<ul class="emailto">' +
-                '<tpl for="emails">' +
-                    '<li>{ email }</li>' +
-                '</tpl>' +
-            '</ul>' +
+            '<tpl if="actions !== null">' +
+                '<ul class="x-grid-actions">' +
+                    '<tpl for="actions">' +
+                        '<li><button type="button" class="x-btn x-btn-small {className}" title="{title}">{text}</button></li>' +
+                    '</tpl>' +
+                '</ul>' +
+            '</tpl>' +
         '</tpl>', {
             compiled : true
         });
 
-        var emails = [];
-
-        d.split(',').forEach(function (email) {
-            emails.push({
-                email : email
-            });
-        });
-
         return tpl.apply({
-            emails : emails
+            actions : [{
+                className   : 'icon icon-pencil action-edit',
+                title       : _('formalicious.forms.update'),
+                text        : ''
+            }, {
+                className   : 'icon icon-clone action-duplicate',
+                title       : _('formalicious.forms.duplicate'),
+                text        : ''
+            }, {
+                className   : 'icon icon-times action-remove',
+                text        : '',
+                title       : _('formalicious.forms.remove')
+            }]
         });
     },
     renderBoolean: function(d, c) {
         c.css = 1 === parseInt(d) || d ? 'green' : 'red';
 
         return 1 === parseInt(d) || d ? _('yes') : _('no');
-    }
-    ,onClick: function(e) {
+    },
+    onClick : function(e) {
+        var btn = e.getTarget();
+        var cls = btn.className.split(' ');
+        var record = this.getSelectionModel().getSelected();
 
-        var t = e.getTarget();
-        var elm = t.className.split(' ')[0];
-        if (elm == 'controlBtn') {
-        var act = t.className.split(' ')[1];
-        var record = this.getSelectionModel()
-        .getSelected();
-        this.menu.record = record.data;
-        switch (act) {
-            case 'update':
-                this.updateForm(record, e);
-            break;
+        if (record) {
+            this.menu.record = record.data;
 
-            case 'duplicate':
-                this.duplicateForm(record, e);
-                break;
-
-            case 'delete':
-                this.removeForm(record, e);
-            break;
+            if (-1 !== cls.indexOf('action-edit')) {
+                this.updateForm(e.getTarget(), e);
+            } else if (-1 !== cls.indexOf('action-duplicate')) {
+                this.duplicateForm(e.getTarget(), e);
+            } else if (-1 !== cls.indexOf('action-remove')) {
+                this.removeForm(e.getTarget(), e);
             }
         }
+
+        return false;
     }
 });
 
@@ -258,17 +271,18 @@ Formalicious.window.DuplicateForm = function(config) {
 
     Ext.applyIf(config, {
         autoHeight  : true,
-        title       : _('formalicious.form_duplicate'),
+        title       : _('formalicious.forms.duplicate'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/form/duplicate'
+            action      : 'mgr/forms/duplicate'
         },
         fields      : [{
             xtype       : 'hidden',
             name        : 'id'
         }, {
             xtype       : 'textfield',
-            fieldLabel  : _('name'),
+            fieldLabel  : _('formalicious.settings.label_name'),
+            description : MODx.expandHelp ? '' : _('formalicious.settings.label_name_desc'),
             name        : 'name',
             anchor      : '100%',
             allowBlank  : false

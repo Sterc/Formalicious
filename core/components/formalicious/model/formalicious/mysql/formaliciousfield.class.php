@@ -1,7 +1,13 @@
 <?php
+
 /**
- * @package formalicious
+ * Formalicious
+ *
+ * Copyright 2019 by Sterc <modx@sterc.nl>
  */
-require_once (strtr(realpath(dirname(dirname(__FILE__))), '\\', '/') . '/formaliciousfield.class.php');
-class FormaliciousField_mysql extends FormaliciousField {}
-?>
+
+require_once dirname(__DIR__) . '/formaliciousfield.class.php';
+
+class FormaliciousField_mysql extends FormaliciousField
+{
+}
