@@ -1,10 +1,22 @@
-# Formalicious #
+# MODX Formalicious
+![Formalicious version](https://img.shields.io/badge/version-2.0.0-red.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/checked%20by-Gauke%20and%20Roel-blue.svg) ![MODX version requirements](https://img.shields.io/badge/modx%20version%20requirement-2.4%2B-brightgreen.svg)
 
 Formalicious is a tool for MODX content managers, which enables them to manage complex forms using a GUI, without any programming knowledge. The tool makes use of FormIt to render the forms, therefore the properties available in FormIt are used in Formalicious. For example hooks and preHooks are optional settings in Formalicious.
 
 ### Requirements ###
-* MODX 2.3.0 or greater
-* FormIt 2.2.2 or greater
+* MODX 2.4.0 or greater
+* FormIt 4.2.2 or greater
+
+## Snippets
+
+**Voorbeeld snippet call:**
+
+```
+{'!FormaliciousRenderForm' | snippet : [
+	'form' 	        => 3,
+    'tplForm'		=> '@FILE elements/chunks/formfenom.chunk.tpl'
+]}
+```
 
 ### How do I get set up? ###
 
