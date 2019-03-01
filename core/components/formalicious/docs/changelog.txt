@@ -1,3 +1,7 @@
+Version 2.0.1-pl
+--------------------------
+- Add sterc extra settings when not existing
+
 Version 2.0.0-pl
 --------------------------
 - Add form DB fields published_from and published_till to auto (de)publication forms
