@@ -232,7 +232,7 @@ class FormaliciousSnippetRenderForm extends FormaliciousSnippets
                     ]);
                 }
 
-                if ($currentStep <= 1 || $totalSteps === 1) {
+                if ($totalSteps === 1) {
                     $placeholders['currentUrl'] = $this->getStepUrl();
                 } else {
                     $placeholders['currentUrl'] = $this->getStepUrl([
