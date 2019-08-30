@@ -1,0 +1,392 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      'c38d9e34fd59a6cd40de693e0f7433c7' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousEmailTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<!DOCTYPE html PUBLIC \\"-\\/\\/W3C\\/\\/DTD HTML 4.01 Transitional\\/\\/EN\\" \\"http:\\/\\/www.w3.org\\/TR\\/html4\\/loose.dtd\\">\\n<html lang=\\"nl\\">\\n<head>\\n    <meta name=\\"robots\\" content=\\"noindex, nofollow\\">\\n    <meta http-equiv=\\"Content-Type\\" content=\\"text\\/html; charset=UTF-8\\">\\n    <meta name=\\"viewport\\" content=\\"initial-scale=1.0\\">    <!-- So that mobile webkit will display zoomed in -->\\n    <meta name=\\"format-detection\\" content=\\"telephone=no\\"> <!-- disable auto telephone linking in iOS -->\\n    <title>[[++site_name]]<\\/title>\\n\\n    <style type=\\"text\\/css\\">\\n        body {\\n            margin: 0;\\n            padding: 0;\\n            width: 100% !important;\\n            -ms-text-size-adjust: 100%;\\n            -webkit-text-size-adjust: 100%;\\n        }\\n\\n        p {\\n            margin-top: 2px;\\n            margin-bottom: 10px;\\n        }\\n\\n        table {\\n            border-spacing: 0;\\n        }\\n\\n        table td {\\n            border-collapse: collapse;\\n        }\\n\\n        .ExternalClass {\\n            width: 100%;\\n        }\\n\\n        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {\\n            line-height: 100%;\\n        }\\n\\n        .ReadMsgBody {\\n            width: 100%;\\n            padding: 0;\\n            margin: 0;\\n            background-color: #f5f5f5;\\n        }\\n\\n        table {\\n            mso-table-lspace: 0pt;\\n            mso-table-rspace: 0pt;\\n        }\\n\\n        img {\\n            -ms-interpolation-mode: bicubic;\\n        }\\n\\n        .yshortcuts a {\\n            border-bottom: none !important;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            h2[class=full],\\n            table[class=force-row],\\n            table[class=container],\\n            table[class=article-image-full] {\\n                width: 100% !important;\\n                max-width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr.visible-lg,\\n            tr[class=visible=lg],\\n            table.visible-lg,\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .logo {\\n                display: block;\\n                margin-left: auto;\\n                margin-right: auto;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .cta {\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .header-line {\\n                padding-left: 10px;\\n                padding-right: 10px;\\n                display: block;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleleft-image {\\n                margin-bottom: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleright-image {\\n                margin-top: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class*=container-padding] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        .ios-footer a {\\n            color: #aaaaaa !important;\\n            text-decoration: underline;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=col] {\\n                width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=small-center] {\\n                text-align: center !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr[class=visible-xs] {\\n                display: block !important;\\n                width: auto !important;\\n                overflow: visible !important;\\n                float: none !important;\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=cols-wrapper],\\n            td[class=2-cols-wrapper] {\\n            padding-top: 18px;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=2-cols-wrapper] {\\n            padding-left: 12px !important;\\n            padding-right: 12px !important;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=cols-wrapper] {\\n                padding-left: 0 !important;\\n                padding-right: 0 !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=content-wrapper] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=spacer] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=article-image-full] {\\n                height: 100px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            .article-image-full {\\n                height: 100px !important;\\n            }\\n        }\\n    <\\/style>\\n    <!--[if mso]>\\n\\n    <style>\\n        h2, h4 {\\n            font-family: Arial, sans-serif !important;\\n        }\\n    <\\/style>\\n\\n    <![endif]-->\\n<\\/head>\\n<body style=\\"margin:0; padding:0;\\" bgcolor=\\"#f5f5f5\\" marginwidth=\\"0\\" marginheight=\\"0\\" margintop=\\"0\\" marginleft=\\"0\\" marginright=\\"0\\">\\n\\n<!-- 100% background wrapper (grey background) -->\\n<table border=\\"0\\" width=\\"100%\\" cellpadding=\\"0\\" cellspacing=\\"0\\" bgcolor=\\"#f5f5f5\\">\\n    <tr>\\n        <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n\\n            <!-- row to add space above the container -->\\n            <table width=\\"100%\\" height=\\"40\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"spacer\\" style=\\"width: 600px;border:none;\\" bgcolor=\\"#f5f5f5\\">\\n                <tr>\\n                    <td height=\\"40\\" width=\\"100%\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n                        <br>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- \\/row to add space above the container -->\\n\\n            <!-- 600px container (white background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#ffffff;border:none;\\">\\n\\n                        <!-- 600px container (white background) -->\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#ffffff\\">\\n                                    <br>\\n                                    <br>\\n                                    <table border=\\"0\\" width=\\"600\\" cellpadding=\\"20\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;padding: 20px;\\">\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                <h2>[[+name]]<\\/h2>\\n                                                [[+emailContent]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                [[+emailFields]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                    <\\/table>\\n                                    <br>&nbsp;\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                        <!-- \\/600px container (white background) -->\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!--\\/600px container -->\\n\\n            <!-- 600px container (no background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#f5f5f5;border:none;\\">\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td style=\\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #5d6561; text-align: left; padding-top: 15px;\\">\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- 600px container (no background) -->\\n            <br>\\n        <\\/td>\\n    <\\/tr>\\n<\\/table>\\n<!--\\/100% background wrapper-->\\n<\\/body>\\n<\\/html>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<!DOCTYPE html PUBLIC \\"-\\/\\/W3C\\/\\/DTD HTML 4.01 Transitional\\/\\/EN\\" \\"http:\\/\\/www.w3.org\\/TR\\/html4\\/loose.dtd\\">\\n<html lang=\\"nl\\">\\n<head>\\n    <meta name=\\"robots\\" content=\\"noindex, nofollow\\">\\n    <meta http-equiv=\\"Content-Type\\" content=\\"text\\/html; charset=UTF-8\\">\\n    <meta name=\\"viewport\\" content=\\"initial-scale=1.0\\">    <!-- So that mobile webkit will display zoomed in -->\\n    <meta name=\\"format-detection\\" content=\\"telephone=no\\"> <!-- disable auto telephone linking in iOS -->\\n    <title>[[++site_name]]<\\/title>\\n\\n    <style type=\\"text\\/css\\">\\n        body {\\n            margin: 0;\\n            padding: 0;\\n            width: 100% !important;\\n            -ms-text-size-adjust: 100%;\\n            -webkit-text-size-adjust: 100%;\\n        }\\n\\n        p {\\n            margin-top: 2px;\\n            margin-bottom: 10px;\\n        }\\n\\n        table {\\n            border-spacing: 0;\\n        }\\n\\n        table td {\\n            border-collapse: collapse;\\n        }\\n\\n        .ExternalClass {\\n            width: 100%;\\n        }\\n\\n        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {\\n            line-height: 100%;\\n        }\\n\\n        .ReadMsgBody {\\n            width: 100%;\\n            padding: 0;\\n            margin: 0;\\n            background-color: #f5f5f5;\\n        }\\n\\n        table {\\n            mso-table-lspace: 0pt;\\n            mso-table-rspace: 0pt;\\n        }\\n\\n        img {\\n            -ms-interpolation-mode: bicubic;\\n        }\\n\\n        .yshortcuts a {\\n            border-bottom: none !important;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            h2[class=full],\\n            table[class=force-row],\\n            table[class=container],\\n            table[class=article-image-full] {\\n                width: 100% !important;\\n                max-width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr.visible-lg,\\n            tr[class=visible=lg],\\n            table.visible-lg,\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .logo {\\n                display: block;\\n                margin-left: auto;\\n                margin-right: auto;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .cta {\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .header-line {\\n                padding-left: 10px;\\n                padding-right: 10px;\\n                display: block;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleleft-image {\\n                margin-bottom: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleright-image {\\n                margin-top: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class*=container-padding] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        .ios-footer a {\\n            color: #aaaaaa !important;\\n            text-decoration: underline;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=col] {\\n                width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=small-center] {\\n                text-align: center !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr[class=visible-xs] {\\n                display: block !important;\\n                width: auto !important;\\n                overflow: visible !important;\\n                float: none !important;\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=cols-wrapper],\\n            td[class=2-cols-wrapper] {\\n            padding-top: 18px;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=2-cols-wrapper] {\\n            padding-left: 12px !important;\\n            padding-right: 12px !important;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=cols-wrapper] {\\n                padding-left: 0 !important;\\n                padding-right: 0 !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=content-wrapper] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=spacer] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=article-image-full] {\\n                height: 100px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            .article-image-full {\\n                height: 100px !important;\\n            }\\n        }\\n    <\\/style>\\n    <!--[if mso]>\\n\\n    <style>\\n        h2, h4 {\\n            font-family: Arial, sans-serif !important;\\n        }\\n    <\\/style>\\n\\n    <![endif]-->\\n<\\/head>\\n<body style=\\"margin:0; padding:0;\\" bgcolor=\\"#f5f5f5\\" marginwidth=\\"0\\" marginheight=\\"0\\" margintop=\\"0\\" marginleft=\\"0\\" marginright=\\"0\\">\\n\\n<!-- 100% background wrapper (grey background) -->\\n<table border=\\"0\\" width=\\"100%\\" cellpadding=\\"0\\" cellspacing=\\"0\\" bgcolor=\\"#f5f5f5\\">\\n    <tr>\\n        <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n\\n            <!-- row to add space above the container -->\\n            <table width=\\"100%\\" height=\\"40\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"spacer\\" style=\\"width: 600px;border:none;\\" bgcolor=\\"#f5f5f5\\">\\n                <tr>\\n                    <td height=\\"40\\" width=\\"100%\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n                        <br>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- \\/row to add space above the container -->\\n\\n            <!-- 600px container (white background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#ffffff;border:none;\\">\\n\\n                        <!-- 600px container (white background) -->\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#ffffff\\">\\n                                    <br>\\n                                    <br>\\n                                    <table border=\\"0\\" width=\\"600\\" cellpadding=\\"20\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;padding: 20px;\\">\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                <h2>[[+name]]<\\/h2>\\n                                                [[+emailContent]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                [[+emailFields]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                    <\\/table>\\n                                    <br>&nbsp;\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                        <!-- \\/600px container (white background) -->\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!--\\/600px container -->\\n\\n            <!-- 600px container (no background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#f5f5f5;border:none;\\">\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td style=\\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #5d6561; text-align: left; padding-top: 15px;\\">\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- 600px container (no background) -->\\n            <br>\\n        <\\/td>\\n    <\\/tr>\\n<\\/table>\\n<!--\\/100% background wrapper-->\\n<\\/body>\\n<\\/html>"}',
+        'guid' => 'f835a9ad8b4cd327c470dd51d680bb6e',
+        'native_key' => NULL,
+        'signature' => '9716008515bfc19dc19dfb97db787230',
+      ),
+      '9cf71596af3afa32f838937de1c1006d' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFiarEmailTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<!DOCTYPE html PUBLIC \\"-\\/\\/W3C\\/\\/DTD HTML 4.01 Transitional\\/\\/EN\\" \\"http:\\/\\/www.w3.org\\/TR\\/html4\\/loose.dtd\\">\\n<html lang=\\"nl\\">\\n<head>\\n    <meta name=\\"robots\\" content=\\"noindex, nofollow\\">\\n    <meta http-equiv=\\"Content-Type\\" content=\\"text\\/html; charset=UTF-8\\">\\n    <meta name=\\"viewport\\" content=\\"initial-scale=1.0\\">    <!-- So that mobile webkit will display zoomed in -->\\n    <meta name=\\"format-detection\\" content=\\"telephone=no\\"> <!-- disable auto telephone linking in iOS -->\\n    <title>[[++site_name]]<\\/title>\\n\\n    <style type=\\"text\\/css\\">\\n        body {\\n            margin: 0;\\n            padding: 0;\\n            width: 100% !important;\\n            -ms-text-size-adjust: 100%;\\n            -webkit-text-size-adjust: 100%;\\n        }\\n\\n        p {\\n            margin-top: 2px;\\n            margin-bottom: 10px;\\n        }\\n\\n        table {\\n            border-spacing: 0;\\n        }\\n\\n        table td {\\n            border-collapse: collapse;\\n        }\\n\\n        .ExternalClass {\\n            width: 100%;\\n        }\\n\\n        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {\\n            line-height: 100%;\\n        }\\n\\n        .ReadMsgBody {\\n            width: 100%;\\n            padding: 0;\\n            margin: 0;\\n            background-color: #f5f5f5;\\n        }\\n\\n        table {\\n            mso-table-lspace: 0pt;\\n            mso-table-rspace: 0pt;\\n        }\\n\\n        img {\\n            -ms-interpolation-mode: bicubic;\\n        }\\n\\n        .yshortcuts a {\\n            border-bottom: none !important;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            h2[class=full],\\n            table[class=force-row],\\n            table[class=container],\\n            table[class=article-image-full] {\\n                width: 100% !important;\\n                max-width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr.visible-lg,\\n            tr[class=visible=lg],\\n            table.visible-lg,\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .logo {\\n                display: block;\\n                margin-left: auto;\\n                margin-right: auto;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .cta {\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .header-line {\\n                padding-left: 10px;\\n                padding-right: 10px;\\n                display: block;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleleft-image {\\n                margin-bottom: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleright-image {\\n                margin-top: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class*=container-padding] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        .ios-footer a {\\n            color: #aaaaaa !important;\\n            text-decoration: underline;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=col] {\\n                width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=small-center] {\\n                text-align: center !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr[class=visible-xs] {\\n                display: block !important;\\n                width: auto !important;\\n                overflow: visible !important;\\n                float: none !important;\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=cols-wrapper],\\n            td[class=2-cols-wrapper] {\\n            padding-top: 18px;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=2-cols-wrapper] {\\n            padding-left: 12px !important;\\n            padding-right: 12px !important;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=cols-wrapper] {\\n                padding-left: 0 !important;\\n                padding-right: 0 !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=content-wrapper] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=spacer] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=article-image-full] {\\n                height: 100px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            .article-image-full {\\n                height: 100px !important;\\n            }\\n        }\\n    <\\/style>\\n    <!--[if mso]>\\n\\n    <style>\\n        h2, h4 {\\n            font-family: Arial, sans-serif !important;\\n        }\\n    <\\/style>\\n\\n    <![endif]-->\\n<\\/head>\\n<body style=\\"margin:0; padding:0;\\" bgcolor=\\"#f5f5f5\\" marginwidth=\\"0\\" marginheight=\\"0\\" margintop=\\"0\\" marginleft=\\"0\\" marginright=\\"0\\">\\n\\n<!-- 100% background wrapper (grey background) -->\\n<table border=\\"0\\" width=\\"100%\\" cellpadding=\\"0\\" cellspacing=\\"0\\" bgcolor=\\"#f5f5f5\\">\\n    <tr>\\n        <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n\\n            <!-- row to add space above the container -->\\n            <table width=\\"100%\\" height=\\"40\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"spacer\\" style=\\"width: 600px;border:none;\\" bgcolor=\\"#f5f5f5\\">\\n                <tr>\\n                    <td height=\\"40\\" width=\\"100%\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n                        <br>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- \\/row to add space above the container -->\\n\\n            <!-- 600px container (white background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#ffffff;border:none;\\">\\n\\n                        <!-- 600px container (white background) -->\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#ffffff\\">\\n                                    <br>\\n                                    <br>\\n                                    <table border=\\"0\\" width=\\"600\\" cellpadding=\\"20\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;padding: 20px;\\">\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                <h2>[[+name]]<\\/h2>\\n                                                [[+fiarContent]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                [[+fiarFields]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                    <\\/table>\\n                                    <br>&nbsp;\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                        <!-- \\/600px container (white background) -->\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!--\\/600px container -->\\n\\n            <!-- 600px container (no background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#f5f5f5;border:none;\\">\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td style=\\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #5d6561; text-align: left; padding-top: 15px;\\">\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- 600px container (no background) -->\\n            <br>\\n        <\\/td>\\n    <\\/tr>\\n<\\/table>\\n<!--\\/100% background wrapper-->\\n<\\/body>\\n<\\/html>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<!DOCTYPE html PUBLIC \\"-\\/\\/W3C\\/\\/DTD HTML 4.01 Transitional\\/\\/EN\\" \\"http:\\/\\/www.w3.org\\/TR\\/html4\\/loose.dtd\\">\\n<html lang=\\"nl\\">\\n<head>\\n    <meta name=\\"robots\\" content=\\"noindex, nofollow\\">\\n    <meta http-equiv=\\"Content-Type\\" content=\\"text\\/html; charset=UTF-8\\">\\n    <meta name=\\"viewport\\" content=\\"initial-scale=1.0\\">    <!-- So that mobile webkit will display zoomed in -->\\n    <meta name=\\"format-detection\\" content=\\"telephone=no\\"> <!-- disable auto telephone linking in iOS -->\\n    <title>[[++site_name]]<\\/title>\\n\\n    <style type=\\"text\\/css\\">\\n        body {\\n            margin: 0;\\n            padding: 0;\\n            width: 100% !important;\\n            -ms-text-size-adjust: 100%;\\n            -webkit-text-size-adjust: 100%;\\n        }\\n\\n        p {\\n            margin-top: 2px;\\n            margin-bottom: 10px;\\n        }\\n\\n        table {\\n            border-spacing: 0;\\n        }\\n\\n        table td {\\n            border-collapse: collapse;\\n        }\\n\\n        .ExternalClass {\\n            width: 100%;\\n        }\\n\\n        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {\\n            line-height: 100%;\\n        }\\n\\n        .ReadMsgBody {\\n            width: 100%;\\n            padding: 0;\\n            margin: 0;\\n            background-color: #f5f5f5;\\n        }\\n\\n        table {\\n            mso-table-lspace: 0pt;\\n            mso-table-rspace: 0pt;\\n        }\\n\\n        img {\\n            -ms-interpolation-mode: bicubic;\\n        }\\n\\n        .yshortcuts a {\\n            border-bottom: none !important;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            h2[class=full],\\n            table[class=force-row],\\n            table[class=container],\\n            table[class=article-image-full] {\\n                width: 100% !important;\\n                max-width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr.visible-lg,\\n            tr[class=visible=lg],\\n            table.visible-lg,\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .logo {\\n                display: block;\\n                margin-left: auto;\\n                margin-right: auto;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .cta {\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .header-line {\\n                padding-left: 10px;\\n                padding-right: 10px;\\n                display: block;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleleft-image {\\n                margin-bottom: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            .articleright-image {\\n                margin-top: 20px;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class*=container-padding] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        .ios-footer a {\\n            color: #aaaaaa !important;\\n            text-decoration: underline;\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=col] {\\n                width: 100% !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=small-center] {\\n                text-align: center !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            table[class=visible-lg] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            tr[class=visible-xs] {\\n                display: block !important;\\n                width: auto !important;\\n                overflow: visible !important;\\n                float: none !important;\\n                height: auto !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 599px) {\\n            td[class=cols-wrapper],\\n            td[class=2-cols-wrapper] {\\n            padding-top: 18px;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=2-cols-wrapper] {\\n            padding-left: 12px !important;\\n            padding-right: 12px !important;\\n        }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=cols-wrapper] {\\n                padding-left: 0 !important;\\n                padding-right: 0 !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            td[class=content-wrapper] {\\n                padding-left: 12px !important;\\n                padding-right: 12px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=spacer] {\\n                display: none !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            table[class=article-image-full] {\\n                height: 100px !important;\\n            }\\n        }\\n\\n        @media screen and (max-width: 400px) {\\n            .article-image-full {\\n                height: 100px !important;\\n            }\\n        }\\n    <\\/style>\\n    <!--[if mso]>\\n\\n    <style>\\n        h2, h4 {\\n            font-family: Arial, sans-serif !important;\\n        }\\n    <\\/style>\\n\\n    <![endif]-->\\n<\\/head>\\n<body style=\\"margin:0; padding:0;\\" bgcolor=\\"#f5f5f5\\" marginwidth=\\"0\\" marginheight=\\"0\\" margintop=\\"0\\" marginleft=\\"0\\" marginright=\\"0\\">\\n\\n<!-- 100% background wrapper (grey background) -->\\n<table border=\\"0\\" width=\\"100%\\" cellpadding=\\"0\\" cellspacing=\\"0\\" bgcolor=\\"#f5f5f5\\">\\n    <tr>\\n        <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n\\n            <!-- row to add space above the container -->\\n            <table width=\\"100%\\" height=\\"40\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"spacer\\" style=\\"width: 600px;border:none;\\" bgcolor=\\"#f5f5f5\\">\\n                <tr>\\n                    <td height=\\"40\\" width=\\"100%\\" bgcolor=\\"#f5f5f5\\" style=\\"background-color: #f5f5f5;\\">\\n                        <br>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- \\/row to add space above the container -->\\n\\n            <!-- 600px container (white background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#ffffff;border:none;\\">\\n\\n                        <!-- 600px container (white background) -->\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td align=\\"center\\" valign=\\"top\\" bgcolor=\\"#ffffff\\">\\n                                    <br>\\n                                    <br>\\n                                    <table border=\\"0\\" width=\\"600\\" cellpadding=\\"20\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;padding: 20px;\\">\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                <h2>[[+name]]<\\/h2>\\n                                                [[+fiarContent]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                        <tr style=\\"font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:20px;text-align:left;color:#333333;background-color:#ffffff;\\">\\n                                            <td style=\\"text-align:left;max-width: 100%;\\" width=\\"560\\" class=\\"force-row\\">\\n                                                [[+fiarFields]]\\n                                            <\\/td>\\n                                        <\\/tr>\\n                                    <\\/table>\\n                                    <br>&nbsp;\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                        <!-- \\/600px container (white background) -->\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!--\\/600px container -->\\n\\n            <!-- 600px container (no background) -->\\n            <table border=\\"0\\" width=\\"600\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"container\\" style=\\"width:600px;max-width:600px;border:none;\\">\\n                <tr>\\n                    <td class=\\"content\\" align=\\"left\\" style=\\"background-color:#f5f5f5;border:none;\\">\\n                        <table width=\\"600\\" border=\\"0\\" cellpadding=\\"0\\" cellspacing=\\"0\\" class=\\"force-row\\" style=\\"width: 600px;border:none;\\">\\n                            <tr>\\n                                <td style=\\"font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 18px; color: #5d6561; text-align: left; padding-top: 15px;\\">\\n                                <\\/td>\\n                            <\\/tr>\\n                        <\\/table>\\n                    <\\/td>\\n                <\\/tr>\\n            <\\/table>\\n            <!-- 600px container (no background) -->\\n            <br>\\n        <\\/td>\\n    <\\/tr>\\n<\\/table>\\n<!--\\/100% background wrapper-->\\n<\\/body>\\n<\\/html>"}',
+        'guid' => 'bf7295d4a40545ad35f6822e29feff67',
+        'native_key' => NULL,
+        'signature' => 'ce03455301fdcdecf3410985a9c63b2d',
+      ),
+      '174882c52445d4925c997ff0f5a6b394' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldCheckboxesItemTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<label>\\n    <input type=\\"checkbox\\" name=\\"[[!+name]][]\\" id=\\"[[!+name]]_[[!+idx]]\\" class=\\"form-control form-control--checkbox [[!+error:notempty=`error`]]\\" value=\\"[[!+title]]\\"\\n        [[!FormItIsChecked? &input=`[[!+value]]` &options=`[[!+title]]`]]\\n    \\/>\\n    [[!+title]]\\n<\\/label>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<label>\\n    <input type=\\"checkbox\\" name=\\"[[!+name]][]\\" id=\\"[[!+name]]_[[!+idx]]\\" class=\\"form-control form-control--checkbox [[!+error:notempty=`error`]]\\" value=\\"[[!+title]]\\"\\n        [[!FormItIsChecked? &input=`[[!+value]]` &options=`[[!+title]]`]]\\n    \\/>\\n    [[!+title]]\\n<\\/label>"}',
+        'guid' => '1ccae32cb19e45c7891995ab77fc6978',
+        'native_key' => NULL,
+        'signature' => '1f893999fe764ff51d5028fb831996e4',
+      ),
+      'b1bc1a2ee99f959f3860b27608acd245' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldCheckboxesTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <input type=\\"hidden\\" name=\\"[[+name]]\\" \\/>\\n    [[!+valuesCount:gt=`1`:then=`\\n        <label>[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    `:else=``]]\\n    <div class=\\"form-control--wrapper\\">\\n        [[!+values]]\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <input type=\\"hidden\\" name=\\"[[+name]]\\" \\/>\\n    [[!+valuesCount:gt=`1`:then=`\\n        <label>[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    `:else=``]]\\n    <div class=\\"form-control--wrapper\\">\\n        [[!+values]]\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => '255baa64647adf002f5fa78735c8cf16',
+        'native_key' => NULL,
+        'signature' => '4741b65cedbab19dbcc30204094b6bd9',
+      ),
+      '7e8708e8c786dc5df43cb464e0edbd4d' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldDescriptionTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group\\">\\n    [[!+description]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group\\">\\n    [[!+description]]\\n<\\/div>"}',
+        'guid' => '0f20d2c756ccccce0e9cb042ce4dd95c',
+        'native_key' => NULL,
+        'signature' => '9faf4c1a50ff3a58ca7e7af0020a6b07',
+      ),
+      '1d3a7cf960240d9846f6b075479e2773' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldEmailTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"email\\" id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control [[!+error:notempty=`error`]]\\" value=\\"[[!+value]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]] \\/>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"email\\" id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control [[!+error:notempty=`error`]]\\" value=\\"[[!+value]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]] \\/>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => '975e15b46d8823bc861ae2cadd5ceb82',
+        'native_key' => NULL,
+        'signature' => 'efd01a5814ed0a5446cad24d1ccfb5f1',
+      ),
+      '676762810383d3c644356da24419e646' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldFileTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"file\\" name=\\"[[!+name]]\\" id=\\"[[!+name]]\\" class=\\"form-control form-control--file [[!+error:notempty=`error`]]\\" value=\\"[[!+value.name]]\\" \\/>\\n        [[!+error]]\\n        <i>[[!+value.name]]<\\/i>\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"file\\" name=\\"[[!+name]]\\" id=\\"[[!+name]]\\" class=\\"form-control form-control--file [[!+error:notempty=`error`]]\\" value=\\"[[!+value.name]]\\" \\/>\\n        [[!+error]]\\n        <i>[[!+value.name]]<\\/i>\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => 'f71003244b08ea9d6770f5db172ee3e1',
+        'native_key' => NULL,
+        'signature' => '371c7fb85c18e592aaf23a095c5f00dc',
+      ),
+      'd7c8f3ac33a1f271ef6d66a42c1b99cb' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldHeadingTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group\\">\\n    <[[+property]]>[[+title]]<\\/[[+property]]>\\n    [[+description]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group\\">\\n    <[[+property]]>[[+title]]<\\/[[+property]]>\\n    [[+description]]\\n<\\/div>"}',
+        'guid' => 'b1010b2a156b41fa69694005413cd2c8',
+        'native_key' => NULL,
+        'signature' => '26ff4ba96a723a2d77142fa0a1bd4aa9',
+      ),
+      'ab1c8639220616bf54b8060459902c5a' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldNumberTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"number\\" id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control [[!+error:notempty=`error`]]\\" value=\\"[[!+value]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]] \\/>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"number\\" id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control [[!+error:notempty=`error`]]\\" value=\\"[[!+value]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]] \\/>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => 'd73d70c68593b7d483dce3601dca120f',
+        'native_key' => NULL,
+        'signature' => '4d4839583a17d1df2cf9ec4f7fb8638a',
+      ),
+      'cbe6703a4c9c3512d8dbd6f6568d8123' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldRadiobuttonsItemTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<label>\\n    <input type=\\"radio\\" name=\\"[[!+name]]\\" id=\\"[[!+name]]_[[!+idx]]\\" class=\\"form-control form-control--radio [[!+error:notempty=`error`]]\\" value=\\"[[!+title]]\\"\\n        [[!FormItIsChecked? &input=`[[!+value]]` &options=`[[!+title]]`]]\\n    \\/>\\n    [[!+title]]\\n<\\/label>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<label>\\n    <input type=\\"radio\\" name=\\"[[!+name]]\\" id=\\"[[!+name]]_[[!+idx]]\\" class=\\"form-control form-control--radio [[!+error:notempty=`error`]]\\" value=\\"[[!+title]]\\"\\n        [[!FormItIsChecked? &input=`[[!+value]]` &options=`[[!+title]]`]]\\n    \\/>\\n    [[!+title]]\\n<\\/label>"}',
+        'guid' => 'b7776d3e11d3fac0092453665ac2ab4a',
+        'native_key' => NULL,
+        'signature' => '169814e607d2399d55f49f3f196dc860',
+      ),
+      'd6afcb8388d3aacb848a483aeea7645e' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldRadiobuttonsTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label>[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        [[!+values]]\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label>[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        [[!+values]]\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => '3a17b5fc339b099ca863c9d340215609',
+        'native_key' => NULL,
+        'signature' => '74bd46e6af1a4fa12ed9b2e6a822acb5',
+      ),
+      '2f12fd6063fcb9f2b1a11de4c08c7867' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldSelectItemTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<option value=\\"[[!+title]]\\" id=\\"[[!+name]]_[[!+idx]]\\"\\n    [[!FormItIsSelected? &input=`[[!+value]]` &options=`[[!+title]]`]]\\n>[[!+title]]<\\/option>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<option value=\\"[[!+title]]\\" id=\\"[[!+name]]_[[!+idx]]\\"\\n    [[!FormItIsSelected? &input=`[[!+value]]` &options=`[[!+title]]`]]\\n>[[!+title]]<\\/option>"}',
+        'guid' => '77fe0ded707f5aa0add757021934fe51',
+        'native_key' => NULL,
+        'signature' => 'bc38bbe34b9308dbf963a1a512d8cfd2',
+      ),
+      '8950c5834d34c7f10fc0cd4e10c85d71' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldSelectTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <select id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control form-control--select [[!+error:notempty=`error`]]\\">\\n            [[!+placeholder:notempty=`<option value=\\"\\">[[+placeholder]]<\\/option>`]]\\n            [[!+values]]\\n        <\\/select>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <select id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control form-control--select [[!+error:notempty=`error`]]\\">\\n            [[!+placeholder:notempty=`<option value=\\"\\">[[+placeholder]]<\\/option>`]]\\n            [[!+values]]\\n        <\\/select>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => '5db87d05f26237a79be26afda5529bd3',
+        'native_key' => NULL,
+        'signature' => '792248827b6901c4b1144f09f14a2bf0',
+      ),
+      'abe531ffc3743a52de1b3d52de12655a' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldTextareaTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <textarea id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control form-control--textarea [[!+error:notempty=`error`]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]]>[[!+value]]<\\/textarea>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <textarea id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control form-control--textarea [[!+error:notempty=`error`]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]]>[[!+value]]<\\/textarea>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => '418b822050107ecb2f0d3a9017f4b250',
+        'native_key' => NULL,
+        'signature' => '9085ddec8721080fd5cd02983b7def45',
+      ),
+      'd1efd99fc0d5525e013c566be709c101' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"formaliciousFieldTextTpl","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"text\\" id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control [[!+error:notempty=`error`]]\\" value=\\"[[!+value]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]] \\/>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div class=\\"form-group [[!+error:notempty=`has-error`]]\\">\\n    <label for=\\"[[!+name]]\\">[[!+title]][[!+required:notempty=`*`:empty=``]]:<\\/label>\\n    <div class=\\"form-control--wrapper\\">\\n        <input type=\\"text\\" id=\\"[[!+name]]\\" name=\\"[[!+name]]\\" class=\\"form-control [[!+error:notempty=`error`]]\\" value=\\"[[!+value]]\\" [[!+placeholder:notempty=`placeholder=\\"[[!+placeholder]]\\"`]] \\/>\\n        [[!+error]]\\n    <\\/div>\\n    [[!+description:notempty=`<div class=\\"form-control--description\\">[[!+description]]<\\/div>`]]\\n<\\/div>"}',
+        'guid' => '7621c38c334048f8917afd7c6cf4ed2f',
+        'native_key' => NULL,
+        'signature' => 'cd142f9bbefe4872a9027cca327ab201',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      '6347e679299253c60937ab0fea51fdde' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousHookHandleForm","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetHookHandleForm\', \'FormaliciousSnippetHookHandleForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetHookHandleForm) {\\n    return $instance->run($hook, $errors);\\n}\\n\\nreturn \'\';","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetHookHandleForm\', \'FormaliciousSnippetHookHandleForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetHookHandleForm) {\\n    return $instance->run($hook, $errors);\\n}\\n\\nreturn \'\';"}',
+        'guid' => 'f5e338b31d065c44b67e976ea10204f8',
+        'native_key' => NULL,
+        'signature' => '9c24d5e9c1128f769be54f5b87a4306f',
+      ),
+      '326727cc2b0ea2a78c57c0363f6a8d0d' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousHookRemoveForm","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetHookRemoveForm\', \'FormaliciousSnippetHookRemoveForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetHookRemoveForm) {\\n    return $instance->run($hook, $errors);\\n}\\n\\nreturn \'\';","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetHookRemoveForm\', \'FormaliciousSnippetHookRemoveForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetHookRemoveForm) {\\n    return $instance->run($hook, $errors);\\n}\\n\\nreturn \'\';"}',
+        'guid' => '48e18d787ea51adc76089433415fa3d1',
+        'native_key' => NULL,
+        'signature' => '170ce8cc1788765e984892fcf41dba2a',
+      ),
+      '608fd530372e85fdee35055b3eb23dcc' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousHookRenderForm","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetHookRenderForm\', \'FormaliciousSnippetHookRenderForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetHookRenderForm) {\\n    return $instance->run($hook, $errors);\\n}\\n\\nreturn \'\';","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetHookRenderForm\', \'FormaliciousSnippetHookRenderForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetHookRenderForm) {\\n    return $instance->run($hook, $errors);\\n}\\n\\nreturn \'\';"}',
+        'guid' => '55d31261eb55e20144a559bd2e4fac43',
+        'native_key' => NULL,
+        'signature' => '7daca9392df51e1a720b86c5117eb287',
+      ),
+      'e9ed1ebf46fa9cb55c4cbbab5faf7dad' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"FormaliciousRenderForm","description":"","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetRenderForm\', \'FormaliciousSnippetRenderForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetRenderForm) {\\n    return $instance->run($scriptProperties);\\n}\\n\\nreturn \'\';","locked":0,"properties":"a:8:{s:7:\\"tplForm\\";a:7:{s:4:\\"name\\";s:7:\\"tplForm\\";s:4:\\"desc\\";s:33:\\"formalicious.snippet_tplform_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:36:\\"@FILE elements\\/chunks\\/form.chunk.tpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:7:\\"tplStep\\";a:7:{s:4:\\"name\\";s:7:\\"tplStep\\";s:4:\\"desc\\";s:33:\\"formalicious.snippet_tplstep_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:36:\\"@FILE elements\\/chunks\\/step.chunk.tpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:17:\\"tplNavigationItem\\";a:7:{s:4:\\"name\\";s:17:\\"tplNavigationItem\\";s:4:\\"desc\\";s:43:\\"formalicious.snippet_tplnavigationitem_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:47:\\"@FILE elements\\/chunks\\/navigation\\/item.chunk.tpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:20:\\"tplNavigationWrapper\\";a:7:{s:4:\\"name\\";s:20:\\"tplNavigationWrapper\\";s:4:\\"desc\\";s:46:\\"formalicious.snippet_tplnavigationwrapper_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:50:\\"@FILE elements\\/chunks\\/navigation\\/wrapper.chunk.tpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:8:\\"tplEmail\\";a:7:{s:4:\\"name\\";s:8:\\"tplEmail\\";s:4:\\"desc\\";s:34:\\"formalicious.snippet_tplemail_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:20:\\"formaliciousEmailTpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:18:\\"tplEmailFieldsItem\\";a:7:{s:4:\\"name\\";s:18:\\"tplEmailFieldsItem\\";s:4:\\"desc\\";s:44:\\"formalicious.snippet_tplemailfieldsitem_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:42:\\"@FILE elements\\/chunks\\/email\\/item.chunk.tpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:21:\\"tplEmailFieldsWrapper\\";a:7:{s:4:\\"name\\";s:21:\\"tplEmailFieldsWrapper\\";s:4:\\"desc\\";s:47:\\"formalicious.snippet_tplemailfieldswrapper_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:45:\\"@FILE elements\\/chunks\\/email\\/wrapper.chunk.tpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}s:12:\\"tplFiarEmail\\";a:7:{s:4:\\"name\\";s:12:\\"tplFiarEmail\\";s:4:\\"desc\\";s:38:\\"formalicious.snippet_tplfiaremail_desc\\";s:4:\\"type\\";s:9:\\"textfield\\";s:7:\\"options\\";s:0:\\"\\";s:5:\\"value\\";s:24:\\"formaliciousFiarEmailTpl\\";s:7:\\"lexicon\\";s:23:\\"formalicious:properties\\";s:4:\\"area\\";s:0:\\"\\";}}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\n$instance = $modx->getService(\'FormaliciousSnippetRenderForm\', \'FormaliciousSnippetRenderForm\', $modx->getOption(\'formalicious.core_path\', null, $modx->getOption(\'core_path\') . \'components\\/formalicious\\/\') . \'model\\/formalicious\\/snippets\\/\');\\n\\nif ($instance instanceof FormaliciousSnippetRenderForm) {\\n    return $instance->run($scriptProperties);\\n}\\n\\nreturn \'\';"}',
+        'guid' => '640bc6a7363a51bc4e50f15e5f4c91b1',
+        'native_key' => NULL,
+        'signature' => 'f7da32f7842bf7280fbc323446b94afd',
+      ),
+    ),
+    'Plugins' => 
+    array (
+      '555d5c6d59fff535c0ad48d2cb18ebc6' => 
+      array (
+        'unique_key' => 'name',
+        'preserve_keys' => false,
+        'update_object' => true,
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'd231017f587a71864688e8c90820ba74' => 
+            array (
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"ContentBlocks_RegisterInputs","priority":0,"propertyset":0}',
+              'guid' => '1584d601d4cd93b3ee15805d829cbf40',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'ContentBlocks_RegisterInputs',
+              ),
+              'signature' => 'e938d49b2b8f4d1c29a48239c3534521',
+            ),
+          ),
+        ),
+        'related_object_attributes' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'preserve_keys' => true,
+            'update_object' => false,
+            'unique_key' => 
+            array (
+              0 => 'pluginid',
+              1 => 'event',
+            ),
+          ),
+        ),
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"name":"Formalicious","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\nif ($modx->event->name === \'ContentBlocks_RegisterInputs\') {\\n    require_once $modx->getOption(\'formalicious.core_path\', null, MODX_CORE_PATH . \'components\\/formalicious\\/\') . \'elements\\/inputs\\/FormaliciousInput.php\';\\n\\n    $instance = new FormaliciousInput($contentBlocks);\\n\\n    if ($instance instanceof FormaliciousInput) {\\n        $modx->event->output([\\n            \'formalicious\' => $instance\\n        ]);\\n    }\\n}","locked":0,"properties":"a:0:{}","disabled":0,"moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * Formalicious\\n *\\n * Copyright 2019 by Sterc <modx@sterc.nl>\\n *\\/\\n\\nif ($modx->event->name === \'ContentBlocks_RegisterInputs\') {\\n    require_once $modx->getOption(\'formalicious.core_path\', null, MODX_CORE_PATH . \'components\\/formalicious\\/\') . \'elements\\/inputs\\/FormaliciousInput.php\';\\n\\n    $instance = new FormaliciousInput($contentBlocks);\\n\\n    if ($instance instanceof FormaliciousInput) {\\n        $modx->event->output([\\n            \'formalicious\' => $instance\\n        ]);\\n    }\\n}"}',
+        'guid' => 'e7d25aa661fab8dee318b82589b03091',
+        'native_key' => NULL,
+        'signature' => '8aec14e33a080764b7d135096dc9eb97',
+      ),
+    ),
+    'TemplateVars' => 
+    array (
+      '19c84d0e07902348403c53d8608cd561' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modTemplateVar',
+        'object' => '{"id":null,"source":0,"property_preprocess":0,"type":"listbox","name":"formalicious","caption":"Formalicious form","description":"","editor_type":0,"category":0,"locked":0,"elements":"@SELECT \'- Select a form -\' AS name, 0 AS id UNION ALL SELECT name,id FROM [[+PREFIX]]formalicious_forms WHERE published = 1","rank":0,"display":"","default_text":"","properties":"a:0:{}","input_properties":"a:1:{s:10:\\"allowBlank\\";b:0;}","output_properties":null,"static":0,"static_file":"","content":""}',
+        'guid' => 'b94ad55976ff09c5bb4959e5d0aa3e8a',
+        'native_key' => NULL,
+        'signature' => 'cbae249dd9d97a0557715647ae581005',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Children' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'parent',
+        1 => 'category',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Templates' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'templatename',
+    ),
+    'TemplateVars' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Plugins' => 
+    array (
+      'unique_key' => 'name',
+      'preserve_keys' => false,
+      'update_object' => true,
+      'related_objects' => true,
+      'related_object_attributes' => 
+      array (
+        'PluginEvents' => 
+        array (
+          'preserve_keys' => true,
+          'update_object' => false,
+          'unique_key' => 
+          array (
+            0 => 'pluginid',
+            1 => 'event',
+          ),
+        ),
+      ),
+    ),
+  ),
+  'namespace' => 'formalicious',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb\\/0\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"formalicious"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"formalicious"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb.gpm.resolve.tv_templates.resolver","type":"php","name":"gpm.resolve.tv_templates"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb.tables.resolver.resolver","type":"php","name":"tables.resolver"}',
+    ),
+    4 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb.tablevalues.resolver.resolver","type":"php","name":"tablevalues.resolver"}',
+    ),
+    5 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb.permissions.resolver.resolver","type":"php","name":"permissions.resolver"}',
+    ),
+    6 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb.setupoptions.resolver.resolver","type":"php","name":"setupoptions.resolver"}',
+    ),
+    7 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"formalicious-2.0.2-pl\\/modCategory\\/5be9a8e680d1f2a602f26b6717478cbb.stercextra.resolver.resolver","type":"php","name":"stercextra.resolver"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '9bfa37c3b17ea623fd041a0ec04623da',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '5be9a8e680d1f2a602f26b6717478cbb',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"Formalicious","rank":0}',
+);

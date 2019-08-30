@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '419a955601b26e455a44b55bb25a136a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'e5cf8fe98d6e7ed79be09c650ca2654e',
+  'native_key' => 'formalicious.editor_plugins',
+  'object' => '{"key":"formalicious.editor_plugins","value":"advlist autolink lists modximage charmap print preview anchor visualblocks searchreplace code fullscreen insertdatetime media table contextmenu paste modxlink","xtype":"textfield","namespace":"formalicious","area":"formalicious_editor","editedon":null}',
+);

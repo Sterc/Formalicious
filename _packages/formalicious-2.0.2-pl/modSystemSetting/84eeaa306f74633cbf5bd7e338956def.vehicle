@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '5375a5c2a7103eea4ae690c10d640ba5',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '84eeaa306f74633cbf5bd7e338956def',
+  'native_key' => 'formalicious.editor_statusbar',
+  'object' => '{"key":"formalicious.editor_statusbar","value":0,"xtype":"combo-boolean","namespace":"formalicious","area":"formalicious_editor","editedon":null}',
+);

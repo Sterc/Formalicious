@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'a3faf500dd46d828f5f3603b43c1f03f',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '9127339a323807c5bac867f30e76b476',
+  'native_key' => 'formalicious.editor_toolbar1',
+  'object' => '{"key":"formalicious.editor_toolbar1","value":"undo redo | bold italic | alignleft aligncenter alignright alignjustify | link","xtype":"textfield","namespace":"formalicious","area":"formalicious_editor","editedon":null}',
+);

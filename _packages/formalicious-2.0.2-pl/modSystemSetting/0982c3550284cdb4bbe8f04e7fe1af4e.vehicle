@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'formalicious',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'b21d3a669ae6427445fbba5f5e35d320',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '0982c3550284cdb4bbe8f04e7fe1af4e',
+  'native_key' => 'formalicious.branding_url_help',
+  'object' => '{"key":"formalicious.branding_url_help","value":"https:\\/\\/docs.modmore.com\\/en\\/Formalicious\\/v1\\/index.html","xtype":"textfield","namespace":"formalicious","area":"formalicious","editedon":null}',
+);
