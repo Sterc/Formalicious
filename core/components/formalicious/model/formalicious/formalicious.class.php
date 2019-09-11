@@ -50,7 +50,7 @@ class Formalicious
             'css_url'               => $assetsUrl . 'css/',
             'assets_url'            => $assetsUrl,
             'connector_url'         => $assetsUrl . 'connector.php',
-            'version'               => '2.0.0',
+            'version'               => '2.0.3',
             'branding_url'          => $this->modx->getOption('formalicious.branding_url'),
             'branding_help_url'     => $this->modx->getOption('formalicious.branding_url_help'),
             'save_forms'            => $this->modx->getOption('formalicious.saveforms'),

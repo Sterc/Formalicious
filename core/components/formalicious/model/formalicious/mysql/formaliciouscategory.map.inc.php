@@ -18,7 +18,7 @@ $xpdo_meta_map['FormaliciousCategory'] = array(
         'id'            => '',
         'name'          => '',
         'description'   => '',
-        'published'     => '',
+        'published'     => 1,
     ),
     'fieldMeta'     => array(
         'id'            => array(
@@ -48,7 +48,7 @@ $xpdo_meta_map['FormaliciousCategory'] = array(
             'attributes'    => 'unsigned',
             'phptype'       => 'boolean',
             'null'          => false,
-            'default'       => 0,
+            'default'       => 1,
             'index'         => 'index'
         ),
     ),

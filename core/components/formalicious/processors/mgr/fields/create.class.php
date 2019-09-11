@@ -38,6 +38,10 @@ class FormaliciousFieldCreateProcessor extends modObjectCreateProcessor
             $this->setProperty('published', 0);
         }
 
+        if (null === $this->getProperty('directional')) {
+            $this->setProperty('directional', 0);
+        }
+
         if (null === $this->getProperty('required')) {
             $this->setProperty('required', 0);
         }

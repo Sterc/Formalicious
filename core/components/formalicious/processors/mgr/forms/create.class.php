@@ -42,8 +42,8 @@ class FormaliciousFormCreateProcessor extends modObjectCreateProcessor
             $this->setProperty('saveform', 0);
         }
 
-        if (null === $this->getProperty('email')) {
-            $this->setProperty('email', 0);
+        if (null === $this->getProperty('redirectto')) {
+            $this->setProperty('redirectto', 0);
         }
 
         if (null === $this->getProperty('fiaremail')) {

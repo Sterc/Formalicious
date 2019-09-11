@@ -59,7 +59,8 @@ Formalicious.panel.Update = function(config) {
                 fieldLabel      : _('formalicious.settings.label_redirectto'),
                 description     : MODx.expandHelp ? '' : _('formalicious.settings.label_redirectto'),
                 name            : 'redirectto',
-                width           : 500
+                width           : 500,
+                default         : 0
             }, {
                 xtype           : 'label',
                 html            : _('formalicious.settings.label_redirectto_desc'),

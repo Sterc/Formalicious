@@ -16,10 +16,10 @@ $xpdo_meta_map['FormaliciousAnswer'] = array(
     ),
     'fields'        => array(
         'id'            => '',
-        'field_id'      => '',
+        'field_id'      => 0,
         'name'          => '',
         'rank'          => '',
-        'published'     => '',
+        'published'     => 0,
         'selected'      => '',
         'subfield_id'   => ''
     ),

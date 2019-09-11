@@ -21,7 +21,7 @@ $xpdo_meta_map['FormaliciousStep'] = array (
         'description'   => '',
         'button'        => '',
         'rank'          => '',
-        'published'     => '',
+        'published'     => 1,
     ),
     'fieldMeta'     => array (
         'id'            => array(
