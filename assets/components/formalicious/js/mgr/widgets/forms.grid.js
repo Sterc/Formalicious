@@ -71,7 +71,7 @@ Formalicious.grid.Forms = function(config) {
         renderer    : this.renderBoolean
     }, {
         header      : _('formalicious.settings.label_saveform'),
-        dataIndex   : 'saveform',
+        dataIndex   : 'name',
         sortable    : true,
         editable    : false,
         width       : 125,
