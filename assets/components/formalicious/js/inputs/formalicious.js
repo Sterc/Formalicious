@@ -17,7 +17,7 @@
                 dataType: 'json',
                 url: url,
                 data: {
-                    action: 'mgr/form/getlist',
+                    action: 'mgr/forms/getlist',
                     limit: 0
                 },
                 context: this,
