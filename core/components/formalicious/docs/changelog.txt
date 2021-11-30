@@ -1,3 +1,12 @@
+Version 2.0.5-pl
+- Add hidden input field to heading
+- Return FormItParameters as array for Fenom usage
+- Set properties so they use the hook config
+- Update renderForm class so it reuses the settings set from the snippet properties
+- Add step count placeholder to step tpl
+- Use {assets_url} for default value of system settings
+- Remove the requirement for published_from and published_till
+
 Version 2.0.4-pl
 - Fixed undefined bug when clicking View in FormIt in overview grid
 
