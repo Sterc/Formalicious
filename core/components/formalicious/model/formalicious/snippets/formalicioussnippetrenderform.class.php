@@ -130,6 +130,14 @@ class FormaliciousSnippetRenderForm extends FormaliciousSnippets
                     $currentStepIndex++;
                 }
 
+                $formPrehooks = explode(',', trim($form->get('prehooks')));
+                $formPrehooks = !empty($formPrehooks) ? array_map('trim', $formPrehooks) : $formPrehooks ;
+
+                $scriptPrehooks = explode(',', trim($this->getProperty('preHooks')));
+                $scriptPrehooks = !empty($scriptPrehooks) ? array_map('trim', $scriptPrehooks) : $scriptPrehooks ;
+
+                $prehooks = array_filter(array_merge($formPrehooks, $scriptPrehooks));
+
                 if ($form->get('posthooks')) {
                     $hooks = array_merge(
                         array_filter(explode(',', $this->getProperty('hooks'))),
@@ -208,7 +216,7 @@ class FormaliciousSnippetRenderForm extends FormaliciousSnippets
                 }
 
                 $parameters['hooks'] = $this->parseHooks($hooks);
-                $parameters['preHooks'] = $this->parseHooks($this->getProperty('preHooks'));
+                $parameters['preHooks'] = $this->parseHooks($prehooks);
                 $parameters['renderHooks'] = $this->parseHooks($this->getProperty('renderHooks'));
                 $parameters['validate'] = $this->parseValidation($validation);
 
