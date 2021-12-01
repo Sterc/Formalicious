@@ -71,6 +71,8 @@ class FormaliciousSnippetRenderForm extends FormaliciousSnippets
 
                 'formaliciousFormId'    => $form->get('id'),
                 'formaliciousStep'      => 1,
+                'usePdoTools'           => $this->getProperty('usePdoTools'),
+                'usePdoElementsPath'    => $this->getProperty('usePdoElementsPath')
             ];
 
             $placeholders = [
@@ -277,7 +279,8 @@ class FormaliciousSnippetRenderForm extends FormaliciousSnippets
                 $placeholders['currentUrl'] = $placeholders['formAction'];
 
                 return $this->getChunk($this->getProperty('tplForm'), array_merge($placeholders, $parameters, [
-                    'FormItParameters' => $this->parseParameters($parameters)
+                    'FormItParameters'      => $this->parseParameters($parameters),
+                    'FormItParametersArray' => $parameters
                 ]));
             }
         }

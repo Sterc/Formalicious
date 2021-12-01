@@ -6,3 +6,6 @@ config.core.php
 core/components/formit/test/properties.inc.php
 core/components/formit/test/config.inc.php
 .DS_Store
+_packages/*.*
+!_packages/.gitignore
+!_packages/*.zip

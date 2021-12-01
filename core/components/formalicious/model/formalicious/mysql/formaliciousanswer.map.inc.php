@@ -21,7 +21,7 @@ $xpdo_meta_map['FormaliciousAnswer'] = array(
         'rank'          => '',
         'published'     => 0,
         'selected'      => '',
-        'subfield_id'   => ''
+        'subfield_id'   => 0
     ),
     'fieldMeta'     =>  array(
         'id'            => array(

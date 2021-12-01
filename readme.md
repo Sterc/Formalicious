@@ -1,5 +1,5 @@
 # MODX Formalicious
-![Formalicious version](https://img.shields.io/badge/version-2.0.0-red.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/checked%20by-Gauke%20and%20Roel-blue.svg) ![MODX version requirements](https://img.shields.io/badge/modx%20version%20requirement-2.4%2B-brightgreen.svg)
+![Formalicious version](https://img.shields.io/badge/version-2.0.5-green.svg) ![MODX Extra by Sterc](https://img.shields.io/badge/checked%20by-Gauke%20and%20Roel-blue.svg) ![MODX version requirements](https://img.shields.io/badge/modx%20version%20requirement-2.4%2B-brightgreen.svg)
 
 Formalicious is a tool for MODX content managers, which enables them to manage complex forms using a GUI, without any programming knowledge. The tool makes use of FormIt to render the forms, therefore the properties available in FormIt are used in Formalicious. For example hooks and preHooks are optional settings in Formalicious.
 

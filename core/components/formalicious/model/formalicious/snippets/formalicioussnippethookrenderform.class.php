@@ -27,6 +27,8 @@ class FormaliciousSnippetHookRenderForm extends FormaliciousSnippets
      */
     public function run($hook, array $errors = [])
     {
+        $this->properties = array_merge($this->properties, $hook->config);
+        
         $formit =& $hook->formit;
         $values = $hook->getValues();
 
@@ -89,7 +91,8 @@ class FormaliciousSnippetHookRenderForm extends FormaliciousSnippets
 
                     if (!empty($formit->config['formaliciousTplStep'])) {
                         $formOutput = $this->getChunk($formit->config['formaliciousTplStep'], array_merge($step->toArray(), [
-                            'fields' => implode(PHP_EOL, $stepOutput)
+                            'fields'     => implode(PHP_EOL, $stepOutput),
+                            'totalSteps' => $form->getStepsTotal()
                         ]));
                     } else {
                         $formOutput = implode(PHP_EOL, $stepOutput);
