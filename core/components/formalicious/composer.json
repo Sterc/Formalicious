@@ -1,0 +1,16 @@
+{
+    "name": "sterc/formalicious",
+    "description": "The most powerful and easiest form builder for MODX.",
+    "keywords": [
+      "modx",
+      "formalicious"
+    ],
+    "require": {
+      "php": ">=5.6"
+    },
+    "autoload": {
+      "psr-4": {
+        "Sterc\\": "src/"
+      }
+    }
+  }

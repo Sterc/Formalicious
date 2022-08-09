@@ -25,7 +25,7 @@ Formalicious.page.Update = function(config) {
         text    : _('save'),
         cls     : 'primary-button',
         method  : 'remote',
-        process : MODx.request.id ? 'mgr/forms/update' : 'mgr/forms/create',
+        process : MODx.request.id ? '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Update' : '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Create',
         checkDirty : true,
         keys    : [{
             ctrl    : true,

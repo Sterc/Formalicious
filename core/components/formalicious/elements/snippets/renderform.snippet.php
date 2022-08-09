@@ -1,14 +1,6 @@
 <?php
-/**
- * Formalicious
- *
- * Copyright 2019 by Sterc <modx@sterc.nl>
- */
+use Sterc\Formalicious\Snippets\RenderForm;
 
-$instance = $modx->getService('FormaliciousSnippetRenderForm', 'FormaliciousSnippetRenderForm', $modx->getOption('formalicious.core_path', null, $modx->getOption('core_path') . 'components/formalicious/') . 'model/formalicious/snippets/');
+$form = new RenderForm($modx);
 
-if ($instance instanceof FormaliciousSnippetRenderForm) {
-    return $instance->run($scriptProperties);
-}
-
-return '';
+return $form->run($scriptProperties);

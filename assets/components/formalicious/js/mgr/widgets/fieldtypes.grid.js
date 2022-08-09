@@ -36,10 +36,10 @@ Formalicious.grid.FieldTypes = function(config) {
         id          : 'formalicious-grid-fieldtypes',
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtypes/getlist'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\FieldTypes\\GetList'
         },
         autosave    : true,
-        save_action : 'mgr/fieldtypes/updatefromgrid',
+        save_action : '\\Sterc\\Formalicious\\Processors\\Mgr\\FieldTypes\\UpdateFromGrid',
         fields      : ['id', 'name', 'tpl', 'answertpl', 'values', 'validation', 'icon', 'fields'],
         paging      : true,
         pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
@@ -132,7 +132,7 @@ Ext.extend(Formalicious.grid.FieldTypes, MODx.grid.Grid,{
             text    : _('formalicious.fieldtypes.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/fieldtypes/remove',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\FieldTypes\\Remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -160,7 +160,7 @@ Formalicious.window.CreateFieldType = function(config) {
         title       : _('formalicious.fieldtypes.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtypes/create'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\FieldTypes\\Create'
         },
         fields      : [{
             xtype       : 'textfield',
@@ -289,7 +289,7 @@ Formalicious.window.UpdateFieldType = function(config) {
         title       : _('formalicious.fieldtypes.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtypes/update'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\FieldTypes\\Update'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -424,7 +424,7 @@ Formalicious.window.DuplicateFieldType = function(config) {
         title       : _('formalicious.fieldtypes.duplicate'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fieldtypes/duplicate'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\FieldTypes\\Duplicate'
         },
         fields      : [{
             xtype       : 'hidden',

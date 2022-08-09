@@ -110,7 +110,7 @@ Ext.extend(Formalicious.panel.UpdateForm, MODx.Panel, {
                 text    : _('formalicious.step.remove_confirm'),
                 url     : Formalicious.config.connector_url,
                 params  : {
-                    action  : 'mgr/steps/remove',
+                    action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Steps\\Remove',
                     id      : record.record.id
                 },
                 listeners   : {
@@ -136,7 +136,7 @@ Formalicious.window.CreateStep = function(config) {
         title       : _('formalicious.step.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/steps/create'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Steps\\Create'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -180,7 +180,7 @@ Formalicious.window.UpdateStep = function(config) {
         title       : _('formalicious.step.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/steps/update'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Steps\\Update'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -240,7 +240,7 @@ Formalicious.panel.Tabs = function(config) {
                 MODx.Ajax.request({
                     url     : Formalicious.config.connector_url,
                     params  : {
-                        action  : 'mgr/steps/sort',
+                        action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Steps\\Sort',
                         order   : order.join(',')
                     },
                     listeners   : {
@@ -261,7 +261,7 @@ Ext.extend(Formalicious.panel.Tabs, Ext.ux.panel.DDTabPanel, {
         MODx.Ajax.request({
             url     : Formalicious.config.connector_url,
             params  : {
-                action  : 'mgr/steps/getlist',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Steps\\GetList',
                 form_id : MODx.request.id
             },
             listeners   : {
@@ -357,11 +357,11 @@ Formalicious.grid.FormFields = function(config) {
         columns     : columns,
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fields/getlist',
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\GetList',
             step_id     : config.step_id
         },
         autosave    : true,
-        save_action : 'mgr/fields/updatefromgrid',
+        save_action : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\UpdateFromGrid',
         fields      : ['id', 'step_id', 'title', 'placeholder', 'description', 'directional', 'type', 'required', 'published', 'rank', 'property', 'type_name', 'type_values'],
         paging      : false,
         remoteSort  : true,
@@ -419,7 +419,7 @@ Ext.extend(Formalicious.grid.FormFields, MODx.grid.Grid, {
                     MODx.Ajax.request({
                         url     : Formalicious.config.connector_url,
                         params  : {
-                            action  : 'mgr/fields/sort',
+                            action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\Sort',
                             order   : order.join(',')
                         },
                         listeners   : {
@@ -520,7 +520,7 @@ Ext.extend(Formalicious.grid.FormFields, MODx.grid.Grid, {
         MODx.Ajax.request({
             url     : Formalicious.config.connector_url,
             params  : {
-                action  : 'mgr/forms/preview',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Preview',
                 form_id : MODx.request.id,
                 step_id : this.config.step_id
             },
@@ -552,7 +552,7 @@ Ext.extend(Formalicious.grid.FormFields, MODx.grid.Grid, {
             text    : _('formalicious.field.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/fields/remove',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\Remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -629,7 +629,7 @@ Formalicious.window.CreateField = function(config) {
         title       : _('formalicious.field.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fields/create'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\Create'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -686,7 +686,7 @@ Ext.extend(Formalicious.window.CreateField, MODx.Window, {
             MODx.Ajax.request({
                 url         : Formalicious.config.connector_url,
                 params      : {
-                    action      : 'mgr/fields/create',
+                    action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\Create',
                     step_id     : form.findField('step_id').getValue(),
                     type        : btn.type
                 },
@@ -726,7 +726,7 @@ Formalicious.window.UpdateField = function(config) {
         title       : _('formalicious.field.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fields/update'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\Update'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -875,7 +875,7 @@ Formalicious.window.DuplicateField = function(config) {
         title       : _('formalicious.field.duplicate'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fields/duplicate'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\Duplicate'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -967,12 +967,12 @@ Formalicious.grid.FieldValues = function(config) {
         columns     : columns,
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/answers/getlist',
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Answers\\GetList',
             field_id    : config.field_id,
             limit       : 0
         },
         autosave    : true,
-        save_action : 'mgr/answers/updatefromgrid',
+        save_action : '\\Sterc\\Formalicious\\Processors\\Mgr\\Answers\\UpdateFromGrid',
         fields      : ['id', 'field_id', 'name', 'rank', 'published', 'selected'],
         pageSize    : 0,
         remoteSort  : true,
@@ -1030,7 +1030,7 @@ Ext.extend(Formalicious.grid.FieldValues, MODx.grid.Grid, {
                     MODx.Ajax.request({
                         url     : Formalicious.config.connector_url,
                         params  : {
-                            action  : 'mgr/answers/sort',
+                            action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Answers\\Sort',
                             order   : order.join(',')
                         },
                         listeners   : {
@@ -1096,7 +1096,7 @@ Ext.extend(Formalicious.grid.FieldValues, MODx.grid.Grid, {
             text    : _('formalicious.field.value.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/answers/remove',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Answers\\Remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -1124,7 +1124,7 @@ Formalicious.window.FieldCreateValue = function(config) {
         title       : _('formalicious.field.value.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/answers/create'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Answers\\Create'
         },
         fields      : [{
             xtype       : 'hidden',
@@ -1163,7 +1163,7 @@ Formalicious.window.FieldUpdateValue = function(config) {
         title       : _('formalicious.field.value.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/answers/update'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Answers\\Update'
         },
         fields      : [{
             xtype       : 'hidden',

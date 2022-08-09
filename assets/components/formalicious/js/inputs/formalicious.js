@@ -17,7 +17,7 @@
                 dataType: 'json',
                 url: url,
                 data: {
-                    action: 'mgr/forms/getlist',
+                    action: '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\GetList',
                     limit: 0
                 },
                 context: this,

@@ -388,7 +388,7 @@ Formalicious.panel.Update = function(config) {
     Ext.apply(config, {
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : MODx.request.id ? 'mgr/forms/update' : 'mgr/forms/create',
+            action      : MODx.request.id ? '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Update' : '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Create',
             id          : MODx.request.id
         },
         id          : 'formalicious-panel-update',
@@ -717,7 +717,7 @@ Formalicious.combo.Resources = function(config) {
     Ext.applyIf(config, {
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/resources/getlist'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Resources\\GetList'
         },
         fields      : ['id', 'pagetitle', 'context_key', 'context_name'],
         hiddenName  : 'redirectto',
@@ -748,7 +748,7 @@ Formalicious.combo.Fields = function(config) {
     Ext.applyIf(config, {
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/fields/getlist',
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Fields\\GetList',
             form_id     : config.formId || '-1',
             limit       : 0
         },

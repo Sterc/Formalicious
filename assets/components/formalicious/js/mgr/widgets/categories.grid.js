@@ -39,10 +39,10 @@ Formalicious.grid.Categories = function(config) {
         id          : 'formalicious-grid-categories',
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/categories/getlist'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Categories\\GetList'
         },
         autosave    : true,
-        save_action : 'mgr/categories/updatefromgrid',
+        save_action : '\\Sterc\\Formalicious\\Processors\\Mgr\\Categories\\UpdateFromGrid',
         fields      : ['id', 'name', 'description', 'published'],
         paging      : true,
         pageSize    : MODx.config.default_per_page > 30 ? MODx.config.default_per_page : 30,
@@ -106,7 +106,7 @@ Ext.extend(Formalicious.grid.Categories, MODx.grid.Grid, {
             text    : _('formalicious.categories.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/categories/remove',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Categories\\Remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -129,12 +129,12 @@ Ext.reg('formalicious-grid-categories', Formalicious.grid.Categories);
 Formalicious.window.CreateCategory = function(config) {
     config = config || {};
 
-    Ext.applyIf(config,{
+    Ext.applyIf(config, {
         autoHeight  : true,
         title       : _('formalicious.categories.create'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/categories/create'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Categories\\Create'
         },
         fields      : [{
             xtype       : 'textfield',
@@ -181,7 +181,7 @@ Formalicious.window.UpdateCategory = function(config) {
         title       : _('formalicious.categories.update'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/categories/update'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Categories\\Update'
         },
         fields      : [{
             xtype       : 'hidden',

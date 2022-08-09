@@ -98,7 +98,7 @@ Formalicious.grid.Forms = function(config) {
         columns     : columns,
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/forms/getlist',
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\GetList',
             category    : config.category
         },
         fields      : ['id', 'name', 'email', 'emailto', 'fiaremail', 'published'],
@@ -175,7 +175,7 @@ Ext.extend(Formalicious.grid.Forms, MODx.grid.Grid, {
             text    : _('formalicious.forms.remove_confirm'),
             url     : this.config.url,
             params  : {
-                action  : 'mgr/forms/remove',
+                action  : '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Remove',
                 id      : this.menu.record.id
             },
             listeners   : {
@@ -274,7 +274,7 @@ Formalicious.window.DuplicateForm = function(config) {
         title       : _('formalicious.forms.duplicate'),
         url         : Formalicious.config.connector_url,
         baseParams  : {
-            action      : 'mgr/forms/duplicate'
+            action      : '\\Sterc\\Formalicious\\Processors\\Mgr\\Forms\\Duplicate'
         },
         fields      : [{
             xtype       : 'hidden',
