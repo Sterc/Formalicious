@@ -1,0 +1,137 @@
+name: Formalicious
+lowCaseName: formalicious
+description: The most powerful and easiest form builder for MODX.
+author: Sterc
+namespace: Sterc\Formalicious
+version: 3.0.0
+
+systemSettings:
+  - key: branding_url
+    value: https://www.sterc.nl/modx/extras/formalicious
+    area: formalicious
+  - key: branding_url_help
+    value: https://docs.modmore.com/en/Formalicious/v1/index.html
+    area: formalicious
+    type: combo-boolean
+  - key: saveforms
+    value: "1"
+    area: formalicious
+  - key: saveforms_prefix
+    value: Formalicious
+    area: formalicious
+  - key: disallowed_hooks
+    value: spam,email,redirect,FormaliciousHookHandleForm,FormaliciousHookRemoveForm
+    area: formalicious
+  - key: preview_css
+    value: "{assets_url}components/formalicious/css/mgr/preview.css"
+    area: formalicious
+  - key: source
+    value:  "1"
+    area: formalicious
+    type: combo-boolean
+  - key: use_editor
+    value: "0"
+    area: formalicious_editor
+  - key: editor_menubar
+    area: formalicious_editor
+  - key: editor_plugins
+    value: advlist autolink lists modximage charmap print preview anchor visualblocks searchreplace code fullscreen insertdatetime media table contextmenu paste modxlink
+    area: formalicious_editor
+    type: combo-boolean
+  - key: editor_statusbar
+    value: "0"
+    area: formalicious_editor
+  - key: editor_toolbar1
+    value: undo redo | bold italic | alignleft aligncenter alignright alignjustify | link
+    area: formalicious_editor
+  - key: editor_toolbar2
+    area: formalicious_editor
+  - key: editor_toolbar3
+    area: formalicious_editor
+
+chunks:
+  - name: formaliciousEmailTpl
+    file: email.chunk.tpl
+  - name: formaliciousFiarEmailTpl
+    file: fiaremail.chunk.tpl
+  - name: formaliciousFieldCheckboxesItemTpl
+    file: fieldtypes/checkboxesitem.chunk.tpl
+  - name: formaliciousFieldCheckboxesTpl
+    file: fieldtypes/checkboxes.chunk.tpl
+  - name: formaliciousFieldDescriptionTpl
+    file: fieldtypes/description.chunk.tpl
+  - name: formaliciousFieldEmailTpl
+    file: fieldtypes/email.chunk.tpl
+  - name: formaliciousFieldFileTpl
+    file: fieldtypes/file.chunk.tpl
+  - name: formaliciousFieldHeadingTpl
+    file: fieldtypes/heading.chunk.tpl
+  - name: formaliciousFieldNumberTpl
+    file: fieldtypes/number.chunk.tpl
+  - name: formaliciousFieldRadiobuttonsItemTpl
+    file: fieldtypes/radiobuttonsitem.chunk.tpl
+  - name: formaliciousFieldRadiobuttonsTpl
+    file: fieldtypes/radiobuttons.chunk.tpl
+  - name: formaliciousFieldSelectItemTpl
+    file: fieldtypes/selectitem.chunk.tpl
+  - name: formaliciousFieldSelectTpl
+    file: fieldtypes/select.chunk.tpl
+  - name: formaliciousFieldTextareaTpl
+    file: fieldtypes/textarea.chunk.tpl
+  - name: formaliciousFieldTextTpl
+    file: fieldtypes/text.chunk.tpl
+
+snippets:
+- name: FormaliciousHookHandleForm
+  file: hookhandleform.snippet.php
+- name: FormaliciousHookRemoveForm
+  file: hookremoveform.snippet.php
+- name: FormaliciousHookRenderForm
+  file: hookrenderform.snippet.php
+- name: FormaliciousRenderForm
+  file: renderform.snippet.php
+  properties:
+  - name: tplForm
+    value: "@FILE elements/chunks/form.chunk.tpl"
+    description: formalicious.snippet_tplform_desc
+  - name: tplStep
+    value: "@FILE elements/chunks/step.chunk.tpl"
+    description: formalicious.snippet_tplstep_desc
+  - name: tplNavigationItem
+    value: "@FILE elements/chunks/navigation/item.chunk.tpl"
+    description: formalicious.snippet_tplnavigationitem_desc
+  - name: tplNavigationWrapper
+    value: "@FILE elements/chunks/navigation/wrapper.chunk.tpl"
+    description: formalicious.snippet_tplnavigationwrapper_desc
+  - name: tplEmail
+    value: formaliciousEmailTpl
+    description: formalicious.snippet_tplemail_desc
+  - name: tplEmailFieldsItem
+    value: "@FILE elements/chunks/email/item.chunk.tpl"
+    description: formalicious.snippet_tplemailfieldsitem_desc
+  - name: tplEmailFieldsWrapper
+    value: "@FILE elements/chunks/email/wrapper.chunk.tpl"
+    description: formalicious.snippet_tplemailfieldswrapper_desc
+  - name: tplFiarEmail
+    value: formaliciousFiarEmailTpl
+    description: formalicious.snippet_tplfiaremail_desc
+
+plugins:
+- name: Formalicious
+  file: formalicious.plugin.php
+  events: ["ContentBlocks_RegisterInputs"]
+
+menus:
+  - text: formalicious
+    description: formalicious.desc
+    action: home
+    parent: components
+    permissions: formalicious
+
+build:
+  setupOptions: "setup.options.php"
+  scriptsAfter: ["permissions.resolver.php", "setupoptions.resolver.php", "stercextra.resolver.php", "tablevalues.resolver.php", "templatevariables.resolver.php"]
+  requires: {"FormIt": ">=5.0.0"}
+
+database:
+  tables: ['\Sterc\Formalicious\Model\FormaliciousAnswer', '\Sterc\Formalicious\Model\FormaliciousCategory', '\Sterc\Formalicious\Model\FormaliciousField', '\Sterc\Formalicious\Model\FormaliciousFieldType', '\Sterc\Formalicious\Model\FormaliciousForm', '\Sterc\Formalicious\Model\FormaliciousStep']
