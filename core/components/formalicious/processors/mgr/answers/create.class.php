@@ -54,7 +54,7 @@ class FormaliciousAnswerCreateProcessor extends modObjectCreateProcessor
         $query = $this->modx->newQuery($this->classKey, [
             'field_id' => $this->getProperty('field_id')
         ]);
-        $query->sortby('rank', 'DESC');
+        $query->sortby($this->classKey.'_rank', 'DESC');
         $query->limit(1);
 
         $object = $this->modx->getObject($this->classKey, $query);

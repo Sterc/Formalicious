@@ -47,7 +47,7 @@ class FormaliciousStepCreateProcessor extends modObjectCreateProcessor
             'form_id' => $this->getProperty('form_id')
         ]);
 
-        $query->sortby('rank', 'DESC');
+        $query->sortby($this->classKey.'_rank', 'DESC');
 
         $query->limit(1);
 
