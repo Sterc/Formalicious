@@ -44,7 +44,7 @@ class FormaliciousFormPreviewProcessor extends modProcessor
                 'published' => 1
             ]);
 
-            $criteria->sortby('rank', 'ASC');
+            $criteria->sortby('FormaliciousField_rank', 'ASC');
 
             foreach ((array) $step->getMany('Fields', $criteria) as $field) {
                 $answerOuter = [];
@@ -56,7 +56,7 @@ class FormaliciousFormPreviewProcessor extends modProcessor
                         'published' => 1
                     ]);
 
-                    $criteria->sortby('rank', 'ASC');
+                    $criteria->sortby('FormaliciousAnswer_rank', 'ASC');
 
                     foreach ((array) $field->getMany('Answers', $criteria) as $answer) {
                         $chunk = $this->modx->getObject('modChunk', [
