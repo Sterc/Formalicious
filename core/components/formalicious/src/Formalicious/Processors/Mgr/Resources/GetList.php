@@ -60,7 +60,7 @@ class GetList extends GetListProcessor
             ]);
         }
 
-        $criteria->sortby('context_key', 'ASC');
+        $criteria->sortby('`context_key`', 'ASC');
 
         return $criteria;
     }

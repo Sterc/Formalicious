@@ -133,7 +133,7 @@ class Update extends Base
         $fieldTypes = [];
 
         $query = $this->modx->newQuery(FormaliciousFieldType::class);
-        $query->sortby('name', 'ASC');
+        $query->sortby('`name`', 'ASC');
 
         foreach ($this->modx->getCollection(FormaliciousFieldType::class, $query) as $fieldType) {
             $fieldTypes[] = $fieldType->toArray();

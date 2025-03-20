@@ -28,7 +28,7 @@ class Preview extends Processor
             $stepOutput = [];
 
             $criteria = $this->modx->newQuery(FormaliciousField::class, ['published' => 1]);
-            $criteria->sortby('rank', 'ASC');
+            $criteria->sortby('`rank`', 'ASC');
 
             foreach ((array) $step->getMany('Fields', $criteria) as $field) {
                 $answerOuter = [];
@@ -36,7 +36,7 @@ class Preview extends Processor
                 $type = $field->getOne('Type');
                 if ($type) {
                     $criteria = $this->modx->newQuery(FormaliciousAnswer::class, ['published' => 1]);
-                    $criteria->sortby('rank', 'ASC');
+                    $criteria->sortby('`rank`', 'ASC');
 
                     foreach ((array) $field->getMany('Answers', $criteria) as $answer) {
                         $chunk = $this->modx->getObject(modChunk::class, ['name' => $type->get('answertpl')]);
