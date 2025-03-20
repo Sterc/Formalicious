@@ -50,7 +50,7 @@ class Home extends Base
 
         $query = $this->modx->newQuery(FormaliciousCategory::class);
         $query->where(['published' => 1]);
-        $query->sortby('name', 'ASC');
+        $query->sortby('`name`', 'ASC');
 
         foreach ($this->modx->getCollection(FormaliciousCategory::class, $query) as $category) {
             $categories[] = $category->toArray();

@@ -90,7 +90,7 @@ class FormaliciousField extends \xPDO\Om\xPDOSimpleObject
             'published' => 1
         ]);
 
-        $criteria->sortby('rank', 'ASC');
+        $criteria->sortby('`rank`', 'ASC');
 
         return $this->xpdo->getCollection(FormaliciousAnswer::class, $criteria);
     }

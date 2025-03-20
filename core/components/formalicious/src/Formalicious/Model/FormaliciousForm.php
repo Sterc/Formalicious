@@ -84,7 +84,7 @@ class FormaliciousForm extends \xPDO\Om\xPDOSimpleObject
             'form_id' => $this->get('id')
         ]);
 
-        $criteria->sortby('rank', 'ASC');
+        $criteria->sortby('`rank`', 'ASC');
 
         return $this->xpdo->getCollection(FormaliciousStep::class, $criteria);
     }

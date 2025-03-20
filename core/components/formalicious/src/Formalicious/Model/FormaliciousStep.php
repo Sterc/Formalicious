@@ -31,7 +31,7 @@ class FormaliciousStep extends \xPDO\Om\xPDOSimpleObject
             'published' => 1
         ]);
 
-        $criteria->sortby('rank', 'ASC');
+        $criteria->sortby('`rank`', 'ASC');
 
         return $this->xpdo->getCollection(FormaliciousField::class, $criteria);
     }
