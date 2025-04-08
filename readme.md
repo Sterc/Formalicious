@@ -42,7 +42,7 @@ To show the form on a page:
 
 * When installing the Formalicious package, a TV named 'formalicious' will be created. This TV can be assigned to a template and in the code add this for example to show the form chosen in the TV:
 ```html
-[[!renderForm? &form=`[[!*formalicious]]`]]
+[[!FormaliciousRenderForm? &form=`[[!*formalicious]]`]]
 ```
 
 ### Options ###
