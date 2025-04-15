@@ -3,7 +3,7 @@ lowCaseName: formalicious
 description: The most powerful and easiest form builder for MODX.
 author: Sterc
 namespace: Sterc\Formalicious
-version: 3.0.0
+version: 3.1.1
 
 systemSettings:
   - key: branding_url

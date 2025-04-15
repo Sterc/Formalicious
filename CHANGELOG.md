@@ -1,3 +1,6 @@
+Version 3.1.1-pl
+- Renamed usage of rank column to avoid conflict with reserved keywords in MySQL 8. This prevents SQL errors during table creation or queries in newer MySQL versions
+
 Version 3.1.0-pl
 - Move to datetime object to prevent forms from breaking when publishing beyond 2038
 - Add form action field to which the form will be posted instead of the landingspage (requires latest FormIt.)
