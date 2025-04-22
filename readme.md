@@ -9,7 +9,7 @@ Formalicious is a tool for MODX content managers, which enables them to manage c
 
 ## Snippets
 
-**Voorbeeld snippet call:**
+**Example snippet call:**
 
 ```
 {'!FormaliciousRenderForm' | snippet : [
