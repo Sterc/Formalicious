@@ -50,7 +50,7 @@ class Base extends Formalicious
      */
     public function getChunk($name, array $properties = [])
     {
-        if (class_exists('pdoTools') && $pdo = $this->modx->getService('pdoTools')) {
+        if ($pdo = $this->modx->getService('pdoTools')) {
             if ((bool) $this->getProperty('usePdoTools')) {
                 if ((bool) $this->getProperty('usePdoElementsPath')) {
                     $elementsPath = $this->modx->getOption('pdotools_elements_path');
