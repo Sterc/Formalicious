@@ -2,6 +2,7 @@
 namespace Sterc\Formalicious\Model\mysql;
 
 use xPDO\xPDO;
+use Sterc\Formalicious\Model\FormaliciousField;
 
 class FormaliciousFieldType extends \Sterc\Formalicious\Model\FormaliciousFieldType
 {
@@ -88,7 +89,7 @@ class FormaliciousFieldType extends \Sterc\Formalicious\Model\FormaliciousFieldT
         array (
             'Fields' => 
             array (
-                'class' => 'FormaliciousField',
+                'class' => FormaliciousField::class,
                 'local' => 'id',
                 'foreign' => 'type',
                 'cardinality' => 'many',

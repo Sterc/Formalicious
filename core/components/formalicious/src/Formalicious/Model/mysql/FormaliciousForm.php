@@ -2,6 +2,8 @@
 namespace Sterc\Formalicious\Model\mysql;
 
 use xPDO\xPDO;
+use Sterc\Formalicious\Model\FormaliciousStep;
+use Sterc\Formalicious\Model\FormaliciousCategory;
 
 class FormaliciousForm extends \Sterc\Formalicious\Model\FormaliciousForm
 {
@@ -254,7 +256,7 @@ class FormaliciousForm extends \Sterc\Formalicious\Model\FormaliciousForm
         array (
             'Steps' => 
             array (
-                'class' => 'FormaliciousStep',
+                'class' => FormaliciousStep::class,
                 'local' => 'id',
                 'foreign' => 'form_id',
                 'cardinality' => 'many',
@@ -265,7 +267,7 @@ class FormaliciousForm extends \Sterc\Formalicious\Model\FormaliciousForm
         array (
             'Category' => 
             array (
-                'class' => 'FormaliciousCategory',
+                'class' => FormaliciousCategory::class,
                 'local' => 'category_id',
                 'foreign' => 'id',
                 'cardinality' => 'one',
