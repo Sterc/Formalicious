@@ -150,6 +150,7 @@
             "value": "{assets_url}components/formalicious/css/mgr/preview.css",
             "area": "formalicious"
         },{
+            "type": "modx-combo-source",
             "key": "source",
             "value": 1,
             "area": "formalicious"
