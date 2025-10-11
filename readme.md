@@ -9,7 +9,7 @@ Formalicious is a tool for MODX content managers, which enables them to manage c
 
 ## Snippets
 
-**Voorbeeld snippet call:**
+**Example snippet call:**
 
 ```
 {'!FormaliciousRenderForm' | snippet : [
@@ -49,3 +49,59 @@ To show the form on a page:
 System settings:
 
 * formalicious.source: the media source id Formalicious will use
+
+## Multi-Step Paged Forms
+
+New in version 3.1.2, logic has been added to persist data across multiple step forms when moving forward, backward, or jumping between steps. To function, FormIt 5.1.2+ is required.
+
+### Basic Markup
+
+Note that, in the example below, the value of the placeholder `formaliciousSteps` is the total number of steps in your form. Also important is that for the special use buttons (previous and skip to last) to work, their names must be the `submitVar` appended with a unique string. In this case, “_prev” and "_last" are used to distiguish those buttons from the default submit one.
+
+```html
+<form action="[[!+formAction]]" id="form-[[!+id]]" method="post" enctype="multipart/form-data">
+	[[!+formalicious.form]]
+	<div class="form-pagination">
+		[[!+step
+			:neq=`1`
+			:then=`
+				<button type="submit" name="[[!+submitVar]]_prev" value="[[!+submitValPrev]]">
+    		        [[%formalicious.prev? &namespace=`formalicious` &topic=`default`]]
+	    		</button>
+			`
+			:else=``
+		]]
+        <!-- Note that `submitTitle` will output either “Next” or “Submit” depending on which page the user is on -->
+        <button type="submit" name="[[!+submitVar]]">
+            [[!+submitTitle]]
+        </button>
+	</div>
+</form>
+```
+### Customizing the Next/Submit Button
+
+If you want to override the standard next/submit labels provided by `submitTitle`, use a conditional that applies your own label text, for example:
+```html
+<button type="submit" name="[[!+submitVar]]">
+    [[!+step
+        :is=`[[+formaliciousSteps]]`
+        :then=`My Next Label`
+        :else=`My Final Submit Label`
+    ]]
+</button>
+```
+
+### Skipping to the Last Step
+
+For forms where intermediate steps may not require their fields to be filled in, a voting ballot for example, the ability to skip to the last step might be useful. To do so, add another button for this purpose:
+```html
+[[!+step
+    :lt=`[[+formaliciousSteps]]`
+    :then=`
+        <button type="submit" name="[[!+submitVar]]_last" value="[[!+submitValLast]]">
+            Skip to Last Step
+        </button>
+    `
+    :else=``
+]]
+```
