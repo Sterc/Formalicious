@@ -79,7 +79,10 @@ class RenderForm extends Base
             ];
 
             $currentStep = $this->getCurrentStep();
+            $nextStep = (int) $currentStep + 1;
+            $prevStep = (int) $currentStep - 1;
             $totalSteps = $form->getStepsTotal();
+
             if ($totalSteps >= 1) {
                 if ($currentStep >= $totalSteps) {
                     $currentStep = $totalSteps;
@@ -150,7 +153,7 @@ class RenderForm extends Base
                     $hooks[] = 'FormaliciousHookHandleForm';
                 }
 
-                if ($currentStep >= $totalSteps) {
+                if ($currentStep >= $totalSteps && isset($_POST[$parameters['submitVar']])) {
                     if (!in_array('FormaliciousHookRemoveForm', $hooks, true)) {
                         $hooks[] = 'FormaliciousHookRemoveForm';
                     }
@@ -200,13 +203,34 @@ class RenderForm extends Base
                     }
                 } else {
                     $hooks[] = 'redirect';
-                    
+
+                    /**
+                     * Setting up redirect in a way that allows variable/dynamic destination, based on value stored in the submit input/button.
+                     * This way, form data on the step that is being navigated away from will always be posted/saved.
+                     * Navigation and pagination should then be done via submit inputs/buttons instead of <a> tags.
+                     *
+                     * A related change to FormIt's Request class is necessary for this additional functionality.
+                     */
+
+                    /* Default redirect destination */
+                    $destination = $nextStep;
+
+                    /* Check for alternate destination request */
+                    if ($_POST) {
+                        foreach ($_POST as $key => $value) {
+                            if (strpos($key, $parameters['submitVar']) !== false) {
+                                $destination = is_numeric($value) ? $value : $destination ;
+                                break;
+                            }
+                        }
+                    }
+
                     if (!empty($form->get('form_action'))) {
                         $parameters['formAction'] = $form->get('form_action');
                     }
 
                     $parameters['redirectTo'] = $this->getStepUrl([
-                        $this->getProperty('stepParam') => $currentStep + 1
+                        $this->getProperty('stepParam') => (int) $destination
                     ], 'full');
 
                     if (empty($placeholders['submitTitle'])) {
@@ -237,17 +261,20 @@ class RenderForm extends Base
                     $placeholders['prevUrl'] = $this->getStepUrl();
                 } else {
                     $placeholders['prevUrl'] = $this->getStepUrl([
-                        $this->getProperty('stepParam') => $currentStep - 1
+                        $this->getProperty('stepParam') => $prevStep
                     ]);
+                    $placeholders['submitValPrev'] = $prevStep;
                 }
 
-                if ($totalSteps === 1) {
-                    $placeholders['currentUrl'] = $this->getStepUrl();
-                } else {
-                    $placeholders['currentUrl'] = $this->getStepUrl([
-                        $this->getProperty('stepParam') => $currentStep
-                    ]);
-                }
+                /* Renaming the placeholder currentUrl to formAction, as it makes its purpose more immediately clear */
+                $placeholders['formAction'] = $totalSteps === 1
+                    ? $this->getStepUrl()
+                    : $this->getStepUrl([$this->getProperty('stepParam') => $currentStep]);
+
+                $placeholders['submitValLast'] = $totalSteps;
+
+                /* Set orignal for backward compatibility */
+                $placeholders['currentUrl'] = $placeholders['formAction'];
 
                 return $this->getChunk($this->getProperty('tplForm'), array_merge($placeholders, $parameters, [
                     'FormItParameters'      => $this->parseParameters($parameters),
