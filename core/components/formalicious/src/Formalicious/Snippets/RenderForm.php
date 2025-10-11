@@ -390,6 +390,7 @@ class RenderForm extends Base
      */
     public function getStepUrl(array $parameters = [], $scheme = null)
     {
+        $stepParam          = $this->getProperty('stepParam');
         $stepRedirect       = $this->getProperty('stepRedirect');
         $requestUrl         = '';
         $requestParam       = $this->modx->getOption('request_param_alias', null, 'q');
@@ -402,8 +403,8 @@ class RenderForm extends Base
             unset($requestParams[$requestParam]);
         }
 
-        if ($requestParams[$this->getProperty('stepParam')]) {
-            unset($requestParams[$this->getProperty('stepParam')]);
+        if (isset($requestParams[$stepParam])) {
+            unset($requestParams[$stepParam]);
         }
 
         if (!empty($stepRedirect)) {
